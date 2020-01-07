@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hugo tranquilpeak theme</title>
-    <link>https://example.org/categories/</link>
+    <link>https://stevenlee87.github.io/categories/</link>
     <description>Recent content in Categories on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Jan 2020 14:22:19 +0800</lastBuildDate>
     
-	<atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stevenlee87.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go</title>
-      <link>https://example.org/categories/go/</link>
+      <link>https://stevenlee87.github.io/categories/go/</link>
       <pubDate>Thu, 02 Jan 2020 14:22:19 +0800</pubDate>
       
-      <guid>https://example.org/categories/go/</guid>
+      <guid>https://stevenlee87.github.io/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>后端</title>
-      <link>https://example.org/categories/%E5%90%8E%E7%AB%AF/</link>
+      <link>https://stevenlee87.github.io/categories/%E5%90%8E%E7%AB%AF/</link>
       <pubDate>Thu, 02 Jan 2020 14:22:19 +0800</pubDate>
       
-      <guid>https://example.org/categories/%E5%90%8E%E7%AB%AF/</guid>
+      <guid>https://stevenlee87.github.io/categories/%E5%90%8E%E7%AB%AF/</guid>
       <description></description>
     </item>
     
