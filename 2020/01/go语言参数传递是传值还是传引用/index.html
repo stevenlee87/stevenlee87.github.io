@@ -517,8 +517,8 @@ type Person struct {
   </div>
 </figure>
 <p>运行打印输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">原始Person的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc4200721b0</span>
-<span style="color:#a6e22e">函数里接收到Person的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc4200721c0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">原始Person的内存地址是</span>:<span style="color:#ae81ff">0xc4200721b0</span>
+<span style="color:#a6e22e">函数里接收到Person的内存地址是</span>:<span style="color:#ae81ff">0xc4200721c0</span>
 {<span style="color:#a6e22e">张三</span>}
 </code></pre></div><p>我们发现，我们自己定义的<code>Person</code>类型，在函数传参的时候也是值传递，但是它的值(<code>Name</code>字段)并没有被修改，我们想改成李四，发现最后的结果还是张三。</p>
 <p>这也就是说，<code>map</code>类型和我们自己定义的<code>struct</code>类型是不一样的。我们尝试把<code>modify</code>函数的接收参数改为<code>Person</code>的指针。</p>
@@ -1036,8 +1036,8 @@ func modify(p Person){
   </div>
 </figure>
 <p>运行打印输出结果为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">姓名为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">19</span>
-<span style="color:#a6e22e">姓名为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">20</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">姓名为</span>:<span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span>:<span style="color:#ae81ff">19</span>
+<span style="color:#a6e22e">姓名为</span>:<span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span>:<span style="color:#ae81ff">20</span>
 </code></pre></div><p>通过这个<code>Person</code>和<code>slice</code>对比，就更好理解了，<code>Person</code>的<code>name</code>字段就类似于<code>slice</code>的<code>len</code>和<code>cap</code>字段，<code>age</code>字段类似于<code>array</code>字段。在传参为非指针类型的情况下，只能修改<code>age</code>字段，<code>name</code>字段无法修改。要修改<code>name</code>字段，就要把传参改为指针，比如：</p>
 
 
