@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="Go, 并发模式, 后端">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go并发模式（一）">
+<meta name="twitter:title" content="Go并发模式（一）">
+<meta property="og:url" content="https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+<meta property="twitter:url" content="https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-11-18T10:50:19">
+  
+  
+    <meta property="article:modified_time" content="2019-11-18T10:50:19">
+  
+  
+  
+    
+      <meta property="article:section" content="后端">
+    
+      <meta property="article:section" content="Go">
+    
+  
+  
+    
+      <meta property="article:tag" content="Go">
+    
+      <meta property="article:tag" content="并发模式">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2019/12/20/QOLqXj.jpg">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2019/12/20/QOLqXj.jpg">
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2019/12/20/QXE5s1.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2019/12/20/QXE5s1.png">
+
+
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
+    <title>Go并发模式（一）</title>
+
+    <link rel="icon" href="https://stevenlee87.github.io/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://stevenlee87.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155547068-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://stevenlee87.github.io/">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://stevenlee87.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://stevenlee87.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stevenlee87.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://s2.ax1x.com/2019/12/20/QXE5s1.png')"
+       data-behavior="5">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Go并发模式（一）
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-11-18T10:50:19&#43;08:00">
+        
+  November 18, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://stevenlee87.github.io/categories/%e5%90%8e%e7%ab%af">后端</a>, 
+    
+      <a class="category-link" href="https://stevenlee87.github.io/categories/go">Go</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaIn
+               hasCoverCaption">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+            <span class="post-header-cover-caption caption">A beautiful sunrise</span>
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#close-channel">close-channel</a></li>
+<li><a href="#channel约束">channel约束</a></li>
+<li><a href="#select">Select</a></li>
+<li><a href="#本文参考">本文参考</a></li>
+</ul>
+</nav>
+
+<h1 id="前言">前言</h1>
+
+<p>不知道大家有没有过，基础语法明明已经掌握了，但是一看别人的源码还是一头雾水，总有一种我和他学的不是同一门语言的赶脚，有没有看到别人的思路总是感觉那么新奇，写法那么的独特，困惑的同时又羡慕呢？</p>
+
+<p>其实这个和其他语言一样是存在设计模式的</p>
+
+<div class="alert info ">
+  <p>所谓设计模式, 就是大家经过一段时间实践并总结出来的一种解决问题的方法模式</p>
+</div>
+
+<p>然而这个设计模式，就像武功秘籍一样，分不同的招式，来应对不同场景的问题，大家只要领会了招式的内涵，加上勤加苦练，相信大家也会写出一手优美的代码来的</p>
+
+<p>下面我们来进入正题啦, 下面我会把一些常见的模式归纳出来，有的会比较基础且常见，有的会彼此组合来使得扩展代码更加强壮。</p>
+
+<h1 id="close-channel">close-channel</h1>
+
+<p>我们知道当channel被关闭的时候，我们可以从中读取到:</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>close-channel.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">intStream := make(chan int)
+close(intStream)
+integer, ok := &lt;- intStream // 我们能从close channel 读取到值,ok=false,并且channel里类型的默认值
+fmt.Printf(&#34;(%v):%v&#34;, ok, integer)
+// output: (false):0</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>我们并没有往channel里写入任何东西，当我们关闭channel之后我们依旧可以不断的从channel中读取，下面的一些模式里我们会经常用到这一特性</p>
+
+<p>比如这样：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>close-channel.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">intStream := make(chan int)
+go func() {
+  defer close(intStream)
+  for i:=1;i&lt;=5;i&#43;&#43; {
+    intStream &lt;-i
+  }
+}
+
+for integer := range intSteam {
+  fmt.Printf(&#34;%v &#34;, integer)
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果输出并程序退出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span></code></pre></div>
+<p>上面的例子里我们确保我我们执行完goroutine之后关闭了<code>intStream</code>, 并且提供了循环的终止条件，这是非常常见的模式</p>
+
+<div class="alert info ">
+  <p>关闭channel也是同时通知多个<code>goroutine</code>方法之一。</p>
+</div>
+
+<p>当n个<code>goroutine</code>等待同一个channel,block的时候，与其向channel写入n次数据来unblock<code>goroutine</code>，不如简单的去关闭这个channel,因为我们可以从已经关闭的channel里无限次的读取数据，不管有多少个<code>goroutine</code>在等待。<br />
+并且啊，关闭channel这个方法比写入n次数据的做法成本低又快速。 我们来看下面的例子：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>close-channel.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">begin := make(chan interface{})
+var wg sync.WaitGroup
+for i:=0;i&lt;5;i&#43;&#43; {
+  wg.Add(1)
+  go func(i int) {
+    defer wg.Done()
+    &lt;-begin // goroutine blocked，直到被告知可以继续
+    fmt.Printf(&#34;%v has begun\n&#34;, i)
+  }(i)
+}
+fmt.Println(&#34;Unblocking goroutines...&#34;)
+close(begin)  // 同时unblock所有goroutine
+wg.Wait()</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>输出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Unblocking</span> <span style="color:#a6e22e">goroutines</span><span style="color:#f92672">...</span>
+<span style="color:#ae81ff">4</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
+<span style="color:#ae81ff">2</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
+<span style="color:#ae81ff">3</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
+<span style="color:#ae81ff">0</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
+<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span></code></pre></div>
+<p>我们可以看到所有的<code>goroutine</code>都没有开始执行，直到先打印输出之后，我们关闭了channel。</p>
+
+<h1 id="channel约束">channel约束</h1>
+
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s2.ax1x.com/2020/01/03/laKv6I.png" title="Result of channel operations given a channel&#39;s state" data-fancybox-group="group:none">
+  
+    <img class="fig-img" src="https://s2.ax1x.com/2020/01/03/laKv6I.png"  alt="Result of channel operations given a channel&#39;s state">
+  
+    </a>
+  
+   
+    <span class="caption">Result of channel operations given a channel&#39;s state</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<p>从这个表格可以看出来和<code>channel</code>交互的情形中有3种操作会导致一个<code>goroutine</code> block, 有三种操作会到只程序<code>panic</code>, 乍一看会感觉操作<code>channel</code> 有点危险，但是正因为我们把所有会遇到的情形归纳出来了，牢牢记住，反而不会再担心会踩坑了。
+下面我们就来看看如何组织<code>channel</code>来实现一些健壮稳定的代码</p>
+
+<p>首先我们要先分配<code>channel</code>的<code>物主身份</code>，这个<code>物主身份</code>是指某个实例化，写入并且关闭一个<code>channel</code>的<code>goroutine</code>,为了使得代码逻辑明确，很有必要明确哪个<code>goroutine</code>拥有的<code>channel</code>.<br />
+单向<code>channel</code>是一个很好的工具来区分<code>channel</code>是自己拥有的还是外面传进来的：<br />
+因为<code>channel</code>的拥有者有对<code>channel</code>的写权限（<code>chan</code> or <code>chan&lt;-</code>）<br />
+而<code>channel</code>的使用者仅仅对<code>channel</code>拥有读权限（<code>&lt;-chan</code>）<br />
+一旦我们对<code>channel</code>的所有者和非<code>channel</code>的所有者之间进行了区分，上面表格的结果自然而然就会得到，我们就可以依此来分别对<code>channel</code>的所有者和非所有者进行责任划分。</p>
+
+<p>首先我们先来确定<code>channel</code>所有者的责任划分，所拥有<code>channel</code>的<code>goroutine</code>应该满足下面4点：</p>
+
+<ol>
+<li>实例化一个<code>channel</code></li>
+<li>执行写操作或者将<code>物主身份</code>传递给另一个<code>goroutine</code><br /></li>
+<li>负责关闭该<code>channel</code><br /></li>
+<li>将上面3条打包并通过一个只读<code>channel</code>暴露给外界<br /></li>
+</ol>
+
+<p>通过上面的对<code>channel</code>进行责任划分，将会达到下面的效果：</p>
+
+<ol>
+<li>正因为是我们初始化的<code>channel</code>, 所以我们避免了往<code>nil channel</code>写入数据导致<code>dead lock</code>的风险</li>
+<li>正因为是我们初始化的<code>channel</code>, 所以我们避免了由于关闭<code>nil channel</code>产生的<code>panic</code>的风险</li>
+<li>正因为是我们来决定<code>channel</code>何时关闭， 所以我们避免了由于往<code>closed channel</code>继续写入数据产生的<code>panic</code>的风险</li>
+<li>正因为是我们来决定<code>channel</code>何时关闭， 所以我们避免了由于重复关闭<code>channel</code>而产生的<code>panic</code>的风险</li>
+<li>在编译时使用了类型检查器，以防止对<code>channel</code>不正确的写入</li>
+</ol>
+
+<p>其次我们来看看那些在从<code>channel</code>读取数据时可能发生的阻塞操作，作为<code>channel</code>的消费者，只需要关注两件事：</p>
+
+<ul>
+<li>要知道一个<code>channel</code>什么时候被关闭</li>
+<li>负责处理任何原因产生的<code>block</code></li>
+</ul>
+
+<p>处理第一点，我们可以像这样用第二个返回值<code>v,ok := &lt;-channel</code>，来校验<br />
+第二点就比较麻烦了，他取决于我们的算法逻辑，处理方法可能是作超时处理，也有可能别的程序告知要停止读取，或者也有可能就是像在程序生命周期内进行阻塞。不管是那种，作为一个消费端你应该处理读取过程中可能或将会阻塞的情况。</p>
+
+<p>现在呢，我们来通过一个例子来验证上面的观点，我们来创建一个<code>goroutine</code>,并且拥有一个<code>channel</code>，而且有一个消费端负责处理<code>channel</code>的阻塞<code>channel</code>关闭的情况：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>channel.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">chanOwner := func() &lt;-chan int {
+  // 创建了一个5个buffer的channel,因为我们知道有6个数据将要写入，为了goroutine能尽快处理完
+  resultStream := make(chan int, 5) 
+  // 创建一个匿名函数来执行对resultStream的写操作
+  go func() {
+    // 我们确保写入数据完毕后关闭resultStream channel, 因为作为channel的owner这是我们应有的责任
+    defer close(resultStream)
+    for i:=0;i&lt;=5;i&#43;&#43; {
+      // 返回channel,暴露给外界，resultStream会隐式转换成单向channel
+      resultStream &lt;-i
+    }
+  }()
+  return resultStream
+}
+
+resultStream := chanOwner()
+// range over resultStream, 作为消费端，我们只关心阻塞和关闭的channel
+for result := range resultStream {
+  fmt.Printf(&#34;Received: %d\n&#34;, result)
+}
+fmt.Println(&#34;Done receiving!&#34;)</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">0</span>
+<span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">2</span>
+<span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">3</span>
+<span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">4</span>
+<span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">5</span>
+<span style="color:#a6e22e">Done</span> <span style="color:#a6e22e">receiving</span>!</code></pre></div>
+<p>注意看下上面的<code>resultStream</code>这个<code>channel</code>是如何封装在<code>channel owner</code>函数里的。很明显，这种写法规避了往<code>nil channel</code>和<code>closed channel</code>里写入数据的风险，并且关闭<code>channel</code>只触发一次。为我们的程序规避了一大片的风险。</p>
+
+<p>而且这里建议你在程序里尽可能的保证<code>channel</code>的<code>物主身份</code>，也就是上面例子的<code>goroutine</code>的作用域范围小一点，这样好处是上面的一些问题会显而易见，如果你的<code>channel</code>是<code>struct</code>一个成员属性，并且有很多成员方法，那么随着代码的迭代很快就会不清楚<code>channel</code>的是来干什么的了</p>
+
+<p>作为<code>channel</code>的消费端，消费函数只有对<code>channel</code>的读取权限，因此也只需如何处理读取阻塞和<code>channel</code>的关闭。<br />
+上面的小例子我们完美的阻塞的程序，直到<code>channel</code>被关闭</p>
+
+<p>如果你按照这个模式来coding, 会很容易像你期望的那样运行，而不会出现一些奇奇怪怪的情况。虽然不会100%保证不会出现问题，但是如果真的出现了问题，那么可能是你的<code>channel 物主身份</code>的作用域过大导致<code>channel</code>的职责混乱了。</p>
+
+<h1 id="select">Select</h1>
+
+<p>在各种并发模式里，<code>select</code>可以说随处可见，如果说<code>channel</code>是把一个个<code>goroutine</code>连接起来的桥梁，那么<code>select</code>是Go语言并发里最重要的语法之一。通过它把<code>channel</code>粘结在一起。<br />
+<code>select</code>也可以安全的将<code>channel</code>的一些概念比如取消，超时，等待，默认值等组合在一起。</p>
+
+<p>我们来简单的过一边<code>select</code>用法:</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">var c1, c2 &lt;-chan insterface{}
+var c3 chan&lt;- interface 
+select {
+  case &lt;- c1:
+    // Do something
+  case &lt;- c2:
+    // Do something
+  case c3&lt;- struct{}{}:
+    // Do something
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>和<code>switch-case</code>语法很像，但是<code>select</code>并不是<code>case</code>从上到下顺序执行的，并且就算一条都没有满足条件，程序也不会继续往下执行后面的逻辑。</p>
+
+<p>我们知道在有数据或者已经关闭的<code>channel</code>情况下读取并且在还没达到<code>channel</code>容量上限的情况下写入，所有的<code>channel</code>的写入和读取我们认为是同时进行的，如果读取和写入都没有准备好，那么整个<code>select</code>就会阻塞，然后当其中一个<code>channel</code>准备好了，那么对应的<code>case</code>会被执行：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">start := time.Now()
+c := make(chan interface{})
+go func() {
+  time.Sleep(5*time.Second)
+  close(c) // 等待5秒后关闭channel
+}()
+
+fmt.Println(&#34;Blocking on read...&#34;)
+select {
+  case &lt;-c: // 这里我们试图从channel里读取数据
+  fmt.Printf(&#34;Unblocked %v later .\n&#34;, time.Since(start))
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果输出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Blocking</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">read</span><span style="color:#f92672">...</span>
+<span style="color:#a6e22e">Unblocked</span> <span style="color:#ae81ff">5.000170042</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">later</span></code></pre></div>
+<p>从上面结果看我们在进入<code>select</code>代码块过了5秒后才结束。可以用这个方法简单而有效的等待一些工作处理好之前阻塞住。但是我们思考一下下面的情况会发生什么：</p>
+
+<ul>
+<li>如果有多个<code>channel</code>要读取会怎样？</li>
+<li>如果永远不会有任何<code>channel</code>满足条件会怎样？</li>
+<li>如果我想要执行一些操作，但是当时并没有<code>channel</code>满足条件该怎么办？<br /></li>
+</ul>
+
+<p>第一个问题很有趣，多个<code>channel</code>会怎么分配呢？</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">c1 := make(chan interface{});close(c1)
+c2 := make(chan interface{});close(c2)
+
+var c1Count, c2Count int
+for i:=1000;i&gt;=0;i-- {
+  select {
+    case &lt;-c1:
+      c1Count&#43;&#43;
+    case &lt;-c2:
+      c2Count&#43;&#43;
+  }
+}
+fmt.Printf(&#34;c1Count: %d\nc2Count: %d\n&#34;, c1Count, c2Count)</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c1Count</span>: <span style="color:#ae81ff">505</span>
+<span style="color:#a6e22e">c2Count</span>: <span style="color:#ae81ff">496</span></code></pre></div>
+<p>我们可以看到，1000次循环，基本每个<code>channel</code>触发次数各占一半。Go的<code>runtime</code>会运行一个伪随机，在<code>select</code>里均匀地选择<code>case</code>来触发，每个<code>case</code>都有同等的机会被选择。</p>
+
+<p>那么第二个问题呢：如果永远不会有任何<code>channel</code>满足条件会怎样？<br />
+如果在阻塞期间你没有什么可做的，但是你又不想一直阻塞下去，那么你可以设置超时时间。Go里的<code>time</code>包提供了一个优雅的通过<code>channel</code>的方式来做这件事：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">var c &lt;-chan int
+select {
+  case &lt;-c: // 这里永远不会被执行到，因为我们是从一个nil channel 里读数据，会一直阻塞
+  case &lt;-time.After(1 * time.Second):
+    fmt.Println(&#34;Timed out.&#34;)
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p><code>time.After</code> 这个方法会在参数给定的时间区间之后，会把当前时间发送到<code>channel</code>里，正好被<code>select</code>消费掉，达到了超时的作用。以后我们会基于这个理念来做一个更强壮的超时退出模式。</p>
+
+<p>最后一个问题：如果我想要执行一些操作，但是当时并没有<code>channel</code>满足条件该怎么办？
+这个就和<code>switch-case</code>差不多了，<code>select-case</code>也有个<code>default</code>默认执行条件：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">start := time.Now()
+var c1, c2 &lt;-chan int
+select{
+  case &lt;-c1:
+  case &lt;-c2:
+  default:
+    fmt.Printf(&#34;In default after %v\n&#34;, time.Since(start))
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">In</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">after</span> <span style="color:#ae81ff">1.421</span><span style="color:#a6e22e">μs</span></code></pre></div>
+<p>可见几乎是瞬间就走到了<code>default</code>语句。这样我们就和<code>for-select</code>相互组合，来实现一个<code>goroutine</code>等待另一个<code>goroutine</code>的结果的同时继续处理其他事情：</p>
+
+
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>for-select.go</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">go</li>
+      
+    </ul>
+  </figcaption> 
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-go" style="display: block;">   
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-go"><code class="go">done := make(chan interface{})
+go func() {
+  time.Sleep(5*time.Second)
+  close(done)
+}()
+
+workCounter := 0
+loop:
+for {
+  select {
+    case &lt;-done:
+      break loop
+    default:
+  }
+  // 模拟处理一些其他事情
+  workCounter&#43;&#43;
+  time.Sleep(1*time.Second) 
+}
+fmt.Printf(&#34;Achieved %v cycles of work before signalled to stop.\n&#34;, workCounter)</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>结果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Achieved</span> <span style="color:#ae81ff">5</span> <span style="color:#a6e22e">cycles</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">work</span> <span style="color:#a6e22e">before</span> <span style="color:#a6e22e">signalled</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">stop</span>.</code></pre></div>
+<p>最后, <code>select{}</code> 这个没有任何条件的语句会永远进行阻塞。</p>
+
+<div class="alert success no-icon ">
+  <p>To Be Continued&hellip;</p>
+</div>
+
+<h1 id="本文参考">本文参考</h1>
+
+<ul>
+<li><a href="https://raw.githubusercontent.com/KeKe-Li/book/master/Go/Concurrency in Go.pdf">《Concurrency in GO》</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://stevenlee87.github.io/tags/go/">Go</a>
+
+  <a class="tag tag--primary tag--small" href="https://stevenlee87.github.io/tags/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F/">并发模式</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://stevenlee87.github.io/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" data-tooltip="Go语言参数传递是传值还是传引用">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://stevenlee87.github.io/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" data-tooltip="Go语言参数传递是传值还是传引用">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://stevenlee87.github.io/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstevenlee87.github.io%2F2019%2F11%2Fgo%25E5%25B9%25B6%25E5%258F%2591%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%2580%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstevenlee87.github.io%2F2019%2F11%2Fgo%25E5%25B9%25B6%25E5%258F%2591%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%2580%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstevenlee87.github.io%2F2019%2F11%2Fgo%25E5%25B9%25B6%25E5%258F%2591%25E6%25A8%25A1%25E5%25BC%258F%25E4%25B8%2580%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://stevenlee87.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://stevenlee87.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/stevenlee87.github.io\/2019\/11\/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80\/';
+          
+            this.page.identifier = 'Go并发模式（一）';
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'stevenlee87-github-io-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
