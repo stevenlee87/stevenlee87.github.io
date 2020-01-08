@@ -281,7 +281,7 @@ if (!doNotTrack) {
 
 <h1 id="什么是传值-值传递">什么是传值（值传递）</h1>
 
-<p>传值的意思是：函数传递的总是原来这个东西的一个副本，一副拷贝。比如我们传递一个int类型的参数，传递的其实是这个参数的一个副本；传递一个指针类型的参数，其实传递的是这个该指针的一份拷贝，而不是这个指针指向的值。</p>
+<p>传值的意思是:函数传递的总是原来这个东西的一个副本，一副拷贝。比如我们传递一个int类型的参数，传递的其实是这个参数的一个副本；传递一个指针类型的参数，其实传递的是这个该指针的一份拷贝，而不是这个指针指向的值。</p>
 
 <p>对于int这类基础类型我们可以很好的理解，它们就是一个拷贝，但是指针呢？我们觉得可以通过它修改原来的值，怎么会是一个拷贝呢？下面我们看个例子:</p>
 
@@ -324,13 +324,13 @@ if (!doNotTrack) {
                 <pre class="code-highlight language-go"><code class="go">func main() {
 	i:=10
 	ip:=&amp;i
-	fmt.Printf(&#34;原始指针的内存地址是：%p\n&#34;,&amp;ip)
+	fmt.Printf(&#34;原始指针的内存地址是:%p\n&#34;,&amp;ip)
 	modify(ip)
-	fmt.Println(&#34;int值被修改了，新值为:&#34;,i)
+	fmt.Println(&#34;int值被修改了, 新值为:&#34;,i)
 }
 
  func modify(ip *int){
-	 fmt.Printf(&#34;函数里接收到的指针的内存地址是：%p\n&#34;,&amp;ip)
+	 fmt.Printf(&#34;函数里接收到的指针的内存地址是:%p\n&#34;,&amp;ip)
  	*ip=1
  }</code></pre>
               </td>
@@ -342,10 +342,10 @@ if (!doNotTrack) {
   </div>
 </figure>
 
-<p>我们运行，可以看到输入结果如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">原始指针的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc42000c028</span>
-<span style="color:#a6e22e">函数里接收到的指针的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc42000c038</span>
-<span style="color:#a6e22e">int值被修改了</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">新值为</span>: <span style="color:#ae81ff">1</span></code></pre></div>
+<p>我们运行，可以看到输入结果如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">原始指针的内存地址是</span>:<span style="color:#ae81ff">0xc42000c028</span>
+<span style="color:#a6e22e">函数里接收到的指针的内存地址是</span>:<span style="color:#ae81ff">0xc42000c038</span>
+<span style="color:#a6e22e">int值被修改了</span>, <span style="color:#a6e22e">新值为</span>: <span style="color:#ae81ff">1</span></code></pre></div>
 <p>首先我们要知道，任何存放在内存里的东西都有自己的地址，指针也不例外，它虽然指向别的数据，但是也有存放该指针的内存。</p>
 
 <p>所以通过输出我们可以看到，这是一个指针的拷贝，因为存放这两个指针的内存地址是不同的，虽然指针的值相同，但是是两个不同的指针。</p>
@@ -383,7 +383,7 @@ if (!doNotTrack) {
   
     <a class="fancybox" href="https://s2.ax1x.com/2020/01/02/lYH2DJ.png" title="示意图" data-fancybox-group="group:none">
   
-    <img class="fig-img" src="https://s2.ax1x.com/2020/01/02/lYH2DJ.png" style="width: 150px;height: 300px;" alt="示意图">
+    <img class="fig-img" src="https://s2.ax1x.com/2020/01/02/lYH2DJ.png" style="width: 236px;height: 322px;" alt="示意图">
   
     </a>
   
@@ -453,13 +453,13 @@ if (!doNotTrack) {
 
 	mp:=&amp;persons
 
-	fmt.Printf(&#34;原始map的内存地址是：%p\n&#34;,mp)
+	fmt.Printf(&#34;原始map的内存地址是:%p\n&#34;,mp)
 	modify(persons)
-	fmt.Println(&#34;map值被修改了，新值为:&#34;,persons)
+	fmt.Println(&#34;map值被修改了, 新值为:&#34;,persons)
 }
 
  func modify(p map[string]int){
-	 fmt.Printf(&#34;函数里接收到map的内存地址是：%p\n&#34;,&amp;p)
+	 fmt.Printf(&#34;函数里接收到map的内存地址是:%p\n&#34;,&amp;p)
 	 p[&#34;张三&#34;]=20
  }</code></pre>
               </td>
@@ -471,10 +471,10 @@ if (!doNotTrack) {
   </div>
 </figure>
 
-<p>运行打印输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">原始map的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc42000c028</span>
-<span style="color:#a6e22e">函数里接收到map的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc42000c038</span>
-<span style="color:#a6e22e">map值被修改了</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">新值为</span>: <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">张三</span>:<span style="color:#ae81ff">20</span>]</code></pre></div>
+<p>运行打印输出:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">原始map的内存地址是</span>:<span style="color:#ae81ff">0xc42000c028</span>
+<span style="color:#a6e22e">函数里接收到map的内存地址是</span>:<span style="color:#ae81ff">0xc42000c038</span>
+<span style="color:#a6e22e">map值被修改了</span>, <span style="color:#a6e22e">新值为</span>: <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">张三</span>:<span style="color:#ae81ff">20</span>]</code></pre></div>
 <p>两个内存地址是不一样的，所以这又是一个值传递（值的拷贝），那么为什么我们可以修改Map的内容呢？先不急，我们先看一个自己实现的<code>struct</code>。</p>
 
 
@@ -515,7 +515,7 @@ if (!doNotTrack) {
               <td class="code">
                 <pre class="code-highlight language-go"><code class="go">func main() {
 	p:=Person{&#34;张三&#34;}
-	fmt.Printf(&#34;原始Person的内存地址是：%p\n&#34;,&amp;p)
+	fmt.Printf(&#34;原始Person的内存地址是:%p\n&#34;,&amp;p)
 	modify(p)
 	fmt.Println(p)
 }
@@ -525,7 +525,7 @@ type Person struct {
 }
 
  func modify(p Person) {
-	 fmt.Printf(&#34;函数里接收到Person的内存地址是：%p\n&#34;,&amp;p)
+	 fmt.Printf(&#34;函数里接收到Person的内存地址是:%p\n&#34;,&amp;p)
 	 p.Name = &#34;李四&#34;
  }</code></pre>
               </td>
@@ -537,9 +537,9 @@ type Person struct {
   </div>
 </figure>
 
-<p>运行打印输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">原始Person的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc4200721b0</span>
-<span style="color:#a6e22e">函数里接收到Person的内存地址是</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">0xc4200721c0</span>
+<p>运行打印输出:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">原始Person的内存地址是</span>:<span style="color:#ae81ff">0xc4200721b0</span>
+<span style="color:#a6e22e">函数里接收到Person的内存地址是</span>:<span style="color:#ae81ff">0xc4200721c0</span>
 {<span style="color:#a6e22e">张三</span>}</code></pre></div>
 <p>我们发现，我们自己定义的<code>Person</code>类型，在函数传参的时候也是值传递，但是它的值(<code>Name</code>字段)并没有被修改，我们想改成李四，发现最后的结果还是张三。</p>
 
@@ -1067,7 +1067,7 @@ type Person struct {
 }
 
 func (p Person) String() string{
-	return &#34;姓名为：&#34; &#43; p.name &#43; &#34;,年龄为：&#34;&#43; strconv.Itoa(*p.age)
+	return &#34;姓名为:&#34; &#43; p.name &#43; &#34;,年龄为:&#34;&#43; strconv.Itoa(*p.age)
 }
 
 func modify(p Person){
@@ -1083,10 +1083,10 @@ func modify(p Person){
   </div>
 </figure>
 
-<p>运行打印输出结果为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">姓名为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">19</span>
-<span style="color:#a6e22e">姓名为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#ae81ff">20</span></code></pre></div>
-<p>通过这个<code>Person</code>和<code>slice</code>对比，就更好理解了，<code>Person</code>的<code>name</code>字段就类似于<code>slice</code>的<code>len</code>和<code>cap</code>字段，<code>age</code>字段类似于<code>array</code>字段。在传参为非指针类型的情况下，只能修改<code>age</code>字段，<code>name</code>字段无法修改。要修改<code>name</code>字段，就要把传参改为指针，比如：</p>
+<p>运行打印输出结果为:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">姓名为</span>:<span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span>:<span style="color:#ae81ff">19</span>
+<span style="color:#a6e22e">姓名为</span>:<span style="color:#a6e22e">张三</span>,<span style="color:#a6e22e">年龄为</span>:<span style="color:#ae81ff">20</span></code></pre></div>
+<p>通过这个<code>Person</code>和<code>slice</code>对比，就更好理解了，<code>Person</code>的<code>name</code>字段就类似于<code>slice</code>的<code>len</code>和<code>cap</code>字段，<code>age</code>字段类似于<code>array</code>字段。在传参为非指针类型的情况下，只能修改<code>age</code>字段，<code>name</code>字段无法修改。要修改<code>name</code>字段，就要把传参改为指针，比如:</p>
 
 
 

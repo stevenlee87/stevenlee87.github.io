@@ -346,7 +346,7 @@ fmt.Printf(&#34;(%v):%v&#34;, ok, integer)
 
 <p>我们并没有往channel里写入任何东西，当我们关闭channel之后我们依旧可以不断的从channel中读取，下面的一些模式里我们会经常用到这一特性</p>
 
-<p>比如这样：</p>
+<p>比如这样:</p>
 
 
 
@@ -404,7 +404,7 @@ for integer := range intSteam {
   </div>
 </figure>
 
-<p>结果输出并程序退出：</p>
+<p>结果输出并程序退出:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span></code></pre></div>
 <p>上面的例子里我们确保我我们执行完goroutine之后关闭了<code>intStream</code>, 并且提供了循环的终止条件，这是非常常见的模式</p>
 
@@ -413,7 +413,7 @@ for integer := range intSteam {
 </div>
 
 <p>当n个<code>goroutine</code>等待同一个channel,block的时候，与其向channel写入n次数据来unblock<code>goroutine</code>，不如简单的去关闭这个channel,因为我们可以从已经关闭的channel里无限次的读取数据，不管有多少个<code>goroutine</code>在等待。<br />
-并且啊，关闭channel这个方法比写入n次数据的做法成本低又快速。 我们来看下面的例子：</p>
+并且啊，关闭channel这个方法比写入n次数据的做法成本低又快速。 我们来看下面的例子:</p>
 
 
 
@@ -473,7 +473,7 @@ wg.Wait()</code></pre>
   </div>
 </figure>
 
-<p>输出：</p>
+<p>输出:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Unblocking</span> <span style="color:#a6e22e">goroutines</span><span style="color:#f92672">...</span>
 <span style="color:#ae81ff">4</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
 <span style="color:#ae81ff">2</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
