@@ -6,10 +6,19 @@
     <description>Recent content in Posts on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Mar 2020 12:11:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 22:30:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SR-IOV 简介</title>
+      <link>https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Thu, 05 Mar 2020 22:30:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>centos7操作系统如何开启BBR功能</title>
