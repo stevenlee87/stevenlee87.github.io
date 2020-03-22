@@ -4,7 +4,52 @@
   
   <url>
     <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2020-03-05T22:30:19+08:00</lastmod>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/grafana/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/post/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/prometheus/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/statistics/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</loc>
+    <lastmod>2020-03-21T23:00:19+08:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +58,7 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/</loc>
-    <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imepisode.top/tags/network/</loc>
-    <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/post/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
   </url>
   
@@ -39,11 +74,6 @@
   
   <url>
     <loc>https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/tags/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
   </url>
   
@@ -73,12 +103,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/go/</loc>
+    <loc>https://imepisode.top/categories/go/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/go/</loc>
+    <loc>https://imepisode.top/tags/go/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
   </url>
   

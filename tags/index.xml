@@ -6,10 +6,37 @@
     <description>Recent content in Tags on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 22:30:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 23:00:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>grafana</title>
+      <link>https://imepisode.top/tags/grafana/</link>
+      <pubDate>Sat, 21 Mar 2020 23:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prometheus</title>
+      <link>https://imepisode.top/tags/prometheus/</link>
+      <pubDate>Sat, 21 Mar 2020 23:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/prometheus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://imepisode.top/tags/statistics/</link>
+      <pubDate>Sat, 21 Mar 2020 23:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/statistics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>network</title>
