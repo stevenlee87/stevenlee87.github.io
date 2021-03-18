@@ -13,30 +13,36 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="穷查理宝典">
-<meta name="twitter:title" content="穷查理宝典">
-<meta property="og:url" content="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
-<meta property="twitter:url" content="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+<meta property="og:title" content="97 Things Every SRE Should Know-01">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-01">
+<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
+<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-09-28T16:11:19">
+    <meta property="article:published_time" content="2021-03-18T16:21:19">
   
   
-    <meta property="article:modified_time" content="2020-09-28T16:11:19">
+    <meta property="article:modified_time" content="2021-03-18T16:21:19">
   
-  
-  
-    
-      <meta property="article:section" content="book">
-    
   
   
     
-      <meta property="article:tag" content="book">
+      <meta property="article:section" content="SRE">
+    
+      <meta property="article:section" content="97 Things Every SRE Should Know">
+    
+      <meta property="article:section" content="Part I. New to SRE">
+    
+      <meta property="article:section" content="Site Reliability Engineering in Six Words">
+    
+  
+  
+    
+      <meta property="article:tag" content="SRE">
     
   
 
@@ -49,8 +55,8 @@
 
 
 
-  <meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0EjKhD.th.jpg">
-  <meta property="twitter:image" content="https://s1.ax1x.com/2020/09/28/0EjKhD.th.jpg">
+  <meta property="og:image" content="https://s3.ax1x.com/2021/03/12/6aPgYQ.png">
+  <meta property="twitter:image" content="https://s3.ax1x.com/2021/03/12/6aPgYQ.png">
 
 
   <meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
@@ -63,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>穷查理宝典</title>
+    <title>97 Things Every SRE Should Know-01</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -231,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      穷查理宝典
+      97 Things Every SRE Should Know-01
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-09-28T16:11:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-03-18T16:21:19&#43;08:00">
         
-  September 28, 2020
+  March 18, 2021
 
       </time>
     
@@ -248,7 +254,13 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://imepisode.top/categories/book">book</a>
+      <a class="category-link" href="https://imepisode.top/categories/sre">SRE</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/97-things-every-sre-should-know">97 Things Every SRE Should Know</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/site-reliability-engineering-in-six-words">Site Reliability Engineering in Six Words</a>
     
   
 
@@ -260,62 +272,53 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#如何保证自己过上痛苦的生活">如何保证自己过上痛苦的生活</a></li>
-<li><a href="#第一">第一</a></li>
-<li><a href="#第二">第二</a></li>
-<li><a href="#第三">第三</a></li>
-<li><a href="#第四">第四</a></li>
-<li><a href="#注解">注解</a></li>
+<li><a href="#site-reliability-engineering-in-six-words">Site Reliability Engineering in Six Words</a></li>
+<li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
+<li><a href="#结语">结语</a></li>
 </ul>
 </nav>  
 
-<h1 id="如何保证自己过上痛苦的生活">如何保证自己过上痛苦的生活</h1>
+<h1 id="site-reliability-engineering-in-six-words">Site Reliability Engineering in Six Words</h1>
 
-<h1 id="第一">第一</h1>
+<p>当刚认识的人问我是做什么工作的时候，我一般都会回话说：&rdquo;我是网站可靠性工程师。我们保持大规模(可能上万台服务器的规模)计算机服务的可靠性。&rdquo; 对于很多人来说，这已经足够无聊了，我们一般的寒暄还在继续。不过偶尔，我也会碰到比这更好奇的人。&rdquo;哦，这听起来很有趣！你是怎么做到的？&rdquo;</p>
 
-<p>要反复无常，不要虔诚地做你正在做的事。只要养成这个习惯，你们就能够绰绰有余地抵消你们所有优点共同产生的效应，不管那种效应有多么巨大。如果你们喜欢不受信任并被排除在对人类贡献最杰出的人群之外，那么这味药物最适合你们。养成这个习惯，你们将会永远扮演寓言里那只兔子的角色，只不过跑得比你们快的不再只是一只优秀的乌龟，而是一群又一群平庸的乌龟，甚至还有些拄拐杖的平庸乌龟。</p>
+<p>这是一个很难回答的问题! SRE到底能做什么？许多年来，我只是依靠列出各种各样的东西&ndash;其中一些已经被写进了这本书的文章里。虽然这样的答案并不完全是错误的，但也从未感到真正的满足。必须有一个更有凝聚力的答案，当我反思我从事这项工作的十年，我想我终于想明白了。实际上，SRE所做的每一件事都依赖于我们做六件事的能力：测量、分析、决定、行动、反思、重复。</p>
 
-<p>我必须警告你们，如果不服用我开出的第一味药，即使你们最初的条件并不好，你们也可能会难以过上痛苦的日子。我有个大学的室友，他以前患有严重的阅读障碍症，现在也是。但他算得上我认识的人中最可靠的。他的生活到目前为止很美满，拥有出色的太太和子女，掌管着某个数十亿美元的企业。如果你们想要避免这种传统的、主流文化的、富有成就的生活，却又坚持不懈地做到为人可靠，那么就算有其他再多的缺点，你们这个愿望恐怕也会落空。</p>
+<p>测量并不只是指收集数据。要测量某样东西，你心中要有某种目标。你收集面粉不是为了烤蛋糕，而是为了测量面粉，否则，事情最终会变得一团糟。SRE需要测量一些东西，因为纯粹的数据是不够的。我们的数据需要是有意义的。我们需要能够回答这样的问题：&rdquo;这项服务是否在做用户需要它做的事情？&rdquo;</p>
 
-<p>说到“到目前为止很美满”这样一种生活，我忍不住想在这里引用克洛伊斯的话来再次强调人类生存状况那种“到目前为止”的那一面。克洛伊斯曾经是世界上最富裕的国王，后来沦为敌人的阶下囚，就在被活活烧死之前，他说：“哎呀，我现在才想起历史学家梭伦说过的那句话，‘在生命没有结束之前，没有人的一生能够被称为是幸福的。’”</p>
+<p>一旦你有了测量结果，下一步就是分析它们。这时，一些基本的统计学和概率分析就会有所帮助。通过使用数学家们几个世纪的研究和知识，尽可能多地从你所测量的事物中学习。</p>
 
-<h1 id="第二">第二</h1>
+<p>现在你已经尽力测量和分析了某一事物的表现。用这个分析来决定如何最好地走向未来吧!</p>
 
-<p>尽可能从你们自身的经验获得知识，尽量别从其他人成功或失败的经验中广泛地吸取教训，不管他们是古人还是今人。这味药肯定能保证你们过上痛苦的生活，取得二流的成就。</p>
+<p>然后你必须采取行动。你实际上需要做你决定要做的事情。有可能这个行动其实就是不采取任何行动!</p>
 
-<p>只要看看身边发生的事情，你们就能明白拒不借鉴别人的教训所造成的后果。人类常见的灾难全都毫无创意——酒后驾车导致的身亡，鲁莽驾驶引起的残疾，无药可治的性病，加入毁形灭性的邪教的那些聪明的大学生被洗脑后变成的行尸走肉，由于重蹈前人显而易见的覆辙而导致的生意失败，还有各种形式的集体疯狂等等。你们若要寻找那条通往因为不小心、没有创意的错误而引起真正的人生麻烦的道路，我建议你们牢牢记住这句现代谚语：“人生就像悬挂式滑翔，起步没有成功就完蛋啦。”</p>
+<p>最后，回想一下你做过的事情。无论你做了什么，都要把批判的&ndash;但无可指责的目光正视。一般来说，你可以从这个过程中学到比最初的测量分析更多的东西。</p>
 
-<p>避免广泛吸取知识的另一种做法是，别去钻研那些前辈的最好成果。这味药的功效在于让你们得到尽可能少的教育。</p>
+<p>现在你重新开始。由于你的决定，世界上的一些事情要么发生了变化，要么没有，你需要继续测量，看看这个行动或不行动的真正影响到底是什么。继续测量，然后分析、决定、行动、反思，不断重复。这就是SRE的方式。循序渐进是实现可靠性的唯一可靠途径。</p>
 
-<p>如果我再讲一个简短的历史故事，或许你们可以看得更清楚，从而更有效地过上与幸福无缘的生活。从前有个人，他勤奋地掌握了前人最优秀的成果，尽管开始研究分析几何的时候他的基础并不好，学得非常吃力。最终，他本人取得的成就引起了众人的瞩目，他是这样评价他自己的成果的：“如果说我比其他人看得更远，那是因为我站在巨人的肩膀上。”这人的骨灰如今埋在威斯敏斯特大教堂里，他的墓碑上有句异乎寻常的墓志铭：“这里安葬着永垂不朽的艾萨克·牛顿爵士。”</p>
+<p>网站可靠性工程是一门广泛的学科。我们经常被要求成为软件工程师，系统管理员，网络工程师，系统架构师，甚至是教育者或顾问，但有一个范式贯穿所有这些角色，那就是SRE是数据驱动的。测量你需要测量的东西，分析你收集的数据，决定如何处理这个分析，根据你的发现采取行动，反思你的决定，然后再重新做一遍，一遍又一遍。</p>
 
-<h1 id="第三">第三</h1>
+<p>测量、分析、决定、行动、反思、重复：这就是网站可靠性工程师的六字诀。</p>
 
-<p>当你们在人生的战场上遭遇第一、第二或者第三次严重的失败时，就请意志消沉，从此一蹶不振吧。因为即使是最幸运、最聪明的人，也会遇到许许多多的失败，这味药必定能保证你们永远地陷身在痛苦的泥沼里。请你们千万要忽略爱比克泰德亲自撰写的、恰如其分的墓志铭中蕴含的教训：“此处埋着爱比克泰德，一个奴隶，身体残疾，极其穷困，蒙受诸神的恩宠。”</p>
+<h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
-<h1 id="第四">第四</h1>
+<p>SRE虽然涉及复杂的技术系统，但归根结底是一种文化实践。文化是人的产物，这启发我们根据你在组织中的SRE数量来组织本书的各个部分&ndash;你具体处理什么，你的一天是怎样的，取决于有多少个SRE工程师。我们将本书的文章分为 &ldquo;SRE新手&rdquo; 、0-1个SRE、1-10个SRE、10-100个SRE和 &ldquo;SRE的未来&rdquo;。</p>
 
-<p>请忽略小时候人们告诉我的那个乡下人故事。曾经有个乡下人说：“要是知道我会死在哪里就好啦，那我将永远不去那个地方。”大多数人和你们一样，嘲笑这个乡下人的无知，忽略他那朴素的智慧。如果我的经验有什么借鉴意义的话，那些热爱痛苦生活的人应该不惜任何代价避免应用这个乡下人的方法。若想获得失败，你们应该将这种乡下人的方法，也就是卡森在演讲中所用的方法，贬低得愚蠢之极、毫无用处。</p>
+<p>读者如果想找寻先从哪里开始的指导，可以直接跳到最适用于自己的部分；但是，你仍然会发现阅读那些目前并不适用于你日常的部分的文章的价值。</p>
 
-<p>卡森采用的研究方法是把问题反过来想。就是说要解出X，得先研究如何才能得到非X。伟大的代数学家雅各比用的也是卡森这种办法，众所周知，他经常重复一句话：“反过来想，总是反过来想。”雅各比知道事物的本质是这样的，许多难题只有在逆向思考的时候才能得到最好的解决。例如，当年几乎所有人都在试图修正麦克斯韦的电磁定律，以便它能够符合牛顿的三大运动定律，然而爱因斯坦却转了个180度大弯，修正了牛顿的定律，让其符合麦克斯韦的定律，结果他发现了相对论。</p>
+<p>在0到1个SRE时，还没有人被指定为SRE，或者你已经找到了你的第一个SRE，这个角色看起来几乎是孤独的。</p>
 
-<p>作为一个公认的传记爱好者，我认为假如查尔斯·罗伯特·达尔文是哈佛学校1986届毕业班的学生，他的成绩大概只能排到中等。然而现在他是科学史上的大名人。如果你们希望将来碌碌无为，那么千万不能以达尔文为榜样。</p>
+<p>在1到10名SRE时，你正在组建一个团队，有知识共享和分工的能力。</p>
 
-<p>达尔文能够取得这样的成就，主要是因为他的工作方式。这种方式有悖于所有我列出的痛苦法则，而且还特别强调逆向思考：他总是致力于寻求证据来否定他已有的理论，无论他对这种理论有多么珍惜，无论这种理论是多么得之不易。与之相反，大多数人早年取得成就，然后就越来越拒绝新的、证伪性的信息，目的是让他们最初的结论能够保持完整。他们变成了菲利普·威利所评论的那类人：“他们固步自封，满足于已有的知识，永远不会去了解新的事物。”</p>
+<p>在10到100个SRE时，你已经成为一个组织，你需要思考的不仅仅是你所从事的系统，还需要思考如何组织这么多SRE。</p>
 
-<p>达尔文的生平展示了乌龟如何可以在极端客观态度的帮助下跑到兔子前面去。这种态度能够帮助客观的人最后变成“蒙眼拼驴尾”游戏中惟一那个没有被遮住眼睛的玩家。</p>
+<p>&ldquo;SRE新手&rdquo; 涵盖了基础性的话题（尽管并不详尽！），对于那些刚刚开始SRE之旅的人来说是很有帮助的，即使是最有经验的SRE，也是一种复习。 &ldquo;SRE的未来&rdquo; 包含了一些文章，这些文章探讨了SRE潜在的发展方向，或者是（目前）坐拥时代潮流。</p>
 
-<p>如果你们认为客观态度无足轻重，那么你们不但忽略了来自达尔文的训诲，也忽略了来自爱因斯坦的教导。爱因斯坦说他那些成功的理论来自“好奇、专注、毅力和自省”。他所说的自省，就是不停地试验与推翻他自己深爱的想法。</p>
+<p>没有必要按照任何特定的顺序阅读本书。你可以从头到尾读一遍。或者，如果你对某个特定的主题感到好奇，可以翻到索引，在那里你可以找到关于该主题的所有文章。把它作为参考指南，或者是灵感的来源&ndash;可以在需要的时候提供一个震撼。或者，也许可以建立一个阅读俱乐部，每周一次挑选一篇文章与同事讨论。这就是散文集的魅力所在。我们希望你和我们一样喜欢阅读它们。</p>
 
-<p>最后，尽可能地减少客观性，这样会帮助你减少获得世俗好处所需作出的让步以及所要承受的负担，因为客观态度并不只对伟大的物理学家和生物学家有效。它也能够帮助伯米吉地区的管道维修工更好地工作。因此，如果你们认为忠实于自己就是永远不改变你们年轻时的所有观念，那么你们不仅将会稳步地踏上通往极端无知的道路，而且还将走向事业中不愉快的经历给你带来的所有痛苦。</p>
+<h1 id="结语">结语</h1>
 
-<h1 id="注解">注解</h1>
-
-<p>1.克洛伊斯（约公元前546年）克洛伊斯是一个拥有巨额财富的传奇人物，公元前560年登基为吕底亚国王，直到公元前547年被波斯人击败。据说克洛伊斯被俘之后，走上火堆把自己烧死了。</p>
-
-<p>2.查尔斯·达尔文（CharlesRobertDarwin，1809——1882）查尔斯·达尔文是英国的博物学家，其自然选择进化论改变了生物科学。他的《物种起源》一出版就卖光，并遭到了严重的抨击，因为它有悖于《圣经》的创世论。</p>
-
-<p>3.约翰尼（约翰·威廉）·卡森（JohnnyCarson，1925——2005）约翰尼·卡森出生在爱荷华州的康宁市，是美国著名的午夜场喜剧之王。他曾有很多年在奥马哈主持广播节目，称奥马哈是他的故乡。从1962年到1992年这30年间，他是国家广播公司的《今夜秀》主持人，拥有数以百万计的观众。他的节目专访了几千名作家、电影制片人、演员、歌手——当然还有知名的喜剧演员，其中有很多人是他一手捧红的。</p>
+<p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
               
             </div>
           </div>
@@ -327,7 +330,7 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/book/">book</a>
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/sre/">SRE</a>
 
                   </div>
                 
@@ -340,7 +343,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/" data-tooltip="97 Things Every SRE Should Know-preface">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -348,7 +351,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/" data-tooltip="97 Things Every SRE Should Know-preface">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -366,19 +369,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -426,7 +429,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/" data-tooltip="97 Things Every SRE Should Know-preface">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -434,7 +437,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/" data-tooltip="97 Things Every SRE Should Know-preface">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -452,19 +455,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -494,19 +497,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F09%2F%25E7%25A9%25B7%25E6%259F%25A5%25E7%2590%2586%25E5%25AE%259D%25E5%2585%25B8%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-01%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F09%2F%25E7%25A9%25B7%25E6%259F%25A5%25E7%2590%2586%25E5%25AE%259D%25E5%2585%25B8%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-01%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F09%2F%25E7%25A9%25B7%25E6%259F%25A5%25E7%2590%2586%25E5%25AE%259D%25E5%2585%25B8%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-01%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -598,9 +601,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2020\/09\/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-01\/';
           
-            this.page.identifier = 'Poor Charlie’s Almanack';
+            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-01\/'
           
         };
         (function() {
