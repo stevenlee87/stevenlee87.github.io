@@ -3,6 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imepisode.top/categories/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/post/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/sre/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/sre/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/tags/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imepisode.top/categories/97-things-every-sre-should-know/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
   </url>
@@ -13,42 +53,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imepisode.top/categories/do-we-know-why-we-really-want-reliability/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imepisode.top/categories/part-i.-new-to-sre/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/post/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/tags/sre/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/sre/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/tags/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
   </url>
   
@@ -103,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/linux/</loc>
+    <loc>https://imepisode.top/tags/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/linux/</loc>
+    <loc>https://imepisode.top/categories/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
   </url>
   
@@ -153,12 +163,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/sr-iov/</loc>
+    <loc>https://imepisode.top/categories/sr-iov/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/sr-iov/</loc>
+    <loc>https://imepisode.top/tags/sr-iov/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
   </url>
   
