@@ -7,33 +7,37 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Steven Lee">
-<meta name="keywords" content="SRE">
+<meta name="keywords" content="book">
 <meta name="description" content="">
 
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="服务质量说明">
-<meta name="twitter:title" content="服务质量说明">
-<meta property="og:url" content="https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
-<meta property="twitter:url" content="https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+<meta property="og:title" content="97 Things Every SRE Should Know-03">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-03">
+<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
+<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-03-18T18:05:19">
+    <meta property="article:published_time" content="2021-03-24T14:49:19">
   
   
-    <meta property="article:modified_time" content="2021-03-18T18:05:19">
+    <meta property="article:modified_time" content="2021-03-24T14:49:19">
   
   
   
     
       <meta property="article:section" content="SRE">
     
-      <meta property="article:section" content="服务质量说明">
+      <meta property="article:section" content="97 Things Every SRE Should Know">
+    
+      <meta property="article:section" content="Part I. New to SRE">
+    
+      <meta property="article:section" content="Building Self-Regulating Processes">
     
   
   
@@ -51,12 +55,12 @@
 
 
 
-  <meta property="og:image" content="https://s3.ax1x.com/2021/03/18/627a8g.jpg">
-  <meta property="twitter:image" content="https://s3.ax1x.com/2021/03/18/627a8g.jpg">
+  <meta property="og:image" content="https://s3.ax1x.com/2021/03/12/6aPgYQ.png">
+  <meta property="twitter:image" content="https://s3.ax1x.com/2021/03/12/6aPgYQ.png">
 
 
-  <meta property="og:image" content="https://s3.ax1x.com/2021/03/18/627d2Q.png">
-  <meta property="twitter:image" content="https://s3.ax1x.com/2021/03/18/627d2Q.png">
+  <meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
+  <meta property="twitter:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
 
 
 
@@ -65,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>服务质量说明</title>
+    <title>97 Things Every SRE Should Know-03</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -217,7 +221,7 @@ if (!doNotTrack) {
   <div class="post-header-cover
               text-center
               post-header-cover--partial"
-       style="background-image:url('https://s3.ax1x.com/2021/03/18/627d2Q.png')"
+       style="background-image:url('https://s1.ax1x.com/2020/09/28/0VPcfx.jpg')"
        data-behavior="5">
     
   </div>
@@ -233,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      服务质量说明
+      97 Things Every SRE Should Know-03
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-03-18T18:05:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-03-24T14:49:19&#43;08:00">
         
-  March 18, 2021
+  March 24, 2021
 
       </time>
     
@@ -252,7 +256,11 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/sre">SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/%e6%9c%8d%e5%8a%a1%e8%b4%a8%e9%87%8f%e8%af%b4%e6%98%8e">服务质量说明</a>
+      <a class="category-link" href="https://imepisode.top/categories/97-things-every-sre-should-know">97 Things Every SRE Should Know</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/building-self-regulating-processes">Building Self-Regulating Processes</a>
     
   
 
@@ -264,37 +272,63 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#服务质量术语">服务质量术语</a></li>
-<li><a href="#服务质量应用">服务质量应用</a></li>
-<li><a href="#延伸阅读">延伸阅读</a></li>
+<li><a href="#building-self-regulating-processes">Building Self-Regulating Processes</a></li>
+<li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
+<li><a href="#结语">结语</a></li>
+<li><a href="#延伸阅读">延伸阅读</a>
+<ul>
+<li><a href="#結對程式設計-pair-programming">結對程式設計 (Pair programming)</a></li>
+</ul></li>
 </ul>
 </nav>  
 
-<h1 id="服务质量术语">服务质量术语</h1>
+<h1 id="building-self-regulating-processes">Building Self-Regulating Processes</h1>
 
-<p>服务质量术语主要包括以下几个方面：<br />
-服务质量指标（SLI）：<br />
-某项服务的具体量化指标，一般为：请求延迟、错误率、系统吞吐量、可用性、持久性<br />
-服务质量目标（SLO）：<br />
-某个SLI的目标值或目标范围，一般为：平均请求延迟<br />
-服务质量协议（SLA）：<br />
-服务与用户之间的一个明确的或者不明确的协议，描述了在达到或者没有达到SLO之后的应对计划</p>
+<p>建立自我调节的流程</p>
 
-<h1 id="服务质量应用">服务质量应用</h1>
+<p>在卡米尔-福尼尔的优秀著作《经理人之路》（O&rsquo;Reilly，2017）中，她建议读者寻找 &ldquo;自我调节过程&rdquo;，这引起了我的注意。我的本科是经济学专业，我抓住任何机会将经济学思维应用于实际问题的解决。自我调节过程是制衡的微小循环，在人类系统中找到它们是很酷的。</p>
 
-<p>服务质量指标（SLI service-level indicator)）：<br />
-一般选择4~5个具有代表性的指标，并利用某种监控系统在服务器端收集数据<br />
-服务质量目标（SLO service-level objective）：<br />
-可采用错误预算方式进行评估<br />
-服务质量协议（SLA service-level agreement）：<br />
-用于帮助部门理解SLA的SLO达标的概率和困难程序</p>
+<p>在我的技术网络中，我经常听到过程实验的成功或失败是由发起实验的人的情绪或政治带宽决定的。例如，当向一群新的工程师介绍配对编程（pair-programming）时，往往需要一个自信的、有魅力的人去哄骗不愿意的队友，让他们第一次开始配对。</p>
+
+<p>事实上，他们甚至可能一开始就不叫配对&ndash;他们会说：&rdquo;嘿，你要不要过来和我一起看看这个？&rdquo; 但当这个人离开公司后，配对可能就会被遗忘，因为那是由人格力量驱动的东西。这些短暂的流程创新是有价值的，但它们并不持久；所以在这种情况下，我们从来没有学会如何调整它们、衡量它们和扩展它们。</p>
+
+<p>另一方面，自我调节过程并不依赖强大的个性来坚持。它们的工作方式是通过调整激励措施(包括积极和消极的激励措施)，这样就不会有一个人被困在麻烦其他人做他们的部分的令人不快的任务中。微观管理恰恰代表了自我调节过程的相反结果。</p>
+
+<p>为了了解如何调整激励机制，我们先来谈谈什么是激励机制。正向激励代表了个人如果以某种方式行事，就能获得净收益。想想胡萝卜，而不是棍子。正向激励有很多种形式：经济激励（如工资、股票奖励）、社会激励（如同行的认可）、内在激励（如掌握某项技能）等等。</p>
+
+<p>大多数人的动机是希望赚取更多的钱，也许还想获得一个更好的头衔，这种积极的激励。为了促进这一点，鉴于组织表现出更多的生成性文化，大多数人都会同意，从同伴那里获得诚实的、建设性的反馈是提高业绩的好办法。</p>
+
+<p>负激励是相反的：净损失。同样，大多数人也会对一系列负激励做出反应，比如想要避免负面的社会影响，不必要地花费社会资本。想想看，在实行无限休假政策的公司，人们最终的休假天数比全年累积固定假期的同龄人少。这是因为财务激励结构变成了社会激励结构所取代，而社会反激励感觉成本更高，部分原因是它们真的很难量化，而我们天生就不喜欢不确定性。</p>
+
+<p>一个自我调节的过程设置了正确的正向激励和负向激励的组合，这样人们就会有内在的动力去遵循这个过程，而一旦事情开始，就不一定需要外部的鼓励和促进。平衡正激励和负激励很重要：太过消极，人们就会开始感到恐惧；太过积极，你就会基于这样的假设，即每个人都觉得受到同样的胡萝卜的激励。(事实往往不是这样的。)</p>
+
+<p>在软件工程公司，可能在其他公司也是如此，我相信，如果你停下来思考一下是什么激励机制在起作用，你可以设计出自我调节的流程。</p>
+
+<h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
+
+<p>SRE虽然涉及复杂的技术系统，但归根结底是一种文化实践。文化是人的产物，这启发我们根据你在组织中的SRE数量来组织本书的各个部分&ndash;你具体处理什么，你的一天是怎样的，取决于有多少个SRE工程师。我们将本书的文章分为 “SRE新手” 、0-1个SRE、1-10个SRE、10-100个SRE和 “SRE的未来 ”。</p>
+
+<p>读者如果想找寻先从哪里开始的指导，可以直接跳到最适用于自己的部分；但是，你仍然会发现阅读那些目前并不适用于你日常的部分的文章的价值。</p>
+
+<p>在0到1个SRE时，还没有人被指定为SRE，或者你已经找到了你的第一个SRE，这个角色看起来几乎是孤独的。</p>
+
+<p>在1到10名SRE时，你正在组建一个团队，有知识共享和分工的能力。</p>
+
+<p>在10到100个SRE时，你已经成为一个组织，你需要思考的不仅仅是你所从事的系统，还需要思考如何组织这么多SRE。</p>
+
+<p>&ldquo;SRE新手&rdquo; 涵盖了基础性的话题（尽管并不详尽！），对于那些刚刚开始SRE之旅的人来说是很有帮助的，即使是最有经验的SRE，也是一种复习。 &ldquo;SRE的未来&rdquo; 包含了一些文章，这些文章探讨了SRE潜在的发展方向，或者是（目前）坐拥时代潮流。</p>
+
+<p>没有必要按照任何特定的顺序阅读本书。你可以从头到尾读一遍。或者，如果你对某个特定的主题感到好奇，可以翻到索引，在那里你可以找到关于该主题的所有文章。把它作为参考指南，或者是灵感的来源&ndash;可以在需要的时候提供一个震撼。或者，也许可以建立一个阅读俱乐部，每周一次挑选一篇文章与同事讨论。这就是散文集的魅力所在。我们希望你和我们一样喜欢阅读它们。</p>
+
+<h1 id="结语">结语</h1>
+
+<p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<ol>
-<li><a href="https://sqa.stackexchange.com/questions/22213/what-is-the-difference-between-sla-service-level-agreement-and-slo-service-le?newreg=eccd4c4a1c1a4bbca82e58b0fa8ceb30">What is the difference between SLA (Service Level Agreement) and SLO (Service Level Objective)?</a></li>
-<li>SRE：Google运维解密</li>
-</ol>
+<h2 id="結對程式設計-pair-programming">結對程式設計 (Pair programming)</h2>
+
+<p>結對程式設計是一種敏捷軟體開發的方法，兩個程式設計師在一個電腦上共同工作。一個人輸入代碼，而另一個人審查他輸入的每一行代碼。輸入代碼的人稱作駕駛員，審查代碼的人稱作觀察員。兩個程式設計師經常互換角色。 在結對程式設計中，觀察員同時考慮工作的戰略性方向，提出改進的意見，或將來可能出現的問題以便處理。</p>
               
             </div>
           </div>
@@ -319,7 +353,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/" data-tooltip="97 Things Every SRE Should Know-03">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -327,7 +361,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-02/" data-tooltip="97 Things Every SRE Should Know-02">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/" data-tooltip="服务质量说明">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -345,19 +379,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -405,7 +439,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/" data-tooltip="97 Things Every SRE Should Know-03">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -413,7 +447,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-02/" data-tooltip="97 Things Every SRE Should Know-02">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/" data-tooltip="服务质量说明">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -431,19 +465,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -473,19 +507,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F%25E6%259C%258D%25E5%258A%25A1%25E8%25B4%25A8%25E9%2587%258F%25E8%25AF%25B4%25E6%2598%258E%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-03%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F%25E6%259C%258D%25E5%258A%25A1%25E8%25B4%25A8%25E9%2587%258F%25E8%25AF%25B4%25E6%2598%258E%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-03%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F%25E6%259C%258D%25E5%258A%25A1%25E8%25B4%25A8%25E9%2587%258F%25E8%25AF%25B4%25E6%2598%258E%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-03%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -577,9 +611,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-03\/';
           
-            this.page.identifier = '\/2021\/03\/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E\/'
+            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-03\/'
           
         };
         (function() {

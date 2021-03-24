@@ -3,33 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imepisode.top/categories/97-things-every-sre-should-know/</loc>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-03/</loc>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/building-self-regulating-processes/</loc>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/part-i.-new-to-sre/</loc>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/post/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/tags/sre/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/categories/sre/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/tags/</loc>
-    <lastmod>2021-03-18T18:05:19+08:00</lastmod>
+    <lastmod>2021-03-24T14:49:19+08:00</lastmod>
   </url>
   
   <url>
@@ -43,22 +63,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/97-things-every-sre-should-know/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-02/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/categories/do-we-know-why-we-really-want-reliability/</loc>
-    <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/part-i.-new-to-sre/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
   </url>
   
@@ -83,12 +93,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/book/</loc>
+    <loc>https://imepisode.top/categories/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/book/</loc>
+    <loc>https://imepisode.top/tags/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
   </url>
   
@@ -113,12 +123,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/linux/</loc>
+    <loc>https://imepisode.top/categories/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/linux/</loc>
+    <loc>https://imepisode.top/tags/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
   </url>
   
