@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Mar 2021 10:57:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Mar 2021 15:15:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Fri, 26 Mar 2021 10:57:19 +0800</pubDate>
+      <pubDate>Mon, 29 Mar 2021 15:15:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part I. New to SRE</title>
+      <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
+      <pubDate>Mon, 29 Mar 2021 15:15:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE</title>
+      <link>https://imepisode.top/categories/sre/</link>
+      <pubDate>Mon, 29 Mar 2021 15:15:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Reliability Stack</title>
+      <link>https://imepisode.top/categories/the-reliability-stack/</link>
+      <pubDate>Mon, 29 Mar 2021 15:15:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/the-reliability-stack/</guid>
       <description></description>
     </item>
     
@@ -26,24 +53,6 @@
       <pubDate>Fri, 26 Mar 2021 10:57:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/four-engineers-of-an-sre-seder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part I. New to SRE</title>
-      <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
-      <pubDate>Fri, 26 Mar 2021 10:57:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SRE</title>
-      <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Fri, 26 Mar 2021 10:57:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
     </item>
     
