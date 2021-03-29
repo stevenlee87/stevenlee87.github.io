@@ -6,10 +6,19 @@
     <description>Recent content on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Mar 2021 15:15:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Mar 2021 17:20:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>97 Things Every SRE Should Know-06</title>
+      <link>https://imepisode.top/2021/03/97-things-every-sre-should-know-06/</link>
+      <pubDate>Mon, 29 Mar 2021 17:20:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/03/97-things-every-sre-should-know-06/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>97 Things Every SRE Should Know-05</title>

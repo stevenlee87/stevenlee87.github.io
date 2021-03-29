@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-05">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-05">
-<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
-<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+<meta property="og:title" content="97 Things Every SRE Should Know-06">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-06">
+<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
+<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-03-29T15:15:19">
+    <meta property="article:published_time" content="2021-03-29T17:20:19">
   
   
-    <meta property="article:modified_time" content="2021-03-29T15:15:19">
+    <meta property="article:modified_time" content="2021-03-29T17:20:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="The Reliability Stack">
+      <meta property="article:section" content="Infrastructure:It’s Where the Power Is">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-05</title>
+    <title>97 Things Every SRE Should Know-06</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,13 +237,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-05
+      97 Things Every SRE Should Know-06
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-03-29T15:15:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-03-29T17:20:19&#43;08:00">
         
   March 29, 2021
 
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-reliability-stack">The Reliability Stack</a>
+      <a class="category-link" href="https://imepisode.top/categories/infrastructureits-where-the-power-is">Infrastructure:It’s Where the Power Is</a>
     
   
 
@@ -272,36 +272,40 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-reliability-stack">The Reliability Stack</a></li>
+<li><a href="#infrastructure-it-s-where-the-power-is">Infrastructure: It’s Where the Power Is</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-reliability-stack">The Reliability Stack</h1>
+<h1 id="infrastructure-it-s-where-the-power-is">Infrastructure: It’s Where the Power Is</h1>
 
-<p>可靠性堆栈</p>
+<p>基础设施：权利所在</p>
 
-<p>想想你最喜欢的数字流媒体服务。当你坐在沙发上想看一部电影时，你按了一下遥控器上的按钮。大多数时候，电影会缓冲几秒钟，然后开始播放。</p>
+<p>“为什么是基础设施，为什么是ops(运维工程师)？” 多年前，一位同事问我。那是一位软件工程师，在经历了一次特别惨烈的on-call(随时待命)的轮岗后，潜台词很清楚：我是被骗来做这个职业选择的&ndash;被拴在传呼机上的牺牲，成为最后的调试员的压力？谁会选择这种生活？</p>
 
-<p>但如果电影需要整整20秒的缓冲时间呢？你可能会在那一刻有点恼火，但最终，电影的其余部分流转得很好。即使有这一点点的故障，这个服务对你来说仍然表现得很可靠，因为大部分时间都不会花费接近20秒的时间。</p>
+<p>我不失时机地回答道。“因为那是权力的所在。” 然后我惊讶地停了下来，听到自己说的话。我们不习惯把基础设施当成一个强大的角色。CS（计算机科学）部门、媒体和大众的想象都围绕着算法和数据结构，是代码的英勇作者和功能的托运人。</p>
 
-<p>如果每次都需要20秒的缓冲时间会怎样？现在事情就从一时的烦躁变成了完全不可靠。随着数字媒体流媒体服务层出不穷，你可能会选择放弃这项服务，转而使用其他服务。</p>
+<p>对业务人员来说，运维(ops)是一个成本中心，一个不幸的必需品。这是历史的产物，运维(ops)应该被看作是开发的阴与阳，团结一致，不可分割，绝不是 “别人的工作” 。Biz是为什么，dev是什么，运维(ops)是怎么做。无论你的公司有一个人还是一千个人。</p>
 
-<p>没有什么事情是完美的，也没有什么事情可以百分之百的可靠。这不仅是世界的方式，事实证明，人们也完全可以接受这一点! 其实没有人期望计算机系统一直完美地运行，我们只需要它们经常足够可靠。</p>
+<p>代码是短暂的。新功能上线的同时，老功能下线了。在现代开发环境中制作产品，给我的感觉就像在天空中搭建云端城堡：在其他抽象的概念上建立抽象的概念，在脑海中建立起这个丰富的精神世界。</p>
 
-<p>我们如何找出合适的可靠性水平呢？这就是可靠性堆栈发挥作用的地方。它由三个部分组成。SLI（服务水平指标），SLO（服务水平目标），以及错误预算。</p>
+<p>软件工程师是现代的魔术师，他们制作出难以想象的复杂法术和咒语，从稻草中编造出黄金，几乎凭空产生巨大的实际价值。但当这些咒语出错时，会发生什么呢？</p>
 
-<p>可靠性堆栈的基础是SLI，它是从用户的角度对你的服务进行测量。为什么是用户？因为那是你的系统必须要为其良好运行的对象。你的用户决定了你是否可靠。如果用户的电影每次都需要20秒的缓冲时间，那么没有用户会关心你的终端是否好看。一个SLI的例子可能是，“电影缓冲5秒或更少” 。</p>
+<p>在我做系统管理员的第一份工作的几年后，我开始注意到一个模式，当非常资深的工程师会来找我和其他运维人员。他们比我更了解他们的代码，但是当代码在生产中停止工作时，他们会惊慌失措。为什么它不能像昨天那样工作？是什么改变了？就好像生产是一个陌生的国度，他们需要我作为翻译陪伴他们。</p>
 
-<p>其次是SLOs本身。SLOs是由SLI推动的。如果说SLI是关于你的服务如何运行的测量，那么SLO则是你希望它们在多长时间内运行得足够好的目标。使用我们的例子，你现在可能想说：“99%的时间内电影缓冲时间为5秒或更少” 。 如果缓冲时间在100次中只有一次超过5秒，人们可能会接受这个要求。</p>
+<p>我总是喜欢那些能把“它太慢了” 变成 “查询规划器正在做多个全表扫描，因为它使用了错误的复合索引” 的人。我们任何人都能看出它的速度很慢;解释下一个层次的原因是有趣的。</p>
 
-<p>没有什么事情是永远完美的，所以不要以它为目标。而是要确保你的目标是在足够的时间内可靠。你会花费无限多的资源&ndash;包括财力和人力&ndash;去追求完美。</p>
+<p>软件可以看起来像任何神秘主义的仪式一样神秘和玄妙，但基础设施工程师(infrastructure engineer)有一个工具魔法书，可以从每个可能的角度无情地检查仪式。追踪库调用，扫描端口，检查系统调用，转储数据包。</p>
 
-<p>最后，在可靠性堆栈的顶端是错误预算，它由SLOs提供信息，是简单的衡量你在一段时间内的目标表现。从用户的角度来了解你在一周、一个月或一个季度的表现，比简单地了解你现在的表现要有用得多。错误预算可以让你说：“我们无法每30天可靠地缓冲7小时、18分钟和17秒” 。你可以使用错误预算来更全面地思考你的服务的可靠性。使用这些数据来进行更好的讨论，并就解决可靠性问题做出更好的决策。</p>
+<p>基础设施工具提醒我们，软件的运行是按照科学现实主义的规律进行的。如果有足够的毅力去追寻，每一个谜团都会产生答案。要做到这一点，就需要在出错时有一种不畏惧世界的无畏精神。越是难缠、越是细微的bug，他们越是兴趣盎然、干劲十足。基础设施工程师从来没有见过一个我们信任的抽象概念能够按照设计工作。越是宏大的诉求，我们越是悲观。</p>
 
-<p>你不可能是完美的，事实证明无论如何没有人期望你是完美的。使用可靠性堆栈来确保你足够可靠。</p>
+<p>我们与其说是愤世嫉俗，不如说是悲观地确信一切都会失败，而拯救世界的责任将落在我们身上，除了一个回形针和一个烙铁，我们什么都没有。我们强迫性地偷看盖子下面的东西，看看以猴子打补丁的名义在做什么可怕的事情。</p>
+
+<p>当我们和其他基础设施工程师聚在一起喝啤酒的时候，我们会夸耀我们所看到的故障，我们所发现的bug，以及你不会相信上个假期发生的故事。</p>
+
+<p>懂得自给自足，拥有工具和无畏的精神，在一层又一层的抽象中追寻答案，是一种权利。每一个技术堆的底层，都坐拥着光速，这是不能乱来的，也是不能模拟的。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -326,7 +330,7 @@ if (!doNotTrack) {
 <h1 id="延伸阅读">延伸阅读</h1>
 
 <ol>
-<li><a href="https://imepisode.top/2021/03/服务质量说明/">SLA SLO SLI</a></li>
+<li>infrastructure engineer是运维工程师的一个分支</li>
 </ol>
               
             </div>
@@ -352,7 +356,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/" data-tooltip="97 Things Every SRE Should Know-06">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -360,7 +364,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-04/" data-tooltip="97 Things Every SRE Should Know-04">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/" data-tooltip="97 Things Every SRE Should Know-05">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -378,19 +382,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -438,7 +442,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/" data-tooltip="97 Things Every SRE Should Know-06">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -446,7 +450,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-04/" data-tooltip="97 Things Every SRE Should Know-04">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/" data-tooltip="97 Things Every SRE Should Know-05">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -464,19 +468,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -506,19 +510,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-05%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-06%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-05%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-06%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-05%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-06%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -610,9 +614,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-05\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-06\/';
           
-            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-05\/'
+            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-06\/'
           
         };
         (function() {
