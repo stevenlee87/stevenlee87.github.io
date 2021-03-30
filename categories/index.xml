@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Mar 2021 17:20:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Mar 2021 14:58:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Mon, 29 Mar 2021 17:20:19 +0800</pubDate>
+      <pubDate>Tue, 30 Mar 2021 14:58:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part I. New to SRE</title>
+      <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
+      <pubDate>Tue, 30 Mar 2021 14:58:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE</title>
+      <link>https://imepisode.top/categories/sre/</link>
+      <pubDate>Tue, 30 Mar 2021 14:58:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thinking About Resilience</title>
+      <link>https://imepisode.top/categories/thinking-about-resilience/</link>
+      <pubDate>Tue, 30 Mar 2021 14:58:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/thinking-about-resilience/</guid>
       <description></description>
     </item>
     
@@ -26,24 +53,6 @@
       <pubDate>Mon, 29 Mar 2021 17:20:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/infrastructureits-where-the-power-is/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part I. New to SRE</title>
-      <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
-      <pubDate>Mon, 29 Mar 2021 17:20:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SRE</title>
-      <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Mon, 29 Mar 2021 17:20:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
     </item>
     
