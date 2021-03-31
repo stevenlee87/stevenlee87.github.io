@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-07">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-07">
-<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
-<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+<meta property="og:title" content="97 Things Every SRE Should Know-08">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-08">
+<meta property="og:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
+<meta property="twitter:url" content="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-03-30T14:58:19">
+    <meta property="article:published_time" content="2021-03-31T15:18:19">
   
   
-    <meta property="article:modified_time" content="2021-03-30T14:58:19">
+    <meta property="article:modified_time" content="2021-03-31T15:18:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="Thinking About Resilience">
+      <meta property="article:section" content="Observability in the Development Cycle">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-07</title>
+    <title>97 Things Every SRE Should Know-08</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+    <link rel="canonical" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-07
+      97 Things Every SRE Should Know-08
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-03-30T14:58:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-03-31T15:18:19&#43;08:00">
         
-  March 30, 2021
+  March 31, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/thinking-about-resilience">Thinking About Resilience</a>
+      <a class="category-link" href="https://imepisode.top/categories/observability-in-the-development-cycle">Observability in the Development Cycle</a>
     
   
 
@@ -272,89 +272,32 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#thinking-about-resilience">Thinking About Resilience</a></li>
+<li><a href="#observability-in-the-development-cycle">Observability in the Development Cycle</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
+<li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="thinking-about-resilience">Thinking About Resilience</h1>
+<h1 id="observability-in-the-development-cycle">Observability in the Development Cycle</h1>
 
-<p>关于弹性的思考</p>
+<p>开发周期中的可观察性</p>
 
-<p>在弹性系统中，即使其他变量离开正常状态，重要的变量也会保持在理想状态。例如，许多动物能够避免因轻微割伤而死亡。当皮肤被割破时，未受保护的载血组织会暴露出来，然而随着血块的形成，失血量很快就会趋于零。提高一个系统的弹性，使得描述该系统的因变量更加独立。</p>
+<p>干净利落地捕捉bug，迅速解决bug，防止bug成为积压在开发过程中的技术债务，有赖于团队快速发现这些bug的能力。然而，软件开发团队往往因为各种原因阻碍了他们的能力。</p>
 
-<p>网络系统往往需要快速响应，表现为这样的状态：99百分位数的延迟低于一秒。理想情况下，这个状态一直保持到系统所需的极限，例如，1s的峰值请求率为100000/秒。我们要保证延迟变量不至于太依赖请求率变量。</p>
+<p>考虑一下那些软件工程师不负责在生产中运维软件的组织。工程师们将他们的代码合并到master中，祈祷这个变化不会破坏prod(production)环境，并等待在出现问题时得到错误页面(http 500)。有时他们在部署后不久就会看到错误页面(http 500)。然后将部署回滚，可以检查触发的变化是否有bug。更有可能的是，在该代码被合并后的几个小时、几天、几周或几个月内都不会发现问题。到那个时候，要找出bug的起源，记住上下文，或者解读为什么要写那段代码或者为什么要发布代码的原始意图，都是非常困难的。</p>
 
-<p>以下是我们提高弹性的方法。
-减少负载(<em>Load reduction</em>)
-    节流、负载分流/优先级、排队、负载平衡。
-减少延迟(<em>Latency reduction</em>)
-    缓存、区域复制
-负载适应性(<em>Load adaptation</em>)
-    自动扩展、过度供应
-弹性（具体而言）<em>Resilience (specifically)</em>
-    超时、断路器、隔板、重试、故障切换、后备箱。
-元技术<em>Meta-techniques</em>
-    改进工具，也许是为了更快地扩大规模或失效；特别是当慢速的人类在系统的关键路径上时，影响更大。</p>
+<p>快速解决bug的关键在于能够在原始作者头脑中还记忆犹新的时候检查问题。调试问题再也不会像编写和发布之后那样容易了。从那时起，一切只会变得更加艰难;速度是关键。乍一看，可观察性和编写更好的软件之间的联系可能不太清楚，但正是这种快速调试的需要让这两者深深交织在一起。</p>
 
-<p>其中一些工具通常与弹性无关（它们是一般的优化技术），但都会影响关键变量的依赖性。有时，它们以有用的方式相互作用。例如，重试可以纠正故障切换造成的短暂停机。</p>
+<p>刚接触可观察性的人经常会犯这样的错误:认为可观察性是调试代码的一种方法，类似于使用非常详细的日志记录。虽然可以使用可观察性工具调试代码，但这并不是可观察性的主要目的。可观察性是在系统的顺序上操作，而不是在函数的顺序上操作。在行级发出足够多的细节来可靠地调试代码，会发出大量的输出，以至于会用大量的存储和规模淹没大多数可观察性系统。花钱买一个能够做到这一点的系统是不切实际的，因为它的成本很可能是你的系统本身的1倍到10倍左右。</p>
 
-<p>这些工具也会在多层重复出现。TCP重传对数据包丢失起作用，但也使用应用层重试，因为TCP不能重试整个流（还有其他原因）。</p>
+<p>可观察性不是为了调试你的代码逻辑。可观察性是为了找出系统中哪里可以找到你需要调试的代码。可观察性工具可以帮助你迅速缩小问题可能发生的范围。错误源于哪个组件？在哪里引入了延迟？一段数据是在哪里混入的？哪一跳占用了最多的处理时间？该等待时间是均匀地分布在所有用户身上，还是只有其中的一个子集才会经历？可观察性有助于你对问题的调查确定可能的来源。</p>
 
-<p>我们继续说延迟的例子。在实践中，请求率和延迟之间的关系并不是线性的，通常遵循一些合理的功能。在达到一定负载之前，系统是不饱和的，可以快速响应，但当负载接近容量时，队列很快就会被填满，延迟也会相应增长。</p>
+<p>通常情况下，可观察性还能让你很好地了解受影响的组件中或其周围可能发生了什么，或错误可能是什么，甚至提供了错误实际发生的提示&ndash;你的代码、平台的代码或更高级别的架构对象。</p>
 
-<p>我们可以通过添加服务器来扩展系统，这将横向扩展功能，允许在违背延迟目标之前为更多请求提供服务。这是要花钱的。如果我们不喜欢这样，我们可以考虑其他选项，比如负载减少:当系统过载(延迟达到极限)时，丢弃请求(限制请求速率)。</p>
+<p>一旦你确定了bug所在的位置和关于它如何产生的一些特质，可观察性的工作就完成了。如果你想深入研究代码本身，你需要的工具是一个调试器（例如，gdb）。一旦你怀疑如何重现问题，你就可以旋转一个代码的本地实例，从服务中复制过来完整的上下文，然后继续你的调查。虽然有关联，但可观察性工具和调试器之间的区别是一个规模的顺序；就像望远镜和显微镜一样，它们主要是为不同的事情而设计的。</p>
 
-<p>错误也会带来金钱(收入)上的影响，但如果这种情况非常罕见的话，它可能比购买更多服务器的影响要小。先放弃不重要的工作，可以进一步降低成本。最重要的是，负载削减方法完全防止了无限制的延迟增长，避免了潜在的级联故障。</p>
-
-<p>你可以按照下面的图示来思考每个弹性工具：
-
- 
-  
-  
-  
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-  
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure center" >
-  
-    <a class="fancybox" href="https://z3.ax1x.com/2021/03/30/ciNtoD.png" title="resilience-07" data-fancybox-group="group:none">
-  
-    <img class="fig-img" src="https://z3.ax1x.com/2021/03/30/ciNtoD.png" style="width: 1905px;height: 541px;" alt="resilience-07">
-  
-    </a>
-  
-   
-    <span class="caption">resilience-07</span>
-  
-</div>
-
-  <div style="clear:both;"></div>
-</p>
-
-<p>通过建立弹性，我们可以帮助提高可靠性，使系统在不利条件下恢复并继续运行。</p>
+<p>改编自O&rsquo;Reilly即将出版的《可观察性工程》一书，预计2021年出版。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -375,6 +318,10 @@ if (!doNotTrack) {
 <h1 id="结语">结语</h1>
 
 <p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
+
+<h1 id="延伸阅读">延伸阅读</h1>
+
+<p>1.<a href="https://book.douban.com/subject/35192913/">Observability Engineering</a></p>
               
             </div>
           </div>
@@ -399,7 +346,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/" data-tooltip="97 Things Every SRE Should Know-08">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -407,7 +354,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/" data-tooltip="97 Things Every SRE Should Know-06">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/" data-tooltip="97 Things Every SRE Should Know-07">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -425,19 +372,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -485,7 +432,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/" data-tooltip="97 Things Every SRE Should Know-08">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -493,7 +440,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/" data-tooltip="97 Things Every SRE Should Know-06">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/" data-tooltip="97 Things Every SRE Should Know-07">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -511,19 +458,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -553,19 +500,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-07%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-08%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-07%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-08%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-07%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F03%2F97-things-every-sre-should-know-08%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -657,9 +604,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-07\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/03\/97-things-every-sre-should-know-08\/';
           
-            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-07\/'
+            this.page.identifier = '\/2021\/03\/97-things-every-sre-should-know-08\/'
           
         };
         (function() {
