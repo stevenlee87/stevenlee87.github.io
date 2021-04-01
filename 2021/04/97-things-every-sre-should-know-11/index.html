@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-10">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-10">
-<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
-<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+<meta property="og:title" content="97 Things Every SRE Should Know-11">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-11">
+<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
+<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-01T15:00:19">
+    <meta property="article:published_time" content="2021-04-01T16:20:19">
   
   
-    <meta property="article:modified_time" content="2021-04-01T15:00:19">
+    <meta property="article:modified_time" content="2021-04-01T16:20:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="How Wikipedia Is Served to You">
+      <meta property="article:section" content="Why You Should Understand (a Little) About TCP">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-10</title>
+    <title>97 Things Every SRE Should Know-11</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,13 +237,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-10
+      97 Things Every SRE Should Know-11
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-01T15:00:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-04-01T16:20:19&#43;08:00">
         
   April 1, 2021
 
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/how-wikipedia-is-served-to-you">How Wikipedia Is Served to You</a>
+      <a class="category-link" href="https://imepisode.top/categories/why-you-should-understand-a-little-about-tcp">Why You Should Understand (a Little) About TCP</a>
     
   
 
@@ -272,40 +272,51 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#how-wikipedia-is-served-to-you">How Wikipedia Is Served to You</a></li>
+<li><a href="#why-you-should-understand-a-little-about-tcp">Why You Should Understand (a Little) About TCP</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
-<li><a href="#延伸阅读">延伸阅读</a></li>
+<li><a href="#延伸阅读">延伸阅读</a>
+<ul>
+<li><a href="#tcp连接中启用和禁用tcp-nodelay有什么影响">TCP连接中启用和禁用TCP_NODELAY有什么影响？</a></li>
+</ul></li>
 </ul>
 </nav>  
 
-<h1 id="how-wikipedia-is-served-to-you">How Wikipedia Is Served to You</h1>
+<h1 id="why-you-should-understand-a-little-about-tcp">Why You Should Understand (a Little) About TCP</h1>
 
-<p>维基百科是如何为您提供服务的</p>
+<p>为什么你应该了解（一点）TCP的知识？</p>
 
-<p>据维基百科介绍，&rdquo;维基百科是一个由维基媒体基金会支持的多语种、基于网络、自由内容的百科全书项目，以开放的可编辑内容模式为基础&rdquo;。每月服务于数十亿的页面浏览量，维基百科是世界上流量最高的网站之一。让我解释一下，当你在访问维基百科阅读圣赫勒拿岛或骆驼时，会发生什么。</p>
+<p>我想说服你，了解一点TCP的知识（比如数据包是如何工作的，什么是ACK）是很重要的，即使你的系统只是在进行常规无聊的HTTP请求。让我们从我在工作中遇到的一个谜团开始：多出40毫秒的情况。</p>
 
-<p>首先，这是我们基础设施的三个最重要的构件。</p>
+<p>有一天，有人在Slack中提到：“嘿，我在向NSQ发布消息，每次都要花40毫秒。” 说一下背景。NSQ是一个队列。你发布消息的方式是在localhost上进行HTTP请求。向localhost发送一个HTTP请求确实不应该花40毫秒。有些地方出了大问题。NSQ 守护进程并没有处于高 CPU 负载下，也没有使用大量的内存，它似乎没有处于垃圾收集暂停状态。</p>
+
+<p>然后，我想起了一周前读过的一篇文章，叫做 “In Search of Performance: 我们是如何将每个POST请求减少200毫秒的。”那篇文章描述了两个TCP特性（延迟ACKs和Nagle算法）的组合如何合谋给每个POST请求增加了很多额外的时间。</p>
+
+<p>以下是延迟的ACK加上Nagle的算法是如何让你的HTTP请求变慢的。我将在我读到的blog中告诉你发生了什么。首先，介绍一下他们的设置背景。</p>
 
 <ul>
-<li>CDN（内容传输网络），这是我们的缓存层。</li>
-<li>应用层</li>
-<li>开放源码软件</li>
+<li>他们有一个应用程序在向HAProxy发送请求。</li>
+<li>他们的HTTP库（Ruby的Net::HTTP）以两个小包（一个是头包，一个是主体包）发送POST请求。
+下面是TCP交换的情况。</li>
 </ul>
 
-<p>当你请求一个页面时，我们的地理DNS和互联网路由的魔力会根据你的位置将这个请求发送到最近的维基媒体数据中心，同时利用TLS的魔法，ATS（Apache流量服务器）对你的连接进行加密。每个数据中心都有两个缓存层：内存中（Varnish）和磁盘上（ATS）。大多数请求在这里终止，因为最热的URL总是被缓存。如果缓存失误，请求将被转发到应用层，如果这是一个主数据中心，它可能很近，如果这是一个缓存点，则可能更远一些。</p>
+<ol>
+<li>客户端：嗨！这是数据包1。</li>
+<li>服务器：&lt;沉默&gt;. (“我最终会ACK的，但我们还是等第二个数据包吧。”)</li>
+<li>客户端：&lt;沉默&gt;. (“我还有更多的数据要发送，但让我们等待ACK。”)</li>
+<li>服务器：好吧，我很无聊，这里有一个ACK。</li>
+<li>客户端：太好了，这是第二个数据包!!!</li>
+</ol>
 
-<p>我们的应用层以MediaWiki为核心，由一些微服务和数据库支持。MediaWiki是一个由Apache、PHP、MySQL组成的开源应用，为维基百科开发。MediaWiki最初会在Memcached上寻找文章的渲染版本，如果没有找到，则会在MariaDB数据库集群上寻找，称为解析器缓存(Parser Cache)。</p>
+<p>客户端和服务器都在被动地等待对方发送信息的那段时间？这就是多出来的200毫秒! 客户端是因为Nagle的算法在等待，而服务器是因为延迟ACKs在等待。</p>
 
-<p>如果MediaWiki从Memcached和解析器缓存(Parser Cache)中获取失败，它将提取文章的Wikitext并渲染它。文章存储在两个数据库集群中:Wikitext集群(Wikitext存储在blob中)和元数据集群(元数据集群告诉MediaWiki文章位于Wikitext集群中的位置)。在一篇文章被呈现出来后，它会依次存储在上述所有的缓存中，当然，也会返回给你。</p>
+<p>延迟ACKs和Nagle的算法在Linux上都是默认启用的，所以这并不是什么不寻常的事情。如果你用多个TCP包发送数据，就会发生在你身上。</p>
 
-<p>当请求的是媒体文件而不是页面时，事情就稍微简单了。在缓存层的缓存错过时，ATS会直接从OpenStack的可扩展对象存储系统Swift中获取文件。</p>
+<p>解决方法是TCP_NODELAY。当我看到这篇文章的时候，我想：“这不会是我的问题吧？是吗？问题不可能出在TCP上！” 但是我读到可以通过在客户端启用TCP_NODELAY来解决这个问题，这个套接字选项可以禁用Nagle的算法，这似乎很容易测试，所以我提交了一个更改，为我们的应用程序打开TCP_NODELAY，然后BOOM。所有的40毫秒的延迟瞬间消失了。一切都搞定了。我是个魔法师。</p>
 
-<p>正如你所看到的，MediaWiki被一个非常厚的缓存层所包围，原因很简单：渲染页面的成本很高。此外，当一个页面被编辑时，它需要从所有这些缓存中失效，然后再次填充。当非常有名的人去世时，我们的基础设施会出现一种叫做名人死亡高峰的现象（或者说迈克尔-杰克逊效应1）。在这个事件中，每个人都会链接到维基百科来阅读关于他们的信息，而编辑们则通过不断更新这个人的文章来飙升编辑率。最终，这可能会造成明显的负载，因为大量的阅读流量集中在一篇不断从缓存中失效的文章上。</p>
+<p>如果不了解TCP，就不能解决TCP问题。我曾经认为TCP是非常低级的，我不需要理解它——这在很大程度上是事实!但在现实生活中，有时会有一个错误，而这个错误是由TCP算法中的某些东西引起的。我发现，在运维工作中，这些错误的数量惊人，它们是由我的系统的一个低级组件引起的，我以前认为这些组件很模糊，突然间需要非常迅速地了解更多。</p>
 
-<p>最后一个构件是我们对开源软件的使用。我们基础设施中运行的所有东西都是开源的，包括内部开发的应用程序和工具。围绕维基媒体运动的社区不仅限于照顾各种项目的内容，其贡献还延伸到为其服务的软件和系统。开放源码使社区成员的贡献成为可能；它是维基百科不可或缺的一部分，也是我们技术选择背后的驱动力之一。维基百科在某种程度上遵守了康威定律(Conway’s law)：一个促进自由知识获取的网站在自由软件上运行。</p>
-
-<p>最受欢迎的网站之一只使用开源软件运行，而且没有工程师队伍，这听起来可能令人惊讶&ndash;但这就是维基百科；开放性是它存在的一部分。</p>
+<p>我之所以能够理解并修复这个bug，是因为在两年前，我花了一周时间用Python写了一个玩具TCP协议栈，学习TCP的工作原理。对TCP协议以及数据包是如何被ACK的有了基本的了解，确实帮助我解决了这个问题。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -329,7 +340,29 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://zh.wikipedia.org/wiki/康威定律">康威定律</a></p>
+<h2 id="tcp连接中启用和禁用tcp-nodelay有什么影响">TCP连接中启用和禁用TCP_NODELAY有什么影响？</h2>
+
+<p>30年前，阳澄湖的蟹农老王，每抓一只大闸蟹，就雇佣机器人开着卡车送到上海，然后再带着卖蟹的钱回来，老王想，这样好处是回款快（延迟小）。</p>
+
+<p>但是，30年前的乡间小路，很快被一辆辆的卡车所堵塞，结果三天三夜也没有到达上海，老王的如意算盘泡汤了。</p>
+
+<p>痛定思痛，老王觉得，没有必要一个螃蟹一辆车，可以将上午的所有螃蟹装在一辆卡车，上午发车；下午抓的螃蟹装在另一辆卡车里，下午发车。这样<strong>即使一天抓1000个螃蟹，也只需要两卡车，而不需要1000辆卡车</strong>。</p>
+
+<p>这样，乡间的小路也不会造成拥堵，上午发货，不一会儿，卖蟹的钱会被卡车运回来。</p>
+
+<p>以上就是<strong>Nagle算法</strong>的通俗解释。</p>
+
+<p>70-80年代，一些远程交互式软件，如<strong>Rlogin</strong>，客户端将用户输入的每一个字符独立传输到服务器端，服务器端再将这一个字符发回来，rlogin再显示到用户屏幕上。这样一个字节的字符却需要20字节的IP+ 20字节的TCP头，这样的传输效率非常低下，只有 <sup>1</sup>&frasl;<sub>41</sub> = <strong>2.43%</strong>。</p>
+
+<p>更要命的是，那时网络带宽特别窄，这样的传输模式很容易将窄窄的带宽<strong>挤满而丢包，再重传、再丢包的恶性循环。</strong></p>
+
+<p>于是Nagle发明了一个算法，<strong>针对交互式应用</strong>，将用户敲入的字符缓存一下，聚集了几个字符放在一起发送，这样传输效率则高得多，唯一的不足是，可能会有一些延迟。</p>
+
+<p>为了避免延迟过大，等待用户时间由定时器控制，比如100-200毫秒，定时器到了，立马将缓冲区的数据发送出去。</p>
+
+<p>但记住一点，<strong>Nagle算法是时代的产物，因为当时网络带宽有限。</strong>而当前的局域网、广域网的带宽则宽裕得多，所以目前的TCP/IP协议栈默认将Nagle算法关闭，即通过tcp_nodelay on; (nginx的配置) 禁用nagle算法，也即不缓存数据。</p>
+
+<p>这就好比，现在老王用一辆卡车运一只螃蟹，走沿海高速也不会堵，尽管这听起来很荒诞…</p>
               
             </div>
           </div>
@@ -354,7 +387,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/" data-tooltip="97 Things Every SRE Should Know-11">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -362,7 +395,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-09/" data-tooltip="97 Things Every SRE Should Know-09">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/" data-tooltip="97 Things Every SRE Should Know-10">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -380,19 +413,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -440,7 +473,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/" data-tooltip="97 Things Every SRE Should Know-11">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -448,7 +481,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/03/97-things-every-sre-should-know-09/" data-tooltip="97 Things Every SRE Should Know-09">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/" data-tooltip="97 Things Every SRE Should Know-10">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -466,19 +499,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -508,19 +541,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-10%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-11%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-10%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-11%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-10%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-11%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -612,9 +645,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-10\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-11\/';
           
-            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-10\/'
+            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-11\/'
           
         };
         (function() {
