@@ -279,6 +279,7 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#tcp连接中启用和禁用tcp-nodelay有什么影响">TCP连接中启用和禁用TCP_NODELAY有什么影响？</a></li>
 </ul></li>
+<li><a href="#参考文档">参考文档</a></li>
 </ul>
 </nav>  
 
@@ -363,6 +364,12 @@ if (!doNotTrack) {
 <p>但记住一点，<strong>Nagle算法是时代的产物，因为当时网络带宽有限。</strong>而当前的局域网、广域网的带宽则宽裕得多，所以目前的TCP/IP协议栈默认将Nagle算法关闭，即通过tcp_nodelay on; (nginx的配置) 禁用nagle算法，也即不缓存数据。</p>
 
 <p>这就好比，现在老王用一辆卡车运一只螃蟹，走沿海高速也不会堵，尽管这听起来很荒诞…</p>
+
+<h1 id="参考文档">参考文档</h1>
+
+<ol>
+<li><a href="https://www.zhihu.com/question/42308970">https://www.zhihu.com/question/42308970</a></li>
+</ol>
               
             </div>
           </div>
