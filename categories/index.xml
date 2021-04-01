@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Mar 2021 16:21:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Apr 2021 14:50:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Wed, 31 Mar 2021 16:21:19 +0800</pubDate>
+      <pubDate>Thu, 01 Apr 2021 14:50:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>How Wikipedia Is Served to You</title>
+      <link>https://imepisode.top/categories/how-wikipedia-is-served-to-you/</link>
+      <pubDate>Thu, 01 Apr 2021 14:50:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/how-wikipedia-is-served-to-you/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Part I. New to SRE</title>
       <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
-      <pubDate>Wed, 31 Mar 2021 16:21:19 +0800</pubDate>
+      <pubDate>Thu, 01 Apr 2021 14:50:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Wed, 31 Mar 2021 16:21:19 +0800</pubDate>
+      <pubDate>Thu, 01 Apr 2021 14:50:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
