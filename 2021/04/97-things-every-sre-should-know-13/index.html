@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-12">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-12">
-<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
-<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+<meta property="og:title" content="97 Things Every SRE Should Know-13">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-13">
+<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
+<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-02T11:31:19">
+    <meta property="article:published_time" content="2021-04-02T16:01:19">
   
   
-    <meta property="article:modified_time" content="2021-04-02T11:31:19">
+    <meta property="article:modified_time" content="2021-04-02T16:01:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="The Importance of a Management Interface">
+      <meta property="article:section" content="When It Comes to Storage, Think Distributed">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-12</title>
+    <title>97 Things Every SRE Should Know-13</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,13 +237,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-12
+      97 Things Every SRE Should Know-13
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-02T11:31:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-04-02T16:01:19&#43;08:00">
         
   April 2, 2021
 
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-importance-of-a-management-interface">The Importance of a Management Interface</a>
+      <a class="category-link" href="https://imepisode.top/categories/when-it-comes-to-storage-think-distributed">When It Comes to Storage, Think Distributed</a>
     
   
 
@@ -272,27 +272,31 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-importance-of-a-management-interface">The Importance of a Management Interface</a></li>
+<li><a href="#when-it-comes-to-storage-think-distributed">When It Comes to Storage, Think Distributed</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-importance-of-a-management-interface">The Importance of a Management Interface</h1>
+<h1 id="when-it-comes-to-storage-think-distributed">When It Comes to Storage, Think Distributed</h1>
 
-<p>管理接口的重要性</p>
+<p>当涉及到存储时，请考虑分布式</p>
 
-<p>在中断期间，你更关心的是能不能控制系统，而不是系统能不能响应所有面向用户的请求。通过从网络硬件中改编控制平面的概念，工程师可以将数据传输的责任与控制消息分开。控制平面为管理和操作任务提供了一个统一的入口点，与发送用户数据本身不同。出于可靠性的目的，这种分离为操作人员提供了一种方法，即使系统没有按照预期的功能运行，也可以对其进行管理。让我们来看看为什么这一点很重要，以及如何知道何时分离系统的这些部分。</p>
+<p>几乎每一个应用程序，无论是在智能手机上还是在网络浏览器中运行，都会产生和存储数据。作为SRE，我们经常要负责管理大量的信息，这些信息为恒温器、交通路线、分享猫咪照片等广泛的应用提供指导和决策信息。分布式存储系统之所以受到欢迎，是因为它为数据管理提供了容错和可靠的方法，并为数据存储和检索提供了一种可扩展的方法。</p>
 
-<p>在GFS（Google文件系统）的早期版本中，有一个指定的节点负责所有的数据查询：成千上万的客户端中的每一个客户端都是通过向这个单一节点询问规范的位置来开始请求数据的。这个单一节点还负责响应管理请求，比如：&rdquo;现在队列中的数据请求有多少？&rdquo; 同一个进程负责这两组请求&ndash;一个是面向用户的关键请求，另一个是严格意义上的内部请求，也是关键请求，而且这个进程从同一个线程池中为这两个请求提供响应。这就意味着，当服务器超载，无法处理传入的请求时，负责系统的SRE就无法发送管理请求来减轻负载了！这就意味着，当服务器超载，无法处理传入的请求时，负责系统的SRE就无法发送管理请求来减轻负载了。</p>
+<p>分布式存储不同于存储设备、存储阵列和物理上连接到使用它的计算机上的存储，分布式存储系统将数据生产者与存储这些数据的物理介质解耦。通过将数据存储的风险分散到不同的物理介质上，系统提供了速度和可靠性，这两个特点是提供良好用户体验的基础，无论你的用户是一个兴奋地与世界各地的亲朋好友分享照片的人，还是另一台在流水线上处理数据的计算机。</p>
 
-<p>之前的GFS版本从来没有因为客户端的需求而出现过这样的超载现象，这也是为什么请求争夺现象一直不明显的原因。在下一个版本中，我们用控制平面将关键路径中负责操作的资源和用于管理操作的资源分开，GFS的生产质量得以大幅提升。</p>
+<p>分布式存储可以实现客户端的并发访问：由于系统将数据写入多个位置，因此没有单个磁头来阻塞所有读操作。如果数据变得非常热门，例如热门视频，可以异步地创建额外的数据副本，以支持客户端增加的读取需求。这是分布式系统使水平扩展成为可能的一个例子；虽然RAID（独立磁盘冗余阵列）系统保留了数据的多个副本，但它们不能以这种方式用于并发的客户端读取。</p>
 
-<p>通过将这一概念扩展到多个服务上，(single)独立管理编程接口的好处就显而易见了：自动化的软件可以向一组异构的服务器发送 &ldquo;更新到新版本 &ldquo;的指令，它们可以对其进行解释并采取相应的行动。通过删除网络术语(By dropping the networking nomenclature )，我们将我们的请求分为管理层和数据层，并看到对于任何关键路径上的服务来说，将两者分开的重要性。通过在面向用户的操作之间划定边界，我们也可以对我们应用于数据测量的工具(instrumentation )更有信心；数据层的操作会使用和测量该层的资源，而不会与管理层的操作混为一谈。这反过来又会使面向用户的业务测量方法更加成功，这是服务水平目标的有用指标。</p>
+<p>作为一个额外的好处，在分布式存储系统之上构建应用程序意味着，组织不必在运营商对存储设备应用内核补丁或其他关键升级时，发布 &ldquo;我们的服务将在今晚3-4点不可用，进行定期维护&rdquo;。没有单一的存储设备，有的只是一个存储系统，具有复制和冗余功能。</p>
 
-<p>如何知道什么时候你已经正确地将管理请求与用户请求隔离开来？OpenTracing等工具可能会显示管理调用以及用户请求的完整路径，可能会暴露出非预期的交互。事实上，您的系统很可能会有一些连接点，比如管理界面实际影响用户路径的地方。虽然这种分离并不是完全和绝对的，但SRE应该能够识别他们构建和操作的系统的这些部分之间的界限。</p>
+<p>现代网络服务的承诺，一个全球一致的数据视图，无论是对单个用户还是对一个大型组织，如果没有分布式存储系统，几乎不可能实现。以前，这需要昂贵的设备到设备的同步，本质上是将磁盘或目录树从一台特定的计算机复制到另一台计算机；每一台计算机都是一个单点故障(single point of failure (SPOF))。</p>
 
-<p>为了实现这种分离，对于已经构建好的软件，比如第三方应用程序，你可能需要添加一个单独的服务，它就像一个sidecar一样，附着在核心软件上，通过一个通用的接口，比如HTTP服务器，为管理API提供一个端点。这个胶着的管理层可能是最终与核心软件集成的前奏，也可能是一个长期的解决方案。这种系统设计方法将服务于面向用户的请求路径与提供管理责任的请求分开。</p>
+<p>容错构成了可靠性的关键部分；通过在不同设备之间分担风险，分布式存储系统可以容忍存储设备无法容忍的故障。虽然存储设备可能有多个本地电源模块，但分布式存储系统也有类似的电源冗余加上机柜级电源多样性。这进一步稀释了风险，当分布式存储系统使用这种多样性来完善数据放置时，将导致数据存储对多级电源故障的弹性进一步增强。</p>
+
+<p>与单个网络连接的存储设备相比，负责分布式存储系统的SREs需要关注不同的指标。例如，他们将监控离散数据块的计算可恢复性。这涉及到理解系统的实现: 存储系统如何布局数据，在哪里复制组成数据部分？系统多长时间需要重新复制一次数据以保持风险多样性，这是衡量系统检索数据准确性的指标？系统元数据多久出现一次缓存遗漏，从而更长的数据检索时间？</p>
+
+<p>随着分布式存储系统实现了在全球范围内使用的应用和海量数据，它们为SRE提供了可观察性机会。这些系统的好处包括更持久和可用的存储。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -337,7 +341,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/" data-tooltip="97 Things Every SRE Should Know-13">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -345,7 +349,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/" data-tooltip="97 Things Every SRE Should Know-11">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/" data-tooltip="97 Things Every SRE Should Know-12">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -363,19 +367,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -423,7 +427,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/" data-tooltip="97 Things Every SRE Should Know-13">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -431,7 +435,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/" data-tooltip="97 Things Every SRE Should Know-11">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/" data-tooltip="97 Things Every SRE Should Know-12">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -449,19 +453,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -491,19 +495,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-12%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-13%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-12%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-13%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-12%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-13%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -595,9 +599,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-12\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-13\/';
           
-            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-12\/'
+            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-13\/'
           
         };
         (function() {
