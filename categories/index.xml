@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Apr 2021 16:20:19 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Apr 2021 11:31:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Thu, 01 Apr 2021 16:20:19 +0800</pubDate>
+      <pubDate>Fri, 02 Apr 2021 11:31:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>Part I. New to SRE</title>
       <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
-      <pubDate>Thu, 01 Apr 2021 16:20:19 +0800</pubDate>
+      <pubDate>Fri, 02 Apr 2021 11:31:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
       <description></description>
@@ -32,9 +32,18 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Thu, 01 Apr 2021 16:20:19 +0800</pubDate>
+      <pubDate>Fri, 02 Apr 2021 11:31:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Importance of a Management Interface</title>
+      <link>https://imepisode.top/categories/the-importance-of-a-management-interface/</link>
+      <pubDate>Fri, 02 Apr 2021 11:31:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/the-importance-of-a-management-interface/</guid>
       <description></description>
     </item>
     
