@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-14">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-14">
-<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
-<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+<meta property="og:title" content="97 Things Every SRE Should Know-15">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-15">
+<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
+<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-06T17:01:19">
+    <meta property="article:published_time" content="2021-04-07T12:00:19">
   
   
-    <meta property="article:modified_time" content="2021-04-06T17:01:19">
+    <meta property="article:modified_time" content="2021-04-07T12:00:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="The Role of Cardinality">
+      <meta property="article:section" content="Security Is like an Onion">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-14</title>
+    <title>97 Things Every SRE Should Know-15</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-14
+      97 Things Every SRE Should Know-15
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-06T17:01:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-04-07T12:00:19&#43;08:00">
         
-  April 6, 2021
+  April 7, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-role-of-cardinality">The Role of Cardinality</a>
+      <a class="category-link" href="https://imepisode.top/categories/security-is-like-an-onion">Security Is like an Onion</a>
     
   
 
@@ -272,30 +272,39 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-role-of-cardinality">The Role of Cardinality</a></li>
+<li><a href="#security-is-like-an-onion">Security Is like an Onion</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-role-of-cardinality">The Role of Cardinality</h1>
+<h1 id="security-is-like-an-onion">Security Is like an Onion</h1>
 
-<p>基数的作用</p>
+<p>安全就像一颗洋葱</p>
 
-<p>在数据库上下文中，基数(cardinality)是指集合中包含的数据值的唯一性。低基数意味着列的集合中有很多重复的值。高基数意味着列包含很大比例的完全唯一值。包含单个值的列将始终是可能的最低基数。包含惟一id的列将始终是可能的最高基数。</p>
+<p>您的公司正在实现梦想。你已经找到了产品与市场的契合点，销售额也在不断增长，上市或收购的想法也逐渐接近现实。有一天，领导团队请来了外部帮助来引导IPO的进程，对话是这样的：</p>
 
-<p>例如，如果你有一个一亿条用户记录的集合，你可以假设用户ID号将具有可能的最高基数维度。名和姓将是高基数，虽然比userID低，因为有些名字是重复的。像性别这样的字段将是相当低的基数，因为它可能有非二进制但有限的选择。像物种这样的字段，假设你所有的用户都是人类，那么它的基数将是最低的。</p>
+<p>顾问: 一切看起来都很好!跟我们说说你们的安全故事怎么样?
+领导: 嗯，我们还没有被黑客攻击过，所以我想说这很好!
+顾问: 你怎么知道你没有被黑?你的曝光率是多少?
+领导: (思考ing)我会回复你的。</p>
 
-<p>基数对于可观察性来说很重要，因为高基数的信息对于调试或理解一个系统来说是最有用的数据。考虑到按用户ID、购物车ID、请求ID或无数其他ID（如实例、容器、构建号、跨度等）等字段进行排序的有用性。能够针对唯一的ID进行查询，是在任何给定的干草堆中确定个别针头的最佳方式。</p>
+<p>作为一名SRE，你的目标之一是指导安全控制，并自信地回答与风险管理有关的问题；但你应该从哪里开始呢？我喜欢NIST的网络安全框架(NIST’s CyberSecurity framework)，即识别、保护、检测、响应和恢复。将其作为原样使用或作为您自己的安全之旅的基础。</p>
 
-<p>不幸的是，基于度量的工具系统只能处理任何合理规模的低基数维度。即使只有数百台主机可供比较，对于基于度量的系统，您也不能在不触及基数键空间限制的情况下使用主机名作为标识标记。这些固有的限制对查询数据的方式产生了意想不到的限制。当用度量进行调试时，对于你可能想对数据提出的每一个问题，你都必须提前决定&ndash;在bug发生之前&ndash;你需要查询什么，以便在写入该度量时记录其值。</p>
+<p>确定在系统、数据和资产方面什么对业务连续性至关重要。一旦确定，通过问以下问题来评估与每个关注点相关的风险和实现理想状态所需的任何更改，例如:是什么阻止了人们与我们的托管数据中心的服务器进行交互? 我们该如何处理误放的笔记本电脑或手机?</p>
 
-<p>这种固有的限制有两个大的影响。首先，如果在调查过程中，你决定必须询问一个额外的问题来发现潜在问题的来源，那就不能在事后进行。你必须先设置可能回答这个问题的指标，然后等待问题再次发生。其次，因为需要另一套指标来回答那个额外的问题，大多数基于指标的工具供应商会向你收取记录这些数据的费用。你的成本会随着你决定以每一种新的方式来审视你的数据以发现你不可能事先预测到的隐藏问题而线性增加。</p>
+<p>首先，您需要熟悉设备加密和基本移动设备管理(mobile device management (MDM))，因为它可以提高你的安全性，而不会危及可用性。</p>
 
-<p>相反，可观察性工具鼓励开发人员为每一个可能发生的事件收集丰富的遥测数据，传递任何给定请求的完整上下文，并将其存储起来，以便在以后的某个时刻可能使用。可观察性工具是专门设计用来查询高基数维度数据的。这对调试的意义在于，你可以用任意数量的方式来询问你的事件数据。你可以提出新的问题，你不需要事先预测，并找到这些问题的答案，或者线索，引导你提出下一个问题。你一次又一次地重复这种模式，直到你在众所周知的大海里捞到你要的针。</p>
+<p>不愉快的网络安全事件是生活的事实。保护功能就是在安全事件发生时进行限制或控制影响。关键是培训、连续性和供应链管理。确保每个人都经过了与身份管理、特权数据操作和远程访问相关的培训。为业务连续性和灾难恢复编制文件并进行控制。最后，对代码供应链实施保护措施，如代码扫描和使用第三方许可证。</p>
 
-<p>改编自O&rsquo;Reilly即将出版的《可观察性工程》一书，预计2021年出版。</p>
+<p>一个好的检测系统应该是有层次的，每当一层出现故障时就会发出警报。检测系统最重要的特性是它的平均检测时间，这决定了你对网络安全事件的反应速度。目标是让异常和事件被检测出来，并了解其潜在影响。同样，一定要手动运行检测系统，验证其准确性。</p>
+
+<p>“计划是没用的，但计划是必不可少的。”你将如何应对? 计划与即将发生或正在发生的网络安全事件相关的活动。你将如何确定攻击的爆炸半径？隔离攻击的损害呢？一个经常被遗忘的部分是确定需要通知事件的内部和外部沟通渠道。记得要考虑这些渠道是否会作为攻击的一部分而被破坏。</p>
+
+<p>最后，恢复。生活总是向前发展的。这意味着我们需要思考如何从网络安全事件中恢复过来。这应该包括对事件的反思，并指导对框架的修改，以防止类似事件的发生，增加组织和客户的信心。对外，这意味着以事件回顾的形式写出来，以重新获得公众的信任。对内，你必须审查事件中做出的改变，以及它们对当前的演习手册、监控和检测系统的影响。</p>
+
+<p>安全是一个旅程，永远不会完整。通过采用安全框架，您的团队将能够及时识别和应对事件。不断从以前的事件中学习，重新评估你的基线。网络安全的世界是广阔的，希望这能在这个旅程中帮助指导你!</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -319,7 +328,7 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://book.douban.com/subject/35192913/">Observability Engineering</a></p>
+<p>1.<a href="https://www.nist.gov/cyberframework/framework">美国NIST《网络安全框架》</a></p>
               
             </div>
           </div>
@@ -344,7 +353,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/" data-tooltip="97 Things Every SRE Should Know-15">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -352,7 +361,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/" data-tooltip="97 Things Every SRE Should Know-13">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/" data-tooltip="97 Things Every SRE Should Know-14">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -370,19 +379,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -430,7 +439,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/" data-tooltip="97 Things Every SRE Should Know-15">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -438,7 +447,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/" data-tooltip="97 Things Every SRE Should Know-13">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/" data-tooltip="97 Things Every SRE Should Know-14">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -456,19 +465,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -498,19 +507,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-14%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-15%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-14%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-15%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-14%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-15%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -602,9 +611,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-14\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-15\/';
           
-            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-14\/'
+            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-15\/'
           
         };
         (function() {
