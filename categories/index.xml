@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Apr 2021 12:05:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Apr 2021 09:54:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Wed, 07 Apr 2021 12:05:19 +0800</pubDate>
+      <pubDate>Thu, 08 Apr 2021 09:54:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Wed, 07 Apr 2021 12:05:19 +0800</pubDate>
+      <pubDate>Thu, 08 Apr 2021 09:54:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Wed, 07 Apr 2021 12:05:19 +0800</pubDate>
+      <pubDate>Thu, 08 Apr 2021 09:54:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
@@ -41,9 +41,18 @@
     <item>
       <title>Part I. New to SRE</title>
       <link>https://imepisode.top/categories/part-i.-new-to-sre/</link>
-      <pubDate>Wed, 07 Apr 2021 12:00:19 +0800</pubDate>
+      <pubDate>Thu, 08 Apr 2021 09:53:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-i.-new-to-sre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Use Your Words</title>
+      <link>https://imepisode.top/categories/use-your-words/</link>
+      <pubDate>Thu, 08 Apr 2021 09:53:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/use-your-words/</guid>
       <description></description>
     </item>
     
