@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-19">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-19">
-<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
-<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+<meta property="og:title" content="97 Things Every SRE Should Know-20">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-20">
+<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-09T11:27:19">
+    <meta property="article:published_time" content="2021-04-12T12:00:19">
   
   
-    <meta property="article:modified_time" content="2021-04-09T11:27:19">
+    <meta property="article:modified_time" content="2021-04-12T12:00:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="Sustainability and Burnout">
+      <meta property="article:section" content="Don’t Take Advice from Graybeards">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-19</title>
+    <title>97 Things Every SRE Should Know-20</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-19
+      97 Things Every SRE Should Know-20
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-09T11:27:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-04-12T12:00:19&#43;08:00">
         
-  April 9, 2021
+  April 12, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/sustainability-and-burnout">Sustainability and Burnout</a>
+      <a class="category-link" href="https://imepisode.top/categories/dont-take-advice-from-graybeards">Don’t Take Advice from Graybeards</a>
     
   
 
@@ -272,40 +272,36 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#sustainability-and-burnout">Sustainability and Burnout</a></li>
+<li><a href="#don-t-take-advice-from-graybeards">Don’t Take Advice from Graybeards</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="sustainability-and-burnout">Sustainability and Burnout</h1>
+<h1 id="don-t-take-advice-from-graybeards">Don’t Take Advice from Graybeards</h1>
 
-<p>可持续性与职业倦怠</p>
+<p>不要听信老人的建议</p>
 
-<p>建立、运行和成为SRE团队的一部分是一场马拉松，而不是短跑。在许多组织中，事件响应是一种固有的高压力情况，反复的下班时间升级很容易导致职业倦怠的循环。在我们微调SLO和迭代轮岗设计的同时，同样重要的是要时刻把握团队健康的脉搏，并不断地问：作为一个团队，我们是否在以一种长期可持续的方式工作?</p>
+<p>不要因为老人看起来很自信，就接受他们的建议。没有人知道科技产业将走向何方。对冲你的赌注，90%的预测结果都是可笑的错误。我得到的第一条职业建议是：“有了MS-DOS 6.1，世界不需要更多的软件。去做硬件吧。” 第二条是，“没有人会为通才买单，你需要专业化。” 现在我是一名SRE。</p>
 
-<p>职业倦怠是什么样的？幸运的是，职业倦怠是一种研究得很透彻的临床症状，像赫伯特-弗罗登伯格博士(Dr. Herbert Freudenberger)[1]这样的医生，从20世纪70年代开始，就对职业倦怠进行了研究和定性，认为它有三个明显的标志。</p>
+<p>Robert Heinlein[1]告诉我:“昆虫才需要专业化。”试着做一段时间的软件工程师、系统管理员、前端、后端、硬件、产品、酒保、创始人。每长大一岁都能学到新东西。</p>
 
-<ul>
-<li>情绪疲惫：花太多时间去关心太多的事情</li>
-<li>人格化：你发现自己对他人的同情心减少了</li>
-<li>减少成就感</li>
-</ul>
+<p>职业倦怠是个bitch。它会发生几次，每次你都会想，“我再也不会上当了 。”同样，你会工作得太辛苦，太长时间，却得不到回报或赏识。它会永久损害你的健康。年轻无敌的人以为这种事不会发生在他们身上。然而人生是一场马拉松，不是短跑。</p>
 
-<p>当然，职业倦怠的迹象在每个人身上会有不同的表现，如果你是像我这样的个体，给自己施加了很大的压力，学会识别自己的情绪状态并不是我们花了很多时间培养出来的肌肉，这就使得就我们的幸福感进行高信任度的对话变得更加困难。</p>
+<p>也许你会成为一名经理，也许你不会。你可能为一家著名的跨国公司工作，也可能一直在没有人听说过的创业公司工作。你的股票期权可能价值百万。你可能会建立一些让你在你尊敬的人眼中出名的东西。Blindboy[2]警告我，不要把自己的 “评价点” 交到别人手里&ndash;甚至是我妈妈的手里。Blindboy说话的时候头上总是戴着一个塑料袋[2]。</p>
 
-<p>一群技术专家和研究人员创建了一份在线问卷，你的团队可以专门在技术行业内进行评估职业倦怠的风险水平。</p>
+<p>心理健康不是二元的。Plomin[3]告诉我，有成千上万的基因突变，让我们擅长的事情、耐力的强弱、动力的强弱都有微小的差异。我们需要不断尝试，找出适合我们和我们关心的人的方法。在你工作的每一家公司里找到你尊敬的人，请他们做你的导师。即使你不采纳他们的建议，也要听他们的。</p>
 
-<p>我从Emily和Amelia Nagoski博士[2]的演讲中了解到，职业倦怠在一定程度上是由未解决的反馈回路造成的。这一点深深地引起了我的共鸣；我曾在许多团队工作过，在这些团队中，由于我们没有刻意关闭所需的反馈环路，导致我们对自己是否变得更有效感到不确定和焦虑。</p>
+<p>你拥有的钱越多，你需要的就越多。你可以花5美元在附近的树下读一本书，它给你带来的快乐和在地球另一端的海滩上读它一样多。你可以搬到硅谷，每周工作60小时，五年内年薪50万，但你不会意识到你失去的朋友、健康和自尊。</p>
 
-<p>在大多数健康的产品组织中，推出一个没有可衡量的成功标准的功能是不可接受的。同样，健康的团队应该定期反思他们是如何工作的。最常见的工具是定期进行回顾（我建议从每周的节奏开始，然后进行迭代)，但许多团队也使用健康检查，例如Spotify创建的模型[3]。衡量团队健康状况主要是定性的，但这并不意味着它的重要性会低于比如说正常运行时间的数字；如果你能够捕捉到早期的预警信号，那么你就能对一个团队进行故障排除。</p>
+<p>确保你有退职金，这样你就可以离开不好的雇主。感到经济上的困顿会让情况变得更糟。当你问：“十年后，我希望自己做什么？”困境就会变得简单。你现在的薪水和工作决定了下一份工作。在经济繁荣时期，雇主不得不雇佣那些还不能胜任工作的人，但他们几乎总是能迎接挑战。确保你只有80%的把握能胜任你所申请的工作，否则你就没有充分发挥自己的能力。女性可能应该在只有60%的把握时就申请，因为她们已经习惯于不相信自己多么有能力。</p>
 
-<p>最后我简单地谈一下心理安全[4]及其在创建可持续团队中的作用。多年来的大量研究表明，心理安全是建设学习型组织不可忽视的基石。心理安全是指 “人们对在工作场所等特定环境中承担人际风险所产生的后果的一系列认知。”</p>
+<p>我们为经理工作，而不是为公司工作。经理不是你的朋友，他们是你的代理人。如果你不喜欢他们给你带来的社区、工作或金钱，就解雇他们。Marie Kondo[4]告诉我，不放手只有两个原因：对过去的依恋或对未来的恐惧。不过她可能从来没有在紧急情况下需要一根VGA线(She’s likely never needed a VGA cable in an emergency, though.)。</p>
 
-<p>有了更大的安全感，人们更倾向于向团队提供不同意见的反馈，并尝试创新的实验，而不是继续按部就班地做下去，风险更大。这些都是纠正方向的重要途径，对于那些总是惩罚那些与大多数人意见相左的人或与掌权者意见相左的人的团队来说，这些途径是无法获得的。</p>
+<p>当一个shell脚本就可以完成工作的时候，不要构建一个框架。如果一个shell脚本很可能在修订控制中超过几周，就不要编写shell脚本。Fred Brooks[5]告诉我，在我设计好系统之前，不要雇佣程序员，但他又知道什么呢？他还建议每个编程团队配备两个秘书呢。</p>
 
-<p>建立可持续、健康的团队不存在什么黑魔法。团队是独特的有机体；每个团队都会有稍微不同的团队动态，对相同的刺激有不同的反应，但也有共同的特征。可持续发展的团队具有持续学习和改进的能力，这对建立有效的SRE组织至关重要。安全团队可以获得更丰富的成败指标。这些指标直接有助于团队关闭这些反馈回路的能力，从而使团队感到富有成效和健康。</p>
+<p>不要因为老人看起来很自信，就接受他们的建议。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -329,28 +325,47 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://en.wikipedia.org/wiki/Herbert_Freudenberger">Dr. Herbert Freudenberger</a></p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Competent_man">Robert Heinlein</a></p>
 
-<p>譯自英文-赫伯特·J·弗洛伊登伯格（Herbert J. Freudenberger）是德國出生的美國心理學家。儘管弗洛伊登伯格在其一生中有許多工作，包括從業者，編輯，理論家和作家，但他最重要的貢獻是對壓力，慢性疲勞和藥物濫用的理解和治療。</p>
+<p>羅伯特·安森·海萊恩，美國硬科幻小說作家，人稱「科幻先生」。他的作品被認為在科學和工程方面有相當可信度，也幫助提高了對科幻類作品的科學準確性的要求標準。 海萊恩是1940年代晚期將無修飾科幻小說打入一般主流雜誌的第一位科幻小說作家。他是1960年代最暢銷長篇科幻小說的頭幾名作家之一。</p>
 
-<p>2.<a href="https://www.burnoutbook.net/about-the-authors">Burnout: The Secret to Unlocking the Stress Cycle</a></p>
+<p>A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyse a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.</p>
 
-<p>Twin sisters Emily and Amelia Nagoski are co-authors of Burnout: The Secret To Unlocking The Stress Cycle, a groundbreaking new book explaining how women experience stress differently than men, the structural misogyny that perpetuates it, and how we can fight it together.</p>
+<p>— Robert Heinlein, <em><a href="https://en.wikipedia.org/wiki/Time_Enough_for_Love">Time Enough for Love</a></em>[<a href="https://en.wikipedia.org/wiki/Competent_man#cite_note-1">1]</a>[<a href="https://en.wikipedia.org/wiki/Competent_man#cite_note-2">2]</a></p>
 
-<p>Burnout&rsquo;s Official Homepage: <a href="https://www.burnoutbook.net/">https://www.burnoutbook.net/</a><br />
-About Emily &amp; Amelia: <a href="https://www.burnoutbook.net/about-the-authors">https://www.burnoutbook.net/about-the-authors</a><br />
-Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://www.emilynagoski.com/</a></p>
+<p>2.<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub">Blindboy Boatclub</a></p>
 
-<p>3.spotify模型</p>
+<p>譯自英文-David Chambers，俗稱Blindboy Boatclub，是愛爾蘭諷刺作家，音樂家，播客，作家和電視節目主持人。Boatclub來自利默里克（Limerick），是愛爾蘭喜劇嘻哈樂隊The Rubberbandits的成员之一，他们戴着塑料购物袋作为面具来隐藏自己的身份。</p>
 
-<p><a href="https://www.jianshu.com/p/5efbc77caadc">https://www.jianshu.com/p/5efbc77caadc</a><br />
-<a href="https://www.infoq.cn/article/1quve5gdskbfv4du-sph">https://www.infoq.cn/article/1quve5gdskbfv4du-sph</a></p>
+<p>Boatclub is from Limerick and is best known as one half of the Irish comedy hip-hop group <a href="https://en.wikipedia.org/wiki/The_Rubberbandits">The Rubberbandits</a>, who wear <a href="https://en.wikipedia.org/wiki/Plastic_shopping_bag">plastic shopping bags</a> as masks to conceal their identities. He regularly discusses mental health, masculinity, and other socio-political issues.[<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub#cite_note-5">5]</a>[<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub#cite_note-irishtimes2019-6">6]</a></p>
 
-<p>4.<a href="https://baike.baidu.com/item/心理安全">心里安全</a></p>
+<p><a href="https://www.dailyedge.ie/rubberbandits-explains-the-plastic-bag-3702939-Nov2017/">https://www.dailyedge.ie/rubberbandits-explains-the-plastic-bag-3702939-Nov2017/</a></p>
 
-<p>心理安全：指的是人面对所处内外环境的安全景况持有的一种追求平稳、不受威胁的应对性<a href="https://baike.baidu.com/item/心理机制/16229427">心理机制</a>，不需要有任何的戒备心，不担心别人会随时指责和批评自己，有一种安全、自由的感觉，最终实现人与自身、他人、社会和意义世界的全面积极和谐。面对安全景况，如其所形成的是一种良性的应对心理机制，则其外显行为是和谐友善的。反之，其外显行为则会表现成为一种安全事故。</p>
+<p>3.<a href="https://en.wikipedia.org/wiki/Robert_Plomin">Robert Plomin</a></p>
 
-<p>与长期的<a href="https://baike.baidu.com/item/惶恐/873224">惶恐</a>、<a href="https://baike.baidu.com/item/惧怕/2075949">惧怕</a>、<a href="https://baike.baidu.com/item/过激行为/4661850">过激行为</a>、轻生、颓废、忧郁、愁苦、偏激等相对的一种个体生活存在状态。</p>
+<p>譯自英文-FBA的羅伯特·普羅明（Robert J. Plomin）是美國心理學家和遺傳學家，以其在雙生子研究和行為遺傳學方面的工作而聞名。2002年出版的《一般心理學評論》將普羅明列為20世紀引用最多的第71位心理學家。他是幾本有關遺傳學和心理學的書的作者。</p>
+
+<p><strong>Robert J. Plomin</strong>, <a href="https://en.wikipedia.org/wiki/Fellow_of_the_British_Academy">FBA</a> (born 1948) is an American psychologist and geneticist best known for his work in <a href="https://en.wikipedia.org/wiki/Twin_studies">twin studies</a> and <a href="https://en.wikipedia.org/wiki/Behavior_genetics">behavior genetics</a>. A <em><a href="https://en.wikipedia.org/wiki/Review_of_General_Psychology">Review of General Psychology</a></em> survey, published in 2002, ranked Plomin as the 71st most cited psychologist of the 20th century.[<a href="https://en.wikipedia.org/wiki/Robert_Plomin#cite_note-Haggbloom-1">1]</a> He is the author of several books on <a href="https://en.wikipedia.org/wiki/Genetics">genetics</a> and <a href="https://en.wikipedia.org/wiki/Psychology">psychology</a>.</p>
+
+<p>4.<a href="https://zh.wikipedia.org/wiki/近藤麻理惠">Marie Kondo</a></p>
+
+<p>近藤麻理惠是日本專業整理師及作家，以自研的居家物品整理顧問諮詢為人所知。東京都出身，暱稱為「KonMari」。</p>
+
+<p>Book: <a href="https://book.douban.com/subject/26192379/">The Life-Changing Magic of Tidying Up</a></p>
+
+<p>Marie Kondo (近藤 麻理恵) is a Japanese organizing consultant and author. Kondo&rsquo;s method of organizing is known as the KonMari Method, and one of the main principles is keeping only possessions which &ldquo;spark joy.&rdquo;</p>
+
+<p>Kondo&rsquo;s best-seller The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing has been published in more than 30 countries.</p>
+
+<p>She was listed as one of the world&rsquo;s 100 most influential people by Time Magazine in 2015.</p>
+
+<p>Personal website: <a href="http://konmari.com/en/">http://konmari.com/en/</a><br />
+Book website: <a href="http://tidyingup.com/">http://tidyingup.com/</a><br />
+App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></p>
+
+<p>5.<a href="https://zh.wikipedia.org/wiki/佛瑞德·布魯克斯">Fred Brooks</a></p>
+
+<p>小弗雷德雷克·菲利普斯·「佛瑞德」·布魯克斯，又譯為弗雷德里克·布魯克斯，生於美國北卡羅來納州德罕，美國軟體工程師、學者，曾任IBM系統部主任，主持開發過OS/360等大型電腦用的作業系統軟體。 後來，布魯克斯離開IBM公司，任教於北卡羅萊納大學教堂山分校，擔任計算機科學Kenan講座教授，並著書立說。</p>
               
             </div>
           </div>
@@ -375,7 +390,7 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/" data-tooltip="97 Things Every SRE Should Know-20">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -383,7 +398,7 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-18/" data-tooltip="97 Things Every SRE Should Know-18">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/" data-tooltip="97 Things Every SRE Should Know-19">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -401,19 +416,19 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -461,7 +476,7 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/" data-tooltip="97 Things Every SRE Should Know-20">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -469,7 +484,7 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-18/" data-tooltip="97 Things Every SRE Should Know-18">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/" data-tooltip="97 Things Every SRE Should Know-19">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -487,19 +502,19 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -529,19 +544,19 @@ Emily&rsquo;s official homepage: <a href="http://www.emilynagoski.com/">http://w
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-19%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-19%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-19%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -633,9 +648,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-19\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-20\/';
           
-            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-19\/'
+            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-20\/'
           
         };
         (function() {
