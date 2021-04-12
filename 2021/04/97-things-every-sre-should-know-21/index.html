@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-20">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-20">
-<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
-<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+<meta property="og:title" content="97 Things Every SRE Should Know-21">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-21">
+<meta property="og:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
+<meta property="twitter:url" content="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-04-12T12:00:19">
+    <meta property="article:published_time" content="2021-04-12T17:30:19">
   
   
-    <meta property="article:modified_time" content="2021-04-12T12:00:19">
+    <meta property="article:modified_time" content="2021-04-12T17:30:19">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part I. New to SRE">
     
-      <meta property="article:section" content="Don’t Take Advice from Graybeards">
+      <meta property="article:section" content="Facing That First Page">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-20</title>
+    <title>97 Things Every SRE Should Know-21</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+    <link rel="canonical" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,13 +237,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-20
+      97 Things Every SRE Should Know-21
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-04-12T12:00:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-04-12T17:30:19&#43;08:00">
         
   April 12, 2021
 
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-i.-new-to-sre">Part I. New to SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/dont-take-advice-from-graybeards">Don’t Take Advice from Graybeards</a>
+      <a class="category-link" href="https://imepisode.top/categories/facing-that-first-page">Facing That First Page</a>
     
   
 
@@ -272,36 +272,38 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#don-t-take-advice-from-graybeards">Don’t Take Advice from Graybeards</a></li>
+<li><a href="#facing-that-first-page">Facing That First Page</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="don-t-take-advice-from-graybeards">Don’t Take Advice from Graybeards</h1>
+<h1 id="facing-that-first-page">Facing That First Page</h1>
 
-<p>不要听信老人的建议</p>
+<p>正视第一个告警信息</p>
 
-<p>不要因为老人看起来很自信，就接受他们的建议。没有人知道科技产业将走向何方。对冲你的赌注，90%的预测结果都是可笑的错误。我得到的第一条职业建议是：“有了MS-DOS 6.1，世界不需要更多的软件。去做硬件吧。” 第二条是，“没有人会为通才买单，你需要专业化。” 现在我是一名SRE。</p>
+<p>2017年，大学刚毕业，我就开始在Shopify的软件工程工作岗位上学习。在我第一次值班前的一年时间里，我花了好几个小时阅读#war-room Slack频道，被当天响应工程师的流畅性所吸引，因为他们将一个可怕的页面集合成一个协调、冷静、集中的事件响应，跨越多个团队。</p>
 
-<p>Robert Heinlein[1]告诉我:“昆虫才需要专业化。”试着做一段时间的软件工程师、系统管理员、前端、后端、硬件、产品、酒保、创始人。每长大一岁都能学到新东西。</p>
+<p>That first page （告警信息）可不是开玩笑的。我希望通过一些轻量级的结构和工具帮助您在第一次遇到告警信息的不确定性中找到正确方法，从而使它变得更容易。</p>
 
-<p>职业倦怠是个bitch。它会发生几次，每次你都会想，“我再也不会上当了 。”同样，你会工作得太辛苦，太长时间，却得不到回报或赏识。它会永久损害你的健康。年轻无敌的人以为这种事不会发生在他们身上。然而人生是一场马拉松，不是短跑。</p>
+<p>考虑一下你的情绪反应。感觉高级工程师的血管里流淌着冰块，但事实是，每个人都会有点焦虑。</p>
 
-<p>也许你会成为一名经理，也许你不会。你可能为一家著名的跨国公司工作，也可能一直在没有人听说过的创业公司工作。你的股票期权可能价值百万。你可能会建立一些让你在你尊敬的人眼中出名的东西。Blindboy[2]警告我，不要把自己的 “评价点” 交到别人手里&ndash;甚至是我妈妈的手里。Blindboy说话的时候头上总是戴着一个塑料袋[2]。</p>
+<p>如果你发现自己处于这种状态，不妨花一小会儿时间，评估一下自己的紧张情绪，振作起来，继续前进。如果你不知所措，或者发现自己没有能力应对某一特定事件，可以向同事求助;有这种感觉是正常的，但是为了更快地解决问题，寻求帮助是很重要的。</p>
 
-<p>心理健康不是二元的。Plomin[3]告诉我，有成千上万的基因突变，让我们擅长的事情、耐力的强弱、动力的强弱都有微小的差异。我们需要不断尝试，找出适合我们和我们关心的人的方法。在你工作的每一家公司里找到你尊敬的人，请他们做你的导师。即使你不采纳他们的建议，也要听他们的。</p>
+<p>然后问：“现在什么事情很痛苦？” 你可能收到了一个告警，描述了一些关键业务指标的巨大变化。对于这个告警信息，您可以采取几种方法，首先，非常简单:尝试定位受影响的内容，而不是评估规模或爆炸半径，而是尽最大努力将警报映射到受影响的系统。真正具有挑战性的是预警指标和受影响的系统本身之间的脱节。</p>
 
-<p>你拥有的钱越多，你需要的就越多。你可以花5美元在附近的树下读一本书，它给你带来的快乐和在地球另一端的海滩上读它一样多。你可以搬到硅谷，每周工作60小时，五年内年薪50万，但你不会意识到你失去的朋友、健康和自尊。</p>
+<p>您对关键指标及其背后系统的组织知识可以在这里得到利用，以支持您将随着时间的推移逐步建立的调查，但如果没有这些知识，您可以尝试理解跨组织告警相关性是什么。</p>
 
-<p>确保你有退职金，这样你就可以离开不好的雇主。感到经济上的困顿会让情况变得更糟。当你问：“十年后，我希望自己做什么？”困境就会变得简单。你现在的薪水和工作决定了下一份工作。在经济繁荣时期，雇主不得不雇佣那些还不能胜任工作的人，但他们几乎总是能迎接挑战。确保你只有80%的把握能胜任你所申请的工作，否则你就没有充分发挥自己的能力。女性可能应该在只有60%的把握时就申请，因为她们已经习惯于不相信自己多么有能力。</p>
+<p>在这里，你可以利用你的工具。例如，获得其他正在进行的页面或正在触发的告警的高级视图（通过Slack搜索、PagerDuty、Bugsnag等）可以帮助你合理地识别受影响的系统。</p>
 
-<p>我们为经理工作，而不是为公司工作。经理不是你的朋友，他们是你的代理人。如果你不喜欢他们给你带来的社区、工作或金钱，就解雇他们。Marie Kondo[4]告诉我，不放手只有两个原因：对过去的依恋或对未来的恐惧。不过她可能从来没有在紧急情况下需要一根VGA线(She’s likely never needed a VGA cable in an emergency, though.)。</p>
+<p>接下来，你要通知谁？在确定受影响的系统之后，你可能要想好该通知谁。尽管这是您的电话发出的声音，但可能您已经将上游依赖关系缩小为可能的罪魁祸首。</p>
 
-<p>当一个shell脚本就可以完成工作的时候，不要构建一个框架。如果一个shell脚本很可能在修订控制中超过几周，就不要编写shell脚本。Fred Brooks[5]告诉我，在我设计好系统之前，不要雇佣程序员，但他又知道什么呢？他还建议每个编程团队配备两个秘书呢。</p>
+<p>有时候是你，但如果不是呢?找个人通知很容易;最难的部分是怀疑。如果是错误的告警信息呢?你可能会叫醒正在睡眠中的工程师，然后他们告诉你，你拨错了电话号码。</p>
 
-<p>不要因为老人看起来很自信，就接受他们的建议。</p>
+<p>有时你可能会弄错告警信息。但此时，请相信你迄今为止所积累的事实，并继续迅速采取行动。有可能，即使告警信息不正确，你的尽职调查似乎也表明，错误的收件人和正确的收件人之间的分离度是有限的。</p>
+
+<p>最重要的是，记得要细细品味这一刻。你收到的第一个告警信息是很可怕的，但是这种转变的神奇感觉&ndash;看着一个微弱的告警逐渐发展成大规模的事件响应&ndash;会让你感觉像一个十足的书呆子。每个人都是从某个地方开始的，尽管你可能会给自己施加压力，要求自己在第一次、第二次或第三次就能达到王牌水平，但请记住，你只是在建立神经通路(neural pathways)[1]而已，你需要获得我们都渴望的流畅性。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -325,47 +327,9 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://en.wikipedia.org/wiki/Competent_man">Robert Heinlein</a></p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Neural_pathway">neural pathways</a></p>
 
-<p>羅伯特·安森·海萊恩，美國硬科幻小說作家，人稱「科幻先生」。他的作品被認為在科學和工程方面有相當可信度，也幫助提高了對科幻類作品的科學準確性的要求標準。 海萊恩是1940年代晚期將無修飾科幻小說打入一般主流雜誌的第一位科幻小說作家。他是1960年代最暢銷長篇科幻小說的頭幾名作家之一。</p>
-
-<p>A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyse a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.</p>
-
-<p>— Robert Heinlein, <em><a href="https://en.wikipedia.org/wiki/Time_Enough_for_Love">Time Enough for Love</a></em>[<a href="https://en.wikipedia.org/wiki/Competent_man#cite_note-1">1]</a>[<a href="https://en.wikipedia.org/wiki/Competent_man#cite_note-2">2]</a></p>
-
-<p>2.<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub">Blindboy Boatclub</a></p>
-
-<p>譯自英文-David Chambers，俗稱Blindboy Boatclub，是愛爾蘭諷刺作家，音樂家，播客，作家和電視節目主持人。Boatclub來自利默里克（Limerick），是愛爾蘭喜劇嘻哈樂隊The Rubberbandits的成员之一，他们戴着塑料购物袋作为面具来隐藏自己的身份。</p>
-
-<p>Boatclub is from Limerick and is best known as one half of the Irish comedy hip-hop group <a href="https://en.wikipedia.org/wiki/The_Rubberbandits">The Rubberbandits</a>, who wear <a href="https://en.wikipedia.org/wiki/Plastic_shopping_bag">plastic shopping bags</a> as masks to conceal their identities. He regularly discusses mental health, masculinity, and other socio-political issues.[<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub#cite_note-5">5]</a>[<a href="https://en.wikipedia.org/wiki/Blindboy_Boatclub#cite_note-irishtimes2019-6">6]</a></p>
-
-<p><a href="https://www.dailyedge.ie/rubberbandits-explains-the-plastic-bag-3702939-Nov2017/">https://www.dailyedge.ie/rubberbandits-explains-the-plastic-bag-3702939-Nov2017/</a></p>
-
-<p>3.<a href="https://en.wikipedia.org/wiki/Robert_Plomin">Robert Plomin</a></p>
-
-<p>譯自英文-FBA的羅伯特·普羅明（Robert J. Plomin）是美國心理學家和遺傳學家，以其在雙生子研究和行為遺傳學方面的工作而聞名。2002年出版的《一般心理學評論》將普羅明列為20世紀引用最多的第71位心理學家。他是幾本有關遺傳學和心理學的書的作者。</p>
-
-<p><strong>Robert J. Plomin</strong>, <a href="https://en.wikipedia.org/wiki/Fellow_of_the_British_Academy">FBA</a> (born 1948) is an American psychologist and geneticist best known for his work in <a href="https://en.wikipedia.org/wiki/Twin_studies">twin studies</a> and <a href="https://en.wikipedia.org/wiki/Behavior_genetics">behavior genetics</a>. A <em><a href="https://en.wikipedia.org/wiki/Review_of_General_Psychology">Review of General Psychology</a></em> survey, published in 2002, ranked Plomin as the 71st most cited psychologist of the 20th century.[<a href="https://en.wikipedia.org/wiki/Robert_Plomin#cite_note-Haggbloom-1">1]</a> He is the author of several books on <a href="https://en.wikipedia.org/wiki/Genetics">genetics</a> and <a href="https://en.wikipedia.org/wiki/Psychology">psychology</a>.</p>
-
-<p>4.<a href="https://zh.wikipedia.org/wiki/近藤麻理惠">Marie Kondo</a></p>
-
-<p>近藤麻理惠是日本專業整理師及作家，以自研的居家物品整理顧問諮詢為人所知。東京都出身，暱稱為「KonMari」。</p>
-
-<p>Book: <a href="https://book.douban.com/subject/26192379/">The Life-Changing Magic of Tidying Up</a></p>
-
-<p>Marie Kondo (近藤 麻理恵) is a Japanese organizing consultant and author. Kondo&rsquo;s method of organizing is known as the KonMari Method, and one of the main principles is keeping only possessions which &ldquo;spark joy.&rdquo;</p>
-
-<p>Kondo&rsquo;s best-seller The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing has been published in more than 30 countries.</p>
-
-<p>She was listed as one of the world&rsquo;s 100 most influential people by Time Magazine in 2015.</p>
-
-<p>Personal website: <a href="http://konmari.com/en/">http://konmari.com/en/</a><br />
-Book website: <a href="http://tidyingup.com/">http://tidyingup.com/</a><br />
-App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></p>
-
-<p>5.<a href="https://zh.wikipedia.org/wiki/佛瑞德·布魯克斯">Fred Brooks</a></p>
-
-<p>小弗雷德雷克·菲利普斯·「佛瑞德」·布魯克斯，又譯為弗雷德里克·布魯克斯，生於美國北卡羅來納州德罕，美國軟體工程師、學者，曾任IBM系統部主任，主持開發過OS/360等大型電腦用的作業系統軟體。 後來，布魯克斯離開IBM公司，任教於北卡羅萊納大學教堂山分校，擔任計算機科學Kenan講座教授，並著書立說。</p>
+<p>神经通路也叫传导通路，神经系统内传导某一特定信息的通路。它能传导某种特定信息，如视、听或随意运动的冲动等。可把神经通路分为上行性和下行性两种。</p>
               
             </div>
           </div>
@@ -390,7 +354,7 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/" data-tooltip="97 Things Every SRE Should Know-21">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -398,7 +362,7 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/" data-tooltip="97 Things Every SRE Should Know-19">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/" data-tooltip="97 Things Every SRE Should Know-20">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -416,19 +380,19 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -476,7 +440,7 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/" data-tooltip="97 Things Every SRE Should Know-21">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -484,7 +448,7 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/" data-tooltip="97 Things Every SRE Should Know-19">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/" data-tooltip="97 Things Every SRE Should Know-20">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -502,19 +466,19 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -544,19 +508,19 @@ App website: <a href="http://konmari-media.com/">http://konmari-media.com/</a></
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-21%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-21%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-20%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F04%2F97-things-every-sre-should-know-21%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -648,9 +612,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-20\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/04\/97-things-every-sre-should-know-21\/';
           
-            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-20\/'
+            this.page.identifier = '\/2021\/04\/97-things-every-sre-should-know-21\/'
           
         };
         (function() {
