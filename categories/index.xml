@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Apr 2021 17:38:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Apr 2021 11:01:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Mon, 12 Apr 2021 17:38:19 +0800</pubDate>
+      <pubDate>Tue, 13 Apr 2021 11:01:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Mon, 12 Apr 2021 17:38:19 +0800</pubDate>
+      <pubDate>Tue, 13 Apr 2021 11:01:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Mon, 12 Apr 2021 17:38:19 +0800</pubDate>
+      <pubDate>Tue, 13 Apr 2021 11:01:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part II. Zero to One</title>
+      <link>https://imepisode.top/categories/part-ii.-zero-to-one/</link>
+      <pubDate>Tue, 13 Apr 2021 11:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-ii.-zero-to-one/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRE, at Any Size, Is Cultural</title>
+      <link>https://imepisode.top/categories/sre-at-any-size-is-cultural/</link>
+      <pubDate>Tue, 13 Apr 2021 11:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/sre-at-any-size-is-cultural/</guid>
       <description></description>
     </item>
     
