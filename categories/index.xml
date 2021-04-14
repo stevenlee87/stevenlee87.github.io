@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Apr 2021 15:58:19 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Apr 2021 14:32:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Tue, 13 Apr 2021 15:58:19 +0800</pubDate>
+      <pubDate>Wed, 14 Apr 2021 14:32:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Tue, 13 Apr 2021 15:58:19 +0800</pubDate>
+      <pubDate>Wed, 14 Apr 2021 14:32:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Tue, 13 Apr 2021 15:58:19 +0800</pubDate>
+      <pubDate>Wed, 14 Apr 2021 14:32:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auditing Your Environment for Improvements</title>
+      <link>https://imepisode.top/categories/auditing-your-environment-for-improvements/</link>
+      <pubDate>Wed, 14 Apr 2021 14:30:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/auditing-your-environment-for-improvements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part II. Zero to One</title>
+      <link>https://imepisode.top/categories/part-ii.-zero-to-one/</link>
+      <pubDate>Wed, 14 Apr 2021 14:30:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-ii.-zero-to-one/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Tue, 13 Apr 2021 15:50:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/everyone-is-an-sre-in-a-small-organization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part II. Zero to One</title>
-      <link>https://imepisode.top/categories/part-ii.-zero-to-one/</link>
-      <pubDate>Tue, 13 Apr 2021 15:50:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-ii.-zero-to-one/</guid>
       <description></description>
     </item>
     
