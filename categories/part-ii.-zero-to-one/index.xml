@@ -6,10 +6,19 @@
     <description>Recent content in Part II. Zero to One on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Apr 2021 18:07:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Apr 2021 17:14:19 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/part-ii.-zero-to-one/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>97 Things Every SRE Should Know-26</title>
+      <link>https://imepisode.top/2021/04/97-things-every-sre-should-know-26/</link>
+      <pubDate>Mon, 19 Apr 2021 17:14:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/04/97-things-every-sre-should-know-26/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>97 Things Every SRE Should Know-25</title>
