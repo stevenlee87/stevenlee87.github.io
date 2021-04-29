@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bootstrapping SRE in Enterprises on imepisode blog</title>
+    <link>https://imepisode.top/categories/bootstrapping-sre-in-enterprises/</link>
+    <description>Recent content in Bootstrapping SRE in Enterprises on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Apr 2021 11:37:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://imepisode.top/categories/bootstrapping-sre-in-enterprises/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>97 Things Every SRE Should Know-32</title>
+      <link>https://imepisode.top/2021/04/97-things-every-sre-should-know-32/</link>
+      <pubDate>Thu, 29 Apr 2021 11:37:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/04/97-things-every-sre-should-know-32/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

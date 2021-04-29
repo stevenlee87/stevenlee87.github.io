@@ -283,11 +283,11 @@ if (!doNotTrack) {
 
 <p>SLO衡量的设计目标</p>
 
-<p>在设计SLO衡量时，要考虑<span class="highlight-text danger">灵活性(flexibility)、可测试性(testability)、新鲜性(freshness)、成本(cost)、可靠性(reliability)和组织约束(organizational constraints)</span>等目标。让我解释一下如何使用它们。你要有灵活的目标。也就是说，SLO必须能够随着时间的推移而变化。有时，这只是为了调整错误预算，以允许更多的发布和更快的产品迭代。</p>
+<p>在设计SLO[1]衡量时，要考虑<span class="highlight-text danger">灵活性(flexibility)、可测试性(testability)、新鲜性(freshness)、成本(cost)、可靠性(reliability)和组织约束(organizational constraints)</span>等目标。让我解释一下如何使用它们。你要有灵活的目标。也就是说，SLO必须能够随着时间的推移而变化。有时，这只是为了调整错误预算，以允许更多的发布和更快的产品迭代。</p>
 
 <p>操作员应该能够调整SLIs中嵌入的启发式方法（例如，25ms[毫秒]到30毫秒）、成功阈值（95%的时间到97%的时间）、聚合窗口（过去30秒到过去7天）等，所有这些都不需要进行代码更改、重新部署软件或推送新的生产配置。目标修改前后的SLO性能历史记录也应该保留，并通过某种方式查看每个目标随着时间的变化。</p>
 
-<p>接下来，考虑可测试的目标。当添加一个新的SLO时，我们既需要一个SLI，也需要一个目标(objective)，或者说目标(target)。拟定适当的目标(targets)往往是微妙而具有挑战性的。考虑到我们的可靠性历史，什么是正确的错误预算？衡量延迟的百分位数？实际的延迟阈值？而且，考虑到我们的目标是灵活的SLO目标，任何时候SLO需要更新，这些都应该重新考虑。为了对我们的 SLO 有信心，请根据历史数据对可能的目标进行回测，特别是当 SLO 涉及到告警时&ndash;并且在设置阈值时估计告警频率。</p>
+<p>接下来，考虑可测试的目标。当添加一个新的SLO时，我们既需要一个SLI，也需要一个目标(objective)，或者说目标(target)[2]。拟定适当的目标(targets)往往是微妙而具有挑战性的。考虑到我们的可靠性历史，什么是正确的错误预算？衡量延迟的百分位数？实际的延迟阈值？而且，考虑到我们的目标是灵活的SLO目标，任何时候SLO需要更新，这些都应该重新考虑。为了对我们的 SLO 有信心，请根据历史数据对可能的目标进行回测，特别是当 SLO 涉及到告警时&ndash;并且在设置阈值时估计告警频率。</p>
 
 <p>新鲜度(Freshness)是衡量一个SLO反映生产中实时数据所需的时间。就新鲜度而言，时间延迟越低越好，但实际的新鲜度要求取决于特定的SLO。</p>
 
@@ -325,11 +325,11 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.Difference between Objectives and Targets</p>
+<p>1.<a href="https://imepisode.top/2021/03/服务质量说明/">Service-Level</a></p>
 
-<p>Objectives are the aims / purposes or the vision of a person or an organisation. Targets are the goals or the mission of a person or an organisation.</p>
-
-<p>目标(Objectives)是一个人或一个组织的目的(aims)/目的(purposes)或愿景。目标(Targets)是一个人或一个组织的目标或使命。</p>
+<p>2.Difference between Objectives and Targets<br />
+Objectives are the aims / purposes or the vision of a person or an organisation. Targets are the goals or the mission of a person or an organisation.<br />
+目标(Objectives)是一个人或一个组织的目的(aims)/目的(purposes)或愿景。目标(Targets)是一个人或一个组织的目标或使命。</p>
               
             </div>
           </div>
