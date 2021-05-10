@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-35">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-35">
-<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
-<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+<meta property="og:title" content="97 Things Every SRE Should Know-36">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-36">
+<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
+<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-05-08T17:36:19">
+    <meta property="article:published_time" content="2021-05-10T11:27:19">
   
   
-    <meta property="article:modified_time" content="2021-05-08T17:36:19">
+    <meta property="article:modified_time" content="2021-05-10T11:27:19">
   
   
   
@@ -35,9 +35,9 @@
     
       <meta property="article:section" content="97 Things Every SRE Should Know">
     
-      <meta property="article:section" content="Part II. Zero to One">
+      <meta property="article:section" content="Part III. One to Ten">
     
-      <meta property="article:section" content="Get Your Work Recognized:Write a Brag Document">
+      <meta property="article:section" content="Making Work Visible">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-35</title>
+    <title>97 Things Every SRE Should Know-36</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-35
+      97 Things Every SRE Should Know-36
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-05-08T17:36:19&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-05-10T11:27:19&#43;08:00">
         
-  May 8, 2021
+  May 10, 2021
 
       </time>
     
@@ -258,9 +258,9 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/97-things-every-sre-should-know">97 Things Every SRE Should Know</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/part-ii.-zero-to-one">Part II. Zero to One</a>, 
+      <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/get-your-work-recognizedwrite-a-brag-document">Get Your Work Recognized:Write a Brag Document</a>
+      <a class="category-link" href="https://imepisode.top/categories/making-work-visible">Making Work Visible</a>
     
   
 
@@ -272,52 +272,42 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#get-your-work-recognized-write-a-brag-document">Get Your Work Recognized: Write a Brag Document</a></li>
+<li><a href="#making-work-visible">Making Work Visible</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="get-your-work-recognized-write-a-brag-document">Get Your Work Recognized: Write a Brag Document</h1>
+<h1 id="making-work-visible">Making Work Visible</h1>
 
-<p>让你的工作得到认可: 写一份自夸文件</p>
+<p>让工作变得清晰可见</p>
 
-<p>有一种观点认为，如果你在工作中表现出色，人们会自动意识到这一点，并以晋升和加薪来奖励你。这并不总是真的！你的经理肯定不会记得你所做的所有重要工作。你的经理肯定不会记得你所做的一切重要工作，如果你反思一下，即使是你也可能不记得你在过去一年所做的一切。</p>
+<p>等一下。。。你用REPL[1]来解决这个问题？</p>
 
-<p>这里有一个简单的策略，可以帮助你的工作得到认可：写一份文件，列出你的成就。与其试图记住这一切，不如维护你的自夸文件，它列出了所有的东西，这样当你到了绩效评估季时，你就可以参考它了!</p>
+<p>我正在为一位同事做记录，他在一次事故后采访一位工程师。有一项服务出现了故障，工程师正在讨论他们是如何找出问题所在的。在那之前，我不知道我们支持在生产环境(production box)上启动一个REPL来询问该服务的状态。</p>
 
-<p>下面是一个结构示例：</p>
+<p>我们所做的大部分工作对其他人来说都是不可见的；他们看到了结果，但不知道我们是如何做到的。即使在事故中，我们与他人密切合作，我们的同事也很少有机会观察到我们到底在做什么。他们看不到我们正在运行哪些查询，我们正在看哪些图表或日志，我们如何解释这些结果，以及我们如何决定下一步该看哪里。</p>
 
-<ul>
-<li><p>今年的目标（你是否真正专注于安全？在你的团队中建立代码审查的文化？)</p></li>
+<p>让这项工作可见，有巨大的价值：为同事们提供一个窗口，让他们了解我们日常工作中混乱的细节。</p>
 
-<li><p>明年的目标</p></li>
+<p>为了解决人们在组织中遇到的问题，我们需要了解这些问题是什么：一个操作工具有一个容易出错的用户界面，或者一个工作量很大的团队需要他们不断地进行上下文切换。</p>
 
-<li><p>项目（解释你的贡献及其对公司的影响。解释你的贡献及其对公司的影响。数字是好的！)</p></li>
+<p>在你的组织中，没有人完全了解系统是如何运作的，而且我们经常被一些我们没有的重要背景所困扰。虽然完全了解我们的系统是无法实现的，但通过看到别人的工作，我们可以更多地了解系统的工作原理。我了解了各种各样的操作界面，我甚至都不知道它的存在。</p>
 
-<li><p>指导和领导工作（包括社区建设和胶水工作(glue work)[1])</p></li>
+<p>&nbsp; </p>
 
-<li><p>设计和文档（保留设计文档和你写的文档！）</p></li>
+<span class="highlight-text danger">要提高一项技能，没有比直接体验更好的方法了。然而，如果我们有机会观察别人的行动，我们也可以从他们的经验中学习。本文开头的REPL轶事就是一个很好的例子。</span>
 
-<li><p>你学到了什么？</p></li>
+<p>你如何向组织内部的专家学习？一般来说，促进技能转移的最好方法是观察专家的行动。理想的情况是，你和他们一起工作。观察他们解决实际问题，并记录他们如何减轻操作上的意外：你看他们如何解释信号，他们使用哪些工具，并询问他们如何做出决定。</p>
 
-<li><p>工作以外的事情（讲座！博客文章！）</p></li>
-</ul>
+<p>我最喜欢的方法是通过讲故事来使工作可见。我们人类似乎有听故事的天赋，尤其是那些带有张力和戏剧性的故事。 没有比事故更好的紧张气氛和戏剧性了！</p>
 
-<p>如果你愿意的话，这份文件可以相当全面；10页列举了一年的工作内容也不为过，特别是有图表或屏幕截图。你可以一次写完，也可以每周更新一个流水账；只要保持结构化，让读者可以轻松找到他们要找的东西。</p>
+<p>当我们把事故当作是一个让工作清晰可见的机会时，这就从根本上改变了我们的事故后报告的内容。这些报告的重点从预防行动项目转移到叙述性描述。我们现在要写一个故事，从不同工程师的角度来描述事件是如何发展的。通过使用叙事结构来记录我们的事故，我们可以利用讲故事的力量，以一种引人入胜的方式使工作清晰可见。</p>
 
-<p>坚持用事实说话。当我们在Stripe提出这个想法时，我们称它为自夸文件(brag document)，因为许多人在谈论他们所做的工作时感到不自在，即使它很出色。(&ldquo;这感觉像是在吹牛！&rdquo;)如果这听起来像你，那么写下你的成就是可以的，即使一开始有点不舒服。</p>
+<p>一个好的叙述性描述可以描述出人们在那一刻的想法。回想一下你所参与的最后一次事件。你收到了什么信号，让他们知道事情不对劲?是什么导致你去看某个特定的仪表盘或错误日志，给了你这个信号？在事件中，你对所发生的事情的理解是如何演变的，又是如何被你后来收到的信号所影响的？人们是如何协调的？</p>
 
-<p>不过，不要试图让你的工作听起来比实际情况更好；只要让它听起来和实际情况一样好，例如，&rdquo;是X个新功能的主要贡献者，现在有60%的客户在使用，并得到了Y个积极的反馈。&rdquo; 在可能的情况下，链接到你是如何得出一个数字的来源；要反驳事实是很难的!</p>
-
-<p>分享你的自夸文件。与你的经理分享你的自夸文件，一开始你可能会觉得难为情。但是，我们采访过的每一位经理都喜欢他们的报告分享一份自夸文件。这使你的绩效评估更容易写，这意味着他们在为你的晋升做宣传时，手头有所有的事实。自夸文件对经理人的过渡也很有帮助，例如，如果你在绩效评估周期前3个月换了新经理人。</p>
-
-<p>同样地，与你的同事分享你的自夸文件！如果他们在绩效考核时为你写同行反馈，有一份你所做的工作和目标的清单，就会更容易看到你想要反馈的方面。在绩效时间之外，分享你的文件可以帮助你的同事了解你的目标以及他们可以如何帮助你。我们在写下相关目标后，得到了向会议组织者介绍的机会，以及关于项目想法的建议。<br />
-&nbsp;<br />
-<span class="highlight-text danger">寻找模式。自夸文件也有助于你反思你所做的工作。阅读这些文件可以帮助你了解哪些工作让你感到自豪，哪些工作你希望做得更多或更少，哪些工作你下次可以做得更好，以及你多年前所做项目的长期影响。</span></p>
-
-<p>它们也能帮助其他人：当你真的得到晋升时，你可以与你指导的人分享你的历史自夸文件，以解释你所走过的道路，让下一个人看起来更容易获得晋升。</p>
+<p>叙述式的文章需要更长的时间来写，也需要更长的时间来阅读。但是，如果叙述写得好，人们会很高兴地读完这篇文章。比起传统的根本原因分析，他们会更了解你的系统。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -341,8 +331,11 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://noidea.dog/glue">glue work</a><br />
-Glue work is the difference between a project that succeeds and one that fails. This is why technical program managers and project managers make such an impact: they do the ultimate glue role. They see the gaps and fill them.</p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Read–eval–print_loop">REPL</a></p>
+
+<p>REPL stands for read-eval-print-loop, an interactive environment.</p>
+
+<p>A <strong>read–eval–print loop</strong> (<strong>REPL</strong>), also termed an <strong>interactive toplevel</strong> or <strong>language shell</strong>, is a simple interactive <a href="https://en.wikipedia.org/wiki/Computer_programming">computer programming</a> environment that takes single user inputs, executes them, and returns the result to the user; a program written in a REPL environment is executed piecewise. The term is usually used to refer to programming interfaces similar to the classic <a href="https://en.wikipedia.org/wiki/Lisp_machine">Lisp machine</a> interactive environment. Common examples include <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line</a> <a href="https://en.wikipedia.org/wiki/Shell_(computing)">shells</a> and similar environments for <a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a>, and the technique is very characteristic of <a href="https://en.wikipedia.org/wiki/Scripting_language">scripting languages</a>.[<a href="https://en.wikipedia.org/wiki/Read–eval–print_loop#cite_note-1">1]</a></p>
               
             </div>
           </div>
@@ -367,7 +360,7 @@ Glue work is the difference between a project that succeeds and one that fails. 
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-36/" data-tooltip="97 Things Every SRE Should Know-36">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -375,7 +368,7 @@ Glue work is the difference between a project that succeeds and one that fails. 
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-34/" data-tooltip="97 Things Every SRE Should Know-34">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-35/" data-tooltip="97 Things Every SRE Should Know-35">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -393,19 +386,19 @@ Glue work is the difference between a project that succeeds and one that fails. 
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -453,7 +446,7 @@ Glue work is the difference between a project that succeeds and one that fails. 
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-36/" data-tooltip="97 Things Every SRE Should Know-36">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -461,7 +454,7 @@ Glue work is the difference between a project that succeeds and one that fails. 
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-34/" data-tooltip="97 Things Every SRE Should Know-34">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-35/" data-tooltip="97 Things Every SRE Should Know-35">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -479,19 +472,19 @@ Glue work is the difference between a project that succeeds and one that fails. 
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-35/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-36/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -521,19 +514,19 @@ Glue work is the difference between a project that succeeds and one that fails. 
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-35%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-36%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-35%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-36%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-35%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-36%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -625,9 +618,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-35\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-36\/';
           
-            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-35\/'
+            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-36\/'
           
         };
         (function() {
