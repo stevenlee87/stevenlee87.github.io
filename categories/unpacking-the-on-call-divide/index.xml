@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unpacking the On-Call Divide on imepisode blog</title>
+    <link>https://imepisode.top/categories/unpacking-the-on-call-divide/</link>
+    <description>Recent content in Unpacking the On-Call Divide on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 May 2021 15:40:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://imepisode.top/categories/unpacking-the-on-call-divide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>97 Things Every SRE Should Know-38</title>
+      <link>https://imepisode.top/2021/05/97-things-every-sre-should-know-38/</link>
+      <pubDate>Tue, 11 May 2021 15:40:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/05/97-things-every-sre-should-know-38/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
