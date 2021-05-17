@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-40">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-40">
-<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
-<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+<meta property="og:title" content="97 Things Every SRE Should Know-41">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-41">
+<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
+<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-05-14T16:03:00">
+    <meta property="article:published_time" content="2021-05-17T16:51:00">
   
   
-    <meta property="article:modified_time" content="2021-05-14T16:03:00">
+    <meta property="article:modified_time" content="2021-05-17T16:51:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part III. One to Ten">
     
-      <meta property="article:section" content="Effortless Incident Management">
+      <meta property="article:section" content="If You’re Doing Runbooks, Do Them Well">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-40</title>
+    <title>97 Things Every SRE Should Know-41</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-40
+      97 Things Every SRE Should Know-41
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-05-14T16:03:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-05-17T16:51:00&#43;08:00">
         
-  May 14, 2021
+  May 17, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/effortless-incident-management">Effortless Incident Management</a>
+      <a class="category-link" href="https://imepisode.top/categories/if-youre-doing-runbooks-do-them-well">If You’re Doing Runbooks, Do Them Well</a>
     
   
 
@@ -272,34 +272,31 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#effortless-incident-management">Effortless Incident Management</a></li>
+<li><a href="#if-you-re-doing-runbooks-do-them-well">If You’re Doing Runbooks, Do Them Well</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
-<li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="effortless-incident-management">Effortless Incident Management</h1>
+<h1 id="if-you-re-doing-runbooks-do-them-well">If You’re Doing Runbooks, Do Them Well</h1>
 
-<p>轻松的事件管理</p>
+<p>如果你在做运行手册，那么就好好做</p>
 
-<p>人是事件管理过程中最重要的因素之一，这对于SRE[1]所涉及的事件来说也不例外。如果管理不当，一个事件可能会有太多的平行冲突流（个人相互踩踏）或没有足够的合作（个人试图自己解决事件）。以下是实现轻松的事件管理的关键步骤。<br />
-&nbsp;<br />
-<span class="highlight-text danger">在所有事件中，首先要做的是指定一个事件负责人，并让事件中的每个人都清楚谁是负责人。这个人的任务是协调参与事件的每个人的角色和责任，并分配任务。事件负责人不一定是对受影响的系统最熟悉的人；相反，他可以是一个能够将正确的人群聚集起来的人。在整个事件过程中，牵头人不需要保持不变；一旦获得了所需的所有背景，另一个人可以承担起事件牵头人的角色。</span></p>
+<p>运行手册(也称为剧本)并不是灵丹妙药(什么都不是)，但是事件发生后的一个常见操作项目是“更新运行手册/添加缺少的运行手册”。那么我们为什么要坚持呢?</p>
 
-<p>考虑为每个事件建立一个专门的事件沟通渠道（在您的聊天软件中）。专用频道打破了任何现有的孤岛，如现有的组织团队结构和沟通界限，以支持一个新的共同目标，即大家一起解决手头的事件。此外，专用通道可以作为事件发展的线性时间轴。当需要撰写事件报告时，这可以提供很大的帮助。</p>
+<p>运行手册通常关注的是已知的未知数，而我们无法预测每一个问题。它们有着所有文档的缺陷：准确性、质量、可维护性、漂移(drift)。它们在时间紧迫、压力巨大的情况下被依赖。它们有时会成为可靠性问题上的脆弱绷带：团队不是投资于修复根本问题，而是过度投资于运行手册，创造新的劳作来源。他们可以被视为培训和经验的直接替代品，导致新的或经验不足的团队成员被派去处理他们还不了解的系统，仅仅是因为 “有运行手册”。不准确的或过时的运行手册有时比没有运行手册更危险。</p>
 
-<p>重要的是，每个人都要花一些时间清楚地描述他们所发现的情况，避免含糊不清。你花时间说出的调查结果似乎与继续调查实际事件不一致；但是，它可以提供一套隐含的附加验证。这方面的例子有：有关共享命令输出的解释或提供有关其他人可能不熟悉的系统的文档之类的东西。</p>
+<p>从这个简短的列表中，你可能会认为我非常反对运行手册&ndash;恰恰相反。与任何系统一样，了解缺点意味着我们可以努力减轻或解决这些缺点，并从优点中更好地受益。</p>
 
-<p>在事件发生期间，你可能会遇到其他不符合预期的事情（如损坏的仪表盘或过时的操作手册）。在事件中记录后续行动，而不是等到最后才记录，这样就不会被遗忘。一旦事件结束，事件负责人可以评估建议的操作列表，并为您决定保留的操作分配所有者。</p>
+<p>运行手册的创建、维护和审查应该是一个全团队的活动。认识到运行手册是解决知识分配问题（而不是技术问题），可以促进编写运行手册，特别是在以协作的方式进行时。运行手册记录了一个知道如何解决问题的团队成员的思维过程和决策。对该团队成员来说，一些可能的问题是：你用什么来确定是否有问题？你会使用什么工具？在你的决策过程中，有哪些信息？有什么行动是危险的或有风险的？在此过程的哪些部分使您感到震惊，并且建议您格外小心？作为一个团队定期审查运行手册，也可以对这些知识进行审查和质疑，特别是在系统发展的时候。</p>
 
-<p>事故响应是一系列的行动。自动化可以帮助减少开销。我们建立了一个名为Response的工具，以帮助减少事件发生时个人的压力和认知负担，并引导每个人以统一的方式完成事件管理流程。Response提供了一个逐步的流程来记录一个事件，启动一个专用的沟通渠道，在另一个团队升级并记录操作(escalate in another team, and log actions)，所有这些都无需离开Slack（我们在Monzo的首选聊天软件）。</p>
+<p>运行手册是技术债务。它们通常是一个系统的技术债务和劳作的唯一有用的文件。(在待办事项的底部徘徊的卡片不算。)在审查现有的运行手册时，团队应该质疑它为什么存在，以及它是否可以被消除。根据这个逻辑，有太多的运行手册是一种反模式。将运行手册视为跨系统编排（以人为控制器）可能还有助于了解哪些可以轻松实现自动化，哪些不容易实现，或者是否缺少控制系统。</p>
 
-<p>我们花了很多时间使Response的用户体验尽可能地无障碍，用于申报和管理事件。所有事件在创建时都会被Response自动编入一个专门的Slack频道。每个事件的标题、严重程度、事件负责人和 Slack 频道都显示在前面和中间。</p>
+<p>第一次阅读或运行运行手册的最糟糕的时间是在事件发生时的半夜。想想灭火器或烟雾报警器：它们需要定期测试，以确保它们在紧急情况下需要时能够发挥作用。这包括检查链接和代码片断是否真的有效。记录运行手册最后一次使用或测试的时间，并对陈旧的运行手册进行检查，这也提供了一个机会来不断评估该运行手册是否仍然需要。</p>
 
-<p>不过，围绕事件建立工具和流程并不是全部。参与事件的人需要有文化上的安全感，以便在不分心、不评判、不对其能力有偏见的情况下进行有效沟通。事件及其回顾行报告不应相互指责或推卸责任。要有一个有效的事件管理流程，必须同时拥有正确的工具和正确的文化态度来解决手头的事件。</p>
+<p>运行手册不能也不会解决每一个事件。但这很好；随着系统复杂性的增加，团队的成熟，以及事件变得更加新颖，对运行手册的投资开始出现收益递减的情况。在短期内，这可能意味着运行手册的重点的演变，要么是向有用的资源和诊断技术的方向发展，要么是向更简约的方法发展：隔离/终止/循环故障，如果这不起作用，则逐步升级。</p>
 
-<p>事件管理过程不需要成为一种负担。如果处理得当，事件可以成为每个人关于系统如何协同工作的强大课程，从其他同事那里获得信任和同理心，并展示整个组织的敏捷性和协作性。</p>
+<p>从长远来看，围绕运行手册创造一种健康的文化和流程&ndash;换句话说，一种基于知识共享、协作、水平提升和准备的文化&ndash;甚至比运行手册本身有更好的回报。如果你在做运行手册，就好好做。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -320,11 +317,6 @@ if (!doNotTrack) {
 <h1 id="结语">结语</h1>
 
 <p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
-
-<h1 id="延伸阅读">延伸阅读</h1>
-
-<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-2.<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-英文</a></p>
               
             </div>
           </div>
@@ -349,7 +341,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-41/" data-tooltip="97 Things Every SRE Should Know-41">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -357,7 +349,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-39/" data-tooltip="97 Things Every SRE Should Know-39">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-40/" data-tooltip="97 Things Every SRE Should Know-40">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -375,19 +367,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -435,7 +427,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-41/" data-tooltip="97 Things Every SRE Should Know-41">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -443,7 +435,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-39/" data-tooltip="97 Things Every SRE Should Know-39">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-40/" data-tooltip="97 Things Every SRE Should Know-40">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -461,19 +453,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-40/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-41/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -503,19 +495,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-40%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-41%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-40%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-41%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-40%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-41%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -607,9 +599,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-40\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-41\/';
           
-            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-40\/'
+            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-41\/'
           
         };
         (function() {
