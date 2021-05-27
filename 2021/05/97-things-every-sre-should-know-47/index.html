@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-46">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-46">
-<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
-<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+<meta property="og:title" content="97 Things Every SRE Should Know-47">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-47">
+<meta property="og:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
+<meta property="twitter:url" content="https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-05-24T16:08:00">
+    <meta property="article:published_time" content="2021-05-27T11:38:00">
   
   
-    <meta property="article:modified_time" content="2021-05-24T16:08:00">
+    <meta property="article:modified_time" content="2021-05-27T11:38:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part III. One to Ten">
     
-      <meta property="article:section" content="Move Fast to Unbreak Things">
+      <meta property="article:section" content="You Don’t Know for Sure Until It Runs in Production">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-46</title>
+    <title>97 Things Every SRE Should Know-47</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+    <link rel="canonical" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-46
+      97 Things Every SRE Should Know-47
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-05-24T16:08:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-05-27T11:38:00&#43;08:00">
         
-  May 24, 2021
+  May 27, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/move-fast-to-unbreak-things">Move Fast to Unbreak Things</a>
+      <a class="category-link" href="https://imepisode.top/categories/you-dont-know-for-sure-until-it-runs-in-production">You Don’t Know for Sure Until It Runs in Production</a>
     
   
 
@@ -272,43 +272,42 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#move-fast-to-unbreak-things">Move Fast to Unbreak Things</a></li>
+<li><a href="#you-don-t-know-for-sure-until-it-runs-in-production">You Don’t Know for Sure Until It Runs in Production</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="move-fast-to-unbreak-things">Move Fast to Unbreak Things</h1>
+<h1 id="you-don-t-know-for-sure-until-it-runs-in-production">You Don’t Know for Sure Until It Runs in Production</h1>
 
-<p>快速行动以打破困境</p>
+<p>在生产环境中运行之前，你无法确定。</p>
 
-<p>作为SRE[1]，我们认为我们的工作是平衡速度和可靠性。我们知道部署到生产环境中的每个更改，无论是代码还是配置，都有一定的风险，会导致服务中断或其他服务降级。当故障发生时，我们的直接反应是更加谨慎，放慢生产变化的速度。</p>
+<p>在生产环境中测试的想法通常会有两种反应。有时，你会得到热情的赞美。其他时候，你可能会得到震惊的、不赞成的目光。</p>
 
-<p>然后事情还是发生了。尽管我们做出了努力，但仍然有中断。我们的直觉是错误的。现在事情更有可能发生故障，正是因为我们放慢了速度。当一架飞机在半空中失速时，自然反应可能是拉起，拉离地面。正确的答案是将飞机的机头朝下，增加发动机的动力。这就产生了升力。有时，正确的做法与我们的直觉所告诉我们的相反。</p>
+<p>是什么解释了这种分歧？这是工程中最有趣的悖论之一。我们经常把生产环境看成是像纸牌屋一样的脆弱的生态系统，需要小心翼翼地对待，戴上丝绸手套，或用掩体装备。同时，我们梦想着可观察的系统和平静的、没有告警的夜晚。</p>
 
-<p>你的开发组织是一个水龙头。它以某种恒定的速度产生变化(无论是功能开发、bug还是架构工作)。另外，这些变化进入生产的速度也是一样的。生产流速率由你的部署节奏、质量保证过程的速度、任何批准要求等等决定。</p>
+<p>剧透一下，你不可能两全其美。那么，我们如何弥补这一差距呢？</p>
 
-<p>如果你放慢了这个节奏，不管是通过明确的冻结，还是通过增加审查、人工检查或变更批准程序来隐含地放慢，会发生什么？你会积累更多的积压变更，等待部署。生产环境看起来越来越不象你的测试环境。每一个额外的变化都会增加出错的几率。</p>
+<p>首先，我们必须正视这样一个神话：在任何情况下，bug都不应该出现在生产环境中。把已发布的代码看作是一个实验的想法在某种程度上意味着它没有完成，或者说是不合格的，而且在交付时进行迭代在某种程度上是不好的。</p>
 
-<p>随着风险的增加，不可避免地，你部署的时候还是会出问题。你会怎么做？第一个明显的答案是回滚。这是一个很好的答案。然而，如果您已经为一批更改进行了部署，你必须回滚所有的变更：bug修复，功能，和所有的更改。其中一些与bug一起部署的变更可能是你的用户的关键需求。</p>
+<p>你可能会觉得由于缺乏良好的工具，无法在生产环境中进行测试。最勇敢的组织试图在内部构建工具，如果没有一个统一的运行生产实验的标准，这通常意味着在专题工作会议之间剩下一点时间内把一些Bash脚本拼凑起来，或者，更糟糕的是，把它变成一个“运维问题”。</p>
 
-<p>假设你没有回滚，你可以减轻紧迫的关注，然后要解决这个问题。这个修复现在需要通过所有的测试、审查和你引入的控制，从而延迟了缓解措施。</p>
+<p>然而，这远不是一个全有或全无的方法，它是可以从根本上改变开发者体验的一些小事情的集合，其中一些你可能已经在做了!</p>
 
-<div class="alert success no-icon ">
-  <p><p>从长远来看，对生产环境破坏的直观反应延长了破坏的时间。这并不是说你应该快速行动，因为无论如何你都会出现故障。你希望你的条件限定和发布过程是强大的。它也应该是快速的。通过给人们提供快速响应和修复系统所需的手段和按钮，你会取得更好的结果。</p>
+<p>带有功能切换[1]，允许在不改变代码的情况下修改系统行为。</p>
 
-<p>一旦准备好了，就立即部署。然后信任它。你可以通过持续交付来实现这一点。如果你还没有达到这个目标，你可以通过定期、频繁、递减的部署节奏来实现：从每周到每天，从每天到每小时，以此类推。你的部署仍然带有所有变更的累积风险，但你已经将这种风险限制在你选择的时间段内产生的变更中。</p>
-</p>
-</div>
+<p>有一些工具可以安全地访问生产数据，或者从命令行与应用程序交互。不管你喜欢还是讨厌Rails，控制台对于调试来说是非常棒的，许多框架和语言都可以从这本书中学习。</p>
 
-<p>一旦来自开发组织的变更流与进入生产的变更流相匹配，系统的心理模型和实际系统之间的差距就会缩小。事情变得更容易发现和修复。</p>
+<p>有一些库可以通过在运行新的代码路径的同时运行旧的代码路径，比较结果甚至性能，来帮助重构和迁移遗留系统。</p>
 
-<div class="alert success no-icon ">
-  <p><u>当你仍然会出现服务中断的时候，并且你的直觉告诉你要放慢速度时，请考虑放慢功能开发工作的速度，而不是放慢其部署的速度。</u>将工程方面的努力转移到改善系统的可观察性或更快的测试。建立改进的工具来快速缓解故障：回滚自动化，故障转移工具，等等。投资于那些早就应该进行的架构改进。同时，要意识到即使是这些变化也应该逐步地、经常地部署到生产中。</p>
-</div>
+<p>还有就是可观察性，或者说严重依赖事件和分布式跟踪，而不是传统的固定指标。换句话说，利用代码来制作一个关于系统的故事，而不是提供固定的信息，并让它回答动态的、复杂的问题。</p>
 
-<p>可靠性的关键是使系统迅速改善的能力。任何减缓变化的东西都会减缓你做这件事的能力。</p>
+<p>然而，这不仅仅是关于工具的问题；这也是一个开始将初始生产代码视为实验的机会。把它想成是第一个测试你的煎锅温度是否合适的薄饼。你可以随时为下一次调整。想象一下思维方式的转变，我们将进行观察并得出结论，以更好地了解我们的系统在现实环境中的工作方式以及大规模变更的影响。它涉及到在较小的迭代中交付，这增加了尽早发现真正糟糕的边缘情况的可能性，并快速地减轻它们，使生产环境变得不那么可怕和不可改变的。</p>
+
+<p>通过为你的系统和你刚刚做出的改变提供急需的信心，生产转变为一种创造性和信任的途径。这也意味着晚上可以睡得更好，因为你知道你的代码遇到未知的错误的风险更低，而这些bug可能需要几天时间才能修复。</p>
+
+<p>我们难道不需要更多的安宁与睡眠吗？</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -334,8 +333,13 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
+<p>1.<a href="https://zh.wikipedia.org/wiki/特性切换">feature flaging</a></p>
+
+<p><strong>特性切换</strong>或称<strong>功能切换</strong>，英语：<strong>feature toggle</strong>[<a href="https://zh.wikipedia.org/wiki/特性切换#cite_note-:1-1">1]</a>、<strong>feature switch</strong>、<strong>feature flag</strong>、<strong>feature flipper</strong>或<strong>conditional feature</strong>等。它是<a href="https://zh.wikipedia.org/wiki/软件开发">软件开发</a>中的一种技术，是替代维护多个<a href="https://zh.wikipedia.org/wiki/源代码">源代码</a>分支（也称特性分支）的一种方案，这使特性在完成并正式发布前也可以得到测试。特性切换是在运行期间隐藏、启用或禁用特定功能。例如在开发过程中，开发人员可以启用功能以进行测试，而其他用户不会被启用该功能和受到它的影响。[<a href="https://zh.wikipedia.org/wiki/特性切换#cite_note-:0-2">2]</a></p>
+
+<p>持续发布和<a href="https://zh.wikipedia.org/wiki/持續交付">持续交付</a>为开发人员提供了有关其代码的快速反馈，而这要求尽早地集成其代码更改。特性分支为此过程引入了一个旁路。[<a href="https://zh.wikipedia.org/wiki/特性切换#cite_note-3">3]</a>特性切换是实现持续交付的一项重要技术。</p>
+
+<p>这种技术使开发人员得以发布包含未完成功能的产品<a href="https://zh.wikipedia.org/wiki/軟件版本號">版本</a>。这些未完成的功能被隐藏或被禁用，因此不会出现在<a href="https://zh.wikipedia.org/wiki/用户界面">用户界面</a>中。这使软件可以发布很多次小的增量版本，而无需承担不断分支与合并的成本。特性切换使软件集成的周期得以更短。[<a href="https://zh.wikipedia.org/wiki/特性切换#cite_note-4">4]</a>项目团队可以使用特性切换来加速开发过程，因为产品中可以包含默认不启用的未完成代码。</p>
               
             </div>
           </div>
@@ -360,7 +364,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-47/" data-tooltip="97 Things Every SRE Should Know-47">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -368,7 +372,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-45/" data-tooltip="97 Things Every SRE Should Know-45">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-46/" data-tooltip="97 Things Every SRE Should Know-46">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -386,19 +390,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -446,7 +450,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-47/" data-tooltip="97 Things Every SRE Should Know-47">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -454,7 +458,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-45/" data-tooltip="97 Things Every SRE Should Know-45">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/05/97-things-every-sre-should-know-46/" data-tooltip="97 Things Every SRE Should Know-46">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -472,19 +476,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-46/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/05/97-things-every-sre-should-know-47/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -514,19 +518,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-46%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-47%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-46%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-47%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-46%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F05%2F97-things-every-sre-should-know-47%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -618,9 +622,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-46\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/05\/97-things-every-sre-should-know-47\/';
           
-            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-46\/'
+            this.page.identifier = '\/2021\/05\/97-things-every-sre-should-know-47\/'
           
         };
         (function() {
