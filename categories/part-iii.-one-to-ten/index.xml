@@ -6,10 +6,19 @@
     <description>Recent content in Part III. One to Ten on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 10:41:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jun 2021 10:15:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/part-iii.-one-to-ten/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>97 Things Every SRE Should Know-50</title>
+      <link>https://imepisode.top/2021/06/97-things-every-sre-should-know-50/</link>
+      <pubDate>Wed, 02 Jun 2021 10:15:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/06/97-things-every-sre-should-know-50/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>97 Things Every SRE Should Know-49</title>

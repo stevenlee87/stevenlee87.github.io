@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 10:42:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jun 2021 10:16:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Tue, 01 Jun 2021 10:42:00 +0800</pubDate>
+      <pubDate>Wed, 02 Jun 2021 10:16:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Tue, 01 Jun 2021 10:42:00 +0800</pubDate>
+      <pubDate>Wed, 02 Jun 2021 10:16:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Tue, 01 Jun 2021 10:42:00 +0800</pubDate>
+      <pubDate>Wed, 02 Jun 2021 10:16:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Metrics Are Not SLIs (The Measure Everything Trap)</title>
+      <link>https://imepisode.top/categories/metrics-are-not-slis-the-measure-everything-trap/</link>
+      <pubDate>Wed, 02 Jun 2021 10:15:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/metrics-are-not-slis-the-measure-everything-trap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part III. One to Ten</title>
+      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
+      <pubDate>Wed, 02 Jun 2021 10:15:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Tue, 01 Jun 2021 10:41:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/legendary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part III. One to Ten</title>
-      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
-      <pubDate>Tue, 01 Jun 2021 10:41:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
