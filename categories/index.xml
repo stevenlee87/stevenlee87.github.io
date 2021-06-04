@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jun 2021 17:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jun 2021 14:52:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Thu, 03 Jun 2021 17:10:00 +0800</pubDate>
+      <pubDate>Fri, 04 Jun 2021 14:52:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Thu, 03 Jun 2021 17:10:00 +0800</pubDate>
+      <pubDate>Fri, 04 Jun 2021 14:52:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Thu, 03 Jun 2021 17:10:00 +0800</pubDate>
+      <pubDate>Fri, 04 Jun 2021 14:52:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>In Search of the Lost Time</title>
+      <link>https://imepisode.top/categories/in-search-of-the-lost-time/</link>
+      <pubDate>Fri, 04 Jun 2021 14:51:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/in-search-of-the-lost-time/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part III. One to Ten</title>
+      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
+      <pubDate>Fri, 04 Jun 2021 14:51:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Thu, 03 Jun 2021 17:09:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/holistic-approach-to-product-reliability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part III. One to Ten</title>
-      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
-      <pubDate>Thu, 03 Jun 2021 17:09:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
