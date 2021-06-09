@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-54">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-54">
-<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
-<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+<meta property="og:title" content="97 Things Every SRE Should Know-55">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-55">
+<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
+<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-06-07T18:05:00">
+    <meta property="article:published_time" content="2021-06-09T14:05:00">
   
   
-    <meta property="article:modified_time" content="2021-06-07T18:05:00">
+    <meta property="article:modified_time" content="2021-06-09T14:05:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part III. One to Ten">
     
-      <meta property="article:section" content="Unexpected Lessons from Office Hours">
+      <meta property="article:section" content="Building Tools for Internal Customers that They Actually Want to Use">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-54</title>
+    <title>97 Things Every SRE Should Know-55</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-54
+      97 Things Every SRE Should Know-55
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-06-07T18:05:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-06-09T14:05:00&#43;08:00">
         
-  June 7, 2021
+  June 9, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/unexpected-lessons-from-office-hours">Unexpected Lessons from Office Hours</a>
+      <a class="category-link" href="https://imepisode.top/categories/building-tools-for-internal-customers-that-they-actually-want-to-use">Building Tools for Internal Customers that They Actually Want to Use</a>
     
   
 
@@ -272,30 +272,36 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#unexpected-lessons-from-office-hours">Unexpected Lessons from Office Hours</a></li>
+<li><a href="#building-tools-for-internal-customers-that-they-actually-want-to-use">Building Tools for Internal Customers that They Actually Want to Use</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="unexpected-lessons-from-office-hours">Unexpected Lessons from Office Hours</h1>
+<h1 id="building-tools-for-internal-customers-that-they-actually-want-to-use">Building Tools for Internal Customers that They Actually Want to Use</h1>
 
-<p>从答疑时间得到的意外经验</p>
+<p>为内部客户建立他们真正想要使用的工具</p>
 
-<p>在之前工作的一次团队回顾中，一位工程师建议开启答疑时间(office hours)【1】，这样产品团队就可以向我们询问关于我们提供的工具和服务的问题。</p>
+<p>在纽约时报，没有人被要求使用我的团队的工具或遵循我们的流程。相反，如果我们想赢得团队的心，我们必须建立他们想使用的工具。为了做到这一点，我们采用了一种产品管理的观点，积极寻求团队如何看待我们的工具和流程的价值方面的反馈。</p>
 
-<p>当时，我们为产品团队提供的工具采用率低，与利益相关者或内部客户的关系脆弱，以及不了解如何使现有的平台工具（如Prometheus）以产品开发人员需要的方式工作而挣扎。</p>
+<p>尽管定量指标是至关重要的，但在内部工具建设中，定性反馈可能会被忽视。你如何发现用户——或者你应该开始称呼他们为客户——的满意度？你可能无法像外部产品那样收集同样规模的用户行为数据，但幸运的是，来自你同事的定性反馈是解决这个问题的好办法。能够很容易地联系到你公司目录中的人，实际上是一个主要的优势。</p>
 
-<p>说实话，我真的不认为答疑时间能解决这个问题；我们已经有了其他的沟通渠道，而且我们一直对缺乏利益相关者的反馈感到不满意。为了跟踪模式并在需要时对流程进行修改，我们设立了内部月度审查会议（在我们解决了最初的问题后，将频率降低到每季度一次）。我期待看到模式的出现，这些模式可能很容易通过增加文档、使某些东西自动化或创造一个更好的流程来解决。在实施答疑时间(office hours)后，我们立即注意到我们的团队和公司其他人员之间的沟通有了改善。</p>
+<p>首先，要确定期望的结果。你是否试图了解一个问题空间？寻找对设计的反馈？从那里，我们使用一个反馈过程，包括调查和后续的采访过程。对于你的团队如何收集反馈有很多建议。以下是我的看法。</p>
 
-<p>为了鼓励人们出现并打招呼，有人建议我们带来烘焙食品，因此，我认为我们至少可以通过食物与其他团队建立一些积极的关系，这可能会缓解团队之间的紧张关系。令我惊讶的是，即使没有烘焙食品，每周也至少有两个人在那个时间段出现。(Slack的公告显著提高了这一数字。)</p>
+<p>构建调查问卷时，要像对待产品一样对待它。在你的调查设计中保持用户体验的中心地位。大部分的问题应该是多选题。抵制有多个开放性问题的诱惑，如：&rdquo;你为什么会这样打分？&rdquo; 在您将调查问卷发送给广大受众之前，请测试您的调查问卷，以确保它易于理解和完成。</p>
 
-<p>经过调查，发现Slack帮助频道太吓人了，因为公开问问题就像在为自己设置一个愚蠢的问题而感到羞愧。虽然这种情况不会真的发生，但这种可能性足以让人们望而却步。一个意想不到的现象是，非工程师开始问我们问题，还有更多的工程师，他们要么是初级的，要么是刚开始接触某个技术领域，要么是相当焦虑——这些人从来没有在我们的帮助频道里问过我们问题！相反，我们创造了一个温馨的空间（偶尔有香蕉面包），创造了一个非正式的安全场所，人们可以来这里，而不必担心成为一个麻烦，公开宣布他们不知道的事情，或者让愚蠢的问题永远记录在案。</p>
+<p>匿名的反馈，特别是来自你的同事，往往是最诚实的。你可以使用其他问题，如工作职能或团队，以确保你有一个平衡的回应。例如，我们的第一个问题让受访者选择留下他们的名字，如果他们有兴趣与我们交谈。这减轻了受访者必须写出详细反馈的压力，并帮助我们建立了一个有兴趣分享他们的经验的基础。</p>
 
-<p>非工程师不想通过安排特定的时间让白板会议进行非关键的学习来打断或打扰工程师。心理安全经常被讨论到无责的事后分析，但在制定SRE的参与模式时，需要考虑到这一点，期间。否则，可能会有更多的事情没有说出来。我们发现某些问题只有在我们实施答疑时间后才会出现。例如，PM（项目经理）会问及系统细节或性能改进。答疑时间(office hours)为利益相关者创造了一个完美的环境，让他们感到安全地问这些问题。在这之后，我们看到Slack帮助频道的参与度也增加了，因为人们已经与团队建立了更多的关系，并对他们的问题会得到解决感到更有信心。</p>
+<p>然而，调查并不能代替对话。接下来，你应该进行用户访谈。列出你的用户类型。确保你有坚实的代表性，将有助于确保你考虑到你可能没想到的事情，以及盲点。</p>
 
-<p>实验一下跨团队沟通和利益相关者管理的新载体，把心理安全和社会学模式考虑进去。我鼓励你想办法把人性带回工程对话中；为失败和在安全的空间里提出愚蠢的问题留出空间。请记住，Slack需要一定的专业性，但答疑时间(office hours)为创造力和非结构化的对话创造了空间，不管逻辑上是否有缺陷。在我们的答疑时间(office hours)里，人们停下来只是为了打招呼，这使得偶然的对话、创新以及学习和成长的空间成为可能。</p>
+<p>写出一定数量的开放式问题，但要注意引导性问题。在采访过程中，不要打断被采访者的发言。一旦他们讲完，请受访者进一步阐述所提出的观点。每个面试都应该有一个主持人和一个抄写员。尽可能地利用你的团队——我们的工程师自愿领导或抄写用户访谈。这不仅使我们能够采访到更多的人，而且团队也帮助我们对采访过程进行了改进。</p>
+
+<div class="alert success no-icon ">
+  <p>一旦你完成了，与你的团队一起综合分析结果。现在，要注意的是：对调查结果要慎重对待。一次采访并不意味着你应该改变你目前的计划。分享你的结果和计划。如果你试图推动文化，重要的是要证明你不只是在听，而且还有改变的计划（或你不能做的理由）。在未来的反馈意见征集中，参考基于反馈意见的改进措施也很有帮助。</p>
+</div>
+
+<p>作为最后一条建议，请记住，反馈回路【1】应该是定期和一致的。这不是一个一劳永逸的过程，而是一个你不断迭代和建立的过程。而且要经常质疑你的流程是否在为你服务。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -321,8 +327,7 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://lsc.cornell.edu/wp-content/uploads/2015/10/What-Are-Office-Hours.pdf">office_hours</a>答疑时间<br />
-Professors and teaching assistants schedule time outside of class to meet with students. These are called office hours. Office hours are times when you can meet with your professors and teaching assistants to discuss the material being presented in class or other related interests you have. Course-related discussions include asking for extra help, seeking clarification of material presented in class and following up on aspects of the class you find compelling. In addition, students also discuss majors and programs of study, and graduation requirements, as well as summer internships, graduate schools, campus events, and much more.</p>
+<p>1.<a href="https://zhuanlan.zhihu.com/p/59527036">feedback loops</a></p>
               
             </div>
           </div>
@@ -347,7 +352,7 @@ Professors and teaching assistants schedule time outside of class to meet with s
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-55/" data-tooltip="97 Things Every SRE Should Know-55">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -355,7 +360,7 @@ Professors and teaching assistants schedule time outside of class to meet with s
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-53/" data-tooltip="97 Things Every SRE Should Know-53">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-54/" data-tooltip="97 Things Every SRE Should Know-54">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -373,19 +378,19 @@ Professors and teaching assistants schedule time outside of class to meet with s
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -433,7 +438,7 @@ Professors and teaching assistants schedule time outside of class to meet with s
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-55/" data-tooltip="97 Things Every SRE Should Know-55">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -441,7 +446,7 @@ Professors and teaching assistants schedule time outside of class to meet with s
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-53/" data-tooltip="97 Things Every SRE Should Know-53">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-54/" data-tooltip="97 Things Every SRE Should Know-54">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -459,19 +464,19 @@ Professors and teaching assistants schedule time outside of class to meet with s
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-54/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-55/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -501,19 +506,19 @@ Professors and teaching assistants schedule time outside of class to meet with s
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-54%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-55%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-54%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-55%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-54%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-55%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -605,9 +610,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-54\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-55\/';
           
-            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-54\/'
+            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-55\/'
           
         };
         (function() {
