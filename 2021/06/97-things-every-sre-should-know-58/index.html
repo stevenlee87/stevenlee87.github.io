@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-57">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-57">
-<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
-<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+<meta property="og:title" content="97 Things Every SRE Should Know-58">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-58">
+<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
+<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-06-11T15:26:00">
+    <meta property="article:published_time" content="2021-06-15T17:08:00">
   
   
-    <meta property="article:modified_time" content="2021-06-11T15:26:00">
+    <meta property="article:modified_time" content="2021-06-15T17:08:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part III. One to Ten">
     
-      <meta property="article:section" content="The Human Baseline in SRE">
+      <meta property="article:section" content="Remotely Productive or Productively Remote">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-57</title>
+    <title>97 Things Every SRE Should Know-58</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-57
+      97 Things Every SRE Should Know-58
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-06-11T15:26:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-06-15T17:08:00&#43;08:00">
         
-  June 11, 2021
+  June 15, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-human-baseline-in-sre">The Human Baseline in SRE</a>
+      <a class="category-link" href="https://imepisode.top/categories/remotely-productive-or-productively-remote">Remotely Productive or Productively Remote</a>
     
   
 
@@ -272,45 +272,45 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-human-baseline-in-sre">The Human Baseline in SRE</a></li>
+<li><a href="#remotely-productive-or-productively-remote">Remotely Productive or Productively Remote</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-human-baseline-in-sre">The Human Baseline in SRE</h1>
+<h1 id="remotely-productive-or-productively-remote">Remotely Productive or Productively Remote</h1>
 
-<p>SRE的基本要求</p>
+<p>远程生产或生产远程</p>
 
-<p>没有所谓的SRE【1】学校。网站可靠性工程是一个独特的职业，因为成为SRE的要求非常广泛，而且这些技能不是普通计算机科学学位课程的一部分。企业雇用SRE的前提是他们有良好的代码，对系统有深刻的理解，知道监控和告警，可以运行任何服务，可以调试生产问题，可以提高性能&ndash;以及从帽子里拿出一只兔子(and pull a rabbit out of their hat.)。</p>
+<p>当你从本地或分布式团队转到远程团队时，1生产力的转变似乎是矛盾的。假设远离办公室的干扰，人们的生产力会激增，而在远程团队中，整体生产力会增加，但个人生产力可能会波动或下降。</p>
 
-<p>拥有这样的范围似乎是超人的，但这需要对事物如何运作有深刻的好奇心，以及四处学习的能力。公平地说，期望每个人从一开始就知道所有这些是不现实的；我们都来自不同的背景，学习方式也不同。我们中很少有人能成为这么多领域中的深度专家，所以相反，我们应该互相依靠，不断提高彼此的技能水平。</p>
+<p>这种情况是如何发生的呢？<span class="highlight-text danger">在每个组织中，关键工作和不太紧急的工作都必须完成。生产力是这两种类型的工作得到关注的结果。随着个人生产力的下降，人们倾向于重新专注于一种类型的工作或另一种工作。如果你以达到里程碑的高优先级任务或项目的数量来衡量成功，你很可能看到你的团队的整体影响力上升。</span></p>
 
-<p>提高水平应该是指导和个人努力的综合。指导可以对团队产生深远的积极影响，提高指导者和被指导者的知识水平，并建立更牢固的联系。然而，由于指导需要时间、精力、奉献精神，当然还有良好的意愿，所以它被认为是额外的工作。它通常不计入绩效考核，不被认为具有影响力，也不包括在我们团队的规划中。因此，指导他人成为课外活动，而提升水平往往成为一项单打独斗的运动，由个人自行决定如何实现。</p>
+<p>远程IC（个人贡献者） (individual contributors) 也有机会以不同于以往的方式进行生产，时间转移工作或打破他们的一天就是一个很好的例子。例如，比同事早几个时区的IC可以利用早上的安静时间，在较少干扰的情况下完成任务。</p>
+
+<p>保持高生产力的一个关键因素是沟通和协作，而这些都是非常以人为本的。他们需要与其他人接触，倾听，内化，并作出反应。互联网上有大量关于如何做好视频会议或作为远程 IC 进行过度通信如何重要的信息，但很少有人讨论社会纽带的重要性。</p>
 
 <div class="alert success no-icon ">
-  <p><p>这不应该是一项单打独斗的运动，人们不应该在这方面感到孤独。我相信，指导工作可以贯穿于日常工作中。这里有一些简单的策略可以尝试：</p>
-
-<p>走远路回家(Take the long way home)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与其把任务分配给能更快完成任务的工程师，不如考虑把任务分配给能从中获益更多的工程师，并得到团队的适当支持/指导。</p>
-
-<p>错误和不完美是可以的(Mistakes and imperfections are okay)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在合理范围内，让人们犯错，然后让他们改正错误是可以的。此外，接受一个普通的解决方案，让工程师随着时间的推移改进它，也是可以的。</p>
-
-<p>配对系统工程(Pair systems engineering)【2】<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这就相当于结对编程的系统，两个SRE一起执行一项任务，比如说，共享同一个屏幕。</p>
-
-<p>退一步(Stepping back)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在一个事件中，根据严重程度，更高级的工程师可以退后，让团队的其他成员进行调查。事件中的英雄主义会产生结果，但它也可能使团队的其他成员黯然失色，并阻止他们变得有足够的信心来站出来。</p>
-</p>
+  <p>成员之间的信任是任何成功团队的一个组成部分，而这种信任是由强大的关系支持的。在COVID-19之前的世界里，当IC们坐在一起，解决问题，并花时间在一起，了解对方时，就会发生这种情况。根据我自己的经验，在同一地点呆上1-2周的时间，就足以让个人分开3个月，仍然保持同样的信任和协作水平。3个月后，这些关系将开始减弱，需要更多的时间在一起，以恢复它们。</p>
 </div>
 
-<p>将指导工作纳入团队的日常工作是一个基石，可以使其更具包容性并帮助其茁壮成长。</p>
+<p>在我们的新世界里，随着越来越多的组织转向远程团队，以及整体旅行的减少，这变得非常困难。我们必须找到方法，在专业和个人层面上保持团队成员之间牢固的关系。一些建议包括：</p>
 
-<p>在运行服务时，我们使用baselines作为我们的系统表现良好的指标，但baselines并不限于我们的生产；它们延伸到运行它的人。The human baselines是团队同意候选人加入团队时应具备的软技能和技术技能的组合。我们时常想雇用那些不完全符合条件的人，但有时，投资于我们认为有前景的人，可能比浪费时间面试寻找独角兽更好。当我们这样做的时候，我们需要有一个框架，帮助新成员达到团队的human baseline，然后再超越它。</p>
+<p>视频会议社交时间(Video conferencing social hours)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;让人们在同一时间聚在一起，谈论工作以外的事情。讨论特殊场合、个人里程碑和事件，并确保人们能很好地处理与团队的隔离度增加的问题。</p>
 
-<p>随着时间的推移，在我们团队的帮助下，技能可以得到提高。还有什么比一个相互关心的团队更有生产力和效率吗？</p>
+<p>多人游戏(Multiplayer games)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有很多，有些是免费游戏，可以广泛使用。</p>
+
+<p>吃饭时一对一的谈话(One-on-one conversations while having dinner)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这些自然提供了一个非工作环境，人们可以谈论工作以外的事情。</p>
+
+<p>作为一个大型团队的高级工程师，我每周都会花大量时间与其他工程师进行10-15分钟的一对一叙谈。这里的关键是要找到机会，让我们在社会环境中相互交流。</p>
+
+<div class="alert success no-icon ">
+  <p>转移到远程工作可能会让一些人感到生产力下降，完成的工作比他们习惯的少。重要的是，我们不要对此有膝跳反应，要意识到这其实是可以的。你的组织应该不断评估它可以做哪些更重要的工作，确保专注于此。一些额外的、不太重要的工作可能会因此而被搁置。接受并接纳这一点。如果不重要的工作被抛在后面，而关键的工作却完成得很好或更好，那么事情就会朝着正确的方向发展。</p>
+</div>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -364,7 +364,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-58/" data-tooltip="97 Things Every SRE Should Know-58">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -372,7 +372,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-56/" data-tooltip="97 Things Every SRE Should Know-56">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-57/" data-tooltip="97 Things Every SRE Should Know-57">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -390,19 +390,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -450,7 +450,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-58/" data-tooltip="97 Things Every SRE Should Know-58">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -458,7 +458,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-56/" data-tooltip="97 Things Every SRE Should Know-56">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-57/" data-tooltip="97 Things Every SRE Should Know-57">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -476,19 +476,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-57/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-58/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -518,19 +518,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-57%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-58%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-57%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-58%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-57%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-58%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -622,9 +622,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-57\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-58\/';
           
-            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-57\/'
+            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-58\/'
           
         };
         (function() {
