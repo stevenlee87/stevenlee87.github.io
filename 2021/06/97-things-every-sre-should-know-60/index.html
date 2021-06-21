@@ -7,26 +7,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Steven Lee">
-<meta name="keywords" content="97 Things Every SRE Should Know, SRE">
+<meta name="keywords" content="97 Things Every SRE Should Know, SRE, book">
 <meta name="description" content="">
 
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-toc">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-toc">
-<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
-<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+<meta property="og:title" content="97 Things Every SRE Should Know-60">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-60">
+<meta property="og:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
+<meta property="twitter:url" content="https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-06-21T11:01:00">
+    <meta property="article:published_time" content="2021-06-21T11:00:00">
   
   
-    <meta property="article:modified_time" content="2021-06-21T11:01:00">
+    <meta property="article:modified_time" content="2021-06-21T11:00:00">
   
   
   
@@ -35,7 +35,9 @@
     
       <meta property="article:section" content="97 Things Every SRE Should Know">
     
-      <meta property="article:section" content="Table of Contents">
+      <meta property="article:section" content="Part III. One to Ten">
+    
+      <meta property="article:section" content="The Importance of Margins in Systems">
     
   
   
@@ -67,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-toc</title>
+    <title>97 Things Every SRE Should Know-60</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+    <link rel="canonical" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -235,13 +237,13 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-toc
+      97 Things Every SRE Should Know-60
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-06-21T11:01:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-06-21T11:00:00&#43;08:00">
         
   June 21, 2021
 
@@ -256,7 +258,9 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/97-things-every-sre-should-know">97 Things Every SRE Should Know</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/table-of-contents">Table of Contents</a>
+      <a class="category-link" href="https://imepisode.top/categories/part-iii.-one-to-ten">Part III. One to Ten</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/the-importance-of-margins-in-systems">The Importance of Margins in Systems</a>
     
   
 
@@ -266,135 +270,63 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h2 id="table-of-contents">Table of Contents</h2>
+              <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#the-importance-of-margins-in-systems">The Importance of Margins in Systems</a></li>
+<li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
+<li><a href="#结语">结语</a></li>
+<li><a href="#延伸阅读">延伸阅读</a></li>
+</ul>
+</nav>  
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/">Preface</a></p>
+<h1 id="the-importance-of-margins-in-systems">The Importance of Margins in Systems</h1>
 
-<p><a href="https://imepisode.top/categories/part-i.-new-to-sre/">Part I. New to SRE</a></p>
+<p>系统中边际的重要性</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">1. Site Reliability Engineering in Six Words</a></p>
+<p>边际是处理不确定性的工具，也是管理技术或人类系统时需要平衡的多个目标之一。在从心理学到机械工程再到排队理论和可靠性工程等领域，一个系统的适应能力（在某些情况下，甚至完全发挥作用）关键取决于作为系统一部分的时间和空间缓冲。正如我所讨论的边际对个人的价值一样，边际对系统也很重要。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-02/">2. Do We Know Why We Really Want Reliability?</a></p>
+<p>在功能系统的设计中必须包括边际，以考虑不确定性和单个系统容差的累加效应。计算机网络是一个很好的例子，边际的计算是实践中的一个标准部分。确保路径中的每条网络链路都有超出预期带宽使用量的多余容量，是管理网络性能的一个关键部分。旧的经验法则是升级任何平均利用率为50%的链路；其中一部分是考虑到采购过程中的准备时间，但另一部分是为了优雅地处理瞬时流量负载中不可预测的峰值。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">3. Building Self-Regulating Processes</a></p>
+<p>新的指导方针，以及QOS（服务质量）优先化等措施，使网络工程师能够将平均利用率推到70-80%的范围内，只要他们对通过其链路的流量有良好的了解。在不太确定的情况下，需要更高的利润率。如果平均利用率的增长远远超过这些水平，延迟和丢包的水平就会迅速增长，超过可接受的水平。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-04/">4. Four Engineers of an SRE Seder</a></p>
+<p>导致网络工程中需要保证金的排队理论的基本原理也适用于许多领域。大量的研究与医院手术室的安排有关，试图确定在面对病人取消、不确定的手术时间以及非常昂贵的设备和人力资源时的最佳利用平衡。如果你遇到过令人无法接受的漫长的看病等待，那可能是因为他们被过度安排了，而缺乏边际造成了服务上的延迟。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">5. The Reliability Stack</a></p>
+<p>就像网络和手术室一样，团队在超计划时也会遇到问题。这是Dominica DeGrandis的《让工作看得见》中的核心原则。团队的负荷常常被忽视。如果没有对团队工作量的全面了解，他们（或他们的管理层）就不能正确地分配任务工作，同时为学习和处理意外变化保留必要的边际。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">6. Infrastructure: It’s Where the Power Is</a></p>
+<p>Avery Pennarun【1】和Will Larson【2】分别开发了团队生产力（从交付给最终用户的价值来看）在面对变化的目标和过多的任务时如何波动的模拟。这些模拟强调了适当数量的边际的重要性。在面对更大的不确定性时，需要更多的边际来保持团队的有效生产。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">7. Thinking About Resilience</a></p>
+<p>多少边际取决于系统的情况。如果没有足够的边际，当最轻微的破坏导致广泛的系统故障时，系统就会束手无策，因为没有适应能力。如果边际太大，系统就不能达到最大的生产力，因为工作被分散到系统的空隙中去了。当我们与复杂的、分布式的社会技术系统合作时，我们需要不断地重新评估我们在约束和自由度之间的平衡，以优化我们团队和系统的产出。</p>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">8. Observability in the Development Cycle</a></p>
+<h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
-<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-09/">9. There Is No Magic</a></p>
+<p>SRE虽然涉及复杂的技术系统，但归根结底是一种文化实践。文化是人的产物，这启发我们根据你在组织中的SRE数量来组织本书的各个部分&ndash;你具体处理什么，你的一天是怎样的，取决于有多少个SRE工程师。我们将本书的文章分为 “SRE新手” 、0-1个SRE、1-10个SRE、10-100个SRE和 “SRE的未来 ”。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">10. How Wikipedia Is Served to You</a></p>
+<p>读者如果想找寻先从哪里开始的指导，可以直接跳到最适用于自己的部分；但是，你仍然会发现阅读那些目前并不适用于你日常的部分的文章的价值。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">11. Why You Should Understand (a Little) About TCP</a></p>
+<p>在0到1个SRE时，还没有人被指定为SRE，或者你已经找到了你的第一个SRE，这个角色看起来几乎是孤独的。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">12. The Importance of a Management Interface</a></p>
+<p>在1到10名SRE时，你正在组建一个团队，有知识共享和分工的能力。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">13. When It Comes to Storage, Think Distributed</a></p>
+<p>在10到100个SRE时，你已经成为一个组织，你需要思考的不仅仅是你所从事的系统，还需要思考如何组织这么多SRE。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">14. The Role of Cardinality</a></p>
+<p>&ldquo;SRE新手&rdquo; 涵盖了基础性的话题（尽管并不详尽！），对于那些刚刚开始SRE之旅的人来说是很有帮助的，即使是最有经验的SRE，也是一种复习。 &ldquo;SRE的未来&rdquo; 包含了一些文章，这些文章探讨了SRE潜在的发展方向，或者是（目前）坐拥时代潮流。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">15. Security Is like an Onion</a></p>
+<p>没有必要按照任何特定的顺序阅读本书。你可以从头到尾读一遍。或者，如果你对某个特定的主题感到好奇，可以翻到索引，在那里你可以找到关于该主题的所有文章。把它作为参考指南，或者是灵感的来源&ndash;可以在需要的时候提供一个震撼。或者，也许可以建立一个阅读俱乐部，每周一次挑选一篇文章与同事讨论。这就是散文集的魅力所在。我们希望你和我们一样喜欢阅读它们。</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-16/">16. Use Your Words</a></p>
+<h1 id="结语">结语</h1>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-17/">17. Where to SRE</a></p>
+<p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-18/">18. Dear Future Team</a></p>
+<p>翻译不易，转载时请注明原文链接，谢谢</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">19. Sustainability and Burnout</a></p>
+<h1 id="延伸阅读">延伸阅读</h1>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">20. Don’t Take Advice from Graybeards</a></p>
+<p><a href="https://learning.oreilly.com/library/view/97-things-every/9781492081487/ch60.html#ch01fn3-marker">1.</a><br />
+Avery Pennarun (2018). <a href="https://oreil.ly/0sGHL">“The Math behind Project Scheduling, Bug Tracking, and Triage”</a><br />
+Avery Pennarun (2017). <a href="https://oreil.ly/W89Jt">“SimSWE Part 1: Indecisiveness Simulator”</a>.<br />
+Avery Pennarun (2017).<a href="https://oreil.ly/aTbvD">“SimSWE Part 2: The Perils of Multitasking”</a>.</p>
 
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">21. Facing That First Page</a></p>
-
-<p><a href="https://imepisode.top/categories/part-ii.-zero-to-one/">Part II. Zero to One</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-22/">22. SRE, at Any Size, Is Cultural</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-23/">23. Everyone Is an SRE in a Small Organization</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-24/">24. Auditing Your Environment for Improvements</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-25/">25. With Incident Response, Start Small</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-26/">26. Solo SRE: Effecting Large-Scale Change as a Single Individual</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-27/">27. Design Goals for SLO Measurement</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-28">28. I Have an Error Budget—Now What?</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-29">29. How to Change Things</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-30">30. Methodological Debugging</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-31">31. How Startups Can Build an SRE Mindset</a></p>
-
-<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-32">32. Bootstrapping SRE in Enterprises</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-33">33. It’s Okay Not to Know, and It’s Okay to Be Wrong</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-34">34. Storytelling Is a Superpower</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-35">35. Get Your Work Recognized: Write a Brag Document</a></p>
-
-<p><a href="https://imepisode.top/categories/part-iii.-one-to-ten/">Part III. One to Ten</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-36">36. Making Work Visible</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-37">37. An Overlooked Engineering Skill</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-38">38. Unpacking the On-Call Divide</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-39">39. The Maestros of Incident Response</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-40">40. Effortless Incident Management</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-41">41. If You’re Doing Runbooks, Do Them Well</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-42">42. Why I Hate Our Playbooks</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-43">43. What Machines Do Well</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-44">44. Integrating Empathy into SRE Tools</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-45">45. Using ChatOps to Implement Empathy</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-46">46. Move Fast to Unbreak Things</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-47">47. You Don’t Know for Sure Until It Runs in Production</a></p>
-
-<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-48">48. Sometimes the Fix Is the Problem</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-49">49. Legendary</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-50">50. Metrics Are Not SLIs (The Measure Everything Trap)</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-51">51. When SLOs Attack: Pathological SLOs and How to Fix Them</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-52">52. Holistic Approach to Product Reliability</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-53">53. In Search of the Lost Time</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-54">54. Unexpected Lessons from Office Hours</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-55">55. Building Tools for Internal Customers that They Actually Want to Use</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-56">56. It’s About the Individuals and Interactions</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-57">57. The Human Baseline in SRE</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-58">58. Remotely Productive or Productively Remote</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-59">59. Of Margins and Individuals</a></p>
-
-<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-60">60. The Importance of Margins in Systems</a></p>
+<p><a href="https://learning.oreilly.com/library/view/97-things-every/9781492081487/ch60.html#ch01fn4-marker">2.</a> Will Larson (2019). <a href="https://oreil.ly/Vbv8d">“Why Limiting Work-in-Progress Works”</a>.</p>
               
             </div>
           </div>
@@ -419,7 +351,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -427,7 +359,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-60/" data-tooltip="97 Things Every SRE Should Know-60">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-59/" data-tooltip="97 Things Every SRE Should Know-59">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -445,19 +377,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -472,7 +404,7 @@ if (!doNotTrack) {
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
         
           <i class="fa fa-list"></i>
         </a>
@@ -505,7 +437,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -513,7 +445,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-60/" data-tooltip="97 Things Every SRE Should Know-60">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/06/97-things-every-sre-should-know-59/" data-tooltip="97 Things Every SRE Should Know-59">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -531,19 +463,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-toc/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/06/97-things-every-sre-should-know-60/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -558,7 +490,7 @@ if (!doNotTrack) {
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
         
           <i class="fa fa-list"></i>
         </a>
@@ -573,19 +505,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-toc%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-60%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-toc%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-60%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-toc%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F06%2F97-things-every-sre-should-know-60%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -677,9 +609,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-toc\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/06\/97-things-every-sre-should-know-60\/';
           
-            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-toc\/'
+            this.page.identifier = '\/2021\/06\/97-things-every-sre-should-know-60\/'
           
         };
         (function() {

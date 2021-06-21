@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 11:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 11:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Thu, 17 Jun 2021 11:40:00 +0800</pubDate>
+      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Thu, 17 Jun 2021 11:40:00 +0800</pubDate>
+      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Thu, 17 Jun 2021 11:40:00 +0800</pubDate>
+      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part III. One to Ten</title>
+      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
+      <pubDate>Mon, 21 Jun 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Importance of Margins in Systems</title>
+      <link>https://imepisode.top/categories/the-importance-of-margins-in-systems/</link>
+      <pubDate>Mon, 21 Jun 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/the-importance-of-margins-in-systems/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Thu, 17 Jun 2021 11:39:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/of-margins-and-individuals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part III. One to Ten</title>
-      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
-      <pubDate>Thu, 17 Jun 2021 11:39:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
