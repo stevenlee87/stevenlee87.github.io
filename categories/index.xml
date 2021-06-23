@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Jun 2021 11:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jun 2021 11:34:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,16 +32,25 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Mon, 21 Jun 2021 11:01:00 +0800</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Fewer Spreadsheets, More Napkins</title>
+      <link>https://imepisode.top/categories/fewer-spreadsheets-more-napkins/</link>
+      <pubDate>Wed, 23 Jun 2021 11:28:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/fewer-spreadsheets-more-napkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Part III. One to Ten</title>
       <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
-      <pubDate>Mon, 21 Jun 2021 11:00:00 +0800</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:28:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
