@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 15:25:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jul 2021 10:34:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Fri, 09 Jul 2021 15:25:00 +0800</pubDate>
+      <pubDate>Mon, 12 Jul 2021 10:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Fri, 09 Jul 2021 15:25:00 +0800</pubDate>
+      <pubDate>Mon, 12 Jul 2021 10:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +32,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Fri, 09 Jul 2021 15:25:00 +0800</pubDate>
+      <pubDate>Mon, 12 Jul 2021 10:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part III. One to Ten</title>
+      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
+      <pubDate>Mon, 12 Jul 2021 10:33:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>To All the SREs I’ve Loved</title>
+      <link>https://imepisode.top/categories/to-all-the-sres-ive-loved/</link>
+      <pubDate>Mon, 12 Jul 2021 10:33:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/to-all-the-sres-ive-loved/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Fri, 09 Jul 2021 15:24:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/effecting-sre-cultural-changes-in-enterprises/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part III. One to Ten</title>
-      <link>https://imepisode.top/categories/part-iii.-one-to-ten/</link>
-      <pubDate>Fri, 09 Jul 2021 15:24:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-iii.-one-to-ten/</guid>
       <description></description>
     </item>
     
