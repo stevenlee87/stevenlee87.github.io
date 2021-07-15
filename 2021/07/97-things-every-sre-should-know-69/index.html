@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-68">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-68">
-<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
-<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+<meta property="og:title" content="97 Things Every SRE Should Know-69">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-69">
+<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
+<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-14T14:15:00">
+    <meta property="article:published_time" content="2021-07-15T11:24:00">
   
   
-    <meta property="article:modified_time" content="2021-07-14T14:15:00">
+    <meta property="article:modified_time" content="2021-07-15T11:24:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="The Order of Operations for Getting SLO Buy-In">
+      <meta property="article:section" content="Heroes Are Necessary, but Hero Culture Is Not">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-68</title>
+    <title>97 Things Every SRE Should Know-69</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-68
+      97 Things Every SRE Should Know-69
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-14T14:15:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-07-15T11:24:00&#43;08:00">
         
-  July 14, 2021
+  July 15, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-order-of-operations-for-getting-slo-buy-in">The Order of Operations for Getting SLO Buy-In</a>
+      <a class="category-link" href="https://imepisode.top/categories/heroes-are-necessary-but-hero-culture-is-not">Heroes Are Necessary, but Hero Culture Is Not</a>
     
   
 
@@ -272,43 +272,40 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-order-of-operations-for-getting-slo-buy-in">The Order of Operations for Getting SLO Buy-In</a></li>
+<li><a href="#heroes-are-necessary-but-hero-culture-is-not">Heroes Are Necessary, but Hero Culture Is Not</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-order-of-operations-for-getting-slo-buy-in">The Order of Operations for Getting SLO Buy-In</h1>
+<h1 id="heroes-are-necessary-but-hero-culture-is-not">Heroes Are Necessary, but Hero Culture Is Not</h1>
 
-<p>获得SLO支持的操作顺序</p>
+<p>英雄是必要的，但英雄文化不是必要的</p>
 
-<p>作为推动你的团队、组织或公司采用 SLI、SLO 和错误预算【1】的人，你将不得不做相当多的说服工作。对于一些人来说，SLO的基本论点与他们为自己和团队设定的目标相悖。还有一些人希望把功能速度放在可靠性工作之前，还有一些人怀疑公司是否足够成熟或足够好，能够真正采用这些原则和技术。</p>
+<p>建立健康、可持续的文化需要了解英雄和英雄文化之间的区别。英雄是在危机中产生的，当人们执行非凡的任务来拯救世界时，但这并不意味着你应该鼓励灾难迫使人们成为英雄——这就是英雄文化的作用。</p>
 
-<p>重要的是现在要认识到，采用基于SLO的方法的好处不会对每个人都是不言而喻的，你将不得不做相当多的耐心解释。让我们建立一个游戏计划，让每个人都加入进来。像工程中的大多数事情一样，操作的顺序很重要。</p>
+<p>想一想你的SRE【1】什么时候受到广泛的赞扬。根据我的经验，这通常是对夜间事件的回应，当有人牺牲了睡眠来拯救一天时。像这样的事件获得了工程部内外同事的赞誉。是的，我们必须承认事件响应者的英雄行为，但当它偏向于美化这项工作时就变得危险了。</p>
 
-<p>根据经验，以下是我对获得认同的顺序的建议：</p>
+<p>真正的英雄在需要的时候会立即行动起来，但他们不希望其他人，包括他们自己，陷入这些可怕的情况。英雄文化中的SRE将组织推向运营与开发的思维模式，而这正是网站可靠性工程所要摆脱的思维模式。开发人员忽视了与SRE分担他们服务的责任。当有一个SRE on-call【2】工程师来拯救这一天时，为什么还要担心运送更可靠的选择呢？</p>
 
-<ol>
-<li><p>工程和运营
-你的第一步是让工程和运营团队都加入到SLO中来。这应该是相当直接的，因为SLA、SLO和错误预算给每个小组提供了真正的好处。他们对SLO的原则的相互认同对于让其他团队加入进来是至关重要的。请注意，我说的是原则。实施细节（错误预算政策、SLO目标等）将在以后协商。</p></li>
+<div class="alert success no-icon ">
+  <p>因此，英雄文化不鼓励预防性工作。如果工作只有在解决紧急情况时才被认可，人们就会被鼓励专注于以紧急情况出现的工作! 这时，垃圾箱火灾驱动的开发就开始发挥作用了：当某件事情急需解决，但并不紧急时，只有当它成为垃圾箱火灾（即已经成为一个事件）时，上面才会买账。</p>
+</div>
 
-<li><p>产品
-你的下一站可能是你的产品经理（或编写产品需求文件的人，或PRD）。你向他们提出的关键论点是，这种方法会给他们带来更好的功能速度。他们会想知道工程和运营部门是否同意，这就是他们在第二步的原因。</p></li>
+<p>英雄的动机是内在的，因为人们想在非常时期做好工作。在英雄文化中，动机来自外部，因为人们只有在被抛入必须执行非凡工作以维持运转的情况下才会得到奖励。我们需要承认并奖励预防性工作。</p>
 
-<li><p>领导层
-一旦工程、运营和产品团队都接受了，就该和你的高层领导谈谈了。这种变化的好处（更大的发布速度、对用户体验的早期洞察、更好的工作环境等）是显而易见的，但他们会想知道这三大团队是否达成一致。</p></li>
+<div class="alert success no-icon ">
+  <p>当一个问题只能由少数人解决，而这些人觉得只有当他们是拯救世界的关键时才会有积极的关注，不仅（具有讽刺意味）他们成为潜在的故障点，而且这种环境转化为沉重的on-call负担。当他们可靠地响应号召去解决问题时，人们就会产生期望，认为他们每次都能解决问题，而组织也不会努力去避免问题的发生。不断地救火是通往倦怠的必经之路。</p>
+</div>
 
-<li><p>法律
-你的下一站是律师。如果你已经完成了第1-3步，你就不可能在这里遇到很多阻力。他们会担心（这是正确的）这种变化对公共SLA意味着什么（回答：如果他们还没有遇到很多违反SLA的情况，那么这些变化几乎没有影响，而且可能会提供一个采用更有竞争力的SLA的机会；如果他们遇到的情况比他们希望的多，这个数字会下降）。</p></li>
+<p>从英雄文化回归到英雄，需要找到新的方法来认可工作。这之所以如此困难，原因之一是很难量化什么时候没有发生。我们必须做出预测。</p>
 
-<li><p>QA
-这是你的最后一站。这是一个将最关心这些变化对他们意味着什么的小组。这次谈话的重要部分是让团队专注于他们带来的技能，而不是他们加入的组织。没有人会失去他们的工作&ndash;远非如此。你不是真的去说服QA团队。你要告诉他们（温和地），公司正在向SLO转变，领导层、工程部、产品部和运营部都同意这是正确的事情。</p></li>
-</ol>
+<p>我想到了斯多葛派的消极可视化的做法(Stoic practice of negative visualization)【4】，当你想象一个有更糟糕的事件的生活版本，比如失去工作，来实现对你目前状况的感激。在SRE中，premortem【5】是一个著名的工具，可以用来想象什么会导致项目失败。让我们在项目交付后使用它，庆祝那些没有发生的事情和没有发生的事件背后的人。</p>
 
-<p>你将需要与其他团体&ndash;销售、营销、客户支持等交谈，但他们是这个决定的消费者，而不是实施者。</p>
+<p>同样，我们必须提醒开发人员他们可以做些什么来防止或减少这些情况的危害。 这也应该是潜在客户在技术债务上投资资源的绊脚石。 这是让每个人都参与到团队中努力使他们共同承担的责任变得更好的最佳时机。</p>
 
-<p><em>Adapted from the book</em> <a href="https://oreil.ly/kAVJt">Implementing Service Level Objectives: A Practical Guide to SLIs, SLOs, and Error Budgets</a> <em>(O’Reilly).</em></p>
+<p>英雄文化很容易陷入，但可以应用SRE思维来对抗这种情况。我们可以认识到，英雄是作为团队的一部分做他们最好的工作，而真正的英雄不需要英雄文化来做好事。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -334,7 +331,17 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://imepisode.top/2021/03/服务质量说明/">Service-Level</a></p>
+<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
+&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
+
+<p>2.<a href="https://sre.google/sre-book/being-on-call/">on-call</a></p>
+
+<p>3.<a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">burnout</a></p>
+
+<p>4.<a href="https://en.wikipedia.org/wiki/Negative_visualization">negative visualization</a></p>
+
+<p>5.<a href="https://en.wikipedia.org/wiki/Pre-mortem">premortem</a><br />
+   <a href="https://baijiahao.baidu.com/s?id=1651962503620183299&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1651962503620183299&amp;wfr=spider&amp;for=pc</a></p>
               
             </div>
           </div>
@@ -359,7 +366,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/" data-tooltip="97 Things Every SRE Should Know-69">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -367,7 +374,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-67/" data-tooltip="97 Things Every SRE Should Know-67">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-68/" data-tooltip="97 Things Every SRE Should Know-68">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -385,19 +392,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -445,7 +452,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/" data-tooltip="97 Things Every SRE Should Know-69">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -453,7 +460,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-67/" data-tooltip="97 Things Every SRE Should Know-67">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-68/" data-tooltip="97 Things Every SRE Should Know-68">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -471,19 +478,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-68/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-69/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -513,19 +520,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-68%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-69%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-68%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-69%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-68%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-69%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -617,9 +624,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-68\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-69\/';
           
-            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-68\/'
+            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-69\/'
           
         };
         (function() {
