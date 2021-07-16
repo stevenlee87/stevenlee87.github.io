@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-70">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-70">
-<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
-<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+<meta property="og:title" content="97 Things Every SRE Should Know-71">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-71">
+<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
+<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-15T17:05:00">
+    <meta property="article:published_time" content="2021-07-16T14:36:00">
   
   
-    <meta property="article:modified_time" content="2021-07-15T17:05:00">
+    <meta property="article:modified_time" content="2021-07-16T14:36:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="Heroes Are Necessary, but Hero Culture Is Not">
+      <meta property="article:section" content="Study of Human Factors and Team Culture to Improve Pager Fatigue">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-70</title>
+    <title>97 Things Every SRE Should Know-71</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-70
+      97 Things Every SRE Should Know-71
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-15T17:05:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-07-16T14:36:00&#43;08:00">
         
-  July 15, 2021
+  July 16, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/heroes-are-necessary-but-hero-culture-is-not">Heroes Are Necessary, but Hero Culture Is Not</a>
+      <a class="category-link" href="https://imepisode.top/categories/study-of-human-factors-and-team-culture-to-improve-pager-fatigue">Study of Human Factors and Team Culture to Improve Pager Fatigue</a>
     
   
 
@@ -272,36 +272,36 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#on-call-rotations-that-people-want-to-join">On-Call Rotations that People Want to Join</a></li>
+<li><a href="#study-of-human-factors-and-team-culture-to-improve-pager-fatigue">Study of Human Factors and Team Culture to Improve Pager Fatigue</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="on-call-rotations-that-people-want-to-join">On-Call Rotations that People Want to Join</h1>
+<h1 id="study-of-human-factors-and-team-culture-to-improve-pager-fatigue">Study of Human Factors and Team Culture to Improve Pager Fatigue</h1>
 
-<p>人们想要加入的On-Call轮换工作</p>
+<p>研究人的因素和团队文化以改善值班人员的疲劳度</p>
 
-<p>在Monzo，On-Call【1】是如此受欢迎，以至于我们的轮换有一个等待名单。不幸的是，大多数机构的情况不是这样的。我们的行业已经接受了这种观念，即On-Call是一种痛苦和必要的邪恶。成千上万的开发人员和SRE【2】让自己经历痛苦和倦怠，因为这是工作的一部分。但一定要这样吗？</p>
+<p>嘈杂的告警会导致值班人员疲劳，但嘈杂是一个主观的想法；对于嘈杂的告警手机，每个团队都有自己的警报阈值。有一种假设是，越多一定意味着越差，这让我想知道：告警手机的数量与On-Call【1】的满意度有关系吗？为了找出答案，我研究了一个由大约200名工程师组成的组织，他们被分成10到20人的团队，其中既有经验丰富的工程师，也有初级工程师。工程师们对他们的待命满意度进行了评分，并对他们的经历进行了详细的反馈。结果令我吃惊。<span class="highlight-text danger">较高的告警数与On-Call满意度没有关联。</span></p>
 
-<p>我们并不这么认为。我们的努力表明，一个精心设计的、以人为中心的On-Call过程，通过在我们的轮换中拥有热情的、积极的和有效的工程师而得到回报。我们是怎么做到的？以人为本。</p>
+<p>我观察了那些满意度高且告警数量多的团队，并跟踪他们以了解他们的工程实践。事实证明，人的因素和团队文化在使工程师对他们的On-Call经历感到更加积极方面发挥了实质性的重要作用。</p>
 
-<p>On-Call人员也是人。这就是On-Call的强大之处；当安全系统、弹性架构和自动补救措施停止工作时，没有任何机器能够接近人类对复杂系统中的新故障作出反应和适应的能力。与机器不同，人类无法承受24/7的正常运行时间或持续100%的CPU使用率。职业倦怠很糟糕，对他们周围的人来说很糟糕，对公司来说失去一个聪明能干的工程师很糟糕，但对个人来说真的很糟糕。有效的On-Call也是人性化的On-Call。</p>
+<p>值班人员的疲劳不在于告警数的多少；一个人可能只有两个告警，但没有改变现状的意识，而另一个人可以有20告警，并在推动系统的持久改进上茁壮成长。我发现，满意的团队拥有自主权的工程师，并被授权在最重要的地方推动系统的变化。此外，讨论想法和庆祝成就是一贯的做法。这导致了一个积极的反馈回路、问责制和合作机会，并有助于避免重复工作。让我们回顾一下On-Call满意度较高的团队的一些工程实践：</p>
 
-<p>首先，我们激励人们。许多On-Call人员根本没有工资；对于公司来说，为告警带来的额外负担、责任、压力和对正常生活的干扰提供补偿才是公平的。人们的积极性还在于有机会在技术上取得进步，并对他们所工作的系统有更多的了解。我们通过将On-Call行为纳入我们的发展和职业进步框架来鼓励和奖励这种行为。</p>
+<ul>
+<li><p>技术知识和实践经验是提高On-Call满意度的两个重要因素。成功的团队建立了有效的入职流程，并投资于培训和保持其文档的更新。</p></li>
 
-<div class="alert success no-icon ">
-  <p>第二，我们解决On-Call的痛苦。减少告警的频率是一个明显的开始；虽然我们实际上永远不会达到100%的可靠性（否则根本就不需要On-Call！），但我们可以通过自动化和仔细的监控设计减少嘈杂的警报和故障的数量。我们把每一个页面都当作一种特殊情况；如果不需要采取行动，我们就调整阈值，甚至删除警报。</p>
-</div>
+<li><p>良好的沟通和协作对团队的效率具有倍增效应。成功的团队有多次周会，90%的团队成员和经理一起参加，经理积极为会议做出贡献，但不主导讨论。这有助于在自上而下的支持下建立自下而上的文化。工程师们审查了事件趋势、系统性问题、文档改进、自动化等等。这些会议产生的任何后续行动都会导致记录一个工作项目并确定一个所有者。专门的会议按照 “五个为什么” 的流程对事件进行了详细的回顾。无责文化是所有讨论的一个重要组成部分，重点是平台和流程，而不是个人。工程师们感到安全地分享他们的意见。</p></li>
 
-<p>第三，良好的On-Call体验从某人加入轮换的那一刻开始。一个常见的经历是被扔进深渊，被期望独自处理事情。在Monzo，每个On-Call人员都会跟随一个更有经验的工程师几个月，这样他们可以练习事件响应，并在一个知识渊博和自信的人指导下，以较低的期望来获得背景知识。</p>
+<li><p>为了建立一种责任感和所有权的文化，同时也为了庆祝成就，团队有经常性的工程审查和演示会议，有预定的议程或开放式的麦克风风格。这两种会议，结构化的和非结构化的，建立了不同的团队合作动态。任何阻碍因素和优先级的变化都被及时地传达和讨论。</p></li>
 
-<p>最后，强大的On-Call文化不是一蹴而就的；相反，它来自不断的努力和频繁的迭代。我们有很多尝试过但没有成功的好点子；有一段时间，值班表是在电子表格中手工制作的，就像一个拼图。</p>
+<li><p>团队建立了一个有效的反馈回路，以确保每个人的声音都能被听到，并且随着时间的推移，On-Call的满意度也被衡量。值班工程师在值班结束后会立即填写调查问卷，包括对短期和中期改进建议的详细反馈。调查结果被定期审查并采取行动。</p></li>
 
-<p>改善On-Call的想法的最佳来源是On-Call的人自己。我们经常举行回顾会议，思考如何使On-Call工作做得更好。有时，有一个论坛来发泄是很好的，但我们最有用的改进和想法往往来自于合作的思考。给予人们代理权和改善事情的机会，是赋予On-Call人员权力和改善他们福祉的有力方式。</p>
+<li><p>最后，高度满意的团队表现出高度的同理心，积极主动地寻找机会支持对方。</p></li>
+</ul>
 
-<p>你可以，也应该改善On-Call状态。我们的系统正变得越来越复杂而关键，当自动化失败时，我们越来越依赖人类来介入。建立快乐、健康的轮值制度是一种超级能力，你也可以通过花时间和精力来激励人们，减少痛点，提供指导，并快速迭代来获得。</p>
+<p>告警数量并不总是衡量On-Call经验的一个好办法。这个数字并不重要，重要的是处理这个问题的方法。一种信任、所有权、问责制、有效沟通和协作的文化对于建立一个成功的团队至关重要。它为改进流程和技术奠定了基础，从而推动了更好的On-Call体验和服务可靠性。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -328,9 +328,6 @@ if (!doNotTrack) {
 <h1 id="延伸阅读">延伸阅读</h1>
 
 <p>1.<a href="https://sre.google/sre-book/being-on-call/">on-call</a></p>
-
-<p>2.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
               
             </div>
           </div>
@@ -355,7 +352,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-71/" data-tooltip="97 Things Every SRE Should Know-71">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -363,7 +360,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/" data-tooltip="97 Things Every SRE Should Know-69">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-70/" data-tooltip="97 Things Every SRE Should Know-70">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -381,19 +378,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -441,7 +438,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-71/" data-tooltip="97 Things Every SRE Should Know-71">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -449,7 +446,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69/" data-tooltip="97 Things Every SRE Should Know-69">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-70/" data-tooltip="97 Things Every SRE Should Know-70">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -467,19 +464,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-70/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-71/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -509,19 +506,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-70%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-71%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-70%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-71%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-70%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-71%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -613,9 +610,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-70\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-71\/';
           
-            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-70\/'
+            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-71\/'
           
         };
         (function() {
