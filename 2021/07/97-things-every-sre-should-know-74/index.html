@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-73">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-73">
-<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
-<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+<meta property="og:title" content="97 Things Every SRE Should Know-74">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-74">
+<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
+<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-19T14:54:00">
+    <meta property="article:published_time" content="2021-07-20T15:31:00">
   
   
-    <meta property="article:modified_time" content="2021-07-19T14:54:00">
+    <meta property="article:modified_time" content="2021-07-20T15:31:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="Mitigating and Preventing Cascading Failures">
+      <meta property="article:section" content="On-Call Health:The Metric You Could Be Measuring">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-73</title>
+    <title>97 Things Every SRE Should Know-74</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-73
+      97 Things Every SRE Should Know-74
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-19T14:54:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-07-20T15:31:00&#43;08:00">
         
-  July 19, 2021
+  July 20, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/mitigating-and-preventing-cascading-failures">Mitigating and Preventing Cascading Failures</a>
+      <a class="category-link" href="https://imepisode.top/categories/on-call-healththe-metric-you-could-be-measuring">On-Call Health:The Metric You Could Be Measuring</a>
     
   
 
@@ -272,36 +272,42 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#mitigating-and-preventing-cascading-failures">Mitigating and Preventing Cascading Failures</a></li>
+<li><a href="#on-call-health-the-metric-you-could-be-measuring">On-Call Health: The Metric You Could Be Measuring</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="mitigating-and-preventing-cascading-failures">Mitigating and Preventing Cascading Failures</h1>
+<h1 id="on-call-health-the-metric-you-could-be-measuring">On-Call Health: The Metric You Could Be Measuring</h1>
 
-<p>缓解和防止连带故障的发生</p>
+<p>On-Call的健康:你可以衡量的指标</p>
 
-<p>想象一下，一摞多米诺骨牌倒下了，每一块都会推倒下一块，直到每一块多米诺骨牌都倒下。当一个理论上松散耦合的系统实际上有我们不知道的紧密连接时，就会发生级联故障。在生产系统中，当一个过载的区域发生故障时，它的流量会转移到健康的邻近区域，而这些区域也会变得过载并反过来发生故障。如果不加以控制，级联故障会迅速发展，在几分钟内导致系统的全面瘫痪。这类故障一直是GCP（谷歌云平台）等服务大规模公开停运的罪魁祸首，甚至是电网。</p>
+<p>一个星期六的下午，我的电话里传出了悲伤的长号声。我又一次为要求关注的服务而On-Call【1】。那是我为一个新团队On-Call的第一个星期的尾声，我已经被呼唤了至少50次。我眼花缭乱，焦虑不安。当我确认这个提示时，我有一种强烈的冲动，想把我的手机扔到旁边的砖墙上。相反，我深吸一口气，滚动浏览警报的细节，同时再次启动了我的笔记本电脑。</p>
 
-<p>有多种方法可以触发级联故障。 突然的流量高峰会使系统中的某个组件过载。 尽管总体流量没有增加，但看似无害的代码或配置更改会导致性能下降，从而降低容量，这可能是一个原因。</p>
+<p>我们为服务健康定义了SLI、SLO和SLA【2】。我们衡量可用性和可靠性，进行注重客户影响的事后分析，并对服务进行健康检查以迅速发现故障。作为一个行业，我们很快就知道我们的服务是否健康，但我们忽略了运行一个成功的服务的一个重要组成部分：On-Call的人是否同样健康。</p>
 
-<p>当发生级联故障时，会同时出现许多过载症状，因此很难在蔓延到全球中断之前及时进行调试和缓解。 第一个目标应该是打破链条。 前线（Front-line）缓解措施可能会有所不同，但这里有一些适用于大多数情况的核心缓解措施。</p>
+<p>他们是否整夜都在睡觉？他们在工作时间之外被呼唤的频率如何？On-Call的工作是否符合一个合理的工作周？幸运的是，我们可以使用一些监测服务健康的工具和最佳做法来监测这另一个关键部分。</p>
 
-<p>对于由变更引起的初始区域过载，识别并回滚此更改可以使查询成本恢复正常。 限制已经受影响的区域以减少负载可以帮助它们恢复并防止它们变得完全不可用。</p>
+<div class="alert success no-icon ">
+  <p><p>衡量的指标<br />
+&emsp;&emsp;为了解服务健康状况，我们定义了SLI；为衡量On-Call健康状况，我们需要类似的指标。注意每周的警报数量，每周触发警报时的严重程度，工作时间以外的警报数量。思考一下警报的解决方法。警报是噪音吗？还是可操作的？</p>
 
-<p>前线缓解程序应有详细记录、定期测试和快速部署。 即使专家团队已经准备好缓解措施，也很难完全缓解级联故障，而不会对用户产生任何严重影响。</p>
+<p>监测指标和补救问题<br />
+&emsp;&emsp;On-Call的健康指标应该被定期审查。我建议每周一次，作为定期On-Call审查或交接过程的一部分。就像我们处理服务健康指标一样，查看每周的On-Call健康指标的趋势，以发现新出现的模式。利用这种每周审查来问一些问题，例如。这是不寻常的忙碌的一周吗？还是每周的警报数量在稳步增加？它们是可操作的还是大部分是噪音？这段时间也应该用来安排后续项目。如果警报是噪音，应该调整或消除它们。如果警报大多是可操作的，那么是否有可以自动化的重复性任务？</p>
 
-<p>一个更有效的策略是通过改进系统设计进行预防。在发布的金丝雀阶段进行性能和回归测试【1】，可以在全局部署可能导致容量不足之前，抓住性能回归，如内存泄漏。</p>
+<p>On-Call的事后分析<br />
+&emsp;&emsp;定期获得关于On-Call过程的定性反馈也很重要。就像我们用事后总结来浮现服务健康方面的定性反馈和学习一样，我们也需要对On-Call健康做同样的事。</p>
+</p>
+</div>
 
-<p>更好的负载节流可以通过在任务达到其容量时拒绝或降低响应，从而使区域更能抵抗过载。对一个区域进行负载测试，以确定在负载平衡器层面上的理想利用率，这样单个任务就不会过载。配置一个合理的任务级的负载平衡算法（如加权轮回），以保持任务尽可能的平等负载。</p>
+<p>&emsp;&emsp;<span class="highlight-text danger">我建议定期进行匿名的On-Call健康回顾。我喜欢混合使用定量和定性的问题。提出带有数字分数的问题。例如，在1到5的范围内，On-Call对你的工作和生活平衡有多大的破坏性？包括自由形式的问题，例如。On-Call的最糟糕的部分是什么？在On-Call时，什么占用了你的大部分时间？
 
-<p>区域之间更强的隔离可以确保区域性故障不会蔓延到全球。在这种设置中，每个区域的冗余必须单独维护，因为相邻的区域不再能够补偿彼此的容量。这种方法可能是昂贵的，但提供了最有力的隔离保证。</p>
+</span></p>
 
-<p>在系统之外，还有对人的伤害。想象一下，星期五下午，每个人都准备为这一周收拾东西。值班工程师的告警机响了。她叹了口气，拿出她的笔记本电脑看了一下。很快，整个团队都在争先恐后地应用缓解措施，因为错误率急剧上升。回滚和上限正在以快速和不安全的方式进行部署，同时，标志着全局过载的告警机风暴响起。来自客户支持部的通知源源不断地涌来。(Tickets from customer support are flooding in.)。很快，总监和副总就打电话来，要求知道缓解措施的时间。</p>
+<p>一旦收集到所有的反馈，就应该对其进行分析，并汇总一套后续行动项目，添加到团队的积压项目中。就像事后总结和其他回顾性工作一样，要使其成为一个有效的工具，重要的是要及时安排和完成行动项目；否则，这就是浪费时间，会使On-Call工程师感到沮丧。</p>
 
-<p>不幸的是，这就是发生级联故障时的典型情况。即使应用了多种缓解措施，也可能需要数十分钟才能完全停止过载。除了面临风险的系统之外，还有处于压力下试图处理这种情况的人。即使系统恢复了，对人的影响也可能存在。这就是为什么预防胜于治疗；避免影响客户的故障的唯一方法是建立一个能抵御级联故障的系统。</p>
+<p>这似乎与技术方面脱节，但请记住：如果你的服务符合其SLO和SLA，但你的On-Call是不健康的，你的服务就不会保持健康太久。不健康的On-Call将导致疲劳、倦怠和减员。长期来看，这些都会对服务的健康和它所支持的业务目标产生负面影响。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -327,10 +333,8 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://baike.baidu.com/item/回归测试/1925732?fr=aladdin">回归测试</a><br />
-回归测试是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他<a href="https://baike.baidu.com/item/代码/86048">代码</a>产生错误。自动回归测试将大幅降低<a href="https://baike.baidu.com/item/系统测试/3073399">系统测试</a>、维护升级等阶段的成本。</p>
-
-<p>回归测试作为<a href="https://baike.baidu.com/item/软件生命周期/861455">软件生命周期</a>的一个组成部分，在整个<a href="https://baike.baidu.com/item/软件测试/327953">软件测试</a>过程中占有很大的工作量比重，<a href="https://baike.baidu.com/item/软件开发/3448966">软件开发</a>的各个阶段都会进行多次回归测试。在渐进和快速迭代开发中，新版本的连续发布使回归测试进行的更加频繁，而在<a href="https://baike.baidu.com/item/极端编程/7400429">极端编程</a>方法中，更是要求每天都进行若干次回归测试。因此，通过选择正确的回归测试策略来改进回归测试的效率和有效性是很有意义的。</p>
+<p>1.<a href="https://sre.google/sre-book/being-on-call/">on-call</a><br />
+2.<a href="https://imepisode.top/2021/03/服务质量说明/">Service-Level</a></p>
               
             </div>
           </div>
@@ -355,7 +359,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-74/" data-tooltip="97 Things Every SRE Should Know-74">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -363,7 +367,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-72/" data-tooltip="97 Things Every SRE Should Know-72">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-73/" data-tooltip="97 Things Every SRE Should Know-73">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -381,19 +385,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -441,7 +445,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-74/" data-tooltip="97 Things Every SRE Should Know-74">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -449,7 +453,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-72/" data-tooltip="97 Things Every SRE Should Know-72">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-73/" data-tooltip="97 Things Every SRE Should Know-73">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -467,19 +471,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-73/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-74/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -509,19 +513,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-73%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-74%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-73%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-74%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-73%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-74%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -613,9 +617,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-73\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-74\/';
           
-            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-73\/'
+            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-74\/'
           
         };
         (function() {

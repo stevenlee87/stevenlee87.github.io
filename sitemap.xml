@@ -4,47 +4,62 @@
   
   <url>
     <loc>https://imepisode.top/categories/97-things-every-sre-should-know/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/post/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/sre/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/tags/sre/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/sre/</loc>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/categories/table-of-contents/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://imepisode.top/tags/</loc>
-    <lastmod>2021-07-19T14:59:00+08:00</lastmod>
+    <lastmod>2021-07-20T15:32:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-74/</loc>
+    <lastmod>2021-07-20T15:31:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/on-call-healththe-metric-you-could-be-measuring/</loc>
+    <lastmod>2021-07-20T15:31:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imepisode.top/categories/part-iv.-ten-to-hundred/</loc>
+    <lastmod>2021-07-20T15:31:00+08:00</lastmod>
   </url>
   
   <url>
@@ -54,11 +69,6 @@
   
   <url>
     <loc>https://imepisode.top/categories/mitigating-and-preventing-cascading-failures/</loc>
-    <lastmod>2021-07-19T14:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/part-iv.-ten-to-hundred/</loc>
     <lastmod>2021-07-19T14:54:00+08:00</lastmod>
   </url>
   
@@ -813,12 +823,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/book/</loc>
+    <loc>https://imepisode.top/tags/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/book/</loc>
+    <loc>https://imepisode.top/categories/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
   </url>
   
@@ -908,12 +918,12 @@
   </url>
   
   <url>
-    <loc>https://imepisode.top/categories/go/</loc>
+    <loc>https://imepisode.top/tags/go/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imepisode.top/tags/go/</loc>
+    <loc>https://imepisode.top/categories/go/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
   </url>
   
