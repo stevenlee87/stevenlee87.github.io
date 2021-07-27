@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-77">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-77">
-<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
-<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+<meta property="og:title" content="97 Things Every SRE Should Know-78">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-78">
+<meta property="og:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
+<meta property="twitter:url" content="https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-26T15:16:00">
+    <meta property="article:published_time" content="2021-07-27T11:34:00">
   
   
-    <meta property="article:modified_time" content="2021-07-26T15:16:00">
+    <meta property="article:modified_time" content="2021-07-27T11:34:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="The Forward-Deployed SRE">
+      <meta property="article:section" content="Test Your Disaster Plan">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-77</title>
+    <title>97 Things Every SRE Should Know-78</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+    <link rel="canonical" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-77
+      97 Things Every SRE Should Know-78
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-26T15:16:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-07-27T11:34:00&#43;08:00">
         
-  July 26, 2021
+  July 27, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/the-forward-deployed-sre">The Forward-Deployed SRE</a>
+      <a class="category-link" href="https://imepisode.top/categories/test-your-disaster-plan">Test Your Disaster Plan</a>
     
   
 
@@ -272,34 +272,34 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#the-forward-deployed-sre">The Forward-Deployed SRE</a></li>
+<li><a href="#test-your-disaster-plan">Test Your Disaster Plan</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="the-forward-deployed-sre">The Forward-Deployed SRE</h1>
+<h1 id="test-your-disaster-plan">Test Your Disaster Plan</h1>
 
-<p>前向部署的 SRE</p>
+<p>测试你的灾难计划</p>
 
-<p>SRE【1】团队通常独立于任何其他团队，并在更广泛的工程组织中以自己的目标和任务运作。然而，嵌入式模式是另一种不常被谈论的方法，但在寻求SRE的采用或投资于持续的卓越运营时，它可以是有效的。在第76章中，我讨论了fdSRE【2】（向前部署的SRE）的必要性，作为嵌入式模式的一种表现。在这里，我们将讨论使一个伟大的 fdSRE 的属性。</p>
+<p>系统失败。这很好。网站可靠性是一门专门从事预测和减轻故障的学科。我们建立可观察、可反省、可恢复的系统，限制故障的爆炸半径。我们为失败而设计。</p>
 
-<p>与SRE一样，fdSRE是一个有能力但有操作意识的软件工程师。当他们设计软件时，他们会考虑它在生产中如何运行，在负载下如何表现，配置会是什么样子，安全和/或合规性会是什么样子，在重新启动时如何恢复一致的状态，以及如何观察。</p>
+<p>失败规划通常包括后备计划、通过我们的代码的替代路径，以及当我们的常规机制失败时我们将使用的系统或流程。例如，一个客户可能会重试一个失败的请求，希望下次能找到一个更健康的副本。一个领导者选举的系统可能会把领导权从一个没有反应的服务器上移开。后备计划有时涉及到人类；每当我们呼唤一个值班人员【1】或采取一些行动来应对故障时，我们都在执行一个后备计划。</p>
 
-<p>fdSRE承担了更多的所有权。作为另一个团队的嵌入式工程师，他们关心所在团队的健康状况，但也关心与他们有点线报告关系的SRE组织的更广泛的任务。在总体所有权模式中，团队拥有整个堆栈，解决影响每个人的高阶问题的动力可能是缺乏的。fdSRE必须学会建立关系并产生信任，以确定他们可以带回上游的可解决的问题。当 fdSREs 互相分享他们共同的痛苦时，他们就可以建立最有影响力的解决方案，并作为整个组织的渠道。</p>
+<p>我们的常规途径一直在使用。我们知道它们在工作，当它们失败时我们也会注意到。我们的许多后备计划也是运行良好的，运行如此频繁，以至于我们会发现它们是否有问题。那么，那些不常运行的路径呢？如果我们只在紧急情况下使用它们，我们可能不会发现它们不工作，直到我们真的需要它们。</p>
 
-<p>fdSRE具有同情心。如同任何加入一个新团队的人一样，fdSRE和其所在团队可能需要时间来磨合。团队可能不知道fdSRE是否与他们保持一致，但随着时间的推移，当他们一起解决问题时，这种信任差距就有机会缩小。fdSRE必须理解这一点，并给其所在团队成员空间和时间来适应他们的存在。</p>
+<p>这个问题的一个极端说明是一个行业的经典：缓慢腐烂的灾难恢复站点。一个团队预计他们的主站点会发生大规模故障，并在另一个地区或另一个数据中心建立了一个系统的副本。他们配置他们的部署管道以推送到两个区域，设置数据复制，并称其为良好——直到灾难来袭，第一次需要故障转移区域。现在，在凌晨3点，在所有人员的努力下，团队发现了指向旧区域的硬编码DNS名称、被遗忘的密码、被注释的复制策略，以及过于临时的修复，无法复制到DR（灾难恢复）站点，当然，这些修复现在是重要的基础设施。</p>
 
-<p>FdSRE是变革的催化剂，但要知道不是每个人都准备好了。他们激发变革的欲望，给人们空间、时间和数据，让他们想成为解决方案的一部分。为此，他们满足团队和个人在提高运营成熟度的旅程中的需求。</p>
+<p>我们需要在我们还能修复它们的时候发现这些问题。这意味着测试我们的后备计划。这些测试中有些是模拟的。许多组织开展游戏日，当他们练习应对典型的灾难场景时，有时会用测试数据重现这些场景。团队可以通过当地的 &ldquo;不幸之轮 &ldquo;演习来测试自己的反应，对可能发生的故障进行详细的角色扮演，这样团队就必须去寻找真正的日志、图表、配置，甚至是同事的电话号码——他们在真实事件中可能需要的一切。</p>
 
-<p>FdSRE是一个老师和导师。很有可能主办团队中没有人拥有和 fdSRE 一样的运营专业知识水平。有一个可以传授知识的SRE在团队中是非常有价值的，可以让其所在团队成员感到兴奋，帮助他们发展运营思维。fdSRE的职责包括对其他工程师的教育和成长。</p>
+<p>灾难的角色扮演可以帮助我们发现计划中不起作用的部分，或者我们不太理解的部分。他们也能建立肌肉记忆，减少恐慌。想想建筑消防演习是如何训练我们平静地走到会议区而不惊慌失措的。</p>
 
-<p>FdSRE是一位外交官。这个角色有其人性化的一面，这是非常宝贵的。他们明白，每个团队最终都希望对组织产生积极的影响，有时必须通过委婉的谈判，而不是授权来达成权衡和妥协。这可以采取的形式是提供数据，询问痛点，以及了解和运作帮助决策的渠道。</p>
+<p>模拟灾难是有帮助的，但如果我们能使回退计划成为我们正常操作的一部分，那就更好了。当你第一次故障转移到DR（灾难恢复）站点时，故意绕过你的缓存，或者用防火墙关闭一个服务的副本来测试其冗余度。这将是非常可怕的。你可能会破坏一些东西。但是破坏的最好时机是在你观察它的时候，并且可以快速回滚。每次都会变得容易一些。</p>
 
-<p>如果你采用了fdSRE的方法，你要准备好为跨团队的工程师之间的合作以及与工程领导层的合作做出刻意的努力，以推动所有各方安全地创建和维护可扩展和可靠的软件系统，并且知道这种努力是值得的。</p>
+<p>与所有的可靠性一样，测试回退计划的优先级应该与它对企业的重要性成正比。如果失败的最坏结果是一些团队需要做额外的工作，也许这是一个可以接受的风险。如果后备计划是你和你的业务结束之间的唯一障碍，那就要非常认真地对待它。</p>
 
-<p>(这篇文章中所分享的经验也是通过与以下同事和业界同行的交流而获得的，在此我要感谢他们。Sarah Sherbondy, Paul Lathrop, Will Barnette, Steve Conklin, Kimberly Lowe-Williams, and Christian Funkhouser。)</p>
+<p>灾难计划只有在发挥作用时才能保证你的安全。确定你的后备计划，并进行试验。确保它们在你需要的时候已经准备好了。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -325,11 +325,7 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
-
-<p>2.<a href="https://www.palantir.com/careers/teams/forward-deployed-software-engineers">Forward Deployed Software Engineers (FDSEs) </a><br />
-前向部署软件工程师 (FDSE) 负责我们部署的技术成功。 我们技术精湛，好奇心极强，当我们遇到难题时，我们会茁壮成长。 我们直接与该领域的用户合作，了解他们的工作流程、原型工具和功能，并不断改进我们的产品。 从高级系统设计到企业级数据集成再到应用程序开发，我们的工作每天都在变化。 简而言之，我们将技术专长用于解决最重要的问题。</p>
+<p>1.<a href="https://sre.google/sre-book/being-on-call/">on-call</a></p>
               
             </div>
           </div>
@@ -354,7 +350,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-78/" data-tooltip="97 Things Every SRE Should Know-78">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -362,7 +358,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-76/" data-tooltip="97 Things Every SRE Should Know-76">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-77/" data-tooltip="97 Things Every SRE Should Know-77">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -380,19 +376,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -440,7 +436,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-78/" data-tooltip="97 Things Every SRE Should Know-78">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -448,7 +444,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-76/" data-tooltip="97 Things Every SRE Should Know-76">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/07/97-things-every-sre-should-know-77/" data-tooltip="97 Things Every SRE Should Know-77">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -466,19 +462,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-77/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/07/97-things-every-sre-should-know-78/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -508,19 +504,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-77%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-78%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-77%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-78%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-77%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F07%2F97-things-every-sre-should-know-78%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -612,9 +608,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-77\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/07\/97-things-every-sre-should-know-78\/';
           
-            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-77\/'
+            this.page.identifier = '\/2021\/07\/97-things-every-sre-should-know-78\/'
           
         };
         (function() {

@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Jul 2021 15:17:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jul 2021 11:35:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Mon, 26 Jul 2021 15:17:00 +0800</pubDate>
+      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Mon, 26 Jul 2021 15:17:00 +0800</pubDate>
+      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Mon, 26 Jul 2021 15:17:00 +0800</pubDate>
+      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
@@ -41,9 +41,18 @@
     <item>
       <title>Part IV. Ten to Hundred</title>
       <link>https://imepisode.top/categories/part-iv.-ten-to-hundred/</link>
-      <pubDate>Mon, 26 Jul 2021 15:16:00 +0800</pubDate>
+      <pubDate>Tue, 27 Jul 2021 11:34:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-iv.-ten-to-hundred/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test Your Disaster Plan</title>
+      <link>https://imepisode.top/categories/test-your-disaster-plan/</link>
+      <pubDate>Tue, 27 Jul 2021 11:34:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/test-your-disaster-plan/</guid>
       <description></description>
     </item>
     
