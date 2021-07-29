@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Jul 2021 11:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jul 2021 16:09:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
+      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
+      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Tue, 27 Jul 2021 11:35:00 +0800</pubDate>
+      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
@@ -41,9 +41,18 @@
     <item>
       <title>Part IV. Ten to Hundred</title>
       <link>https://imepisode.top/categories/part-iv.-ten-to-hundred/</link>
-      <pubDate>Tue, 27 Jul 2021 11:34:00 +0800</pubDate>
+      <pubDate>Thu, 29 Jul 2021 16:08:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-iv.-ten-to-hundred/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why Training Matters to an SRE Practice and SRE Matters to Your Training Program</title>
+      <link>https://imepisode.top/categories/why-training-matters-to-an-sre-practice-and-sre-matters-to-your-training-program/</link>
+      <pubDate>Thu, 29 Jul 2021 16:08:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/why-training-matters-to-an-sre-practice-and-sre-matters-to-your-training-program/</guid>
       <description></description>
     </item>
     
