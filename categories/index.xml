@@ -6,7 +6,7 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jul 2021 16:09:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Aug 2021 11:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
+      <pubDate>Mon, 02 Aug 2021 11:40:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
+      <pubDate>Mon, 02 Aug 2021 11:40:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Thu, 29 Jul 2021 16:09:00 +0800</pubDate>
+      <pubDate>Mon, 02 Aug 2021 11:40:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
@@ -41,9 +41,18 @@
     <item>
       <title>Part IV. Ten to Hundred</title>
       <link>https://imepisode.top/categories/part-iv.-ten-to-hundred/</link>
-      <pubDate>Thu, 29 Jul 2021 16:08:00 +0800</pubDate>
+      <pubDate>Mon, 02 Aug 2021 11:39:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-iv.-ten-to-hundred/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Power of Uniformity</title>
+      <link>https://imepisode.top/categories/the-power-of-uniformity/</link>
+      <pubDate>Mon, 02 Aug 2021 11:39:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/the-power-of-uniformity/</guid>
       <description></description>
     </item>
     
