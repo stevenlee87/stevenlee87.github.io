@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-81">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-81">
-<meta property="og:url" content="https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
-<meta property="twitter:url" content="https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+<meta property="og:title" content="97 Things Every SRE Should Know-82">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-82">
+<meta property="og:url" content="https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
+<meta property="twitter:url" content="https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-08-03T18:05:00">
+    <meta property="article:published_time" content="2021-08-06T16:35:00">
   
   
-    <meta property="article:modified_time" content="2021-08-03T18:05:00">
+    <meta property="article:modified_time" content="2021-08-06T16:35:00">
   
   
   
@@ -37,7 +37,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="Bytes per User Value">
+      <meta property="article:section" content="Make Your Engineering Blog a Priority">
     
   
   
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
 
 
-    <title>97 Things Every SRE Should Know-81</title>
+    <title>97 Things Every SRE Should Know-82</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+    <link rel="canonical" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -237,15 +237,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      97 Things Every SRE Should Know-81
+      97 Things Every SRE Should Know-82
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-08-03T18:05:00&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-08-06T16:35:00&#43;08:00">
         
-  August 3, 2021
+  August 6, 2021
 
       </time>
     
@@ -260,7 +260,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/bytes-per-user-value">Bytes per User Value</a>
+      <a class="category-link" href="https://imepisode.top/categories/make-your-engineering-blog-a-priority">Make Your Engineering Blog a Priority</a>
     
   
 
@@ -272,28 +272,32 @@ if (!doNotTrack) {
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#bytes-per-user-value">Bytes per User Value</a></li>
+<li><a href="#make-your-engineering-blog-a-priority">Make Your Engineering Blog a Priority</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
 </ul>
 </nav>  
 
-<h1 id="bytes-per-user-value">Bytes per User Value</h1>
+<h1 id="make-your-engineering-blog-a-priority">Make Your Engineering Blog a Priority</h1>
 
-<p>每位用户的字节值</p>
+<p>让你的工程博客成为一个优先事项</p>
 
-<p>我记得有一段时间，我们的业务在稳步增长，但支持我们产品的系统团队却一直停滞不前，而且负担过重，其增加人数的论点也有点平淡。我们的领导并不理解我们的团队需要更多的人。在他们看来，业务正在增长，值得投资的领域不是系统团队，而是需要建立新功能的产品团队，需要加入新用户的销售团队，以及需要帮助开发人员与我们的API整合的现场工程团队(field engineering teams)【1】。我们的系统团队严重缺乏与我们的用户和利益相关者对话的能力。我们不知道如何把涉及最终用户和他们所依赖的基础系统的故事拼接起来。</p>
+<p>我认识的每一位工程经理都想尽可能地雇用最好的人才，然而他们可能会忽视他们工具箱中最强大的工具之一：一个伟大的工程博客。</p>
 
-<p>因此，我们没有从自己开始，而是从这些终端用户开始。我们调取了用户增长的数据，并问自己如何能够证明对基础设施的投资与我们的业务增长有着内在的联系。</p>
+<p>有才华的开发人员隐藏在全球各地。有些人可能熟悉你公司的工作，而其他人还没有发现它。一个工程博客可以提高公司的知名度，其受众人数比一般的会议出席者要多得多，特别是如果你的文章在黑客新闻上引起了轰动的话。</p>
 
-<p>从那里，我们能够讲述一个故事，说明用户的业务增长如何带来API量的增加，这反过来又给我们的基础设施带来了相应的负担。我们并没有展示我们比以前更频繁地扩展服务器，而是量化了我们增加的规模中有多少是由Stripe增长最快的用户所要求的，并利用这一论点来衡量我们在可靠性方面的投资。</p>
+<p>&emsp;&emsp;<span class="highlight-text danger">候选人会根据工程博客的质量来决定你公司的报价。</span>我已经从高级SRE【1】和领导层那里听了很多次，了解到这是一件大事。该死的，当我加入他们的团队时，这是我的主任对我说的第一件事。文化是对应聘者最重要的因素之一，要想成功招聘，它应该是你讲故事工作的一个必经环节。</p>
 
-<p>我们也能够向其他人展示我们已经知道的东西：系统团队吸收了大量的人工劳作，以保持我们的业务运作。我们接收告警的次数越来越多，我们的用户要求也越来越多，我们被告警打扰的时间也越来越长。最重要的是，我们表明，这些中断平均来说是我们一些用户意外增长的直接结果，解决这些问题对我们企业的健康发展是最有利的。</p>
+<p>一个活跃的、受到高度评价的工程博客使你对候选人更有吸引力。是的，这在某种程度上很像约会；SRE想先对你进行谷歌调查，而一个伟大的博客会给人留下有效的第一印象。</p>
 
-<p>仅仅说 ”我们没有足够的人，所以给我们更多“ 是不够的。仅仅说 ”本季度我们每笔交易处理的字节数更多，所以给我们更多的钱“ 也是不够的。每个人都需要更多的钱，更多的人，更多的服务器，以及组织内更多的资源，这种说法往往是一种零和游戏。最终，帮助我们做出有说服力的论据支持对我们的团队进行投资的原因是向我们的领导层证明，他们最关心的力量的变化会渗透到我们的系统团队中。</p>
+<p>所以，不要让它成为花哨的东西。博客实际上是一个分享你正在工作的信息的好地方，并尽可能多地充实它的内容。遇到相同问题的同行可以利用你的解决方案来克服这些问题，如果你分享的是一个尚未解决的问题，同行看到帖子后可以主动联系。对于使用开源工具的SRE来说，这些联系和讨论是至关重要的。在合作开发开源解决方案时，我们都会互相帮助。这些帖子通过提高意识，启动了重要的对话。</p>
 
-<p>更广泛地说，我一直在思考，为什么这似乎是基础设施行业的一个挑战。产品团队有很好的程序来完全理解他们的用户。对他们来说，这不仅仅是给用户他们想要的东西，而是要了解他们是什么样的人：他们的使用情况，他们的担忧，以及他们的限制。在系统工程中，我们还没有建立起类似的用户服务范式。我们不知道如何雇用它，不知道如何教它，也不太知道如何理解它的价值。我们的错误在于，我们首先只为我们所运营的服务的直接消费者进行优化，并迅速将他们的任何其他问题归类为不属于我们的范围。这在某种程度上是有机的；与产品团队相比，我们自然倾向于在更大程度上与终端用户分离，但这仍然是值得修正的方向。我们需要教会自己从系统的技术性中解脱出来，理解我们的系统最终影响到的人。</p>
+<p>讲故事能给平淡、模糊的工作头衔增添生气，增加清晰度和兴奋感，而不是让人挠头，弄清楚这个工作头衔与行业标准相比意味着什么。他们看到技术堆栈及其使用，以及团队在项目过程中做出的选择和权衡的深入分析。简而言之，一个工程博客可以让求职者深入了解在你的公司工作的情况，这在面试过程中是不可能的。</p>
+
+<p>现在，这需要有意识地进行。如果你希望高质量的博客文章会随机地从你的工程师那里自己跳出来，而他们已经有足够的工作要做，你会失望的。当有一个专门的个人或团队，其唯一的重点是帮助使这些引人注目的故事变得强大、专业和可推广时，它就会更强大。</p>
+
+<p>博客文章是合作性的学习工作。写作需要研究，无论有多少年的经验。你看到芭蕾舞者优雅流畅的动作，但你看不到随之而来的血腥脚趾；这就是写作。然而，要知道，这些努力是值得的。通过写作和编辑的过程，每个人都会通过分享、讨论和重新评估想法，通过这个反馈循环了解到更多关于这个主题的信息。一个工程博客不仅对招聘有好处，而且是一个强大的学习型组织的关键组成部分。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -319,7 +323,8 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://www.fieldengineer.com/blogs/what-does-a-field-engineer-do">field engineering</a></p>
+<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
+&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
               
             </div>
           </div>
@@ -344,7 +349,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-82/" data-tooltip="97 Things Every SRE Should Know-82">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -352,7 +357,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-80/" data-tooltip="97 Things Every SRE Should Know-80">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-81/" data-tooltip="97 Things Every SRE Should Know-81">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -370,19 +375,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -430,7 +435,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-82/" data-tooltip="97 Things Every SRE Should Know-82">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -438,7 +443,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-80/" data-tooltip="97 Things Every SRE Should Know-80">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/08/97-things-every-sre-should-know-81/" data-tooltip="97 Things Every SRE Should Know-81">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -456,19 +461,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/08/97-things-every-sre-should-know-81/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/08/97-things-every-sre-should-know-82/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -498,19 +503,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-81%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-82%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-81%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-82%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-81%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F08%2F97-things-every-sre-should-know-82%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -602,9 +607,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2021\/08\/97-things-every-sre-should-know-81\/';
+          this.page.url = 'https:\/\/imepisode.top\/2021\/08\/97-things-every-sre-should-know-82\/';
           
-            this.page.identifier = '\/2021\/08\/97-things-every-sre-should-know-81\/'
+            this.page.identifier = '\/2021\/08\/97-things-every-sre-should-know-82\/'
           
         };
         (function() {
