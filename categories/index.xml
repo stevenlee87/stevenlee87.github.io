@@ -6,15 +6,11 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Aug 2021 16:36:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Sep 2021 16:10:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Fri, 06 Aug 2021 16:36:00 +0800</pubDate>
+      <pubDate>Tue, 07 Sep 2021 16:10:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -23,7 +19,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Fri, 06 Aug 2021 16:36:00 +0800</pubDate>
+      <pubDate>Tue, 07 Sep 2021 16:10:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -32,9 +28,27 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Fri, 06 Aug 2021 16:36:00 +0800</pubDate>
+      <pubDate>Tue, 07 Sep 2021 16:10:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Don’t Let Anyone Run Code in Your Context</title>
+      <link>https://imepisode.top/categories/dont-let-anyone-run-code-in-your-context/</link>
+      <pubDate>Tue, 07 Sep 2021 16:09:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/dont-let-anyone-run-code-in-your-context/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part IV. Ten to Hundred</title>
+      <link>https://imepisode.top/categories/part-iv.-ten-to-hundred/</link>
+      <pubDate>Tue, 07 Sep 2021 16:09:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-iv.-ten-to-hundred/</guid>
       <description></description>
     </item>
     
@@ -44,15 +58,6 @@
       <pubDate>Fri, 06 Aug 2021 16:35:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/make-your-engineering-blog-a-priority/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part IV. Ten to Hundred</title>
-      <link>https://imepisode.top/categories/part-iv.-ten-to-hundred/</link>
-      <pubDate>Fri, 06 Aug 2021 16:35:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-iv.-ten-to-hundred/</guid>
       <description></description>
     </item>
     

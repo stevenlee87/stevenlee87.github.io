@@ -2,10 +2,30 @@
 <html lang="en-us">
   <head>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://s2.ax1x.com/2020/01/07/lcQywD.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2020\/03\/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD\/",
+  "keywords":"[centos7, linux, bbr]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.5.1-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="centos7, linux, bbr">
 <meta name="description" content="">
@@ -53,18 +73,18 @@
 
 
 
-  <meta property="og:image" content="https://s2.ax1x.com/2020/03/04/354BhF.th.png">
-  <meta property="twitter:image" content="https://s2.ax1x.com/2020/03/04/354BhF.th.png">
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
 
 
   <meta property="og:image" content="https://s2.ax1x.com/2020/03/04/354BhF.png">
   <meta property="twitter:image" content="https://s2.ax1x.com/2020/03/04/354BhF.png">
 
 
-
-
-  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
-  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="og:image" content="https://s2.ax1x.com/2020/03/04/354BhF.th.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/03/04/354BhF.th.png">
 
 
     <title>centos7操作系统如何开启BBR功能</title>
@@ -77,12 +97,12 @@
     <link rel="canonical" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://imepisode.top/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-2w2urpokyukbsouppglitcyxngrsa0pcm58rrm5mqo3ieqo6bkvr3cz9nvf.min.css" />
     
     
 
@@ -100,7 +120,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
     
   </head>
@@ -110,12 +129,12 @@ if (!doNotTrack) {
       <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://imepisode.top/">imepisode blog</a>
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="https://imepisode.top/#about">
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
     
     
     
@@ -131,7 +150,7 @@ if (!doNotTrack) {
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://imepisode.top/#about">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
           <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Steven Lee</h4>
@@ -144,7 +163,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/">
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -154,7 +173,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/categories">
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -164,7 +183,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/tags">
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -174,7 +193,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/archives">
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -184,7 +203,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/#about">
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -202,7 +221,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/index.xml">
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -229,19 +248,19 @@ if (!doNotTrack) {
         class="hasCover
                hasCoverMetaOut
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post">
           
           
             <div class="post-header main-content-wrap text-center">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       centos7操作系统如何开启BBR功能
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-03-30T12:14:19&#43;08:00">
+      <time datetime="2020-03-30T12:14:19&#43;08:00">
         
   March 30, 2020
 
@@ -262,20 +281,9 @@ if (!doNotTrack) {
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
-<ul>
-<li><a href="#google-bbr">Google bbr</a></li>
-<li><a href="#算法对比">算法对比</a></li>
-<li><a href="#升级内核">升级内核</a></li>
-<li><a href="#修改linux-grub2引导">修改linux grub2引导</a></li>
-<li><a href="#开启-bbr-功能">开启 bbr 功能</a></li>
-<li><a href="#速度测试">速度测试</a></li>
-<li><a href="#结论">结论</a></li>
-<li><a href="#参考文档">参考文档</a></li>
-</ul>
-</nav>  
+              <!-- toc -->  
 
 <h1 id="google-bbr">Google bbr</h1>
 
@@ -318,7 +326,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s2.ax1x.com/2020/03/04/35hzO1.png" title="google-bbr2" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s2.ax1x.com/2020/03/04/35hzO1.png" title="google-bbr2" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s2.ax1x.com/2020/03/04/35hzO1.md.png" style="width: 675px;height: 313px;" alt="google-bbr2">
   
@@ -363,7 +371,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s2.ax1x.com/2020/03/04/35XdWq.jpg" title="google-bbr3" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s2.ax1x.com/2020/03/04/35XdWq.jpg" title="google-bbr3" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s2.ax1x.com/2020/03/04/35XdWq.md.jpg" style="width: 680px;height: 380px;" alt="google-bbr3">
   
@@ -396,19 +404,19 @@ if (!doNotTrack) {
 <code>centos8</code>默认支持<code>BBR</code>，可以不用升级内核</p>
 
 <p>如果是<code>centos7</code>操作系统，开启<code>BBR</code>要求<code>4.10</code>以上版本 Linux 内核，可使用如下命令查看当前内核版本：</p>
-<pre><code class="language-shell script" data-lang="shell script">uname -r
-3.10.0-1062.4.1.el7.x86_64</code></pre><pre><code class="language-shell script" data-lang="shell script">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">uname -r
+3.10.0-1062.4.1.el7.x86_64</code></pre><pre tabindex="0"><code class="language-shell script" data-lang="shell script">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml</code></pre>
 <p>执行后会提示：</p>
-<pre><code class="language-shell script" data-lang="shell script">包名: kernel-ml
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">包名: kernel-ml
 版本: 5.3.10-1.el7.elrepo.x86_64
 yum源: elrepo-kernel 
 包大小: 49 M</code></pre>
 <p>关于Linux内核版本：可以在 <a href="https://www.kernel.org/">https://www.kernel.org/</a> 查看持续更新的版本。</p>
 
 <p>安装完成后，查看已安装的内核：</p>
-<pre><code class="language-shell script" data-lang="shell script">rpm -qa | grep kernel
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">rpm -qa | grep kernel
 
 kernel-tools-3.10.0-1062.12.1.el7.x86_64
 kernel-headers-3.10.0-1062.12.1.el7.x86_64
@@ -423,28 +431,28 @@ kernel-debug-devel-3.10.0-1062.12.1.el7.x86_64</code></pre>
 <h1 id="修改linux-grub2引导">修改linux grub2引导</h1>
 
 <p>执行以下shell命令:</p>
-<pre><code class="language-shell script" data-lang="shell script">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \'</code></pre>
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39;</code></pre>
 <p>会得到如下结果:</p>
-<pre><code class="language-shell script" data-lang="shell script">CentOS Linux (5.3.10-1.el7.elrepo.x86_64) 7 (Core)
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">CentOS Linux (5.3.10-1.el7.elrepo.x86_64) 7 (Core)
 CentOS Linux (3.10.0-1062.4.1.el7.x86_64) 7 (Core)
 CentOS Linux (3.10.0-957.1.3.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-05cb8c7b39fe0f70e3ce97e5beab809d) 7 (Core)</code></pre>
 <p>由于序号从0开始，设置默认启动项为1并重启系统：</p>
-<pre><code class="language-shell script" data-lang="shell script">grub2-set-default 0
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">grub2-set-default 0
 reboot</code></pre>
 <p>重启完成后，重新登录并重新运行uname命令来确认你是否使用了正确的内核：</p>
-<pre><code class="language-shell script" data-lang="shell script">uname -r</code></pre>
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">uname -r</code></pre>
 <p>得到如下结果则升级成功：
 5.3.10-1.el7.elrepo.x86_64</p>
 
 <h1 id="开启-bbr-功能">开启 bbr 功能</h1>
 
 <p>执行以下命令：</p>
-<pre><code class="language-shell script" data-lang="shell script">echo 'net.core.default_qdisc=fq' | tee -a /etc/sysctl.conf
-echo 'net.ipv4.tcp_congestion_control=bbr' | tee -a /etc/sysctl.conf
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">echo &#39;net.core.default_qdisc=fq&#39; | tee -a /etc/sysctl.conf
+echo &#39;net.ipv4.tcp_congestion_control=bbr&#39; | tee -a /etc/sysctl.conf
 sysctl -p</code></pre>
 <p>完成后,分别执行如下命令来检查<code>BBR</code>是否开启成功:</p>
-<pre><code class="language-shell script" data-lang="shell script">sysctl net.ipv4.tcp_available_congestion_control
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">sysctl net.ipv4.tcp_available_congestion_control
 输出应为 net.ipv4.tcp_available_congestion_control = bbr cubic reno
 sysctl -n net.ipv4.tcp_congestion_control
 输出应为 bbr
@@ -453,17 +461,17 @@ lsmod | grep bbr
 <h1 id="速度测试">速度测试</h1>
 
 <p>在服务器<code>centos7</code>和<code>centos8</code>上分别执行以下命令：</p>
-<pre><code class="language-shell script" data-lang="shell script">dd if=/dev/zero of=1024MB.zip bs=1024k count=1000
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">dd if=/dev/zero of=1024MB.zip bs=1024k count=1000
 python -mSimpleHTTPServer 8081</code></pre>
 <p>说明:<code>centos7</code>和<code>centos8</code>操作系统的<code>/</code>文件系统类型都是xfs,网卡都是千兆</p>
 
 <p>centos7:</p>
-<pre><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
 CentOS Linux release 7.6.1810 (Core)
 uname -a
 Linux host1.net 3.10.0-957.5.1.el7.x86_64</code></pre>
 <p>centos8:</p>
-<pre><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
+<pre tabindex="0"><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
 CentOS Linux release 8.1.1911 (Core)
 uname -a
 Linux host1.net 4.18.0-147.el8.x86_64</code></pre>
@@ -496,6 +504,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
 <li><a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE/212915?fromtitle=tcp%2Fip&amp;fromid=214077&amp;fr=aladdin">https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE/212915?fromtitle=tcp%2Fip&amp;fromid=214077&amp;fr=aladdin</a></li>
 </ol>
               
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -521,7 +530,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" data-tooltip="穷查理宝典">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" data-tooltip="穷查理宝典" aria-label="NEXT: 穷查理宝典">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -529,7 +538,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" data-tooltip="P10，P50，P90和方差">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" data-tooltip="P10，P50，P90和方差" aria-label="PREVIOUS: P10，P50，P90和方差">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -541,42 +550,36 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
     <ul class="post-actions post-action-share" >
       
         <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-facebook-official"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-twitter"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-google-plus"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
             </a>
           </li>
         
       
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
         
-          <i class="fa fa-list"></i>
+          <i class="fa fa-list" aria-hidden="true"></i>
         </a>
       </li>
     </ul>
@@ -584,12 +587,9 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
 </div>
 
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
@@ -607,7 +607,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" data-tooltip="穷查理宝典">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" data-tooltip="穷查理宝典" aria-label="NEXT: 穷查理宝典">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -615,7 +615,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" data-tooltip="P10，P50，P90和方差">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" data-tooltip="P10，P50，P90和方差" aria-label="PREVIOUS: P10，P50，P90和方差">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -627,42 +627,36 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
     <ul class="post-actions post-action-share" >
       
         <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-facebook-official"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-twitter"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/">
-              <i class="fa fa-google-plus"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
             </a>
           </li>
         
       
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
         
-          <i class="fa fa-list"></i>
+          <i class="fa fa-list" aria-hidden="true"></i>
         </a>
       </li>
     </ul>
@@ -670,37 +664,39 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
 </div>
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F">
-          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F" aria-label="Share on %s Facebook">
+          <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F">
-          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F" aria-label="Share on %s Twitter">
+          <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F">
-          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fcentos7%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E5%25A6%2582%25E4%25BD%2595%25E5%25BC%2580%25E5%2590%25AFbbr%25E5%258A%259F%25E8%2583%25BD%2F" aria-label="Share on %s Google&#43;">
+          <i class="fa-google-plus" aria-hidden="true"></i><span>Share on Google&#43;</span>
         </a>
       </li>
     
   </ul>
 </div>
 <div id="share-options-mask" class="share-options-mask"></div>
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
@@ -718,7 +714,7 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         China
       </div>
@@ -737,30 +733,16 @@ Google的测试环境是10G的网卡，RTT是100ms，相当于美国芝加哥到
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://imepisode.top/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="https://imepisode.top/js/script-8lglxdix2nqhalxxm2bujhkcc8cctdrd5o5axonwhfzx2zqrer5facyn8.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -773,33 +755,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2020\/03\/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD\/';
-          
-            this.page.identifier = 'centos7-enable-bbr-function';
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'stevenlee87-github-io-1';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

@@ -1,1034 +1,628 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://imepisode.top/categories/97-things-every-sre-should-know/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/2021/08/97-things-every-sre-should-know-toc/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/</loc>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/post/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/sre/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/tags/sre/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/sre/</loc>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/categories/table-of-contents/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/tags/</loc>
-    <lastmod>2021-08-06T16:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T16:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/2021/09/97-things-every-sre-should-know-83/</loc>
+    <lastmod>2021-09-07T16:09:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/dont-let-anyone-run-code-in-your-context/</loc>
+    <lastmod>2021-09-07T16:09:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/part-iv.-ten-to-hundred/</loc>
+    <lastmod>2021-09-07T16:09:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/2021/08/97-things-every-sre-should-know-82/</loc>
     <lastmod>2021-08-06T16:35:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/make-your-engineering-blog-a-priority/</loc>
     <lastmod>2021-08-06T16:35:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/part-iv.-ten-to-hundred/</loc>
-    <lastmod>2021-08-06T16:35:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/08/97-things-every-sre-should-know-81/</loc>
     <lastmod>2021-08-03T18:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/bytes-per-user-value/</loc>
     <lastmod>2021-08-03T18:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/08/97-things-every-sre-should-know-80/</loc>
     <lastmod>2021-08-02T11:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-power-of-uniformity/</loc>
     <lastmod>2021-08-02T11:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-79/</loc>
     <lastmod>2021-07-29T16:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/why-training-matters-to-an-sre-practice-and-sre-matters-to-your-training-program/</loc>
     <lastmod>2021-07-29T16:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-78/</loc>
     <lastmod>2021-07-27T11:34:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/test-your-disaster-plan/</loc>
     <lastmod>2021-07-27T11:34:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-77/</loc>
     <lastmod>2021-07-26T15:16:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-forward-deployed-sre/</loc>
     <lastmod>2021-07-26T15:16:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-76/</loc>
     <lastmod>2021-07-23T14:12:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-sre-as-a-diplomat/</loc>
     <lastmod>2021-07-23T14:12:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-75/</loc>
     <lastmod>2021-07-20T18:12:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/helping-leaders-prioritize-on-call-health/</loc>
     <lastmod>2021-07-20T18:12:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-74/</loc>
     <lastmod>2021-07-20T15:31:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/on-call-healththe-metric-you-could-be-measuring/</loc>
     <lastmod>2021-07-20T15:31:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-73/</loc>
     <lastmod>2021-07-19T14:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/mitigating-and-preventing-cascading-failures/</loc>
     <lastmod>2021-07-19T14:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-72/</loc>
     <lastmod>2021-07-16T17:52:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/optimize-for-mttbtb-mean-time-to-back-to-bed/</loc>
     <lastmod>2021-07-16T17:52:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-71/</loc>
     <lastmod>2021-07-16T14:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/study-of-human-factors-and-team-culture-to-improve-pager-fatigue/</loc>
     <lastmod>2021-07-16T14:36:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-70/</loc>
     <lastmod>2021-07-15T17:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/heroes-are-necessary-but-hero-culture-is-not/</loc>
     <lastmod>2021-07-15T17:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-69/</loc>
     <lastmod>2021-07-15T11:24:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-68/</loc>
     <lastmod>2021-07-14T14:15:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-order-of-operations-for-getting-slo-buy-in/</loc>
     <lastmod>2021-07-14T14:15:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-67/</loc>
     <lastmod>2021-07-13T15:47:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/create-your-supporting-artifacts/</loc>
     <lastmod>2021-07-13T15:47:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-66/</loc>
     <lastmod>2021-07-12T18:32:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-best-advice-i-can-give-to-teams/</loc>
     <lastmod>2021-07-12T18:32:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-65/</loc>
     <lastmod>2021-07-12T12:02:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/complexthe-most-overloaded-word-in-technology/</loc>
     <lastmod>2021-07-12T12:02:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/part-iii.-one-to-ten/</loc>
     <lastmod>2021-07-12T12:02:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-64/</loc>
     <lastmod>2021-07-12T10:33:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/to-all-the-sres-ive-loved/</loc>
     <lastmod>2021-07-12T10:33:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-63/</loc>
     <lastmod>2021-07-09T15:24:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/effecting-sre-cultural-changes-in-enterprises/</loc>
     <lastmod>2021-07-09T15:24:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/07/97-things-every-sre-should-know-62/</loc>
     <lastmod>2021-07-09T11:13:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/sneaking-in-your-devops-deliciously/</loc>
     <lastmod>2021-07-09T11:13:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-61/</loc>
     <lastmod>2021-06-23T11:28:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/fewer-spreadsheets-more-napkins/</loc>
     <lastmod>2021-06-23T11:28:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-60/</loc>
     <lastmod>2021-06-21T11:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-importance-of-margins-in-systems/</loc>
     <lastmod>2021-06-21T11:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-59/</loc>
     <lastmod>2021-06-17T11:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/of-margins-and-individuals/</loc>
     <lastmod>2021-06-17T11:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-58/</loc>
     <lastmod>2021-06-15T17:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/remotely-productive-or-productively-remote/</loc>
     <lastmod>2021-06-15T17:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-57/</loc>
     <lastmod>2021-06-11T15:26:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-human-baseline-in-sre/</loc>
     <lastmod>2021-06-11T15:26:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-56/</loc>
     <lastmod>2021-06-09T17:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/its-about-the-individuals-and-interactions/</loc>
     <lastmod>2021-06-09T17:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-55/</loc>
     <lastmod>2021-06-09T14:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/building-tools-for-internal-customers-that-they-actually-want-to-use/</loc>
     <lastmod>2021-06-09T14:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-54/</loc>
     <lastmod>2021-06-07T18:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/unexpected-lessons-from-office-hours/</loc>
     <lastmod>2021-06-07T18:05:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-53/</loc>
     <lastmod>2021-06-04T14:51:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/in-search-of-the-lost-time/</loc>
     <lastmod>2021-06-04T14:51:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-52/</loc>
     <lastmod>2021-06-03T17:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/holistic-approach-to-product-reliability/</loc>
     <lastmod>2021-06-03T17:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-51/</loc>
     <lastmod>2021-06-02T15:01:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/when-slos-attackpathological-slos-and-how-to-fix-them/</loc>
     <lastmod>2021-06-02T15:01:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-50/</loc>
     <lastmod>2021-06-02T10:15:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/metrics-are-not-slis-the-measure-everything-trap/</loc>
     <lastmod>2021-06-02T10:15:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/06/97-things-every-sre-should-know-49/</loc>
     <lastmod>2021-06-01T10:41:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/legendary/</loc>
     <lastmod>2021-06-01T10:41:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-48/</loc>
     <lastmod>2021-05-27T18:29:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/sometimes-the-fix-is-the-problem/</loc>
     <lastmod>2021-05-27T18:29:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-47/</loc>
     <lastmod>2021-05-27T11:38:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/you-dont-know-for-sure-until-it-runs-in-production/</loc>
     <lastmod>2021-05-27T11:38:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-46/</loc>
     <lastmod>2021-05-24T16:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/move-fast-to-unbreak-things/</loc>
     <lastmod>2021-05-24T16:08:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-45/</loc>
     <lastmod>2021-05-21T14:46:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/using-chatops-to-implement-empathy/</loc>
     <lastmod>2021-05-21T14:46:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-44/</loc>
     <lastmod>2021-05-20T18:11:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/integrating-empathy-into-sre-tools/</loc>
     <lastmod>2021-05-20T18:11:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-43/</loc>
     <lastmod>2021-05-20T11:23:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/what-machines-do-well/</loc>
     <lastmod>2021-05-20T11:23:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-42/</loc>
     <lastmod>2021-05-18T18:47:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/why-i-hate-our-playbooks/</loc>
     <lastmod>2021-05-18T18:47:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-41/</loc>
     <lastmod>2021-05-17T16:51:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/if-youre-doing-runbooks-do-them-well/</loc>
     <lastmod>2021-05-17T16:51:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-40/</loc>
     <lastmod>2021-05-14T16:03:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/effortless-incident-management/</loc>
     <lastmod>2021-05-14T16:03:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-39/</loc>
     <lastmod>2021-05-12T18:40:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-maestros-of-incident-response/</loc>
     <lastmod>2021-05-12T18:40:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-38/</loc>
     <lastmod>2021-05-11T15:40:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/unpacking-the-on-call-divide/</loc>
     <lastmod>2021-05-11T15:40:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-37/</loc>
     <lastmod>2021-05-11T10:19:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/an-overlooked-engineering-skill/</loc>
     <lastmod>2021-05-11T10:19:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-36/</loc>
     <lastmod>2021-05-10T11:27:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/making-work-visible/</loc>
     <lastmod>2021-05-10T11:27:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-35/</loc>
     <lastmod>2021-05-08T17:36:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/get-your-work-recognizedwrite-a-brag-document/</loc>
     <lastmod>2021-05-08T17:36:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/part-ii.-zero-to-one/</loc>
     <lastmod>2021-05-08T17:36:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-34/</loc>
     <lastmod>2021-05-07T16:08:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/storytelling-is-a-superpower/</loc>
     <lastmod>2021-05-07T16:08:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/05/97-things-every-sre-should-know-33/</loc>
     <lastmod>2021-05-06T17:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/its-okay-not-to-know-and-its-okay-to-be-wrong/</loc>
     <lastmod>2021-05-06T17:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-32/</loc>
     <lastmod>2021-04-29T11:37:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/bootstrapping-sre-in-enterprises/</loc>
     <lastmod>2021-04-29T11:37:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-31/</loc>
     <lastmod>2021-04-27T16:19:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/how-startups-can-build-an-sre-mindset/</loc>
     <lastmod>2021-04-27T16:19:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-30/</loc>
     <lastmod>2021-04-23T16:46:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/methodological-debugging/</loc>
     <lastmod>2021-04-23T16:46:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-29/</loc>
     <lastmod>2021-04-22T12:08:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/how-to-change-things/</loc>
     <lastmod>2021-04-22T12:08:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-28/</loc>
     <lastmod>2021-04-21T18:10:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/i-have-an-error-budgetnow-what/</loc>
     <lastmod>2021-04-21T18:10:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-27/</loc>
     <lastmod>2021-04-21T11:07:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/design-goals-for-slo-measurement/</loc>
     <lastmod>2021-04-21T11:07:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-26/</loc>
     <lastmod>2021-04-19T17:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/solo-sreeffecting-large-scale-change-as-a-single-individual/</loc>
     <lastmod>2021-04-19T17:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-25/</loc>
     <lastmod>2021-04-14T18:07:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/with-incident-response-start-small/</loc>
     <lastmod>2021-04-14T18:07:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-24/</loc>
     <lastmod>2021-04-14T14:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/auditing-your-environment-for-improvements/</loc>
     <lastmod>2021-04-14T14:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-23/</loc>
     <lastmod>2021-04-13T15:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/everyone-is-an-sre-in-a-small-organization/</loc>
     <lastmod>2021-04-13T15:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-22/</loc>
     <lastmod>2021-04-13T11:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/sre-at-any-size-is-cultural/</loc>
     <lastmod>2021-04-13T11:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-21/</loc>
     <lastmod>2021-04-12T17:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/facing-that-first-page/</loc>
     <lastmod>2021-04-12T17:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/part-i.-new-to-sre/</loc>
     <lastmod>2021-04-12T17:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-20/</loc>
     <lastmod>2021-04-12T12:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/dont-take-advice-from-graybeards/</loc>
     <lastmod>2021-04-12T12:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-19/</loc>
     <lastmod>2021-04-09T11:27:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/sustainability-and-burnout/</loc>
     <lastmod>2021-04-09T11:27:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-18/</loc>
     <lastmod>2021-04-08T16:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/dear-future-team/</loc>
     <lastmod>2021-04-08T16:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-17/</loc>
     <lastmod>2021-04-08T11:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/where-to-sre/</loc>
     <lastmod>2021-04-08T11:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-16/</loc>
     <lastmod>2021-04-08T09:53:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/use-your-words/</loc>
     <lastmod>2021-04-08T09:53:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-15/</loc>
     <lastmod>2021-04-07T12:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/security-is-like-an-onion/</loc>
     <lastmod>2021-04-07T12:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-14/</loc>
     <lastmod>2021-04-06T17:01:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-role-of-cardinality/</loc>
     <lastmod>2021-04-06T17:01:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-13/</loc>
     <lastmod>2021-04-02T16:01:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/when-it-comes-to-storage-think-distributed/</loc>
     <lastmod>2021-04-02T16:01:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-12/</loc>
     <lastmod>2021-04-02T11:31:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-importance-of-a-management-interface/</loc>
     <lastmod>2021-04-02T11:31:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-11/</loc>
     <lastmod>2021-04-01T16:20:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/why-you-should-understand-a-little-about-tcp/</loc>
     <lastmod>2021-04-01T16:20:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/04/97-things-every-sre-should-know-10/</loc>
     <lastmod>2021-04-01T15:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/how-wikipedia-is-served-to-you/</loc>
     <lastmod>2021-04-01T15:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-09/</loc>
     <lastmod>2021-03-31T16:21:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/there-is-no-magic/</loc>
     <lastmod>2021-03-31T16:21:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-08/</loc>
     <lastmod>2021-03-31T15:18:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/observability-in-the-development-cycle/</loc>
     <lastmod>2021-03-31T15:18:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-07/</loc>
     <lastmod>2021-03-30T14:58:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/thinking-about-resilience/</loc>
     <lastmod>2021-03-30T14:58:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-06/</loc>
     <lastmod>2021-03-29T17:20:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/infrastructureits-where-the-power-is/</loc>
     <lastmod>2021-03-29T17:20:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-05/</loc>
     <lastmod>2021-03-29T15:15:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/the-reliability-stack/</loc>
     <lastmod>2021-03-29T15:15:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-04/</loc>
     <lastmod>2021-03-26T10:57:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/four-engineers-of-an-sre-seder/</loc>
     <lastmod>2021-03-26T10:57:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-03/</loc>
     <lastmod>2021-03-24T14:49:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/building-self-regulating-processes/</loc>
     <lastmod>2021-03-24T14:49:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2021-03-18T18:05:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2021-03-18T18:05:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-02/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/do-we-know-why-we-really-want-reliability/</loc>
     <lastmod>2021-03-18T17:52:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-01/</loc>
     <lastmod>2021-03-18T16:21:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/site-reliability-engineering-in-six-words/</loc>
     <lastmod>2021-03-18T16:21:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/</loc>
     <lastmod>2021-03-12T17:55:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/preface/</loc>
     <lastmod>2021-03-12T17:55:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/book/</loc>
-    <lastmod>2020-09-28T16:11:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://imepisode.top/categories/book/</loc>
+    <lastmod>2020-09-28T16:11:19+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/2020/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/bbr/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/bbr/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/linux/</loc>
     <lastmod>2020-03-30T12:14:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/grafana/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/prometheus/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/statistics/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</loc>
     <lastmod>2020-03-21T23:00:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/hardware/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/network/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/sr-iov/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/sr-iov/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2020-03-05T22:30:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imepisode.top/categories/go/</loc>
-    <lastmod>2020-01-02T14:22:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/go/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://imepisode.top/categories/go/</loc>
+    <lastmod>2020-01-02T14:22:19+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/categories/%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2020-01-02T14:22:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/2019/11/go%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%80/</loc>
     <lastmod>2019-11-18T10:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/tags/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-11-18T10:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://imepisode.top/archives/</loc>
   </url>
-  
 </urlset>

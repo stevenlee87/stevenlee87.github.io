@@ -2,10 +2,30 @@
 <html lang="en-us">
   <head>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://s2.ax1x.com/2020/01/07/lcQywD.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2020\/03\/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE\/",
+  "keywords":"[statistics, prometheus, grafana]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.5.1-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="statistics, prometheus, grafana">
 <meta name="description" content="">
@@ -55,18 +75,18 @@
 
 
 
-  <meta property="og:image" content="https://s1.ax1x.com/2020/03/21/8hxrqA.th.png">
-  <meta property="twitter:image" content="https://s1.ax1x.com/2020/03/21/8hxrqA.th.png">
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
 
 
   <meta property="og:image" content="https://s1.ax1x.com/2020/03/22/84PXz6.jpg">
   <meta property="twitter:image" content="https://s1.ax1x.com/2020/03/22/84PXz6.jpg">
 
 
-
-
-  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
-  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="og:image" content="https://s1.ax1x.com/2020/03/21/8hxrqA.th.png">
+  <meta property="twitter:image" content="https://s1.ax1x.com/2020/03/21/8hxrqA.th.png">
 
 
     <title>P10，P50，P90和方差</title>
@@ -79,12 +99,12 @@
     <link rel="canonical" href="https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://imepisode.top/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-2w2urpokyukbsouppglitcyxngrsa0pcm58rrm5mqo3ieqo6bkvr3cz9nvf.min.css" />
     
     
 
@@ -102,7 +122,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
     
   </head>
@@ -112,12 +131,12 @@ if (!doNotTrack) {
       <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://imepisode.top/">imepisode blog</a>
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="https://imepisode.top/#about">
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
     
     
     
@@ -133,7 +152,7 @@ if (!doNotTrack) {
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://imepisode.top/#about">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
           <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Steven Lee</h4>
@@ -146,7 +165,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/">
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -156,7 +175,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/categories">
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -166,7 +185,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/tags">
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -176,7 +195,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/archives">
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -186,7 +205,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/#about">
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -204,7 +223,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://imepisode.top/index.xml">
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -231,19 +250,19 @@ if (!doNotTrack) {
         class="hasCover
                hasCoverMetaOut
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post">
           
           
             <div class="post-header main-content-wrap text-center">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       P10，P50，P90和方差
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-03-21T23:00:19&#43;08:00">
+      <time datetime="2020-03-21T23:00:19&#43;08:00">
         
   March 21, 2020
 
@@ -264,23 +283,9 @@ if (!doNotTrack) {
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
-<ul>
-<li><a href="#蒙特卡罗方法">蒙特卡罗方法</a></li>
-<li><a href="#这些参数是什么-他们为什么如此重要">这些参数是什么？他们为什么如此重要？</a></li>
-<li><a href="#超越和不超越的累积频率和概率是多少">超越和不超越的累积频率和概率是多少？</a></li>
-<li><a href="#什么是p10-p50和p90呢">什么是P10，P50和P90呢？</a>
-<ul>
-<li><a href="#通过excel方式计算">通过excel方式计算</a></li>
-<li><a href="#通过python方式计算">通过python方式计算</a></li>
-</ul></li>
-<li><a href="#方差">方差</a></li>
-<li><a href="#这种统计方法在我们工作中有什么用">这种统计方法在我们工作中有什么用？</a></li>
-<li><a href="#延伸阅读">延伸阅读</a></li>
-</ul>
-</nav>  
+              <!-- toc -->  
 
 <h1 id="蒙特卡罗方法">蒙特卡罗方法</h1>
 
@@ -318,7 +323,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hx6at.png" title="just kidding" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hx6at.png" title="just kidding" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/21/8hx6at.png" style="width: 640px;height: 330px;" alt="just kidding">
   
@@ -431,7 +436,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxBKH.png" title="正态分布，即贝尔曲线" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxBKH.png" title="正态分布，即贝尔曲线" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/21/8hxBKH.md.png" style="width: 680px;height: 480px;" alt="正态分布，即贝尔曲线">
   
@@ -537,7 +542,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxUPK.png" title="超越概率" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxUPK.png" title="超越概率" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/21/8hxUPK.md.png" style="width: 880px;height: 380px;" alt="超越概率">
   
@@ -636,7 +641,7 @@ if (!doNotTrack) {
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxd2D.png" title="非超越概率" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/21/8hxd2D.png" title="非超越概率" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/21/8hxd2D.md.png" style="width: 880px;height: 380px;" alt="非超越概率">
   
@@ -677,16 +682,16 @@ P90 = PERCENTILE(E1:E10,0.9) 96.1</p>
    res=(1−j)∗array[i]+j∗array[i+1]     （res就是我们所需要的百分位数）</p>
 
 <p>2.python代码实现</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
 <span style="color:#75715e">#coding:utf8</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_percentile</span>():
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    方式一：直接写算法</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    :return:</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    方式一：直接写算法
+</span><span style="color:#e6db74">    :return:
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     array <span style="color:#f92672">=</span> sorted([<span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">97</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">94</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">94</span>])
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">93 94 94 95 95 95 95 96 96 97</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;93 94 94 95 95 95 95 96 96 97&#34;&#34;&#34;</span>
     n <span style="color:#f92672">=</span> len(array)
     location_10 <span style="color:#f92672">=</span> (n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>
     i <span style="color:#f92672">=</span> int(location_10)
@@ -702,21 +707,21 @@ P90 = PERCENTILE(E1:E10,0.9) 96.1</p>
     i <span style="color:#f92672">=</span> int(location_90)
     j <span style="color:#f92672">=</span> (round(location_90, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> i)
     percentage90 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> j) <span style="color:#f92672">*</span> array[i] <span style="color:#f92672">+</span> j <span style="color:#f92672">*</span> array[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]
-    <span style="color:#66d9ef">print</span>(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
+    print(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_numpy_percentile</span>():
-    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    方式二：使用numpy库</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    :return: None</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-    <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    方式二：使用numpy库
+</span><span style="color:#e6db74">    :return: None
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
     array <span style="color:#f92672">=</span> sorted([<span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">97</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">94</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">94</span>])
     percentage10 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">10</span>)
     percentage50 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">50</span>)
     percentage90 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">90</span>)
-    <span style="color:#66d9ef">print</span>(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
+    print(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#34;</span>:
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     test_percentile()
     test_numpy_percentile()</code></pre></div>
 <h1 id="方差">方差</h1>
@@ -737,9 +742,9 @@ taskmanager（container）</p>
 <p>如果我们只使用avg平均值来统计CPU的使用率，这样的误差会很大。</p>
 
 <p>我们使用三个指标来衡量CPU的使用率情况: P50, P90和方差</p>
-<pre><code>P50: quantile(0.5, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLUSTER"}*100) by (framework_name)
-P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLUSTER"}*100) by (framework_name)
-方差: stddev(cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLUSTER"}*100) by (framework_name)</code></pre>
+<pre tabindex="0"><code>P50: quantile(0.5, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)
+P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)
+方差: stddev(cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)</code></pre>
 <p>展示的话可以使用grafana，图形如下：</p>
 
 <p>下图说明90%的taskmanager的CPU使用率最高达到了20<br />
@@ -774,7 +779,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/22/85JCOU.png" title="P90 P50" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/22/85JCOU.png" title="P90 P50" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/22/85JCOU.md.png" style="width: 680px;height: 300px;" alt="P90 P50">
   
@@ -820,7 +825,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 
 <div class="figure center" >
   
-    <a class="fancybox" href="https://s1.ax1x.com/2020/03/22/85JplV.png" title="方差" data-fancybox-group="group:none">
+    <a class="fancybox" href="https://s1.ax1x.com/2020/03/22/85JplV.png" title="方差" data-fancybox="group:none">
   
     <img class="fig-img" src="https://s1.ax1x.com/2020/03/22/85JplV.png" style="width: 460px;height: 380px;" alt="方差">
   
@@ -842,6 +847,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 <li><a href="https://baike.baidu.com/item/%E7%99%BE%E5%88%86%E4%BD%8D%E6%95%B0/10064171?fr=aladdin">https://baike.baidu.com/item/%E7%99%BE%E5%88%86%E4%BD%8D%E6%95%B0/10064171?fr=aladdin</a></li>
 </ol>
               
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -869,7 +875,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能" aria-label="NEXT: centos7操作系统如何开启BBR功能">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -877,7 +883,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/" data-tooltip="SR-IOV 简介">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/" data-tooltip="SR-IOV 简介" aria-label="PREVIOUS: SR-IOV 简介">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -889,42 +895,36 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
     <ul class="post-actions post-action-share" >
       
         <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-facebook-official"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-twitter"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-google-plus"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
             </a>
           </li>
         
       
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
         
-          <i class="fa fa-list"></i>
+          <i class="fa fa-list" aria-hidden="true"></i>
         </a>
       </li>
     </ul>
@@ -932,12 +932,9 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 </div>
 
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
@@ -955,7 +952,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFbbr%E5%8A%9F%E8%83%BD/" data-tooltip="centos7操作系统如何开启BBR功能" aria-label="NEXT: centos7操作系统如何开启BBR功能">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -963,7 +960,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/" data-tooltip="SR-IOV 简介">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2020/03/sr-iov-%E7%AE%80%E4%BB%8B/" data-tooltip="SR-IOV 简介" aria-label="PREVIOUS: SR-IOV 简介">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -975,42 +972,36 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
     <ul class="post-actions post-action-share" >
       
         <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
           </a>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-facebook-official"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-twitter"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/">
-              <i class="fa fa-google-plus"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
             </a>
           </li>
         
       
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
         
-          <i class="fa fa-list"></i>
+          <i class="fa fa-list" aria-hidden="true"></i>
         </a>
       </li>
     </ul>
@@ -1018,37 +1009,39 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 </div>
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F">
-          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Facebook">
+          <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F">
-          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Twitter">
+          <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F">
-          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Google&#43;">
+          <i class="fa-google-plus" aria-hidden="true"></i><span>Share on Google&#43;</span>
         </a>
       </li>
     
   </ul>
 </div>
 <div id="share-options-mask" class="share-options-mask"></div>
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
@@ -1066,7 +1059,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         China
       </div>
@@ -1085,30 +1078,16 @@ P90: quantile(0.1, cpu_percent{framework_name=~"$FRAMEWORK_NAME", cluster=~"$CLU
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://imepisode.top/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="https://imepisode.top/js/script-8lglxdix2nqhalxxm2bujhkcc8cctdrd5o5axonwhfzx2zqrer5facyn8.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -1121,33 +1100,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/imepisode.top\/2020\/03\/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE\/';
-          
-            this.page.identifier = 'statistics';
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'stevenlee87-github-io-1';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

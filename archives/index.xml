@@ -5,10 +5,6 @@
     <link>https://imepisode.top/archives/</link>
     <description>Recent content in Archives on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://imepisode.top/archives/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://imepisode.top/archives/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

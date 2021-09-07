@@ -6,11 +6,7 @@
     <description>Recent content in The Reliability Stack on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Mar 2021 15:15:19 +0800</lastBuildDate>
-    
-	<atom:link href="https://imepisode.top/categories/the-reliability-stack/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 Mar 2021 15:15:19 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/the-reliability-stack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>97 Things Every SRE Should Know-05</title>
       <link>https://imepisode.top/2021/03/97-things-every-sre-should-know-05/</link>

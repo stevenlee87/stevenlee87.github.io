@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://s2.ax1x.com/2020/01/07/lcQywD.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2021\/09\/97-things-every-sre-should-know-toc\/",
+  "keywords":"[97 Things Every SRE Should Know, SRE]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.87.0 with theme Tranquilpeak 0.5.1-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="97 Things Every SRE Should Know, SRE">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="97 Things Every SRE Should Know-toc">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-toc">
+<meta property="og:url" content="https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/">
+<meta property="twitter:url" content="https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-09-07T16:10:00">
+  
+  
+    <meta property="article:modified_time" content="2021-09-07T16:10:00">
+  
+  
+  
+    
+      <meta property="article:section" content="SRE">
+    
+      <meta property="article:section" content="97 Things Every SRE Should Know">
+    
+      <meta property="article:section" content="Table of Contents">
+    
+  
+  
+    
+      <meta property="article:tag" content="SRE">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
+
+
+  <meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
+  <meta property="twitter:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
+
+
+  <meta property="og:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
+  <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
+
+
+    <title>97 Things Every SRE Should Know-toc</title>
+
+    <link rel="icon" href="https://imepisode.top/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-2w2urpokyukbsouppglitcyxngrsa0pcm58rrm5mqo3ieqo6bkvr3cz9nvf.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155547068-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+          <h5 class="sidebar-profile-bio">imepisode1@gmail.com</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://s1.ax1x.com/2020/09/28/0VPcfx.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      97 Things Every SRE Should Know-toc
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-09-07T16:10:00&#43;08:00">
+        
+  September 7, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://imepisode.top/categories/sre">SRE</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/97-things-every-sre-should-know">97 Things Every SRE Should Know</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/table-of-contents">Table of Contents</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h2 id="table-of-contents">Table of Contents</h2>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-preface/">Preface</a></p>
+
+<p><a href="https://imepisode.top/categories/part-i.-new-to-sre/">Part I. New to SRE</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-01/">1. Site Reliability Engineering in Six Words</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-02/">2. Do We Know Why We Really Want Reliability?</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-03/">3. Building Self-Regulating Processes</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-04/">4. Four Engineers of an SRE Seder</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-05/">5. The Reliability Stack</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-06/">6. Infrastructure: It’s Where the Power Is</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-07/">7. Thinking About Resilience</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-08/">8. Observability in the Development Cycle</a></p>
+
+<p><a href="https://imepisode.top/2021/03/97-things-every-sre-should-know-09/">9. There Is No Magic</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-10/">10. How Wikipedia Is Served to You</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-11/">11. Why You Should Understand (a Little) About TCP</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-12/">12. The Importance of a Management Interface</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-13/">13. When It Comes to Storage, Think Distributed</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-14/">14. The Role of Cardinality</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-15/">15. Security Is like an Onion</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-16/">16. Use Your Words</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-17/">17. Where to SRE</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-18/">18. Dear Future Team</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">19. Sustainability and Burnout</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-20/">20. Don’t Take Advice from Graybeards</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-21/">21. Facing That First Page</a></p>
+
+<p><a href="https://imepisode.top/categories/part-ii.-zero-to-one/">Part II. Zero to One</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-22/">22. SRE, at Any Size, Is Cultural</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-23/">23. Everyone Is an SRE in a Small Organization</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-24/">24. Auditing Your Environment for Improvements</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-25/">25. With Incident Response, Start Small</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-26/">26. Solo SRE: Effecting Large-Scale Change as a Single Individual</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-27/">27. Design Goals for SLO Measurement</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-28">28. I Have an Error Budget—Now What?</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-29">29. How to Change Things</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-30">30. Methodological Debugging</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-31">31. How Startups Can Build an SRE Mindset</a></p>
+
+<p><a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-32">32. Bootstrapping SRE in Enterprises</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-33">33. It’s Okay Not to Know, and It’s Okay to Be Wrong</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-34">34. Storytelling Is a Superpower</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-35">35. Get Your Work Recognized: Write a Brag Document</a></p>
+
+<p><a href="https://imepisode.top/categories/part-iii.-one-to-ten/">Part III. One to Ten</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-36">36. Making Work Visible</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-37">37. An Overlooked Engineering Skill</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-38">38. Unpacking the On-Call Divide</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-39">39. The Maestros of Incident Response</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-40">40. Effortless Incident Management</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-41">41. If You’re Doing Runbooks, Do Them Well</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-42">42. Why I Hate Our Playbooks</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-43">43. What Machines Do Well</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-44">44. Integrating Empathy into SRE Tools</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-45">45. Using ChatOps to Implement Empathy</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-46">46. Move Fast to Unbreak Things</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-47">47. You Don’t Know for Sure Until It Runs in Production</a></p>
+
+<p><a href="https://imepisode.top/2021/05/97-things-every-sre-should-know-48">48. Sometimes the Fix Is the Problem</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-49">49. Legendary</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-50">50. Metrics Are Not SLIs (The Measure Everything Trap)</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-51">51. When SLOs Attack: Pathological SLOs and How to Fix Them</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-52">52. Holistic Approach to Product Reliability</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-53">53. In Search of the Lost Time</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-54">54. Unexpected Lessons from Office Hours</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-55">55. Building Tools for Internal Customers that They Actually Want to Use</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-56">56. It’s About the Individuals and Interactions</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-57">57. The Human Baseline in SRE</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-58">58. Remotely Productive or Productively Remote</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-59">59. Of Margins and Individuals</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-60">60. The Importance of Margins in Systems</a></p>
+
+<p><a href="https://imepisode.top/2021/06/97-things-every-sre-should-know-61">61. Fewer Spreadsheets, More Napkins</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-62">62. Sneaking in Your DevOps Deliciously</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-63">63. Effecting SRE Cultural Changes in Enterprises</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-64">64. To All the SREs I’ve Loved</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-65">65. Complex: The Most Overloaded Word in Technology</a></p>
+
+<p><a href="https://imepisode.top/categories/part-iv.-ten-to-hundred/">Part IV. Ten to Hundred</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-66">66. The Best Advice I Can Give to Teams</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-67">67. Create Your Supporting Artifacts</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-68">68. The Order of Operations for Getting SLO Buy-In</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-69">69. Heroes Are Necessary, but Hero Culture Is Not</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-70">70. On-Call Rotations that People Want to Join</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-71">71. Study of Human Factors and Team Culture to Improve Pager Fatigue</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-72">72. Optimize for MTTBTB (Mean Time to Back to Bed)</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-73">73. Mitigating and Preventing Cascading Failures</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-74">74. On-Call Health: The Metric You Could Be Measuring</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-75">75. Helping Leaders Prioritize On-Call Health</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-76">76. The SRE as a Diplomat</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-77">77. The Forward-Deployed SRE</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-78">78. Test Your Disaster Plan</a></p>
+
+<p><a href="https://imepisode.top/2021/07/97-things-every-sre-should-know-79">79. Why Training Matters to an SRE Practice and SRE Matters to Your Training Program</a></p>
+
+<p><a href="https://imepisode.top/2021/08/97-things-every-sre-should-know-80">80. The Power of Uniformity</a></p>
+
+<p><a href="https://imepisode.top/2021/08/97-things-every-sre-should-know-81">81. Bytes per User Value</a></p>
+
+<p><a href="https://imepisode.top/2021/08/97-things-every-sre-should-know-82">82. Make Your Engineering Blog a Priority</a></p>
+
+<p><a href="https://imepisode.top/2021/09/97-things-every-sre-should-know-83">83. Don’t Let Anyone Run Code in Your Context</a></p>
+              
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/sre/">SRE</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-83/" data-tooltip="97 Things Every SRE Should Know-83" aria-label="PREVIOUS: 97 Things Every SRE Should Know-83">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+        
+          <i class="fa fa-list" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-83/" data-tooltip="97 Things Every SRE Should Know-83" aria-label="PREVIOUS: 97 Things Every SRE Should Know-83">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
+              <i class="fa-facebook-official" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
+              <i class="fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2021/09/97-things-every-sre-should-know-toc/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
+              <i class="fa-google-plus" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+        
+          <i class="fa fa-list" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-toc%2F" aria-label="Share on %s Facebook">
+          <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-toc%2F" aria-label="Share on %s Twitter">
+          <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-toc%2F" aria-label="Share on %s Google&#43;">
+          <i class="fa-google-plus" aria-hidden="true"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+      <div id="about-card-bio">imepisode1@gmail.com</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://imepisode.top/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://imepisode.top/js/script-8lglxdix2nqhalxxm2bujhkcc8cctdrd5o5axonwhfzx2zqrer5facyn8.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+
