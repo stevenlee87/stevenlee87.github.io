@@ -283,7 +283,18 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <!-- toc -->  
+              <h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#什么是传值-值传递">什么是传值（值传递）</a></li>
+<li><a href="#什么是传引用-引用传递">什么是传引用（引用传递）</a></li>
+<li><a href="#迷惑map">迷惑Map</a></li>
+<li><a href="#chan-类型">chan 类型</a></li>
+<li><a href="#和map-chan都不一样的slice">和map、chan都不一样的slice</a></li>
+<li><a href="#小结">小结</a></li>
+</ul>
+</nav>
+
 
 <div class="alert warning ">
   <p>本文内容转发或参考自此博客，<a href="https://www.flysnow.org/2018/02/24/golang-function-parameters-passed-by-value.html">传送门</a></p>
@@ -1228,19 +1239,19 @@ func modify(p *Person){
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
-              <i class="fa-facebook-official" aria-hidden="true"></i>
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
-              <i class="fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
-              <i class="fa-google-plus" aria-hidden="true"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Linkedin" aria-label="Share on %s Linkedin">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
         
@@ -1248,7 +1259,7 @@ func modify(p *Person){
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
         
           <i class="fa fa-list" aria-hidden="true"></i>
         </a>
@@ -1305,19 +1316,19 @@ func modify(p *Person){
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
-              <i class="fa-facebook-official" aria-hidden="true"></i>
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
-              <i class="fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
-              <i class="fa-google-plus" aria-hidden="true"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2020/01/go%E8%AF%AD%E8%A8%80%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/" title="Share on %s Linkedin" aria-label="Share on %s Linkedin">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
         
@@ -1325,7 +1336,7 @@ func modify(p *Person){
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
         
           <i class="fa fa-list" aria-hidden="true"></i>
         </a>
@@ -1342,19 +1353,19 @@ func modify(p *Person){
     
       <li class="share-option">
         <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F01%2Fgo%25E8%25AF%25AD%25E8%25A8%2580%25E5%258F%2582%25E6%2595%25B0%25E4%25BC%25A0%25E9%2580%2592%25E6%2598%25AF%25E4%25BC%25A0%25E5%2580%25BC%25E8%25BF%2598%25E6%2598%25AF%25E4%25BC%25A0%25E5%25BC%2595%25E7%2594%25A8%2F" aria-label="Share on %s Facebook">
-          <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
         <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F01%2Fgo%25E8%25AF%25AD%25E8%25A8%2580%25E5%258F%2582%25E6%2595%25B0%25E4%25BC%25A0%25E9%2580%2592%25E6%2598%25AF%25E4%25BC%25A0%25E5%2580%25BC%25E8%25BF%2598%25E6%2598%25AF%25E4%25BC%25A0%25E5%25BC%2595%25E7%2594%25A8%2F" aria-label="Share on %s Twitter">
-          <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F01%2Fgo%25E8%25AF%25AD%25E8%25A8%2580%25E5%258F%2582%25E6%2595%25B0%25E4%25BC%25A0%25E9%2580%2592%25E6%2598%25AF%25E4%25BC%25A0%25E5%2580%25BC%25E8%25BF%2598%25E6%2598%25AF%25E4%25BC%25A0%25E5%25BC%2595%25E7%2594%25A8%2F" aria-label="Share on %s Google&#43;">
-          <i class="fa-google-plus" aria-hidden="true"></i><span>Share on Google&#43;</span>
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2020%2F01%2Fgo%25E8%25AF%25AD%25E8%25A8%2580%25E5%258F%2582%25E6%2595%25B0%25E4%25BC%25A0%25E9%2580%2592%25E6%2598%25AF%25E4%25BC%25A0%25E5%2580%25BC%25E8%25BF%2598%25E6%2598%25AF%25E4%25BC%25A0%25E5%25BC%2595%25E7%2594%25A8%2F" aria-label="Share on %s Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
     

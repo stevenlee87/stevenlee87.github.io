@@ -285,7 +285,23 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <!-- toc -->  
+              <h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#蒙特卡罗方法">蒙特卡罗方法</a></li>
+<li><a href="#这些参数是什么-他们为什么如此重要">这些参数是什么？他们为什么如此重要？</a></li>
+<li><a href="#超越和不超越的累积频率和概率是多少">超越和不超越的累积频率和概率是多少？</a></li>
+<li><a href="#什么是p10-p50和p90呢">什么是P10，P50和P90呢？</a>
+<ul>
+<li><a href="#通过excel方式计算">通过excel方式计算</a></li>
+<li><a href="#通过python方式计算">通过python方式计算</a></li>
+</ul></li>
+<li><a href="#方差">方差</a></li>
+<li><a href="#这种统计方法在我们工作中有什么用">这种统计方法在我们工作中有什么用？</a></li>
+<li><a href="#延伸阅读">延伸阅读</a></li>
+</ul>
+</nav>
+
 
 <h1 id="蒙特卡罗方法">蒙特卡罗方法</h1>
 
@@ -902,19 +918,19 @@ P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluste
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
-              <i class="fa-facebook-official" aria-hidden="true"></i>
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
-              <i class="fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
-              <i class="fa-google-plus" aria-hidden="true"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Linkedin" aria-label="Share on %s Linkedin">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
         
@@ -922,7 +938,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluste
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
         
           <i class="fa fa-list" aria-hidden="true"></i>
         </a>
@@ -979,19 +995,19 @@ P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluste
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Facebook" aria-label="Share on %s Facebook">
-              <i class="fa-facebook-official" aria-hidden="true"></i>
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Twitter" aria-label="Share on %s Twitter">
-              <i class="fa-twitter" aria-hidden="true"></i>
+              <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Google&#43;" aria-label="Share on %s Google&#43;">
-              <i class="fa-google-plus" aria-hidden="true"></i>
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2020/03/p10p50p90%E5%92%8C%E6%96%B9%E5%B7%AE/" title="Share on %s Linkedin" aria-label="Share on %s Linkedin">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
         
@@ -999,7 +1015,7 @@ P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluste
       
       <li class="post-action">
         
-          <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+          <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
         
           <i class="fa fa-list" aria-hidden="true"></i>
         </a>
@@ -1016,19 +1032,19 @@ P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluste
     
       <li class="share-option">
         <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Facebook">
-          <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
         <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Twitter">
-          <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Google&#43;">
-          <i class="fa-google-plus" aria-hidden="true"></i><span>Share on Google&#43;</span>
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2020%2F03%2Fp10p50p90%25E5%2592%258C%25E6%2596%25B9%25E5%25B7%25AE%2F" aria-label="Share on %s Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
     
