@@ -17,7 +17,7 @@
   },
   "name":"imepisode blog",
   "description":"",
-  "url":"https:\/\/imepisode.top\/2021\/09\/97-things-every-sre-should-know-85\/",
+  "url":"https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-86\/",
   "keywords":"[97 Things Every SRE Should Know, SRE, book]"
 }
 
@@ -33,20 +33,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-85">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-85">
-<meta property="og:url" content="https://imepisode.top/2021/09/97-things-every-sre-should-know-85/">
-<meta property="twitter:url" content="https://imepisode.top/2021/09/97-things-every-sre-should-know-85/">
+<meta property="og:title" content="97 Things Every SRE Should Know-86">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-86">
+<meta property="og:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-86/">
+<meta property="twitter:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-86/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-09-29T15:00:00">
+    <meta property="article:published_time" content="2021-10-08T15:11:00">
   
   
-    <meta property="article:modified_time" content="2021-09-29T15:00:00">
+    <meta property="article:modified_time" content="2021-10-08T15:11:00">
   
   
   
@@ -57,7 +57,7 @@
     
       <meta property="article:section" content="Part IV. Ten to Hundred">
     
-      <meta property="article:section" content="You See Teams, I See Product">
+      <meta property="article:section" content="The Performance Emergency Fund">
     
   
   
@@ -89,14 +89,14 @@
   <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
 
 
-    <title>97 Things Every SRE Should Know-85</title>
+    <title>97 Things Every SRE Should Know-86</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-85/">
+    <link rel="canonical" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-86/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -256,15 +256,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      97 Things Every SRE Should Know-85
+      97 Things Every SRE Should Know-86
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2021-09-29T15:00:00&#43;08:00">
+      <time datetime="2021-10-08T15:11:00&#43;08:00">
         
-  September 29, 2021
+  October 8, 2021
 
       </time>
     
@@ -279,7 +279,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-iv.-ten-to-hundred">Part IV. Ten to Hundred</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/you-see-teams-i-see-product">You See Teams, I See Product</a>
+      <a class="category-link" href="https://imepisode.top/categories/the-performance-emergency-fund">The Performance Emergency Fund</a>
     
   
 
@@ -292,7 +292,7 @@ if (!doNotTrack) {
               <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
 <ul>
-<li><a href="#you-see-teams-i-see-product">You See Teams, I See Product</a></li>
+<li><a href="#the-performance-emergency-fund">The Performance Emergency Fund</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
@@ -300,40 +300,34 @@ if (!doNotTrack) {
 </nav>
 
 
-<h1 id="you-see-teams-i-see-product">You See Teams, I See Product</h1>
+<h1 id="the-performance-emergency-fund">The Performance Emergency Fund</h1>
 
-<p>你看团队，我看产品</p>
+<p>性能应急基金</p>
 
-<p>1967年，Melvin Conway创造了Conway法则【1】，内容如下：</p>
+<p>SRE 【1】依靠错误预算等概念来管理整个组织的变更，这是否意味着确定发布是否可以向前推进或确定在哪里进行改进。 错误预算与可用性有关，但当然，你需要知道的不仅仅是你是否可用，还包括可用性的质量。</p>
 
-<blockquote>
-<p>任何组织在设计一个系统（广义的定义）时，都会产生一个设计，其结构是该组织的沟通结构的副本。</p>
-</blockquote>
+<p>如果你不考虑质量问题，那么你就只能得到部分情况——但我们如何定义质量？我认为，最重要的方式之一是通过性能。当它似乎要花很长时间才能加载时，你有什么感觉？或者你的智能手机上的性能比你的笔记本电脑上的慢？</p>
 
-<p>随着时间的推移，组织已经认识到了在团队之间不仅要有强大的沟通和协作，而且要以特定的方式来构建它的价值。这成为团队文化的一部分，它指导IC【2】们如何以个人和团体的方式行事。</p>
+<p>一个组织中的每个人都应该关心性能问题。如果一个网站的加载速度太慢或不一致，你就会有失去客户和失去销售的风险。没有人希望这样。</p>
 
-<p>康威法则应该被组织反向应用。找到你希望你的产品的行为方式，并创建一个沟通结构模仿它的组织。如果你的产品有很高的社会因素，你可能希望鼓励团队之间的大量沟通。如果你的产品被用于高度管制的行业，你可能想创建一个更多的流程驱动的、等级制度的组织。</p>
+<span class="highlight-text danger">许多研究表明，更快的加载页面会带来更高的收入，增加用户参与度，并降低跳出率。加载缓慢的页面也可能是问题的早期指示器。由于缓慢而发现问题比等待失败要好。</span>
 
-<p>你在微服务和单体应用之间的位置取决于系统中的组件和你的团队中的个人能够如何沟通。如果界面设计得很好，健壮，有弹性，而且不经常改变，你可能会倾向于微服务。如果你的团队花了更多的时间试图找出最新的正确方式来相互交谈，而且他们有很高的喋喋不休，你可能会倾向于单体。没有错误的答案，但请记住，这些都是同一枚硬币的两面。</p>
+<p>就像你可以创建一个错误预算一样，你也可以为性能做同样的事情。性能预算是对用于指导设计和开发的性能指标的一个明确的限制。你可以为不同的指标制定多个预算。这里有一些我认为特别有价值的：</p>
 
-<p>自2019年底COVID-19出现以来的挑战，迫使我们许多人在不同的协作和工作方式上加大力度。拥有本地、分布式和远程团队的公司有不同的挑战。</p>
+<ul>
+<li>总页面权重</li>
+<li>最大文件大小</li>
+<li>响应时间阈值</li>
+<li>HTTP请求的数量</li>
+</ul>
 
-<p>让我们首先定义一下本地、分布式和远程团队之间的区别。</p>
+<p>类似于把组织的不同部分聚集在一起考虑SLO（以及延伸到错误预算），你也可以为性能做同样的事情，并从一系列的观点中获得宝贵的洞察力。找出你的组织中谁关心最终用户的体验，如果你还没有性能预算，就和他们一起设计一个性能预算。性能预算的创建应该包括来自设计、营销、运营和工程的利益相关者——这确实是一种合作的努力。性能预算的创建和维护不应落在一个团队身上。</p>
 
-<p><em>本地团队</em><br />
-&emsp;&emsp;绝大多数的IC和他们的经理都在同一个办公室里。</p>
+<p>性能预算反映了持续的和不断变化的商业目标，同时允许风险和实验。尽管有灵活性，团队必须同意不超过目前定义的预算。如果所有的团队从一开始就对性能预算达成一致，那么每个功能和设计决策都将对照准则进行检查。任何可能影响性能的决定都应该对照预算来检查。在提出网站变更时，性能预算提供了另一层的责任。</p>
 
-<p><em>分布式团队</em><br />
-&emsp;&emsp;该团队由2个或更多不同地域的本地团队组成。例如，你可能有4个工程师和经理在纽约，5个在伦敦。</p>
+<p>我们必须始终站在客户的角度思考。 客户是否关心网站是否正常运行？ 是的。 客户是否关心网站加载是否没有错误？ 是的。 客户是否关心网站加载速度是否快？ 是的。 如果客户关心，你也应该关心。</p>
 
-<p><em>远程团队</em><br />
-&emsp;&emsp;大多数IC，可能还有经理，都在不同的地方。</p>
-
-<p>我在这里的主要兴趣是讨论远程团队，因为它们在定义和创造文化方面带来了更多的挑战，而且许多组织还没有迈出第一步，使他们现有的文化适应远程环境。看看你的团队和小组今天的结构方式，并找到方法来模拟员工迁移到远程时最重要的环节。</p>
-
-<p>远程IC所面临的结构性挑战，尤其是在早期，主要集中在沟通和自主性方面。由于相对孤立，IC需要以更大的自主权行事，自己做出更多的决定，并将这些决定传达给他们的同僚。在一个软件产品中，你可以想象多个独立的进程在做他们的工作，并通过一个共享协议来沟通结果。</p>
-
-<p>创建和管理远程团队仍然需要与创建本地团队相同的设计和流程，但现在你还必须更慎重地考虑你想要促进的文化。当团队中的大多数人都相距甚远时，就更容易出错，但对这个过程要有耐心，因为这个投资是值得的。</p>
+<p>如果网站已经启动，但用户却因为加载时间过长而放弃了网站，这对企业来说是不利的。归根结底，如果我们所做的工作与业务目标和目的不一致，就没有意义。</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -359,21 +353,8 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://zh.wikipedia.org/wiki/康威定律">Conway&rsquo;s Law</a><br />
-<strong>康威定律</strong> (康威法则 , Conway&rsquo;s Law) 是<a href="https://zh.wikipedia.org/wiki/马尔文·康威">马尔文·康威</a>1967年提出的：</p>
-
-<blockquote>
-<p>&ldquo;设计系统的架构受制于产生这些设计的组织的沟通结构。&rdquo;</p>
-
-<p>——M. Conway[<a href="https://zh.wikipedia.org/wiki/康威定律#cite_note-Conway-1">1]</a></p>
-</blockquote>
-
-<p>即系统设计本质上反映了企业的组织机构。系统各个模块间的接口也反映了企业各个部门之间的信息流动和合作方式。</p>
-
-<p>康威定律源于模块的设计者需要互相之间频繁沟通。而跨部门交流比较难。</p>
-
-<p>2.IC<br />
-incident commander</p>
+<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
+&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
               
 
 
@@ -400,7 +381,7 @@ incident commander</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" data-tooltip="97 Things Every SRE Should Know-86" aria-label="NEXT: 97 Things Every SRE Should Know-86">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -408,7 +389,7 @@ incident commander</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-84/" data-tooltip="97 Things Every SRE Should Know-84" aria-label="PREVIOUS: 97 Things Every SRE Should Know-84">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" data-tooltip="97 Things Every SRE Should Know-85" aria-label="PREVIOUS: 97 Things Every SRE Should Know-85">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -426,19 +407,19 @@ incident commander</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -469,9 +450,9 @@ incident commander</p>
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imepisode.top\/2021\/09\/97-things-every-sre-should-know-85\/';
+        this.page.url = 'https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-86\/';
         
-          this.page.identifier = '\/2021\/09\/97-things-every-sre-should-know-85\/'
+          this.page.identifier = '\/2021\/10\/97-things-every-sre-should-know-86\/'
         
       };
       (function() {
@@ -507,7 +488,7 @@ incident commander</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" data-tooltip="97 Things Every SRE Should Know-86" aria-label="NEXT: 97 Things Every SRE Should Know-86">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -515,7 +496,7 @@ incident commander</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-84/" data-tooltip="97 Things Every SRE Should Know-84" aria-label="PREVIOUS: 97 Things Every SRE Should Know-84">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" data-tooltip="97 Things Every SRE Should Know-85" aria-label="PREVIOUS: 97 Things Every SRE Should Know-85">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -533,19 +514,19 @@ incident commander</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/09/97-things-every-sre-should-know-85/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-86/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -576,19 +557,19 @@ incident commander</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-85%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-86%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-85%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-86%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F09%2F97-things-every-sre-should-know-85%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-86%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
