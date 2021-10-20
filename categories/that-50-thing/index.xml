@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>That 50% Thing on imepisode blog</title>
+    <link>https://imepisode.top/categories/that-50-thing/</link>
+    <description>Recent content in That 50% Thing on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Oct 2021 17:13:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/that-50-thing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>97 Things Every SRE Should Know-88</title>
+      <link>https://imepisode.top/2021/10/97-things-every-sre-should-know-88/</link>
+      <pubDate>Wed, 20 Oct 2021 17:13:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/10/97-things-every-sre-should-know-88/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
