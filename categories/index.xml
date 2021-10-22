@@ -6,11 +6,11 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Oct 2021 17:14:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 16:43:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Wed, 20 Oct 2021 17:14:00 +0800</pubDate>
+      <pubDate>Fri, 22 Oct 2021 16:43:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Wed, 20 Oct 2021 17:14:00 +0800</pubDate>
+      <pubDate>Fri, 22 Oct 2021 16:43:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -28,16 +28,25 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Wed, 20 Oct 2021 17:14:00 +0800</pubDate>
+      <pubDate>Fri, 22 Oct 2021 16:43:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Following the Path of Safety-Critical Systems</title>
+      <link>https://imepisode.top/categories/following-the-path-of-safety-critical-systems/</link>
+      <pubDate>Fri, 22 Oct 2021 16:42:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/following-the-path-of-safety-critical-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Part V. The Future of SRE</title>
       <link>https://imepisode.top/categories/part-v.-the-future-of-sre/</link>
-      <pubDate>Wed, 20 Oct 2021 17:13:00 +0800</pubDate>
+      <pubDate>Fri, 22 Oct 2021 16:42:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/part-v.-the-future-of-sre/</guid>
       <description></description>

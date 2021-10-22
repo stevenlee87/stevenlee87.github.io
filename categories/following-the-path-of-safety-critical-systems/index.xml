@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Following the Path of Safety-Critical Systems on imepisode blog</title>
+    <link>https://imepisode.top/categories/following-the-path-of-safety-critical-systems/</link>
+    <description>Recent content in Following the Path of Safety-Critical Systems on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Oct 2021 16:42:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/following-the-path-of-safety-critical-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>97 Things Every SRE Should Know-89</title>
+      <link>https://imepisode.top/2021/10/97-things-every-sre-should-know-89/</link>
+      <pubDate>Fri, 22 Oct 2021 16:42:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/10/97-things-every-sre-should-know-89/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
