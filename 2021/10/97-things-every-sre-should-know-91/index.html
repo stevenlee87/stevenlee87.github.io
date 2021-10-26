@@ -17,7 +17,7 @@
   },
   "name":"imepisode blog",
   "description":"",
-  "url":"https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-90\/",
+  "url":"https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-91\/",
   "keywords":"[97 Things Every SRE Should Know, SRE, book]"
 }
 
@@ -33,20 +33,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-90">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-90">
-<meta property="og:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-90/">
-<meta property="twitter:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-90/">
+<meta property="og:title" content="97 Things Every SRE Should Know-91">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-91">
+<meta property="og:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-91/">
+<meta property="twitter:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-91/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-10-25T16:35:00">
+    <meta property="article:published_time" content="2021-10-26T11:31:00">
   
   
-    <meta property="article:modified_time" content="2021-10-25T16:35:00">
+    <meta property="article:modified_time" content="2021-10-26T11:31:00">
   
   
   
@@ -57,7 +57,7 @@
     
       <meta property="article:section" content="Part V. The Future of SRE">
     
-      <meta property="article:section" content="Applicable and Achievable Static Analysis">
+      <meta property="article:section" content="The Importance of Formal Specification">
     
   
   
@@ -89,14 +89,14 @@
   <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
 
 
-    <title>97 Things Every SRE Should Know-90</title>
+    <title>97 Things Every SRE Should Know-91</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-90/">
+    <link rel="canonical" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-91/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -256,15 +256,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      97 Things Every SRE Should Know-90
+      97 Things Every SRE Should Know-91
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2021-10-25T16:35:00&#43;08:00">
+      <time datetime="2021-10-26T11:31:00&#43;08:00">
         
-  October 25, 2021
+  October 26, 2021
 
       </time>
     
@@ -279,7 +279,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-v.-the-future-of-sre">Part V. The Future of SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/applicable-and-achievable-static-analysis">Applicable and Achievable Static Analysis</a>
+      <a class="category-link" href="https://imepisode.top/categories/the-importance-of-formal-specification">The Importance of Formal Specification</a>
     
   
 
@@ -292,7 +292,7 @@ if (!doNotTrack) {
               <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
 <ul>
-<li><a href="#applicable-and-achievable-static-analysis">Applicable and Achievable Static Analysis</a></li>
+<li><a href="#the-importance-of-formal-specification">The Importance of Formal Specification</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
@@ -300,42 +300,27 @@ if (!doNotTrack) {
 </nav>
 
 
-<h1 id="applicable-and-achievable-static-analysis">Applicable and Achievable Static Analysis</h1>
+<h1 id="the-importance-of-formal-specification">The Importance of Formal Specification</h1>
 
-<p>可适用和可实现的静态分析</p>
+<p>形式化规范的重要性</p>
 
-<p>SA（静态分析）(static analysis)是一种在不执行代码的情况下分析软件属性的方法，其严格程度各不相同，包括从<span class="highlight-text danger">句法检查（如linter）</span>到<span class="highlight-text danger">形式验证技术</span>的分析。静态分析可以是手动的，也可以是自动的，前者需要数学证明，后者需要静态分析器的自动检查。</p>
+<p>当处理非常复杂的系统时，寻找bug变得更加困难。虽然有各种各样的工具可以帮助你，但这些工具主要是帮助确定为什么会发生错误。作为一个行业，我们在帮助你从一开始就避免出现漏洞方面做得很少。</p>
 
-<p>一般来说，静态分析可以分为三大类，按照严格程度的递增排序，具体如下：</p>
+<p>这是为什么呢？在某种程度上，我们仍然习惯于把bug看作是代码中的错误&ndash;未捕获的空值、偏离一等等，但是最微妙和最危险的bug是设计上的问题。它们是当所有的东西都是局部正确的，但以一种全局不正确的方式进行交互的情况。</p>
 
-<ol>
-<li>代码合规性和指标分析</li>
-<li>完整性分析</li>
-<li>FV（形式验证）(formal verification)</li>
-</ol>
+<p>考虑混合错误重试和滚动部署。客户端的初始请求和第一次重试可以由运行不同版本代码的不同服务器处理。任何意外的行为都不是客户端、服务器或负载均衡器的错，而是来自它们之间的相互作用。</p>
 
-<p>代码合规性根据一组定义好的语法规则检查源代码。支持代码合规性的工具通常包括旨在评估代码复杂性的度量分析，其中包括诸如以下度量：</p>
+<p>没有人犯过错。每一个本地组件都在做我们告诉它要做的事情。鉴于系统的复杂性，在全局层面上理解这些行动的后果变得很困难。</p>
 
-<ul>
-<li>循环复杂性（一个模块中决策点的数量）</li>
-<li>路径复杂度（通过一个代码模块的可能路径的数量）</li>
-</ul>
+<p>处理这些问题的唯一方法是通过智能专家的努力工作。我们。但正如我们有工具帮助我们写代码一样，我们也有工具帮助我们写设计。一种强大的技术是写一个系统的软件模型，然后模拟这个模型的错误。</p>
 
-<p>代码合规性检查器可以通过识别构造不良的代码、语法不符合性或可能导致缺陷的复杂控制流，建立对代码质量的信心。这可以减少，而不是消除手头的代码表现出意外行为的概率。</p>
+<p>因为我们只对系统进行建模，而不是实现它，所以我们可以用编写代码的一小部分时间写出一个高层次的概述。然后我们可以使用工具来检查它是否满足我们的系统要求。这就是所谓的形式化规范【1】，也被称为可调试设计。形式化的规范可以帮助你成功地进行前期设计，节省时间、金钱和理智。</p>
 
-<p>一般来说，最适合验证和确认软件系统的静态分析技术将取决于SLO/SLA（服务质量目标或协议）【1】内定义的服务可用性等因素。在这种情况下，代码符合性适用于所有级别的SLO和SLA。</p>
+<p>这可以通过两个例子看出来。通过使用形式化规范，亚马逊能够在DynamoDB中发现一个35步的错误，这个错误在广泛的设计审查、代码审查和测试中被忽略了。Rackspace公司在一个项目的后期应用了形式化规范，发现了一个需求不匹配，要求他们重新做一年的工作。一个编写嵌入式操作系统的团队发现，编写形式化规范使他们的整体代码大小减少了10倍。</p>
 
-<p>完整性分析旨在确保程序永远不会进入编程语言所不能定义的状态。这通常等同于运行时错误，包括读过了数组的末端，读了未初始化的内存位置，或除以零。它还考虑与语言无关的缺陷，如缓冲区溢出或任何可能破坏代码正确执行的并发问题（如数据竞赛、竞赛条件等），或涉及并发模块之间非故意的互动，如死锁。</p>
+<p>如果形式化规范是如此强大，为什么人们不使用它呢？主要是由于社会原因。形式化规范的大部分工作都集中在一些高优先级的技术上，如电信和芯片组。在过去的半个月里，随着软件变得越来越关键，越来越复杂，我们已经意识到它有更广泛的潜力，可以使关键系统之外的软件工程师受益。</p>
 
-<p>因此，完整性分析是最适用的分析，可以使系统的性能和可用性受益。也就是说，去除常见的漏洞可以确保系统的性能不会出现意外的异常，特别是对于需要更高的可用性的系统（99.9%以上）。如果存在完整性错误，系统在功能上是不正确的，而完整性分析可以被视为形式验证的一个子集。</p>
-
-<p>幸运的是，大多数完整性分析工具不需要SA或FV方面的深入专业知识，因为有大量的工具可以现成地、自动地、大规模地应用，包括Polyspace、CodeSonar、Frama-C和Facebook Infer。</p>
-
-<p>形式验证(formal verification)的目的是根据一组需求或规范，用数学方法证明给定程序的功能属性。它可以为系统的行为提供测试无法提供的保证。要做到这一点，首先必须将程序形式化为一个模型或抽象，然后用形式化规范语言定义程序的功能要求。因此，形式化工具通常是半自动的，需要形式化方法的专业知识来形成模型和规范。</p>
-
-<p>形式验证通常只对要求99.99%以上的服务可用性的系统是必要的，因为相对于避免的风险来说，严格的要求和人工努力是昂贵的（见ALARP【2】）。</p>
-
-<p>静态分析和形式验证技术没有被充分使用，因为人们误认为它们是不必要的严格和复杂的。不幸的是，这阻碍了SRE【3】去考虑那些可以指导消除生产系统中出现的繁琐而昂贵的缺陷的工具。SRE可以轻松地部署SA工具，而不需要对基础设施进行大修，同时获得SA和FV技术提供的系统保证的好处。</p>
+<p>形式化规范并不能创造奇迹。它不会为你写代码。它不能取代我们作为工程师的技能，但它是一种强大的手段，可以在我们花几个月时间建造系统之前，在我们凌晨3点被叫醒处理故障之前，发现系统中的错误。你不会在没有蓝图的情况下建造一座房子。为什么你会在没有蓝图的情况下建造一个价值百万美元的系统呢？</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -361,14 +346,8 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://imepisode.top/2021/03/服务质量说明/">Service-Level</a></p>
-
-<p>2.<a href="https://en.wikipedia.org/wiki/ALARP">ALARP</a><br />
-<strong>ALARP</strong> (&rdquo;<strong>as low as reasonably practicable</strong>&rdquo;), or <strong>ALARA</strong> (&ldquo;as low as reasonably achievable&rdquo;), is a principle in the regulation and management of <a href="https://en.wikipedia.org/wiki/Safety-critical">safety-critical</a> and <a href="https://en.wikipedia.org/wiki/Safety-involved">safety-involved</a> systems.[<a href="https://en.wikipedia.org/wiki/ALARP#cite_note-NOPSEMA-1">1]</a>[<a href="https://en.wikipedia.org/wiki/ALARP#cite_note-2">2]</a> The principle is that the <a href="https://en.wikipedia.org/wiki/Residual_risk">residual risk</a> shall be reduced as far as reasonably practicable. In UK and NZ <a href="https://en.wikipedia.org/wiki/Health_and_safety_law">Health and Safety law</a>, it is equivalent to <strong>SFAIRP</strong> (&ldquo;so far as is reasonably practicable&rdquo;).<br />
-“ALARP” 原则是“最低合理可行(As Low As Reasonably Practicable，ALARP)”原则的俗称。ALARP原则是当前国外风险可接受水平普遍采用的一种项目风险判据原则。</p>
-
-<p>3.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Formal_specification">formal specification</a><br />
+In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, <strong>formal specifications</strong> are mathematically based techniques whose purpose are to help with the implementation of systems and software. They are used to describe a system, to analyze its behavior, and to aid in its design by verifying key properties of interest through rigorous and effective reasoning tools.[<a href="https://en.wikipedia.org/wiki/Formal_specification#cite_note-a9-hierons-1">1]</a>[<a href="https://en.wikipedia.org/wiki/Formal_specification#cite_note-p223-gaudel-2">2]</a> These specifications are <em>formal</em> in the sense that they have a syntax, their semantics fall within one domain, and they are able to be used to infer useful information.[<a href="https://en.wikipedia.org/wiki/Formal_specification#cite_note-lamsweerde-roadmap-3">3]</a></p>
               
 
 
@@ -395,7 +374,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" data-tooltip="97 Things Every SRE Should Know-91" aria-label="NEXT: 97 Things Every SRE Should Know-91">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -403,7 +382,7 @@ if (!doNotTrack) {
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-89/" data-tooltip="97 Things Every SRE Should Know-89" aria-label="PREVIOUS: 97 Things Every SRE Should Know-89">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" data-tooltip="97 Things Every SRE Should Know-90" aria-label="PREVIOUS: 97 Things Every SRE Should Know-90">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -421,19 +400,19 @@ if (!doNotTrack) {
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -464,9 +443,9 @@ if (!doNotTrack) {
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-90\/';
+        this.page.url = 'https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-91\/';
         
-          this.page.identifier = '\/2021\/10\/97-things-every-sre-should-know-90\/'
+          this.page.identifier = '\/2021\/10\/97-things-every-sre-should-know-91\/'
         
       };
       (function() {
@@ -502,7 +481,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" data-tooltip="97 Things Every SRE Should Know-91" aria-label="NEXT: 97 Things Every SRE Should Know-91">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -510,7 +489,7 @@ if (!doNotTrack) {
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-89/" data-tooltip="97 Things Every SRE Should Know-89" aria-label="PREVIOUS: 97 Things Every SRE Should Know-89">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" data-tooltip="97 Things Every SRE Should Know-90" aria-label="PREVIOUS: 97 Things Every SRE Should Know-90">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -528,19 +507,19 @@ if (!doNotTrack) {
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-90/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-91/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -571,19 +550,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-90%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-91%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-90%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-91%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-90%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-91%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
