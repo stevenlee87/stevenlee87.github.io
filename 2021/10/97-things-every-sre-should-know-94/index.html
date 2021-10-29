@@ -17,7 +17,7 @@
   },
   "name":"imepisode blog",
   "description":"",
-  "url":"https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-93\/",
+  "url":"https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-94\/",
   "keywords":"[97 Things Every SRE Should Know, SRE, book]"
 }
 
@@ -33,20 +33,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-93">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-93">
-<meta property="og:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-93/">
-<meta property="twitter:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-93/">
+<meta property="og:title" content="97 Things Every SRE Should Know-94">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-94">
+<meta property="og:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-94/">
+<meta property="twitter:url" content="https://imepisode.top/2021/10/97-things-every-sre-should-know-94/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-10-28T16:00:00">
+    <meta property="article:published_time" content="2021-10-29T11:31:00">
   
   
-    <meta property="article:modified_time" content="2021-10-28T16:00:00">
+    <meta property="article:modified_time" content="2021-10-29T11:31:00">
   
   
   
@@ -57,7 +57,7 @@
     
       <meta property="article:section" content="Part V. The Future of SRE">
     
-      <meta property="article:section" content="SRE in Crisis">
+      <meta property="article:section" content="Expected Risk Limitations">
     
   
   
@@ -89,14 +89,14 @@
   <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
 
 
-    <title>97 Things Every SRE Should Know-93</title>
+    <title>97 Things Every SRE Should Know-94</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-93/">
+    <link rel="canonical" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-94/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -256,15 +256,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      97 Things Every SRE Should Know-93
+      97 Things Every SRE Should Know-94
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2021-10-28T16:00:00&#43;08:00">
+      <time datetime="2021-10-29T11:31:00&#43;08:00">
         
-  October 28, 2021
+  October 29, 2021
 
       </time>
     
@@ -279,7 +279,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-v.-the-future-of-sre">Part V. The Future of SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/sre-in-crisis">SRE in Crisis</a>
+      <a class="category-link" href="https://imepisode.top/categories/expected-risk-limitations">Expected Risk Limitations</a>
     
   
 
@@ -292,7 +292,7 @@ if (!doNotTrack) {
               <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
 <ul>
-<li><a href="#sre-in-crisis">SRE in Crisis</a></li>
+<li><a href="#expected-risk-limitations">Expected Risk Limitations</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
@@ -300,39 +300,27 @@ if (!doNotTrack) {
 </nav>
 
 
-<h1 id="sre-in-crisis">SRE in Crisis</h1>
+<h1 id="expected-risk-limitations">Expected Risk Limitations</h1>
 
-<p>危机中的SRE</p>
+<p>预期风险限制</p>
 
-<p>膨胀的种族关系导致广泛的骚乱。硅谷的新创业公司。在英国激起强烈的反移民情绪。一种致命的大流行病，来自亚洲。这听起来像今天，但那是1968年。</p>
+<p>我一般采用两种主要的风险分析方法。</p>
 
-<p>在德国，一个更年轻、更小的北约组织，当时处于计算机的最前沿，举行了一个很好的声称是历史上第一个软件工程会议的会议。为了与当时的世界状况保持一致，会议宣布了一个危机：随着机器变得更加强大和复杂性的增加，我们编写高质量软件和可靠运行的能力受到了压力。</p>
+<p>第一种是架构分析。这通常是通过某种形式的FMA（故障模式分析）(failure mode analysis)来观察感知的或未实现的风险。FMEA（故障模式和效果分析） (failure mode and effects analysis)，FMECA（故障模式、效果和临界性分析）(failure mode, effects, and criticality analysis)，或者甚至只是一个基本的坐在白板上的会议，寻找系统设计中常见的反模式，并把它们记下来，如缺乏断路、节流、指数回退和重试、抖动等。这些可以是纯粹的定性和主观的，并且仍然有价值，但它们也在很大程度上依赖于你对你的系统已经知道的东西。或者，更确切地说，是在您系统的心理地图(mental map)上以及您认为自己了解的内容上。</p>
 
-<p>认识到这一危机的人之一是年轻的计算机科学家Edsger Dijkstra【1】，他写道：&rdquo;任何大型复杂系统的设计都将是一项非常困难的工作，每当人们遇到负责此类工作的人时，都会发现他们非常关注可靠性问题，这也是正确的。&rdquo;</p>
+<p>第二种是数据驱动的分析，当我们将已实现的风险的历史可靠性数据添加到FMA过程中（故障模式、影响和诊断分析[FMEDA]） (failure modes, effects, and diagnostic analysis [FMEDA]) ，或在一些维度上建立故障的促成因素热图——如故障类型、涉及的服务以及地理位置，并根据退化情况、受影响的用户数量和持续时间将它们与用户影响关联起来。</p>
 
-<p>他的解决方案是推动编程的一致性、纪律性和严谨性。这导致了现在被认为是基础性的方法——例如结构化编程——尽管和所有的新事物一样，最初被怀疑。为了纪念Dijkstra，我也宣布：SRE【2】正处于危机之中。我们的老方法不能解决这个问题。</p>
+<p>这里的目标是得出对某一特定风险的实现影响的年化（或其他定期）预期。这些都是简短的文章，所以我不会详细介绍这些方法，因为通过网络搜索应该能很快让你找到正确的方法。你可以根据你的需要选择简单或复杂的风险建模结构，基于你要处理的复杂程度以及你已经从系统的分支上敲下了多少低垂的果实。互联网会提供。也许吧。毕竟，它也是一个复杂的系统，而且容易出现自己的紧急故障情况。(The internet will provide. Probably. After all, it’s a complex system, too, and prone to its own emergent failure conditions.)</p>
 
-<div class="alert success no-icon ">
-  <p>让我们面对现实吧，我们在这个行业中所拥有的关于系统的行为或推理的模板，大部分都是依赖于一个没有什么证据支持的知识体系。在《SRE【2】》一书出版4年后，许多业内人士仍在有效地复制和粘贴书中的标准操作程序，这可以理解，但却是错误的。</p>
-</div>
+<p>建立这类数据地图可以帮助我们找到我们的最佳投资领域是什么，不仅是针对那些最重要的 “根源”，而且还针对那些不是大多数甚至很多故障的主要促成因素，但在很多故障中起着促进作用的问题。在过去，我已经能够找出一些东西，比如一个令人沮丧的节流系统，大家都认为它很好，不需要投资更换，但它实际上是我们公司第七大最常见的停机因素，尽管它只在不到2%的事件中被确定为  “根本原因”。</p>
 
-<p>我环顾四周，发现在我们的职业中没有多少可以视为严谨的东西。 Dijkstra 自己在分布式系统基础上的开创性工作——信号量、互斥锁、自稳定等——也许是我们所拥有的最接近的，但它只适用于我们所做的计算机科学方面。 我们在 SRE 中所做的很多事情都超出了这个背景——也许甚至是大部分——但我们通常有无可置疑的知识和（充其量）经验法则作为这项工作的基础。</p>
+<p>这种方法也很强大，但和建筑学的方法一样，它也有局限性。数据驱动的分析只能为我们在某种程度上已经知道的问题提供这种投资指导。或者无论如何应该知道。它们已经在我们的风险登记册中了——如果有可靠的、可量化的已实现风险的历史与之相关，那么我们以前就见过，而且可能相对频繁地见过。</p>
 
-<p>一些例子：</p>
+<p>在处理已知但无法量化的风险时，该方法会在提供年度预期风险方面遇到困难：我们在风险登记册中输入的东西，因为我们认为它们可能不好，或者有一天会成为一个问题，但我们实际上无法用任何数据来描述。</p>
 
-<ul>
-<li>为什么辛劳(toil)【3】与项目工作的比例是50:50？这是个正确的数字，而不是20:80，或者确实没有固定的比例，而是一个灵活的方法？</li>
-<li>我们是否有办法理解为什么系统级的变化（例如，对服务网格microservice meshes）应该是成功的，除了尝试和观察？</li>
-<li>如果SLO【4】是一个如此好的模型，当一个足够糟糕的事件破坏了一整年的错误预算时，我们该怎么办？</li>
-</ul>
+<p>因此，我们可能难以决定如何平衡修复它们所需的工作与功能和其他更可衡量的技术债务，或者为项目提供资金，并在这种竞争性的优先事项下为工作辩护，即使我们自己认为它是关键的。这种方法在实际的黑天鹅（或带电的鹈鹕）和未知的未知因素上完全被打破。</p>
 
-<div class="alert success no-icon ">
-  <p>在许多方面，1968年的问题就是今天的问题，其中最重要的是复杂性。复杂性会杀死我们。事实上，它今天正在杀死我们，而我们似乎没有任何有效的防御措施——除了一个整体的实践，即SRE所期望的，但往往达不到的。</p>
-</div>
-
-<p>1968年，剑桥数学实验室的A.G.弗雷泽【5】说。“我只想说，可靠性真的是一个设计问题，在这个意义上，除非你在整个设计过程中意识到对可靠性的需要，否则你可能会放弃” 。SRE的承诺正是如此；我没有看到它被履行。</p>
-
-<p>如果你一定要用怀疑的态度对待它，但也许这也将被视为一个不可避免的认识的开始：我们不知道我们在做什么，也不知道它为什么有效，甚至不知道它是否有效——然而，把它弄好比任何时候都更重要。否则，我们的1968年最终将看起来像1986年。</p>
+<p>然而，就像我们尊敬的编辑的内容长度规则一样，我认为有一种方法可以突破这种限制。因此，我将在下一篇文章中告诉你!</p>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -358,21 +346,8 @@ if (!doNotTrack) {
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.Edsger W. Dijkstra<br />
-<a href="https://baike.baidu.com/item/艾兹格·迪科斯彻/5029407?fr=aladdin">https://baike.baidu.com/item/艾兹格·迪科斯彻/5029407?fr=aladdin</a><br />
-<a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">https://en.wikipedia.org/wiki/Edsger_W._Dijkstra</a></p>
-
-<p>2.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
-&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
-
-<p>3.<a href="https://sre.google/sre-book/eliminating-toil/">toil</a>
-Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply equivalent to administrative chores or grungy work. Preferences as to what types of work are satisfying and enjoyable vary from person to person, and some people even enjoy manual, repetitive work. There are also administrative chores that have to get done, but should not be categorized as toil: this is <em>overhead</em>. Overhead is often work not directly tied to running a production service, and includes tasks like team meetings, setting and grading goals,<a href="https://sre.google/sre-book/eliminating-toil/#id-dA2uXtyF9Tk">19</a> snippets,<a href="https://sre.google/sre-book/eliminating-toil/#id-BWDu1hjFGTg">20</a> and HR paperwork. Grungy work can sometimes have long-term value, and in that case, it’s not toil, either. Cleaning up the entire alerting configuration for your service and removing clutter may be grungy, but it’s not toil.</p>
-
-<p>So what <em>is</em> toil? Toil is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. Not every task deemed toil has all these attributes, but the more closely work matches one or more of the following descriptions, the more likely it is to be toil:</p>
-
-<p>4.<a href="https://imepisode.top/2021/03/服务质量说明/">Service-Level</a></p>
-
-<p>5.<a href="https://en.wikipedia.org/wiki/Alexander_G._Fraser">Alexander G. Fraser</a></p>
+<p>1.<a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis">Failure mode and effects analysis</a><br />
+<strong>故障模式和影响分析</strong>（<strong>FMEA</strong>；通常用复数形式的“故障模式”）是审查尽可能多的组件、组件和子系统以识别系统中潜在故障模式及其原因和影响的过程。对于每个组件，故障模式及其对系统其余部分的影响都记录在特定的 FMEA 工作表中。此类工作表有多种变体。FMEA 可以是定性分析[<a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis#cite_note-1">1]</a>，但当数学<a href="https://en.wikipedia.org/wiki/Failure_rate">故障率</a>模型[<a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis#cite_note-KMTay2-2">2]</a>与统计故障模式比率数据库相结合时，可以将其置于定量的基础上。它是最早的用于<a href="https://en.wikipedia.org/wiki/Failure_analysis">故障分析的</a>高度结构化、系统化的技术之一. 它由<a href="https://en.wikipedia.org/wiki/Reliability_engineering">可靠性工程师</a>在 1950 年代后期开发，用于研究军事系统故障可能引起的问题。FMEA 通常是系统可靠性研究的第一步。</p>
               
 
 
@@ -399,7 +374,7 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" data-tooltip="97 Things Every SRE Should Know-94" aria-label="NEXT: 97 Things Every SRE Should Know-94">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -407,7 +382,7 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-92/" data-tooltip="97 Things Every SRE Should Know-92" aria-label="PREVIOUS: 97 Things Every SRE Should Know-92">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" data-tooltip="97 Things Every SRE Should Know-93" aria-label="PREVIOUS: 97 Things Every SRE Should Know-93">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -425,19 +400,19 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -468,9 +443,9 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-93\/';
+        this.page.url = 'https:\/\/imepisode.top\/2021\/10\/97-things-every-sre-should-know-94\/';
         
-          this.page.identifier = '\/2021\/10\/97-things-every-sre-should-know-93\/'
+          this.page.identifier = '\/2021\/10\/97-things-every-sre-should-know-94\/'
         
       };
       (function() {
@@ -506,7 +481,7 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" data-tooltip="97 Things Every SRE Should Know-94" aria-label="NEXT: 97 Things Every SRE Should Know-94">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -514,7 +489,7 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-92/" data-tooltip="97 Things Every SRE Should Know-92" aria-label="PREVIOUS: 97 Things Every SRE Should Know-92">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" data-tooltip="97 Things Every SRE Should Know-93" aria-label="PREVIOUS: 97 Things Every SRE Should Know-93">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -532,19 +507,19 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-93/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/10/97-things-every-sre-should-know-94/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -575,19 +550,19 @@ Toil is not just &ldquo;work I don’t like to do.&rdquo; It’s also not simply
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-93%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-94%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-93%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-94%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-93%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F10%2F97-things-every-sre-should-know-94%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
