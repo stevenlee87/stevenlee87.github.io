@@ -6,11 +6,11 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Nov 2021 11:03:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 16:37:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>97 Things Every SRE Should Know</title>
       <link>https://imepisode.top/categories/97-things-every-sre-should-know/</link>
-      <pubDate>Tue, 02 Nov 2021 11:03:00 +0800</pubDate>
+      <pubDate>Tue, 02 Nov 2021 16:37:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/97-things-every-sre-should-know/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>SRE</title>
       <link>https://imepisode.top/categories/sre/</link>
-      <pubDate>Tue, 02 Nov 2021 11:03:00 +0800</pubDate>
+      <pubDate>Tue, 02 Nov 2021 16:37:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/sre/</guid>
       <description></description>
@@ -28,9 +28,18 @@
     <item>
       <title>Table of Contents</title>
       <link>https://imepisode.top/categories/table-of-contents/</link>
-      <pubDate>Tue, 02 Nov 2021 11:03:00 +0800</pubDate>
+      <pubDate>Tue, 02 Nov 2021 16:37:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/table-of-contents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part V. The Future of SRE</title>
+      <link>https://imepisode.top/categories/part-v.-the-future-of-sre/</link>
+      <pubDate>Tue, 02 Nov 2021 16:36:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/part-v.-the-future-of-sre/</guid>
       <description></description>
     </item>
     
@@ -40,15 +49,6 @@
       <pubDate>Tue, 02 Nov 2021 11:02:00 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/a-word-from-software-safety-nerds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Part V. The Future of SRE</title>
-      <link>https://imepisode.top/categories/part-v.-the-future-of-sre/</link>
-      <pubDate>Tue, 02 Nov 2021 11:02:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/part-v.-the-future-of-sre/</guid>
       <description></description>
     </item>
     
