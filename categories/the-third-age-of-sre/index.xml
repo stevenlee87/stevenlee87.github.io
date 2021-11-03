@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Third Age of SRE on imepisode blog</title>
+    <link>https://imepisode.top/categories/the-third-age-of-sre/</link>
+    <description>Recent content in The Third Age of SRE on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Nov 2021 14:42:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/the-third-age-of-sre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>97 Things Every SRE Should Know-98</title>
+      <link>https://imepisode.top/2021/11/97-things-every-sre-should-know-98/</link>
+      <pubDate>Wed, 03 Nov 2021 14:42:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2021/11/97-things-every-sre-should-know-98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

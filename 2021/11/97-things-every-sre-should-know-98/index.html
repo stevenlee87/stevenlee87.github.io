@@ -17,7 +17,7 @@
   },
   "name":"imepisode blog",
   "description":"",
-  "url":"https:\/\/imepisode.top\/2021\/11\/97-things-every-sre-should-know-97\/",
+  "url":"https:\/\/imepisode.top\/2021\/11\/97-things-every-sre-should-know-98\/",
   "keywords":"[97 Things Every SRE Should Know, SRE, book]"
 }
 
@@ -33,20 +33,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="97 Things Every SRE Should Know-97">
-<meta name="twitter:title" content="97 Things Every SRE Should Know-97">
-<meta property="og:url" content="https://imepisode.top/2021/11/97-things-every-sre-should-know-97/">
-<meta property="twitter:url" content="https://imepisode.top/2021/11/97-things-every-sre-should-know-97/">
+<meta property="og:title" content="97 Things Every SRE Should Know-98">
+<meta name="twitter:title" content="97 Things Every SRE Should Know-98">
+<meta property="og:url" content="https://imepisode.top/2021/11/97-things-every-sre-should-know-98/">
+<meta property="twitter:url" content="https://imepisode.top/2021/11/97-things-every-sre-should-know-98/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-11-02T16:36:00">
+    <meta property="article:published_time" content="2021-11-03T14:42:00">
   
   
-    <meta property="article:modified_time" content="2021-11-02T16:36:00">
+    <meta property="article:modified_time" content="2021-11-03T14:42:00">
   
   
   
@@ -57,7 +57,7 @@
     
       <meta property="article:section" content="Part V. The Future of SRE">
     
-      <meta property="article:section" content="">
+      <meta property="article:section" content="The Third Age of SRE">
     
   
   
@@ -89,14 +89,14 @@
   <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
 
 
-    <title>97 Things Every SRE Should Know-97</title>
+    <title>97 Things Every SRE Should Know-98</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-97/">
+    <link rel="canonical" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-98/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -256,15 +256,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      97 Things Every SRE Should Know-97
+      97 Things Every SRE Should Know-98
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2021-11-02T16:36:00&#43;08:00">
+      <time datetime="2021-11-03T14:42:00&#43;08:00">
         
-  November 2, 2021
+  November 3, 2021
 
       </time>
     
@@ -279,7 +279,7 @@ if (!doNotTrack) {
     
       <a class="category-link" href="https://imepisode.top/categories/part-v.-the-future-of-sre">Part V. The Future of SRE</a>, 
     
-      <a class="category-link" href="https://imepisode.top/categories/"></a>
+      <a class="category-link" href="https://imepisode.top/categories/the-third-age-of-sre">The Third Age of SRE</a>
     
   
 
@@ -292,7 +292,7 @@ if (!doNotTrack) {
               <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
 <ul>
-<li><a href="#incidents-a-window-into-gaps">Incidents: A Window into Gaps</a></li>
+<li><a href="#the-third-age-of-sre">The Third Age of SRE</a></li>
 <li><a href="#我们如何构建本书的结构">我们如何构建本书的结构</a></li>
 <li><a href="#结语">结语</a></li>
 <li><a href="#延伸阅读">延伸阅读</a></li>
@@ -300,21 +300,33 @@ if (!doNotTrack) {
 </nav>
 
 
-<h1 id="incidents-a-window-into-gaps">Incidents: A Window into Gaps</h1>
+<h1 id="the-third-age-of-sre">The Third Age of SRE</h1>
 
-<p>事故：了解差距的窗口</p>
+<p>SRE的第三个时期</p>
 
-<p>事故迫使我们面对现实，即我们的系统并不总是像我们所期望的那样表现。这是一种不舒服的感觉，我们希望有信心，这种情况不会再发生。为了在事故发生后重拾这种信心，我们努力确定系统损坏的原因，但我们可以从事故中学到更多，而不仅仅是如何防止重蹈覆辙。我们可以找出组织内部存在的一系列差距——我们可以潜在地解决这些差距。</p>
+<p>在第一个时期，SRE是谷歌的专利，关于它的知识只能通过传播才能离开公司。</p>
 
-<p>我们可以识别的一种差距是工具差距，当我们看到工程师在使用操作工具时遇到困难。例如，当工程师在事故中努力理解工具的反馈时，或者当他们在使用工具进行生产变更时出错时，我们可以识别出来。特别是，每当我们注意到一个变通方法，有人以错误的方式执行一项任务，这就是存在工具差距的线索。关于工具差距的信息应该被反馈给这些操作工具的所有者。</p>
+<p>在第二个时期，SRE被赋予了自由。2016年的《网站可靠性工程》(Site Reliability Engineering)（O&rsquo;Reilly）【1】公然表明，一个根本性的变化正在发生，从谷歌内部一个名字奇怪的部门变成了一个普遍知道的职业。自2014年以来，恰如其分的SREcon定期举行，而且越来越成功。在就业市场上，SRE是一个彻头彻尾的热门词汇，到处出现在简历和工作描述中。</p>
 
-<p>另一种差距是业务专长差距。这是指工程师缺少有效完成工作所需的重要操作技能。也许仪表盘上的某张图总是错的，因为创建它的工程师并不完全了解指标查询语言。直到事件发生后，才有人注意到。由于我们的系统在不断地发生变化，操作上的专业知识差距会随着时间的推移而形成。你在配置自动扩缩容时使用的策略可能是去年推荐的方法，但现在已经过时了。</p>
+<p>SRE令人难以置信的受欢迎程度让我相信我们已经到了第二个时期的后期，它的结束将以当前招聘炒作的有趣反转为标志：我们所知道的专门的SRE角色的结束。</p>
 
-<p>最后，当一个团队没有足够的资源来处理他们的工作量时，就会出现资源缺口。担心资源缺口有两个原因。一个是延伸系统定律:每个系统最终都会被推到它的极限。想象一个正在满负荷运行的独立团队，并接收了额外的员工。当他们雇佣新员工时，他们会有一些空闲时间。然而，不可避免的是，团队将继续承担更多的工作，直到他们再次满负荷运行。</p>
+<p>如何做到的？在第二个时期，许多组织很快意识到，他们的规模小得多，无法完全像谷歌那样执行SRE。即使是大到足以维持一个专门的SRE团队的组织——大多数都不能——通常也会得出这样的结论：他们不能仅仅雇用一定数量的SRE来做 “SRE的事情”。相反，每个工程师都必须成为一个兼职的SRE。David N. Blank-Delman的《Seeking SRE》（O&rsquo;Reilly，2018）记录了许多这样的故事，包括（无耻的插播）(shameless plug)我自己在SoundCloud担任制作工程师时的见证记录。</p>
 
-<p>资源缺口的另一个挑战是流畅性法则。这是一种现象，当一个熟练的工程师可以优雅地处理一些超负荷的工作时，他们没有任何迹象表明他们正在超负荷工作（“我做得很好！”），直到他们完全不堪重负。当工程师感到需要在不同的任务之间切换以完成所有的工作时，你就可以看到流畅性法则的作用，例如监控一个复杂的部署，回应内部支持请求，以及做开发工作。这种超负荷的工作既增加了错误的风险，也增加了团队倦怠(burnout)【1】的风险。倦怠会导致团队成员离开，进一步增加团队的负担。我们越早发现一个有超负荷风险的团队，组织解决这个问题的成本就越低。</p>
+<div class="alert success no-icon ">
+  <p>从这个角度来看，工作市场对SRE的高需求，主要是希望找到一个人在其他工程师中传播SRE知识。一个真正到达第三时期的组织是已经发生了这种情况。所有的工程师都可以戴上SRE的帽子，作为他们工作的一部分，然后至少较小的组织将停止雇用专门的SRE。相反，SRE思维将成为每个工程角色的重要招聘条件。</p>
+</div>
 
-<p>一个组织内部的每个人对整个系统的运作方式只有部分了解。每当事件发生时，我们就有机会了解事件所暴露的差距。通过强调这些差距，我们可以开始为未来做准备。</p>
+<p>你可能会问，是什么让这些时期之间的过渡变得必要？对于第二个时期，是云原生技术的民主化和扩散。CNCF发布的非常有洞察力的定义表明，云原生技术甚至允许小型组织迅速达到复杂程度和规模，从而使SRE成为必要的。</p>
+
+<p>对于第三个时期来说，它将是对从事专门的SRE角色而不是直接从事实际产品的工程师部分的优化。一个处于第二时期成熟度的组织，大多数工程师作为兼职的SRE，将意识到剩下的专职SRE的大部分任务可以移交给服务提供商，包括但不限于传统的以基础设施为重点的云供应商。事实上，越来越多的高阶服务的选择，这些服务在其他云服务之上运行，将推动大部分机会的增长。</p>
+
+<p>当然，这也是一种权衡。一个组织越大，自己运行其堆栈的较大部分就越有效(the more efficient it is to run a larger part of its stack on its own)，但随着服务提供商的稳定创新，这里的标准正在提高。</p>
+
+<p>我们是否很快就会享受到 “SRE即服务(SRE as a service)”，从而可以完全忘记运维方面的问题？恰恰相反。在第二个时期的情况下，工程师实际上更容易通过依靠组织内的SRE来摆脱一定程度的运维无知。在第三个时期，大多数工程师将非常接近生产，由SRE启发的工具和服务在他们的指尖上实现。为了有效地使用这些，他们将需要一种SRE的思维方式。</p>
+
+<div class="alert success no-icon ">
+  <p>SRE在第三个时期的难以想象的力量是，它将（而且必须）进入每个人的头脑。当大学在其计算机科学课程中加入SRE课程时，将是第三个时期开始的一个肯定的标志。</p>
+</div>
 
 <h1 id="我们如何构建本书的结构">我们如何构建本书的结构</h1>
 
@@ -336,11 +348,14 @@ if (!doNotTrack) {
 
 <p>SRE系列的文章，有时间我就会翻译一些，希望大家能学到对自己有用的东西。谢谢</p>
 
+<p>本章是《97 Things Every SRE Should Know》系列的最后一章，翻译的过程也是一个自我认知检验与学习的过程，我很享受这段旅程。如果有问题可以发邮件联系我进行沟通。</p>
+
 <p>翻译不易，转载时请注明原文链接，谢谢</p>
 
 <h1 id="延伸阅读">延伸阅读</h1>
 
-<p>1.<a href="https://imepisode.top/2021/04/97-things-every-sre-should-know-19/">19. Sustainability and Burnout</a></p>
+<p>1.<a href="https://book.douban.com/subject/30422891/">Site Reliability Engineering-中文</a><br />
+&nbsp;&nbsp;&nbsp;<a href="https://sre.google/sre-book/table-of-contents/">Site Reliability Engineering-english</a></p>
               
 
 
@@ -367,7 +382,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" data-tooltip="97 Things Every SRE Should Know-98" aria-label="NEXT: 97 Things Every SRE Should Know-98">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -375,7 +390,7 @@ if (!doNotTrack) {
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-96/" data-tooltip="97 Things Every SRE Should Know-96" aria-label="PREVIOUS: 97 Things Every SRE Should Know-96">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" data-tooltip="97 Things Every SRE Should Know-97" aria-label="PREVIOUS: 97 Things Every SRE Should Know-97">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -393,19 +408,19 @@ if (!doNotTrack) {
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -436,9 +451,9 @@ if (!doNotTrack) {
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imepisode.top\/2021\/11\/97-things-every-sre-should-know-97\/';
+        this.page.url = 'https:\/\/imepisode.top\/2021\/11\/97-things-every-sre-should-know-98\/';
         
-          this.page.identifier = '\/2021\/11\/97-things-every-sre-should-know-97\/'
+          this.page.identifier = '\/2021\/11\/97-things-every-sre-should-know-98\/'
         
       };
       (function() {
@@ -474,7 +489,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" data-tooltip="97 Things Every SRE Should Know-98" aria-label="NEXT: 97 Things Every SRE Should Know-98">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-toc/" data-tooltip="97 Things Every SRE Should Know-toc" aria-label="NEXT: 97 Things Every SRE Should Know-toc">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -482,7 +497,7 @@ if (!doNotTrack) {
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-96/" data-tooltip="97 Things Every SRE Should Know-96" aria-label="PREVIOUS: 97 Things Every SRE Should Know-96">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" data-tooltip="97 Things Every SRE Should Know-97" aria-label="PREVIOUS: 97 Things Every SRE Should Know-97">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -500,19 +515,19 @@ if (!doNotTrack) {
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/11/97-things-every-sre-should-know-97/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2021/11/97-things-every-sre-should-know-98/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -543,19 +558,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-97%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-98%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-97%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-98%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-97%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2021%2F11%2F97-things-every-sre-should-know-98%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
