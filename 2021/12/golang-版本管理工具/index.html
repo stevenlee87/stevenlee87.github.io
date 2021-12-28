@@ -288,6 +288,7 @@ if (!doNotTrack) {
 <li><a href="#特性">特性</a></li>
 <li><a href="#安装">安装</a></li>
 <li><a href="#使用">使用</a></li>
+<li><a href="#g-目录结构">g 目录结构</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#参考文档">参考文档</a></li>
 </ul>
@@ -316,11 +317,44 @@ if (!doNotTrack) {
 
 <h1 id="使用">使用</h1>
 
-<p>1.查询当前可供安装的stable状态的go版本</p>
+<p>1.查看g版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --help
+NAME:
+  g - Golang Version Manager
+
+ USAGE:
+  g  command [arguments...]
+
+ VERSION:
+  1.2.1
+
+ AUTHOR:
+  voidint &lt;voidint@126.com&gt;
+
+ COMMANDS:
+    ls         List installed versions
+    ls-remote  List remote versions available for install
+    use        Switch to specified version
+    install    Download and install a version
+    uninstall  Uninstall a version
+    clean      Remove files from the package download directory
+    help, h    Shows a list of commands or help for one command
+
+ GLOBAL OPTIONS:
+  --help, -h     show help
+  --version, -v  print the version
+
+ COPYRIGHT:
+  Copyright (c) 2019-2021, voidint. All rights reserved.</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --version
+g version 1.2.1
+build: 2021-10-05T15:19:17+08:00
+branch: release/1.2.1
+commit: 674c2616724f983f51dfe8030637f46f51da715b</code></pre></div>
+<p>2.查询当前可供安装的stable状态的go版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote stable
 1.16.12
 1.17.5</code></pre></div>
-<p>2.安装目标go版本1.17.5和1.16.12</p>
+<p>3.安装目标go版本1.17.5和1.16.12</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g install 1.17.5
 Downloading 100% |███████████████| (130/130 MB, 16.578 MB/s) [7s:0s]
 Computing checksum with SHA256
@@ -330,11 +364,11 @@ Downloading 100% |███████████████| (125/125 MB, 16
 Computing checksum with SHA256
 Checksums matched
 Now using go1.16.12</code></pre></div>
-<p>3.查询已安装的go版本</p>
+<p>4.查询已安装的go版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
 * 1.16.12
   1.17.5</code></pre></div>
-<p>4.查询可供安装的所有go版本</p>
+<p>5.查询可供安装的所有go版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote
   1
   1.2.2
@@ -352,13 +386,13 @@ Now using go1.16.12</code></pre></div>
   1.17.4
   1.17.5
   1.18beta1</code></pre></div>
-<p>5.切换到另一个已安装的go版本</p>
+<p>6.切换到另一个已安装的go版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g use 1.17.5
 go version go1.17.5 darwin/amd64
 
 go env | grep VERSION
 GOVERSION=&#34;go1.17.5&#34;</code></pre></div>
-<p>6.卸载一个已安装的go版本</p>
+<p>7.卸载一个已安装的go版本</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
   1.16.12
 * 1.17.5
@@ -368,6 +402,25 @@ Uninstalled go1.16.12
 
 g ls
 * 1.17.5</code></pre></div>
+<h1 id="g-目录结构">g 目录结构</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd ~/.g
+total 0
+drwxr-xr-x   5 steven  staff   160 12 28 15:00 .
+drwxr-xr-x+ 80 steven  staff  2560 12 28 15:23 ..
+drwxr-xr-x   4 steven  staff   128 12 28 14:41 downloads
+lrwxr-xr-x   1 steven  staff    32 12 28 15:00 go -&gt; /Users/steven/.g/versions/1.17.5
+drwxr-xr-x   4 steven  staff   128 12 28 15:00 versions</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd downloads/
+~/.g/downloads$ ll
+total 523056
+drwxr-xr-x  4 steven  staff        128 12 28 14:41 .
+drwxr-xr-x  5 steven  staff        160 12 28 15:00 ..
+-rw-r--r--  1 steven  staff  131024468 12 28 14:41 go1.16.12.darwin-amd64.tar.gz
+-rw-r--r--  1 steven  staff  136774992 12 28 14:41 go1.17.5.darwin-amd64.tar.gz</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~/.g/versions$ ll
+total 0
+drwxr-xr-x   4 steven  staff  128 12 28 15:00 .
+drwxr-xr-x   5 steven  staff  160 12 28 15:00 ..
+drwxr-xr-x  20 steven  staff  640 12 28 15:00 1.16.12
+drwxr-xr-x  19 steven  staff  608 12 28 14:41 1.17.5</code></pre></div>
 <h1 id="faq">FAQ</h1>
 
 <ul>
