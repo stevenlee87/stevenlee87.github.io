@@ -286,7 +286,8 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#简介">简介</a></li>
 <li><a href="#特性">特性</a></li>
-<li><a href="#安装">安装</a></li>
+<li><a href="#自动化安装">自动化安装</a></li>
+<li><a href="#手动安装">手动安装</a></li>
 <li><a href="#使用">使用</a></li>
 <li><a href="#g-目录结构">g 目录结构</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -311,9 +312,29 @@ if (!doNotTrack) {
 <li>支持在已安装的go版本之间自由切换</li>
 </ul>
 
-<h1 id="安装">安装</h1>
+<h1 id="自动化安装">自动化安装</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># 建议安装前清空`GOROOT`、`GOBIN`等环境变量
+$ curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
+$ echo &#34;unalias g&#34; &gt;&gt; ~/.bashrc # 可选。若其他程序（如&#39;git&#39;）使用了&#39;g&#39;作为别名。
+$ source ~/.bashrc # 或者 source ~/.zshrc</code></pre></div>
+<h1 id="手动安装">手动安装</h1>
 
-<p>curl -sSL <a href="https://raw.githubusercontent.com/voidint/g/master/install.sh">https://raw.githubusercontent.com/voidint/g/master/install.sh</a> | bash</p>
+<ul>
+<li><p>下载<a href="https://github.com/voidint/g/releases">release</a> 的二进制压缩包</p></li>
+
+<li><p>将压缩包解压至PATH环境变量目录下（如/usr/local/bin）</p></li>
+
+<li><p>编辑shell环境配置文件（如~/.bashrc、~/.zshrc&hellip;）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cat&gt;&gt;~/.bashrc&lt;&lt;&#39;EOF&#39;
+export GOROOT=&#34;${HOME}/.g/go&#34;
+export PATH=&#34;${HOME}/.g/go/bin:$PATH&#34;
+export G_MIRROR=https://golang.google.cn/dl/
+EOF</code></pre></div></li>
+
+<li><p>启用环境变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ source ~/.bashrc # 或source ~/.zshrc
+macos: vim ~/.bash_profile，加入source ~/.bashrc解决问题。</code></pre></div></li>
+</ul>
 
 <h1 id="使用">使用</h1>
 
