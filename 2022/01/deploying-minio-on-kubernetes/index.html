@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://s2.ax1x.com/2020/01/07/lcQywD.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"\u003cp\u003eMinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.\u003c\/p\u003e\n\n\u003cp\u003eMinIO is different in that it was designed from the beginning as a private\/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.\u003c\/p\u003e",
+  "url":"https:\/\/imepisode.top\/2022\/01\/deploying-minio-on-kubernetes\/",
+  "keywords":"[Container, Kubernetes, Golang]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="Container, Kubernetes, Golang">
+<meta name="description" content="MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.
+
+MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.">
+
+
+<meta property="og:description" content="MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.
+
+MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploying MinIO on Kubernetes">
+<meta name="twitter:title" content="Deploying MinIO on Kubernetes">
+<meta property="og:url" content="https://imepisode.top/2022/01/deploying-minio-on-kubernetes/">
+<meta property="twitter:url" content="https://imepisode.top/2022/01/deploying-minio-on-kubernetes/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.
+
+MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.">
+<meta name="twitter:description" content="MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.
+
+MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-01-19T16:57:15">
+  
+  
+    <meta property="article:modified_time" content="2022-01-19T16:57:15">
+  
+  
+  
+    
+      <meta property="article:section" content="S3">
+    
+      <meta property="article:section" content="Kubernetes">
+    
+      <meta property="article:section" content="MinIO">
+    
+  
+  
+    
+      <meta property="article:tag" content="Kubernetes">
+    
+      <meta property="article:tag" content="Container">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
+
+
+
+
+    <title>Deploying MinIO on Kubernetes</title>
+
+    <link rel="icon" href="https://imepisode.top/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://imepisode.top/2022/01/deploying-minio-on-kubernetes/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155547068-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+          <h5 class="sidebar-profile-bio">imepisode1@gmail.com</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Deploying MinIO on Kubernetes
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-01-19T16:57:15&#43;08:00">
+        
+  January 19, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://imepisode.top/categories/s3">S3</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/kubernetes">Kubernetes</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/minio">MinIO</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.</p>
+
+<p>MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.</p>
+
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#storageclass">StorageClass</a></li>
+<li><a href="#create-minio-headless-service">Create Minio Headless Service</a></li>
+<li><a href="#create-minio-statefulset">Create Minio StatefulSet</a></li>
+<li><a href="#expose-service-using-ingress">Expose Service using Ingress</a></li>
+<li><a href="#access-minio">Access Minio</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</nav>
+
+
+<h1 id="storageclass">StorageClass</h1>
+
+<p>The persistent volume used in this test is bare host directory, Since this is just a test, no additional StorageClass is prepared.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
+<span style="color:#f92672">volumeMounts</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data</span>
+    <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/data</span>
+<span style="color:#f92672">volumes</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data</span>
+    <span style="color:#f92672">hostPath</span>:
+      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/storage/minio</span></code></pre></div>
+<h1 id="create-minio-headless-service">Create Minio Headless Service</h1>
+
+<p>Headless Service controls the domain within which StatefulSets are created. The domain managed by this Service takes the form: <code>$(service name).$(namespace).svc.cluster.local</code> (where <code>cluster.local</code> is the cluster domain), and the pods in this domain take the form: <code>$(pod-name-{i}).$(service name).$(namespace).svc.cluster.local</code>. This is required to get a DNS resolvable URL for each of the pods created within the Statefulset.</p>
+
+<p>This is the Headless service description:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">minio</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">None</span>
+  <span style="color:#f92672">ports</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9000</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">console</span>
+      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9001</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">minio</span></code></pre></div>
+<p>Create the headless service</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f headless-svc.yaml</code></pre></div>
+<h1 id="create-minio-statefulset">Create Minio StatefulSet</h1>
+
+<p>A StatefulSet provides a deterministic name and a unique identity to each pod, making it easy to deploy stateful distributed applications. To launch distributed Minio user need to pass drive locations as parameters to the minio server command. Then the user need to run the same command on all the participating pods. StatefulSets offer a perfect way to handle this requirement.</p>
+
+<p>This is the StatefulSet description.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">StatefulSet</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">serviceName</span>: <span style="color:#ae81ff">minio</span>
+  <span style="color:#f92672">podManagementPolicy</span>: <span style="color:#ae81ff">Parallel</span>
+  <span style="color:#f92672">updateStrategy</span>:
+    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">RollingUpdate</span>
+  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">4</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">matchLabels</span>:
+      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">minio</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">minio</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">nodeSelector</span>:
+        <span style="color:#f92672">minio_role</span>: <span style="color:#ae81ff">distributed</span>
+      <span style="color:#f92672">containers</span>:
+        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+          <span style="color:#f92672">env</span>:
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">MINIO_SERVER_URL</span>
+              <span style="color:#f92672">value</span>: <span style="color:#ae81ff">http://minio.idocker.io</span>
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">MINIO_BROWSER_REDIRECT_URL</span>
+              <span style="color:#f92672">value</span>: <span style="color:#ae81ff">http://console.minio.idocker.io</span>
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">MINIO_ROOT_USER</span>
+              <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;admin&#34;</span>
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">MINIO_ROOT_PASSWORD</span>
+              <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;passwd_for_admin&#34;</span>
+          <span style="color:#f92672">image</span>: <span style="color:#ae81ff">minio/minio:RELEASE.2022-01-08T03-11-54Z</span>
+          <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">IfNotPresent</span>
+          <span style="color:#f92672">args</span>:
+            - <span style="color:#ae81ff">server</span>
+            - <span style="color:#ae81ff">http://minio-{0...3}.minio.minio.svc.cluster.local/data</span>
+            - <span style="color:#e6db74">&#34;--console-address=:9001&#34;</span>
+          <span style="color:#f92672">ports</span>:
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">api</span>
+              <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">9000</span>
+              <span style="color:#f92672">hostPort</span>: <span style="color:#ae81ff">9000</span>
+              <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">console</span>
+              <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">9001</span>
+              <span style="color:#f92672">hostPort</span>: <span style="color:#ae81ff">9001</span>
+              <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+          <span style="color:#f92672">resources</span>:
+            <span style="color:#f92672">limits</span>:
+              <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">2000m</span>
+              <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">2Gi</span>
+            <span style="color:#f92672">requests</span>:
+              <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">1000m</span>
+              <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
+          <span style="color:#f92672">livenessProbe</span>:
+            <span style="color:#f92672">exec</span>:
+              <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;curl&#34;</span>, <span style="color:#e6db74">&#34;-f&#34;</span>, <span style="color:#e6db74">&#34;http://localhost:9000/minio/health/live&#34;</span>]
+            <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">3</span>
+            <span style="color:#f92672">periodSeconds</span>: <span style="color:#ae81ff">3</span>
+            <span style="color:#f92672">timeoutSeconds</span>: <span style="color:#ae81ff">3</span>
+          <span style="color:#f92672">readinessProbe</span>:
+            <span style="color:#f92672">exec</span>:
+              <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;curl&#34;</span>, <span style="color:#e6db74">&#34;-f&#34;</span>, <span style="color:#e6db74">&#34;http://localhost:9000/minio/health/live&#34;</span>]
+            <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">3</span>
+            <span style="color:#f92672">periodSeconds</span>: <span style="color:#ae81ff">2</span>
+            <span style="color:#f92672">timeoutSeconds</span>: <span style="color:#ae81ff">1</span>
+          <span style="color:#f92672">volumeMounts</span>:
+            - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data</span>
+              <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/data</span>
+      <span style="color:#f92672">volumes</span>:
+        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data</span>
+          <span style="color:#f92672">hostPath</span>:
+            <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/storage/minio</span></code></pre></div>
+<p>Create the StatefulSet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f minio-dist-statefulset.yaml</code></pre></div>
+<h1 id="expose-service-using-ingress">Expose Service using Ingress</h1>
+
+<p>Now that a MinIO StatefulSet running, user may either want to access it internally (within the cluster) or expose it as a Service onto an external (outside of the cluster, maybe public internet) IP address, depending on the use case. This can be achieved using Services.</p>
+
+<p>There are many service types - default type is ClusterIP, which exposes a service to connection from inside the cluster. NodePort and LoadBalancer are two types that expose services to external traffic. At here, We will use <a href="https://traefik.io/">Traefik Ingress</a> to expose the service.</p>
+
+<p>This is the service description.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">traefik.containo.us/v1alpha1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">IngressRoute</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio-router</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">entryPoints</span>:
+    - <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">routes</span>:
+    - <span style="color:#f92672">match</span>: <span style="color:#ae81ff">Host(`minio.idocker.io`)</span>
+      <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Rule</span>
+      <span style="color:#f92672">services</span>:
+        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+          <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9000</span>
+    - <span style="color:#f92672">match</span>: <span style="color:#ae81ff">Host(`console.minio.idocker.io`)</span>
+      <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Rule</span>
+      <span style="color:#f92672">services</span>:
+        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
+          <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9001</span></code></pre></div>
+<p>Create the IngressRoute</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ingress-router.yaml</code></pre></div>
+<h1 id="access-minio">Access Minio</h1>
+
+<p>Use the following URL to access MinIO: <code>http://console.minio.idocker.io</code></p>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+<li><a href="https://github.com/lushenle/k8s-manifests/tree/master/minio">https://github.com/lushenle/k8s-manifests/tree/master/minio</a></li>
+<li><a href="https://github.com/minio/minio/issues/12793">https://github.com/minio/minio/issues/12793</a></li>
+<li><a href="https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/minio.html">https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/minio.html</a></li>
+<li><a href="https://www.lishuai.fun/2021/09/01/create-minio/">https://www.lishuai.fun/2021/09/01/create-minio/</a></li>
+</ul>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/kubernetes/">Kubernetes</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/container/">Container</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/12/golang-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" data-tooltip="golang 版本管理工具" aria-label="PREVIOUS: golang 版本管理工具">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/imepisode.top\/2022\/01\/deploying-minio-on-kubernetes\/';
+        
+          this.page.identifier = '\/2022\/01\/deploying-minio-on-kubernetes\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'stevenlee87-github-io-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2021/12/golang-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" data-tooltip="golang 版本管理工具" aria-label="PREVIOUS: golang 版本管理工具">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2022%2F01%2Fdeploying-minio-on-kubernetes%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2022%2F01%2Fdeploying-minio-on-kubernetes%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2022%2F01%2Fdeploying-minio-on-kubernetes%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+      <div id="about-card-bio">imepisode1@gmail.com</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://imepisode.top/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://imepisode.top/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

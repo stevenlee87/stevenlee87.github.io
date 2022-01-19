@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2021-12-28T15:08:00+08:00</lastmod>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/tags/container/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/2022/01/deploying-minio-on-kubernetes/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/tags/kubernetes/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/kubernetes/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/minio/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/post/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/s3/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/tags/</loc>
+    <lastmod>2022-01-19T16:57:15+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/tags/go/</loc>
     <lastmod>2021-12-28T15:08:00+08:00</lastmod>
@@ -12,15 +39,6 @@
     <lastmod>2021-12-28T15:08:00+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/2021/12/golang-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2021-12-28T15:08:00+08:00</lastmod>
-  </url><url>
-    <loc>https://imepisode.top/</loc>
-    <lastmod>2021-12-28T15:08:00+08:00</lastmod>
-  </url><url>
-    <loc>https://imepisode.top/post/</loc>
-    <lastmod>2021-12-28T15:08:00+08:00</lastmod>
-  </url><url>
-    <loc>https://imepisode.top/tags/</loc>
     <lastmod>2021-12-28T15:08:00+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/categories/%E5%90%8E%E7%AB%AF/</loc>

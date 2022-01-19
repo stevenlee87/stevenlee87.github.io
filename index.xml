@@ -6,7 +6,18 @@
     <description>Recent content on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 15:08:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 16:57:15 +0800</lastBuildDate><atom:link href="https://imepisode.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying MinIO on Kubernetes</title>
+      <link>https://imepisode.top/2022/01/deploying-minio-on-kubernetes/</link>
+      <pubDate>Wed, 19 Jan 2022 16:57:15 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2022/01/deploying-minio-on-kubernetes/</guid>
+      <description>&lt;p&gt;MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.&lt;/p&gt;
+
+&lt;p&gt;MinIO is different in that it was designed from the beginning as a private/hybrid cloud object storage. Because MinIO is built specifically to serve objects, the single-tier architecture allows for all the necessary functionality. It is a cloud-native object server that is simultaneously high-performance, scalable, and lightweight.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>golang 版本管理工具</title>
       <link>https://imepisode.top/2021/12/golang-%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
