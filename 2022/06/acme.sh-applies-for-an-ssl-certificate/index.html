@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://s2.ax1x.com/2020/01/07/lcQywD.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2022\/06\/acme.sh-applies-for-an-ssl-certificate\/",
+  "keywords":"[SRE, nginx, certificate, letsencrypt, zerossl]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="SRE, nginx, certificate, letsencrypt, zerossl">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acme.sh Applies for an SSL certificate">
+<meta name="twitter:title" content="acme.sh Applies for an SSL certificate">
+<meta property="og:url" content="https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/">
+<meta property="twitter:url" content="https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-06-07T15:06:00">
+  
+  
+    <meta property="article:modified_time" content="2022-06-07T15:06:00">
+  
+  
+  
+    
+      <meta property="article:section" content="SRE">
+    
+      <meta property="article:section" content="linux">
+    
+      <meta property="article:section" content="nginx">
+    
+  
+  
+    
+      <meta property="article:tag" content="SRE">
+    
+      <meta property="article:tag" content="nginx">
+    
+      <meta property="article:tag" content="certificate">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+  <meta property="twitter:image" content="https://s2.ax1x.com/2020/01/07/lcQywD.png">
+
+
+
+
+  <meta property="og:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
+  <meta property="twitter:image" content="https://s1.ax1x.com/2020/09/28/0VPcfx.jpg">
+
+
+  <meta property="og:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
+  <meta property="twitter:image" content="https://z3.ax1x.com/2021/04/01/cEwi9K.png">
+
+
+    <title>acme.sh Applies for an SSL certificate</title>
+
+    <link rel="icon" href="https://imepisode.top/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155547068-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+          <h5 class="sidebar-profile-bio">imepisode1@gmail.com</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://s1.ax1x.com/2020/09/28/0VPcfx.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      acme.sh Applies for an SSL certificate
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-06-07T15:06:00&#43;08:00">
+        
+  June 7, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://imepisode.top/categories/sre">SRE</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/linux">linux</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/nginx">nginx</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#acme-sh-使用说明">acme.sh 使用说明</a>
+<ul>
+<li><a href="#1-安装-acme-sh">1. 安装 acme.sh</a></li>
+<li><a href="#2-设置acme-sh自动更新">2.设置acme.sh自动更新</a></li>
+<li><a href="#3-查看acme-sh版本">3.查看acme.sh版本</a></li>
+<li><a href="#4-生成证书">4.生成证书</a></li>
+<li><a href="#5-查看已安装证书信息">5.查看已安装证书信息</a></li>
+<li><a href="#6-copy-证书到-nginx-apache-或者其他服务">6.copy 证书到 nginx/apache 或者其他服务</a></li>
+<li><a href="#7-更新证书">7.更新证书</a></li>
+<li><a href="#8-出错怎么办-如何调试">8. 出错怎么办，如何调试</a></li>
+</ul></li>
+<li><a href="#阿里云说明">阿里云说明</a>
+<ul>
+<li><a href="#1-创建ram用户">1.创建RAM用户</a></li>
+<li><a href="#2-添加ram权限">2.添加RAM权限</a></li>
+<li><a href="#3-配置ram-api-key">3.配置RAM API key</a></li>
+</ul></li>
+<li><a href="#zerossl-证书申请">ZeroSSL 证书申请</a></li>
+<li><a href="#延伸阅读">延伸阅读</a></li>
+</ul>
+</nav>
+
+
+<h1 id="acme-sh-使用说明">acme.sh 使用说明</h1>
+
+<p>acme.sh 实现了 acme 协议, 可以从 letsencrypt 生成免费的证书.</p>
+
+<p>主要步骤:</p>
+
+<ol>
+<li>安装 acme.sh</li>
+<li>设置acme.sh自动更新</li>
+<li>查看acme.sh版本</li>
+<li>生成证书</li>
+<li>查看已安装证书信息</li>
+<li>copy 证书到 nginx/apache 或者其他服务</li>
+<li>更新证书</li>
+<li>出错怎么办，如何调试</li>
+</ol>
+
+<p>下面详细介绍.</p>
+
+<h2 id="1-安装-acme-sh">1. 安装 acme.sh</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl https://get.acme.sh | sh -s email<span style="color:#f92672">=</span>example@gmail.com
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分05秒 CST<span style="color:#f92672">]</span> Installing from online archive.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分05秒 CST<span style="color:#f92672">]</span> Downloading https://github.com/acmesh-official/acme.sh/archive/master.tar.gz
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分12秒 CST<span style="color:#f92672">]</span> Extracting master.tar.gz
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分14秒 CST<span style="color:#f92672">]</span> It is recommended to install socat first.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分14秒 CST<span style="color:#f92672">]</span> We use socat <span style="color:#66d9ef">for</span> standalone server <span style="color:#66d9ef">if</span> you use standalone mode.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分14秒 CST<span style="color:#f92672">]</span> If you don<span style="color:#e6db74">&#39;t use standalone mode, just ignore this warning.
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 10时22分14秒 CST] Installing to /Users/steven/.acme.sh
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 10时22分14秒 CST] Installed to /Users/steven/.acme.sh/acme.sh
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 10时22分14秒 CST] Installing alias to &#39;</span>/Users/steven/.bashrc<span style="color:#960050;background-color:#1e0010">&#39;</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分14秒 CST<span style="color:#f92672">]</span> OK, Close and reopen your terminal to start using acme.sh
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分14秒 CST<span style="color:#f92672">]</span> Installing cron job
+crontab: no crontab <span style="color:#66d9ef">for</span> steven
+crontab: no crontab <span style="color:#66d9ef">for</span> steven
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分17秒 CST<span style="color:#f92672">]</span> Good, bash is found, so change the shebang to use bash as preferred.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分19秒 CST<span style="color:#f92672">]</span> OK
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分19秒 CST<span style="color:#f92672">]</span> Install success!
+
+source ~/.bashrc</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat ~/.bashrc
+. <span style="color:#e6db74">&#34;/Users/steven/.acme.sh/acme.sh.env&#34;</span>
+
+cat /Users/steven/.acme.sh/acme.sh.env
+export LE_WORKING_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/steven/.acme.sh&#34;</span>
+alias acme.sh<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/steven/.acme.sh/acme.sh&#34;</span></code></pre></div>
+<h2 id="2-设置acme-sh自动更新">2.设置acme.sh自动更新</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --upgrade --auto-upgrade
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分39秒 CST<span style="color:#f92672">]</span> Installing from online archive.
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分39秒 CST<span style="color:#f92672">]</span> Downloading https://github.com/acmesh-official/acme.sh/archive/master.tar.gz
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分44秒 CST<span style="color:#f92672">]</span> Extracting master.tar.gz
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> It is recommended to install socat first.
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> We use socat <span style="color:#66d9ef">for</span> standalone server <span style="color:#66d9ef">if</span> you use standalone mode.
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> If you don<span style="color:#960050;background-color:#1e0010">&#39;</span>t use standalone mode, just ignore this warning.
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> Installing to /Users/steven/.acme.sh
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> Installed to /Users/steven/.acme.sh/acme.sh
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分45秒 CST<span style="color:#f92672">]</span> Good, bash is found, so change the shebang to use bash as preferred.
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分46秒 CST<span style="color:#f92672">]</span> OK
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分46秒 CST<span style="color:#f92672">]</span> Install success!
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分49秒 CST<span style="color:#f92672">]</span> Upgrade success!</code></pre></div>
+<h2 id="3-查看acme-sh版本">3.查看acme.sh版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --version
+https://github.com/acmesh-official/acme.sh
+v3.0.5</code></pre></div>
+<h2 id="4-生成证书">4.生成证书</h2>
+
+<p>我之前使用默认Server，也就是zerorssl证书，总是报错。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --register-account  -m example@gmail.com --server zerossl
+Usage: _hmac hashalg secret <span style="color:#f92672">[</span>outputhex<span style="color:#f92672">]</span>
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 16时59分12秒 CST<span style="color:#f92672">]</span> Registering account: https://acme.zerossl.com/v2/DV90
+<span style="color:#f92672">[</span>2022年 6月 7日 星期二 16时59分28秒 CST<span style="color:#f92672">]</span> Register account Error: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;urn:ietf:params:acme:error:malformed&#34;</span>,<span style="color:#e6db74">&#34;status&#34;</span>:400,<span style="color:#e6db74">&#34;detail&#34;</span>:<span style="color:#e6db74">&#34;[External Account Binding] The JWS Signature MUST be present&#34;</span><span style="color:#f92672">}</span>
+
+example@gmail.com 为你的zerossl账号，不要随意填写邮箱！</code></pre></div>
+<p>Supported CA：<br />
+- <a href="https://github.com/acmesh-official/acme.sh/wiki/ZeroSSL.com-CA">ZeroSSL.com CA</a>(default)<br />
+- Letsencrypt.org CA<br />
+- <a href="https://github.com/acmesh-official/acme.sh/wiki/BuyPass.com-CA">BuyPass.com CA</a><br />
+- <a href="https://github.com/acmesh-official/acme.sh/wiki/SSL.com-CA">SSL.com CA</a><br />
+- <a href="https://github.com/acmesh-official/acme.sh/wiki/Google-Public-CA">Google.com Public CA</a><br />
+- <a href="https://github.com/letsencrypt/pebble">Pebble strict Mode</a><br />
+- Any other <a href="https://tools.ietf.org/html/rfc8555">RFC8555</a>-compliant CA</p>
+
+<p>我在 <a href="https://github.com/acmesh-official/acme.sh/issues/3472">https://github.com/acmesh-official/acme.sh/issues/3472</a> 上也看到了类似的问题<br />
+还有这个：<a href="https://github.com/acmesh-official/acme.sh/issues/3106">https://github.com/acmesh-official/acme.sh/issues/3106</a> ，这篇帖子中的意思是说macos的openssl默认使用LibreSSL，进行认证的时候会有一些问题，目前还没有看到解决方案。</p>
+
+<p>最后的解决方法就是加上<code>--server letsencrypt</code>参数，不使用zerossl 这个CA，而是使用letsencrypt这个CA</p>
+
+<p>关于ZeroSSL 和 Let&rsquo;s Encrypt的功能比较，可以查看以下链接：<br />
+<a href="https://zerossl.com/letsencrypt-alternative/">https://zerossl.com/letsencrypt-alternative/</a></p>
+
+<p>下面开始申请证书：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --issue --dns dns_ali -d imepisode.top --server letsencrypt
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Using CA: https://acme-v02.api.letsencrypt.org/directory
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Single domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;imepisode.top&#39;</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Getting domain auth token <span style="color:#66d9ef">for</span> each domain
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分29秒 CST<span style="color:#f92672">]</span> Getting webroot <span style="color:#66d9ef">for</span> domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;imepisode.top&#39;</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分30秒 CST<span style="color:#f92672">]</span> Adding txt value: zKq4VEWx8gP1-D1GjxmfIoB2ZwIedtTFmgKZseiuaSw <span style="color:#66d9ef">for</span> domain:  _acme-challenge.imepisode.top
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分33秒 CST<span style="color:#f92672">]</span> The txt record is added: Success.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分33秒 CST<span style="color:#f92672">]</span> Let<span style="color:#e6db74">&#39;s check each DNS record now. Sleep 20 seconds first.
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 17时10分54秒 CST] You can use &#39;</span>--dnssleep<span style="color:#e6db74">&#39; to disable public dns checks.
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 17时10分54秒 CST] See: https://github.com/acmesh-official/acme.sh/wiki/dnscheck
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 17时10分54秒 CST] Checking imepisode.top for _acme-challenge.imepisode.top
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 17时10分56秒 CST] Domain imepisode.top &#39;</span>_acme-challenge.imepisode.top<span style="color:#e6db74">&#39; success.
+</span><span style="color:#e6db74">[2022年 6月 2日 星期四 17时10分56秒 CST] All success, let&#39;</span>s <span style="color:#66d9ef">return</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分56秒 CST<span style="color:#f92672">]</span> Verifying: imepisode.top
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分57秒 CST<span style="color:#f92672">]</span> Pending, The CA is processing your order, please just wait. <span style="color:#f92672">(</span>1/30<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分01秒 CST<span style="color:#f92672">]</span> Success
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分01秒 CST<span style="color:#f92672">]</span> Removing DNS records.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分01秒 CST<span style="color:#f92672">]</span> Removing txt: zKq4VEWx8gP1-D1GjxmfIoB2ZwIedtTFmgKZseiuaSw <span style="color:#66d9ef">for</span> domain: _acme-challenge.imepisode.top
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分06秒 CST<span style="color:#f92672">]</span> Removed: Success
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分06秒 CST<span style="color:#f92672">]</span> Verify finished, start to sign.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分06秒 CST<span style="color:#f92672">]</span> Lets finalize the order.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分06秒 CST<span style="color:#f92672">]</span> Le_OrderFinalize<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://acme-v02.api.letsencrypt.org/acme/finalize/569911696/94092013026&#39;</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分07秒 CST<span style="color:#f92672">]</span> Downloading cert.
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分07秒 CST<span style="color:#f92672">]</span> Le_LinkCert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://acme-v02.api.letsencrypt.org/acme/cert/04416803a84e8e337fa045be2f78ba529128&#39;</span>
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> Cert success.
+-----BEGIN CERTIFICATE-----
+省略
+-----END CERTIFICATE-----
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> Your cert is in: /Users/steven/.acme.sh/imepisode.top/imepisode.top.cer
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> Your cert key is in: /Users/steven/.acme.sh/imepisode.top/imepisode.top.key
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> The intermediate CA cert is in: /Users/steven/.acme.sh/imepisode.top/ca.cer
+<span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> And the full chain certs is there: /Users/steven/.acme.sh/imepisode.top/fullchain.cer</code></pre></div>
+<h2 id="5-查看已安装证书信息">5.查看已安装证书信息</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --info -d imepisode.top
+DOMAIN_CONF<span style="color:#f92672">=</span>/Users/steven/.acme.sh/imepisode.top/imepisode.top.conf
+Le_Domain<span style="color:#f92672">=</span>imepisode.top
+Le_Alt<span style="color:#f92672">=</span>no
+Le_Webroot<span style="color:#f92672">=</span>dns_ali
+Le_PreHook<span style="color:#f92672">=</span>
+Le_PostHook<span style="color:#f92672">=</span>
+Le_RenewHook<span style="color:#f92672">=</span>
+Le_API<span style="color:#f92672">=</span>https://acme-v02.api.letsencrypt.org/directory
+Le_Keylength<span style="color:#f92672">=</span><span style="color:#ae81ff">2048</span>
+Le_OrderFinalize<span style="color:#f92672">=</span>https://acme-v02.api.letsencrypt.org/acme/finalize/569911696/94092013026
+Le_LinkOrder<span style="color:#f92672">=</span>https://acme-v02.api.letsencrypt.org/acme/order/569911696/94092013026
+Le_LinkCert<span style="color:#f92672">=</span>https://acme-v02.api.letsencrypt.org/acme/cert/04416803a84e8e337fa045be2f78ba529128
+Le_CertCreateTime<span style="color:#f92672">=</span><span style="color:#ae81ff">1654161068</span>
+Le_CertCreateTimeStr<span style="color:#f92672">=</span>2022-06-02T09:11:08Z
+Le_NextRenewTimeStr<span style="color:#f92672">=</span>2022-08-01T09:11:08Z
+Le_NextRenewTime<span style="color:#f92672">=</span><span style="color:#ae81ff">1659258668</span></code></pre></div>
+<h2 id="6-copy-证书到-nginx-apache-或者其他服务">6.copy 证书到 nginx/apache 或者其他服务</h2>
+
+<p>这部分我就不重复写了，可以查看官方文档：<br />
+<a href="https://github.com/acmesh-official/acme.sh/wiki/说明">https://github.com/acmesh-official/acme.sh/wiki/说明</a></p>
+
+<h2 id="7-更新证书">7.更新证书</h2>
+
+<p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
+
+<p>请确保 cronjob 正确安装, 看起来是类似这样的:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">crontab  -l
+
+<span style="color:#ae81ff">56</span> * * * * <span style="color:#e6db74">&#34;/root/.acme.sh&#34;</span>/acme.sh --cron --home <span style="color:#e6db74">&#34;/root/.acme.sh&#34;</span> &gt; /dev/null</code></pre></div>
+<h2 id="8-出错怎么办-如何调试">8. 出错怎么办，如何调试</h2>
+
+<p>如果出错, 请添加 debug log：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug</code></pre></div>
+<p>或者：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug  <span style="color:#ae81ff">2</span></code></pre></div>
+<p>请参考： <a href="https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh">https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh</a></p>
+
+<p>最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.</p>
+
+<p><a href="https://github.com/Neilpang/acme.sh/wiki">https://github.com/Neilpang/acme.sh/wiki</a></p>
+
+<h1 id="阿里云说明">阿里云说明</h1>
+
+<h2 id="1-创建ram用户">1.创建RAM用户</h2>
+
+<p>登陆<a href="https://ram.console.aliyun.com/users平台，点击&quot;&quot;身份管理-用户-创建用户&quot;">https://ram.console.aliyun.com/users平台，点击&quot;&quot;身份管理-用户-创建用户&quot;</a></p>
+
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDCdhj.png" title="aliyun ram" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDCdhj.md.png" style="width: 680px;height: 200px;" alt="aliyun ram">
+  
+    </a>
+  
+   
+    <span class="caption">aliyun ram</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<p>注：点击“复制” 按钮，复制保存AccessKey和SecretKey，创建用户只显示一次AccessKey和SecretKey！！！一定要保存好！否则只能再次重新创建用户了。</p>
+
+<h2 id="2-添加ram权限">2.添加RAM权限</h2>
+
+<p>给新添加的RAM用户添加权限，我们需要的是 <span class="highlight-text danger">“管理云解析(DNS)的权限”</span>，我一开始添加成了“管理域名服务的权限”，导致生成证书的时候报错：无法创建dns txt记录。</p>
+
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDCaNQ.png" title="aliyun ram" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDCaNQ.md.png" style="width: 680px;height: 200px;" alt="aliyun ram">
+  
+    </a>
+  
+   
+    <span class="caption">aliyun ram</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<h2 id="3-配置ram-api-key">3.配置RAM API key</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.acme.sh/account.conf
+export Ali_Key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sdfsdfsdfljlbjkljlkjsdfoiwje&#34;</span>
+export Ali_Secret<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jlsdflanljkljlfdsaklkjflsa&#34;</span></code></pre></div>
+<p>The Ali_Key and Ali_Secret will be saved in ~/.acme.sh/account.conf and will be reused when needed.</p>
+
+<h1 id="zerossl-证书申请">ZeroSSL 证书申请</h1>
+
+<p>1.申请证书之前，建议先在ZeroSSL官方网站：<a href="https://zerossl.com/">https://zerossl.com/</a> 注册账号</p>
+
+<p>2.另外注意，如果您通过ZeroSSL官网在线申请SSL证书,免费账户是有3个域的额度限制的，但通过acme.sh申请则没有这个限制，所以建议使用acme.sh进行申请，简单方便。</p>
+
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDe9A0.png" title="套餐说明" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDe9A0.md.png" style="width: 680px;height: 400px;" alt="套餐说明">
+  
+    </a>
+  
+   
+    <span class="caption">套餐说明</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<p>3.在网站上申请证书，认证方式有三种：</p>
+
+<p>3.1. Email Verification(邮箱)<br />
+3.2. DNS(CNAME)<br />
+3.3. HTTP File Upload</p>
+
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDCUAg.png" title="证书申请认证方式" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDCUAg.md.png" style="width: 680px;height: 440px;" alt="证书申请认证方式">
+  
+    </a>
+  
+   
+    <span class="caption">证书申请认证方式</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<p>第一种验证方式，邮箱只能从列表中选择，无法自定义邮箱后缀的，如下图所示：<br />
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDCtHS.jpg" title="邮箱认证方式" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDCtHS.md.jpg" style="width: 680px;height: 400px;" alt="邮箱认证方式">
+  
+    </a>
+  
+   
+    <span class="caption">邮箱认证方式</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+</p>
+
+<p>我使用的第二种方式，需要在aliyun上先配置一个dns cname的解析，如下图所示会有配置示例：<br />
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDC09s.png" title="DNS CNAME认证方式" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDC09s.md.png" style="width: 680px;height: 660px;" alt="DNS CNAME认证方式">
+  
+    </a>
+  
+   
+    <span class="caption">DNS CNAME认证方式</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+</p>
+
+<p>之后点击Next step会进行验证，通过之后显示如下：
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://s1.ax1x.com/2022/06/07/XDKiZ9.png" title="认证通过" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://s1.ax1x.com/2022/06/07/XDKiZ9.md.png" style="width: 680px;height: 200px;" alt="认证通过">
+  
+    </a>
+  
+   
+    <span class="caption">认证通过</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+</p>
+
+<h1 id="延伸阅读">延伸阅读</h1>
+
+<p>1.<a href="https://github.com/acmesh-official/acme.sh/wiki/说明">https://github.com/acmesh-official/acme.sh/wiki/说明</a><br />
+2.<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi">https://github.com/acmesh-official/acme.sh/wiki/dnsapi</a><br />
+3.<a href="https://github.com/acmesh-official/acme.sh/wiki/Change-default-CA-to-ZeroSSL">https://github.com/acmesh-official/acme.sh/wiki/Change-default-CA-to-ZeroSSL</a><br />
+4.<a href="https://github.com/acmesh-official/acme.sh/issues/3472">https://github.com/acmesh-official/acme.sh/issues/3472</a><br />
+5.<a href="https://zerossl.com/letsencrypt-alternative/">https://zerossl.com/letsencrypt-alternative/</a></p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/sre/">SRE</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/nginx/">nginx</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/certificate/">certificate</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" data-tooltip="Deploying MinIO on Kubernetes" aria-label="PREVIOUS: Deploying MinIO on Kubernetes">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/imepisode.top\/2022\/06\/acme.sh-applies-for-an-ssl-certificate\/';
+        
+          this.page.identifier = '\/2022\/06\/acme.sh-applies-for-an-ssl-certificate\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'stevenlee87-github-io-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2022/01/deploying-minio-on-kubernetes/" data-tooltip="Deploying MinIO on Kubernetes" aria-label="PREVIOUS: Deploying MinIO on Kubernetes">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2022%2F06%2Facme.sh-applies-for-an-ssl-certificate%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2022%2F06%2Facme.sh-applies-for-an-ssl-certificate%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2022%2F06%2Facme.sh-applies-for-an-ssl-certificate%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://s2.ax1x.com/2020/01/07/lcQywD.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+      <div id="about-card-bio">imepisode1@gmail.com</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://imepisode.top/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://imepisode.top/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+
