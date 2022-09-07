@@ -2,16 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imepisode.top/tags/book/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/categories/life/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/post/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/tags/reading/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/tags/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/2022/09/%E8%AF%BB%E4%B9%A6%E4%B8%8E%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2022-09-07T18:10:00+08:00</lastmod>
+  </url><url>
     <loc>https://imepisode.top/2022/06/acme.sh-applies-for-an-ssl-certificate/</loc>
     <lastmod>2022-06-07T15:06:00+08:00</lastmod>
   </url><url>
-    <loc>https://imepisode.top/categories/</loc>
-    <lastmod>2022-06-07T15:06:00+08:00</lastmod>
-  </url><url>
     <loc>https://imepisode.top/tags/certificate/</loc>
-    <lastmod>2022-06-07T15:06:00+08:00</lastmod>
-  </url><url>
-    <loc>https://imepisode.top/</loc>
     <lastmod>2022-06-07T15:06:00+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/categories/linux/</loc>
@@ -23,16 +41,10 @@
     <loc>https://imepisode.top/categories/nginx/</loc>
     <lastmod>2022-06-07T15:06:00+08:00</lastmod>
   </url><url>
-    <loc>https://imepisode.top/post/</loc>
-    <lastmod>2022-06-07T15:06:00+08:00</lastmod>
-  </url><url>
     <loc>https://imepisode.top/tags/sre/</loc>
     <lastmod>2022-06-07T15:06:00+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/categories/sre/</loc>
-    <lastmod>2022-06-07T15:06:00+08:00</lastmod>
-  </url><url>
-    <loc>https://imepisode.top/tags/</loc>
     <lastmod>2022-06-07T15:06:00+08:00</lastmod>
   </url><url>
     <loc>https://imepisode.top/tags/container/</loc>
@@ -674,9 +686,6 @@
     <loc>https://imepisode.top/categories/preface/</loc>
     <lastmod>2021-03-12T17:55:19+08:00</lastmod>
   </url><url>
-    <loc>https://imepisode.top/tags/book/</loc>
-    <lastmod>2020-09-28T16:11:19+08:00</lastmod>
-  </url><url>
     <loc>https://imepisode.top/categories/book/</loc>
     <lastmod>2020-09-28T16:11:19+08:00</lastmod>
   </url><url>
@@ -736,6 +745,8 @@
   </url><url>
     <loc>https://imepisode.top/tags/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-11-18T10:50:19+08:00</lastmod>
+  </url><url>
+    <loc>https://imepisode.top/1/01/</loc>
   </url><url>
     <loc>https://imepisode.top/archives/</loc>
   </url>
