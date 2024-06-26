@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="centos7, linux, bbr">
 <meta name="description" content="">
@@ -108,14 +108,16 @@
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -416,19 +418,19 @@ if (!doNotTrack) {
 <code>centos8</code>默认支持<code>BBR</code>，可以不用升级内核</p>
 
 <p>如果是<code>centos7</code>操作系统，开启<code>BBR</code>要求<code>4.10</code>以上版本 Linux 内核，可使用如下命令查看当前内核版本：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">uname -r
-3.10.0-1062.4.1.el7.x86_64</code></pre><pre tabindex="0"><code class="language-shell script" data-lang="shell script">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+<pre><code class="language-shell script" data-lang="shell script">uname -r
+3.10.0-1062.4.1.el7.x86_64</code></pre><pre><code class="language-shell script" data-lang="shell script">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml</code></pre>
 <p>执行后会提示：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">包名: kernel-ml
+<pre><code class="language-shell script" data-lang="shell script">包名: kernel-ml
 版本: 5.3.10-1.el7.elrepo.x86_64
 yum源: elrepo-kernel 
 包大小: 49 M</code></pre>
 <p>关于Linux内核版本：可以在 <a href="https://www.kernel.org/">https://www.kernel.org/</a> 查看持续更新的版本。</p>
 
 <p>安装完成后，查看已安装的内核：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">rpm -qa | grep kernel
+<pre><code class="language-shell script" data-lang="shell script">rpm -qa | grep kernel
 
 kernel-tools-3.10.0-1062.12.1.el7.x86_64
 kernel-headers-3.10.0-1062.12.1.el7.x86_64
@@ -443,28 +445,28 @@ kernel-debug-devel-3.10.0-1062.12.1.el7.x86_64</code></pre>
 <h1 id="修改linux-grub2引导">修改linux grub2引导</h1>
 
 <p>执行以下shell命令:</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39;</code></pre>
+<pre><code class="language-shell script" data-lang="shell script">egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39;</code></pre>
 <p>会得到如下结果:</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">CentOS Linux (5.3.10-1.el7.elrepo.x86_64) 7 (Core)
+<pre><code class="language-shell script" data-lang="shell script">CentOS Linux (5.3.10-1.el7.elrepo.x86_64) 7 (Core)
 CentOS Linux (3.10.0-1062.4.1.el7.x86_64) 7 (Core)
 CentOS Linux (3.10.0-957.1.3.el7.x86_64) 7 (Core)
 CentOS Linux (0-rescue-05cb8c7b39fe0f70e3ce97e5beab809d) 7 (Core)</code></pre>
 <p>由于序号从0开始，设置默认启动项为1并重启系统：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">grub2-set-default 0
+<pre><code class="language-shell script" data-lang="shell script">grub2-set-default 0
 reboot</code></pre>
 <p>重启完成后，重新登录并重新运行uname命令来确认你是否使用了正确的内核：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">uname -r</code></pre>
+<pre><code class="language-shell script" data-lang="shell script">uname -r</code></pre>
 <p>得到如下结果则升级成功：
 5.3.10-1.el7.elrepo.x86_64</p>
 
 <h1 id="开启-bbr-功能">开启 bbr 功能</h1>
 
 <p>执行以下命令：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">echo &#39;net.core.default_qdisc=fq&#39; | tee -a /etc/sysctl.conf
+<pre><code class="language-shell script" data-lang="shell script">echo &#39;net.core.default_qdisc=fq&#39; | tee -a /etc/sysctl.conf
 echo &#39;net.ipv4.tcp_congestion_control=bbr&#39; | tee -a /etc/sysctl.conf
 sysctl -p</code></pre>
 <p>完成后,分别执行如下命令来检查<code>BBR</code>是否开启成功:</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">sysctl net.ipv4.tcp_available_congestion_control
+<pre><code class="language-shell script" data-lang="shell script">sysctl net.ipv4.tcp_available_congestion_control
 输出应为 net.ipv4.tcp_available_congestion_control = bbr cubic reno
 sysctl -n net.ipv4.tcp_congestion_control
 输出应为 bbr
@@ -473,17 +475,17 @@ lsmod | grep bbr
 <h1 id="速度测试">速度测试</h1>
 
 <p>在服务器<code>centos7</code>和<code>centos8</code>上分别执行以下命令：</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">dd if=/dev/zero of=1024MB.zip bs=1024k count=1000
+<pre><code class="language-shell script" data-lang="shell script">dd if=/dev/zero of=1024MB.zip bs=1024k count=1000
 python -mSimpleHTTPServer 8081</code></pre>
 <p>说明:<code>centos7</code>和<code>centos8</code>操作系统的<code>/</code>文件系统类型都是xfs,网卡都是千兆</p>
 
 <p>centos7:</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
+<pre><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
 CentOS Linux release 7.6.1810 (Core)
 uname -a
 Linux host1.net 3.10.0-957.5.1.el7.x86_64</code></pre>
 <p>centos8:</p>
-<pre tabindex="0"><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
+<pre><code class="language-shell script" data-lang="shell script">cat /etc/redhat-release
 CentOS Linux release 8.1.1911 (Core)
 uname -a
 Linux host1.net 4.18.0-147.el8.x86_64</code></pre>

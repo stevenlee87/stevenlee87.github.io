@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="statistics, prometheus, grafana">
 <meta name="description" content="">
@@ -110,14 +110,16 @@
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -697,7 +699,7 @@ P90 = PERCENTILE(E1:E10,0.9) 96.1</p>
    res=(1−j)∗array[i]+j∗array[i+1]     （res就是我们所需要的百分位数）</p>
 
 <p>2.python代码实现</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
 <span style="color:#75715e">#coding:utf8</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_percentile</span>():
@@ -722,19 +724,19 @@ P90 = PERCENTILE(E1:E10,0.9) 96.1</p>
     i <span style="color:#f92672">=</span> int(location_90)
     j <span style="color:#f92672">=</span> (round(location_90, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> i)
     percentage90 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> j) <span style="color:#f92672">*</span> array[i] <span style="color:#f92672">+</span> j <span style="color:#f92672">*</span> array[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]
-    print(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
+    <span style="color:#66d9ef">print</span>(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_numpy_percentile</span>():
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    方式二：使用numpy库
 </span><span style="color:#e6db74">    :return: None
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+    <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
     array <span style="color:#f92672">=</span> sorted([<span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">97</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">94</span>, <span style="color:#ae81ff">95</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">94</span>])
     percentage10 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">10</span>)
     percentage50 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">50</span>)
     percentage90 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(array, <span style="color:#ae81ff">90</span>)
-    print(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
+    <span style="color:#66d9ef">print</span>(percentage10, percentage50, percentage90)  <span style="color:#75715e"># 输出：(93.9, 95.0, 96.1)</span>
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
     test_percentile()
@@ -757,7 +759,7 @@ taskmanager（container）</p>
 <p>如果我们只使用avg平均值来统计CPU的使用率，这样的误差会很大。</p>
 
 <p>我们使用三个指标来衡量CPU的使用率情况: P50, P90和方差</p>
-<pre tabindex="0"><code>P50: quantile(0.5, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)
+<pre><code>P50: quantile(0.5, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)
 P90: quantile(0.1, cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)
 方差: stddev(cpu_percent{framework_name=~&#34;$FRAMEWORK_NAME&#34;, cluster=~&#34;$CLUSTER&#34;}*100) by (framework_name)</code></pre>
 <p>展示的话可以使用grafana，图形如下：</p>

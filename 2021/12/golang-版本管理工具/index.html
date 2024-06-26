@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="golang">
 <meta name="description" content="">
@@ -106,14 +106,16 @@
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -312,7 +314,7 @@ if (!doNotTrack) {
 </ul>
 
 <h1 id="自动化安装">自动化安装</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># 建议安装前清空`GOROOT`、`GOBIN`等环境变量
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># 建议安装前清空`GOROOT`、`GOBIN`等环境变量
 $ curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
 $ echo &#34;unalias g&#34; &gt;&gt; ~/.bashrc # 可选。若其他程序（如&#39;git&#39;）使用了&#39;g&#39;作为别名。
 $ source ~/.bashrc # 或者 source ~/.zshrc</code></pre></div>
@@ -324,21 +326,21 @@ $ source ~/.bashrc # 或者 source ~/.zshrc</code></pre></div>
 <li><p>将压缩包解压至PATH环境变量目录下（如/usr/local/bin）</p></li>
 
 <li><p>编辑shell环境配置文件（如~/.bashrc、~/.zshrc&hellip;）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cat&gt;&gt;~/.bashrc&lt;&lt;&#39;EOF&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cat&gt;&gt;~/.bashrc&lt;&lt;&#39;EOF&#39;
 export GOROOT=&#34;${HOME}/.g/go&#34;
 export PATH=&#34;${HOME}/.g/go/bin:$PATH&#34;
 export G_MIRROR=https://golang.google.cn/dl/
 EOF</code></pre></div></li>
 
 <li><p>启用环境变量</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ source ~/.bashrc # 或source ~/.zshrc
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ source ~/.bashrc # 或source ~/.zshrc
 macos: vim ~/.bash_profile，加入source ~/.bashrc解决问题。</code></pre></div></li>
 </ul>
 
 <h1 id="使用">使用</h1>
 
 <p>1.查看g版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --help
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --help
 NAME:
   g - Golang Version Manager
 
@@ -365,31 +367,31 @@ NAME:
   --version, -v  print the version
 
  COPYRIGHT:
-  Copyright (c) 2019-2021, voidint. All rights reserved.</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --version
+  Copyright (c) 2019-2021, voidint. All rights reserved.</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g --version
 g version 1.2.1
 build: 2021-10-05T15:19:17+08:00
 branch: release/1.2.1
 commit: 674c2616724f983f51dfe8030637f46f51da715b</code></pre></div>
 <p>2.查询当前可供安装的stable状态的go版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote stable
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote stable
 1.16.12
 1.17.5</code></pre></div>
 <p>3.安装目标go版本1.17.5和1.16.12</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g install 1.17.5
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g install 1.17.5
 Downloading 100% |███████████████| (130/130 MB, 16.578 MB/s) [7s:0s]
 Computing checksum with SHA256
 Checksums matched
-Now using go1.17.5</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g install 1.16.12
+Now using go1.17.5</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g install 1.16.12
 Downloading 100% |███████████████| (125/125 MB, 16.947 MB/s) [7s:0s]
 Computing checksum with SHA256
 Checksums matched
 Now using go1.16.12</code></pre></div>
 <p>4.查询已安装的go版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
 * 1.16.12
   1.17.5</code></pre></div>
 <p>5.查询可供安装的所有go版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls-remote
   1
   1.2.2
   1.3rc1
@@ -407,13 +409,13 @@ Now using go1.16.12</code></pre></div>
   1.17.5
   1.18beta1</code></pre></div>
 <p>6.切换到另一个已安装的go版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g use 1.17.5
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g use 1.17.5
 go version go1.17.5 darwin/amd64
 
 go env | grep VERSION
 GOVERSION=&#34;go1.17.5&#34;</code></pre></div>
 <p>7.卸载一个已安装的go版本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">g ls
   1.16.12
 * 1.17.5
 
@@ -423,19 +425,19 @@ Uninstalled go1.16.12
 g ls
 * 1.17.5</code></pre></div>
 <h1 id="g-目录结构">g 目录结构</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd ~/.g
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd ~/.g
 total 0
 drwxr-xr-x   5 steven  staff   160 12 28 15:00 .
 drwxr-xr-x+ 80 steven  staff  2560 12 28 15:23 ..
 drwxr-xr-x   4 steven  staff   128 12 28 14:41 downloads
 lrwxr-xr-x   1 steven  staff    32 12 28 15:00 go -&gt; /Users/steven/.g/versions/1.17.5
-drwxr-xr-x   4 steven  staff   128 12 28 15:00 versions</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd downloads/
+drwxr-xr-x   4 steven  staff   128 12 28 15:00 versions</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd downloads/
 ~/.g/downloads$ ll
 total 523056
 drwxr-xr-x  4 steven  staff        128 12 28 14:41 .
 drwxr-xr-x  5 steven  staff        160 12 28 15:00 ..
 -rw-r--r--  1 steven  staff  131024468 12 28 14:41 go1.16.12.darwin-amd64.tar.gz
--rw-r--r--  1 steven  staff  136774992 12 28 14:41 go1.17.5.darwin-amd64.tar.gz</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~/.g/versions$ ll
+-rw-r--r--  1 steven  staff  136774992 12 28 14:41 go1.17.5.darwin-amd64.tar.gz</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~/.g/versions$ ll
 total 0
 drwxr-xr-x   4 steven  staff  128 12 28 15:00 .
 drwxr-xr-x   5 steven  staff  160 12 28 15:00 ..

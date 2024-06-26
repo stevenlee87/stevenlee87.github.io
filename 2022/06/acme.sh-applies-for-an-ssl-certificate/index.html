@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="SRE, nginx, certificate, letsencrypt, zerossl">
 <meta name="description" content="">
@@ -112,14 +112,16 @@
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -334,7 +336,7 @@ if (!doNotTrack) {
 <p>下面详细介绍.</p>
 
 <h2 id="1-安装-acme-sh">1. 安装 acme.sh</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl https://get.acme.sh | sh -s email<span style="color:#f92672">=</span>example@gmail.com
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl https://get.acme.sh | sh -s email<span style="color:#f92672">=</span>example@gmail.com
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分05秒 CST<span style="color:#f92672">]</span> Installing from online archive.
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分05秒 CST<span style="color:#f92672">]</span> Downloading https://github.com/acmesh-official/acme.sh/archive/master.tar.gz
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分12秒 CST<span style="color:#f92672">]</span> Extracting master.tar.gz
@@ -352,14 +354,14 @@ crontab: no crontab <span style="color:#66d9ef">for</span> steven
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分19秒 CST<span style="color:#f92672">]</span> OK
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 10时22分19秒 CST<span style="color:#f92672">]</span> Install success!
 
-source ~/.bashrc</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat ~/.bashrc
+source ~/.bashrc</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat ~/.bashrc
 . <span style="color:#e6db74">&#34;/Users/steven/.acme.sh/acme.sh.env&#34;</span>
 
 cat /Users/steven/.acme.sh/acme.sh.env
 export LE_WORKING_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/steven/.acme.sh&#34;</span>
 alias acme.sh<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/steven/.acme.sh/acme.sh&#34;</span></code></pre></div>
 <h2 id="2-设置acme-sh自动更新">2.设置acme.sh自动更新</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --upgrade --auto-upgrade
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --upgrade --auto-upgrade
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分39秒 CST<span style="color:#f92672">]</span> Installing from online archive.
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分39秒 CST<span style="color:#f92672">]</span> Downloading https://github.com/acmesh-official/acme.sh/archive/master.tar.gz
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分44秒 CST<span style="color:#f92672">]</span> Extracting master.tar.gz
@@ -373,13 +375,13 @@ alias acme.sh<span style="color:#f92672">=</span><span style="color:#e6db74">&#3
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分46秒 CST<span style="color:#f92672">]</span> Install success!
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 15时13分49秒 CST<span style="color:#f92672">]</span> Upgrade success!</code></pre></div>
 <h2 id="3-查看acme-sh版本">3.查看acme.sh版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --version
 https://github.com/acmesh-official/acme.sh
 v3.0.5</code></pre></div>
 <h2 id="4-生成证书">4.生成证书</h2>
 
 <p>我之前使用默认Server，也就是zerorssl证书，总是报错。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --register-account  -m example@gmail.com --server zerossl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --register-account  -m example@gmail.com --server zerossl
 Usage: _hmac hashalg secret <span style="color:#f92672">[</span>outputhex<span style="color:#f92672">]</span>
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 16时59分12秒 CST<span style="color:#f92672">]</span> Registering account: https://acme.zerossl.com/v2/DV90
 <span style="color:#f92672">[</span>2022年 6月 7日 星期二 16时59分28秒 CST<span style="color:#f92672">]</span> Register account Error: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;urn:ietf:params:acme:error:malformed&#34;</span>,<span style="color:#e6db74">&#34;status&#34;</span>:400,<span style="color:#e6db74">&#34;detail&#34;</span>:<span style="color:#e6db74">&#34;[External Account Binding] The JWS Signature MUST be present&#34;</span><span style="color:#f92672">}</span>
@@ -403,7 +405,7 @@ example@gmail.com 为你的zerossl账号，不要随意填写邮箱！</code></p
 <a href="https://zerossl.com/letsencrypt-alternative/">https://zerossl.com/letsencrypt-alternative/</a></p>
 
 <p>下面开始申请证书：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --issue --dns dns_ali -d imepisode.top --server letsencrypt
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --issue --dns dns_ali -d imepisode.top --server letsencrypt
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Using CA: https://acme-v02.api.letsencrypt.org/directory
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Single domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;imepisode.top&#39;</span>
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时10分27秒 CST<span style="color:#f92672">]</span> Getting domain auth token <span style="color:#66d9ef">for</span> each domain
@@ -436,7 +438,7 @@ example@gmail.com 为你的zerossl账号，不要随意填写邮箱！</code></p
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> The intermediate CA cert is in: /Users/steven/.acme.sh/imepisode.top/ca.cer
 <span style="color:#f92672">[</span>2022年 6月 2日 星期四 17时11分08秒 CST<span style="color:#f92672">]</span> And the full chain certs is there: /Users/steven/.acme.sh/imepisode.top/fullchain.cer</code></pre></div>
 <h2 id="5-查看已安装证书信息">5.查看已安装证书信息</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --info -d imepisode.top
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh --info -d imepisode.top
 DOMAIN_CONF<span style="color:#f92672">=</span>/Users/steven/.acme.sh/imepisode.top/imepisode.top.conf
 Le_Domain<span style="color:#f92672">=</span>imepisode.top
 Le_Alt<span style="color:#f92672">=</span>no
@@ -463,15 +465,15 @@ Le_NextRenewTime<span style="color:#f92672">=</span><span style="color:#ae81ff">
 <p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
 
 <p>请确保 cronjob 正确安装, 看起来是类似这样的:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">crontab  -l
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">crontab  -l
 
 <span style="color:#ae81ff">56</span> * * * * <span style="color:#e6db74">&#34;/root/.acme.sh&#34;</span>/acme.sh --cron --home <span style="color:#e6db74">&#34;/root/.acme.sh&#34;</span> &gt; /dev/null</code></pre></div>
 <h2 id="8-出错怎么办-如何调试">8. 出错怎么办，如何调试</h2>
 
 <p>如果出错, 请添加 debug log：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug</code></pre></div>
 <p>或者：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug  <span style="color:#ae81ff">2</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">acme.sh  --issue  .....  --debug  <span style="color:#ae81ff">2</span></code></pre></div>
 <p>请参考： <a href="https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh">https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh</a></p>
 
 <p>最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.</p>
@@ -581,7 +583,7 @@ Le_NextRenewTime<span style="color:#f92672">=</span><span style="color:#ae81ff">
 
 
 <h2 id="3-配置ram-api-key">3.配置RAM API key</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.acme.sh/account.conf
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.acme.sh/account.conf
 export Ali_Key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sdfsdfsdfljlbjkljlkjsdfoiwje&#34;</span>
 export Ali_Secret<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jlsdflanljkljlfdsaklkjflsa&#34;</span></code></pre></div>
 <p>The Ali_Key and Ali_Secret will be saved in ~/.acme.sh/account.conf and will be reused when needed.</p>

@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="Container, Kubernetes, Golang">
 <meta name="description" content="MinIO is a high-performance object storage solution with native support for Kubernetes deployments. minIO provides an API compatible with Amazon Web Services S3 and supports all core S3 features. MinIO is released under the GNU General Public License v3.0.
@@ -118,14 +118,16 @@ MinIO is different in that it was designed from the beginning as a private/hybri
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -314,7 +316,7 @@ if (!doNotTrack) {
 <h1 id="storageclass">StorageClass</h1>
 
 <p>The persistent volume used in this test is bare host directory, Since this is just a test, no additional StorageClass is prepared.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...
 <span style="color:#f92672">volumeMounts</span>:
   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">data</span>
     <span style="color:#f92672">mountPath</span>: <span style="color:#ae81ff">/data</span>
@@ -327,7 +329,7 @@ if (!doNotTrack) {
 <p>Headless Service controls the domain within which StatefulSets are created. The domain managed by this Service takes the form: <code>$(service name).$(namespace).svc.cluster.local</code> (where <code>cluster.local</code> is the cluster domain), and the pods in this domain take the form: <code>$(pod-name-{i}).$(service name).$(namespace).svc.cluster.local</code>. This is required to get a DNS resolvable URL for each of the pods created within the Statefulset.</p>
 
 <p>This is the Headless service description:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Service</span>
 <span style="color:#f92672">metadata</span>:
@@ -344,13 +346,13 @@ if (!doNotTrack) {
   <span style="color:#f92672">selector</span>:
     <span style="color:#f92672">app</span>: <span style="color:#ae81ff">minio</span></code></pre></div>
 <p>Create the headless service</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f headless-svc.yaml</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f headless-svc.yaml</code></pre></div>
 <h1 id="create-minio-statefulset">Create Minio StatefulSet</h1>
 
 <p>A StatefulSet provides a deterministic name and a unique identity to each pod, making it easy to deploy stateful distributed applications. To launch distributed Minio user need to pass drive locations as parameters to the minio server command. Then the user need to run the same command on all the participating pods. StatefulSets offer a perfect way to handle this requirement.</p>
 
 <p>This is the StatefulSet description.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">StatefulSet</span>
 <span style="color:#f92672">metadata</span>:
@@ -424,7 +426,7 @@ if (!doNotTrack) {
           <span style="color:#f92672">hostPath</span>:
             <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/storage/minio</span></code></pre></div>
 <p>Create the StatefulSet.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f minio-dist-statefulset.yaml</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f minio-dist-statefulset.yaml</code></pre></div>
 <h1 id="expose-service-using-ingress">Expose Service using Ingress</h1>
 
 <p>Now that a MinIO StatefulSet running, user may either want to access it internally (within the cluster) or expose it as a Service onto an external (outside of the cluster, maybe public internet) IP address, depending on the use case. This can be achieved using Services.</p>
@@ -432,7 +434,7 @@ if (!doNotTrack) {
 <p>There are many service types - default type is ClusterIP, which exposes a service to connection from inside the cluster. NodePort and LoadBalancer are two types that expose services to external traffic. At here, We will use <a href="https://traefik.io/">Traefik Ingress</a> to expose the service.</p>
 
 <p>This is the service description.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">traefik.containo.us/v1alpha1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">IngressRoute</span>
 <span style="color:#f92672">metadata</span>:
@@ -452,7 +454,7 @@ if (!doNotTrack) {
         - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">minio</span>
           <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9001</span></code></pre></div>
 <p>Create the IngressRoute</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ingress-router.yaml</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ingress-router.yaml</code></pre></div>
 <h1 id="access-minio">Access Minio</h1>
 
 <p>Use the following URL to access MinIO: <code>http://console.minio.idocker.io</code></p>

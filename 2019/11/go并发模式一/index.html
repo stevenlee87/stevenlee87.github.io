@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Steven Lee">
 <meta name="keywords" content="Go, 并发模式, 后端">
 <meta name="description" content="">
@@ -108,14 +108,16 @@
 
     
       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-H4BWJ91RC7', { 'anonymize_ip': false });
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-H4BWJ91RC7', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
 
@@ -417,7 +419,8 @@ for integer := range intSteam {
 
 
 <p>结果输出并程序退出:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
+</code></pre></div>
 <p>上面的例子里我们确保我我们执行完goroutine之后关闭了<code>intStream</code>, 并且提供了循环的终止条件，这是非常常见的模式</p>
 
 <div class="alert info ">
@@ -487,12 +490,13 @@ wg.Wait()</code></pre>
 
 
 <p>输出:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Unblocking</span> <span style="color:#a6e22e">goroutines</span><span style="color:#f92672">...</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Unblocking</span> <span style="color:#a6e22e">goroutines</span><span style="color:#f92672">...</span>
 <span style="color:#ae81ff">4</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
 <span style="color:#ae81ff">2</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
 <span style="color:#ae81ff">3</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
 <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
-<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span></code></pre></div>
+<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">has</span> <span style="color:#a6e22e">begun</span>
+</code></pre></div>
 <p>我们可以看到所有的<code>goroutine</code>都没有开始执行，直到先打印输出之后，我们关闭了channel。</p>
 
 <h1 id="channel约束">channel约束</h1>
@@ -650,13 +654,14 @@ fmt.Println(&#34;Done receiving!&#34;)</code></pre>
 
 
 <p>结果是：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">0</span>
 <span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">1</span>
 <span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">2</span>
 <span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">3</span>
 <span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">4</span>
 <span style="color:#a6e22e">Received</span>: <span style="color:#ae81ff">5</span>
-<span style="color:#a6e22e">Done</span> <span style="color:#a6e22e">receiving</span>!</code></pre></div>
+<span style="color:#a6e22e">Done</span> <span style="color:#a6e22e">receiving</span>!
+</code></pre></div>
 <p>注意看下上面的<code>resultStream</code>这个<code>channel</code>是如何封装在<code>channel owner</code>函数里的。很明显，这种写法规避了往<code>nil channel</code>和<code>closed channel</code>里写入数据的风险，并且关闭<code>channel</code>只触发一次。为我们的程序规避了一大片的风险。</p>
 
 <p>而且这里建议你在程序里尽可能的保证<code>channel</code>的<code>物主身份</code>，也就是上面例子的<code>goroutine</code>的作用域范围小一点，这样好处是上面的一些问题会显而易见，如果你的<code>channel</code>是<code>struct</code>一个成员属性，并且有很多成员方法，那么随着代码的迭代很快就会不清楚<code>channel</code>的是来干什么的了</p>
@@ -792,8 +797,9 @@ select {
 
 
 <p>结果输出：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Blocking</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">read</span><span style="color:#f92672">...</span>
-<span style="color:#a6e22e">Unblocked</span> <span style="color:#ae81ff">5.000170042</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">later</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Blocking</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">read</span><span style="color:#f92672">...</span>
+<span style="color:#a6e22e">Unblocked</span> <span style="color:#ae81ff">5.000170042</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">later</span>
+</code></pre></div>
 <p>从上面结果看我们在进入<code>select</code>代码块过了5秒后才结束。可以用这个方法简单而有效的等待一些工作处理好之前阻塞住。但是我们思考一下下面的情况会发生什么：</p>
 
 <ul>
@@ -864,8 +870,9 @@ fmt.Printf(&#34;c1Count: %d\nc2Count: %d\n&#34;, c1Count, c2Count)</code></pre>
 
 
 <p>结果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c1Count</span>: <span style="color:#ae81ff">505</span>
-<span style="color:#a6e22e">c2Count</span>: <span style="color:#ae81ff">496</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c1Count</span>: <span style="color:#ae81ff">505</span>
+<span style="color:#a6e22e">c2Count</span>: <span style="color:#ae81ff">496</span>
+</code></pre></div>
 <p>我们可以看到，1000次循环，基本每个<code>channel</code>触发次数各占一半。Go的<code>runtime</code>会运行一个伪随机，在<code>select</code>里均匀地选择<code>case</code>来触发，每个<code>case</code>都有同等的机会被选择。</p>
 
 <p>那么第二个问题呢：如果永远不会有任何<code>channel</code>满足条件会怎样？<br />
@@ -983,7 +990,8 @@ select{
 
 
 <p>结果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">In</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">after</span> <span style="color:#ae81ff">1.421</span><span style="color:#a6e22e">μs</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">In</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">after</span> <span style="color:#ae81ff">1.421</span><span style="color:#a6e22e">μs</span>
+</code></pre></div>
 <p>可见几乎是瞬间就走到了<code>default</code>语句。这样我们就和<code>for-select</code>相互组合，来实现一个<code>goroutine</code>等待另一个<code>goroutine</code>的结果的同时继续处理其他事情：</p>
 
 
@@ -1052,7 +1060,8 @@ fmt.Printf(&#34;Achieved %v cycles of work before signalled to stop.\n&#34;, wor
 
 
 <p>结果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Achieved</span> <span style="color:#ae81ff">5</span> <span style="color:#a6e22e">cycles</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">work</span> <span style="color:#a6e22e">before</span> <span style="color:#a6e22e">signalled</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">stop</span>.</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">Achieved</span> <span style="color:#ae81ff">5</span> <span style="color:#a6e22e">cycles</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">work</span> <span style="color:#a6e22e">before</span> <span style="color:#a6e22e">signalled</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">stop</span>.
+</code></pre></div>
 <p>最后, <code>select{}</code> 这个没有任何条件的语句会永远进行阻塞。</p>
 
 <div class="alert success no-icon ">
