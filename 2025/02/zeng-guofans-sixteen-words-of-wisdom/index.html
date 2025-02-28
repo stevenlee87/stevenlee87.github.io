@@ -17,7 +17,7 @@
   },
   "name":"imepisode blog",
   "description":"",
-  "url":"https:\/\/imepisode.top\/2025\/02\/install-and-set-up-kubectl-on-linux\/",
+  "url":"https:\/\/imepisode.top\/2025\/02\/zeng-guofans-sixteen-words-of-wisdom\/",
   "keywords":"[k8s, study, reading]"
 }
 
@@ -33,20 +33,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Install and Set Up kubectl on Linux">
-<meta name="twitter:title" content="Install and Set Up kubectl on Linux">
-<meta property="og:url" content="https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/">
-<meta property="twitter:url" content="https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/">
+<meta property="og:title" content="Zeng Guofan&#39;s Sixteen Words of Wisdom">
+<meta name="twitter:title" content="Zeng Guofan&#39;s Sixteen Words of Wisdom">
+<meta property="og:url" content="https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/">
+<meta property="twitter:url" content="https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/">
 <meta property="og:site_name" content="imepisode blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2025-02-27T14:20:00">
+    <meta property="article:published_time" content="2025-02-28T10:29:00">
   
   
-    <meta property="article:modified_time" content="2025-02-27T14:20:00">
+    <meta property="article:modified_time" content="2025-02-28T10:29:00">
   
   
   
@@ -87,18 +87,18 @@
   <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
 
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2025/02/kubernetes-logo.png">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2025/02/kubernetes-logo.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2025/02/wisdom.jpeg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2025/02/wisdom.jpeg">
 
 
-    <title>Install and Set Up kubectl on Linux</title>
+    <title>Zeng Guofan&#39;s Sixteen Words of Wisdom</title>
 
     <link rel="icon" href="https://imepisode.top/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/">
+    <link rel="canonical" href="https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -259,15 +259,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Install and Set Up kubectl on Linux
+      Zeng Guofan&#39;s Sixteen Words of Wisdom
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2025-02-27T14:20:00&#43;08:00">
+      <time datetime="2025-02-28T10:29:00&#43;08:00">
         
-  February 27, 2025
+  February 28, 2025
 
       </time>
     
@@ -289,173 +289,68 @@ if (!doNotTrack) {
               <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
 <ul>
-<li><a href="#准备开始">准备开始</a></li>
-<li><a href="#在-linux-系统中安装-kubectl">在 Linux 系统中安装 kubectl</a>
+<li><a href="#物来顺应-未来不迎-当时不杂-既过不恋-曾国藩">物来顺应，未来不迎，当时不杂，既过不恋 &mdash;曾国藩</a>
 <ul>
-<li><a href="#用-curl-在-linux-系统中安装-kubectl">用 curl 在 Linux 系统中安装 kubectl</a>
-<ul>
-<li><a href="#执行命令遇到问题">执行命令遇到问题</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-<li><a href="#安装-kubectl">安装 kubectl</a></li>
+<li><a href="#物来顺应">物来顺应</a></li>
+<li><a href="#未来不迎">未来不迎</a></li>
+<li><a href="#当时不杂">当时不杂</a></li>
+<li><a href="#既过不恋">既过不恋</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#延伸阅读">延伸阅读</a></li>
+<li><a href="#整体理解">整体理解</a></li>
+<li><a href="#现实意义">现实意义</a></li>
 </ul>
 </nav>
 
 
-<h1 id="准备开始">准备开始</h1>
+<h1 id="物来顺应-未来不迎-当时不杂-既过不恋-曾国藩">物来顺应，未来不迎，当时不杂，既过不恋 &mdash;曾国藩</h1>
 
-<p>kubectl 版本和集群版本之间的差异必须在一个小版本号内。 例如：v1.32 版本的客户端能与 v1.31、 v1.32 和 v1.33 版本的控制面通信。 用最新兼容版的 kubectl 有助于避免不可预见的问题。</p>
+<h2 id="物来顺应">物来顺应</h2>
 
-<h1 id="在-linux-系统中安装-kubectl">在 Linux 系统中安装 kubectl</h1>
-
-<p>在 Linux 系统中安装 kubectl 有如下几种方法：<br />
-<div class="alert info no-icon ">
-  <p><ul>
-<li>用 curl 在 Linux 系统中安装 kubectl</li>
-<li>用原生包管理工具安装</li>
-<li>用其他包管理工具安装</li>
+<ul>
+<li>含义：当事情发生时，坦然接受并顺应它，不抗拒、不逃避。</li>
+<li>启示：面对生活中的变化和挑战，保持平和的心态，积极应对，而不是被情绪左右。</li>
 </ul>
-</p>
-</div></p>
 
-<h2 id="用-curl-在-linux-系统中安装-kubectl">用 curl 在 Linux 系统中安装 kubectl</h2>
+<h2 id="未来不迎">未来不迎</h2>
 
-<p>X86-64 and ARM64:</p>
+<ul>
+<li>含义：不要过分担忧未来，也不必刻意迎合未来的不确定性。</li>
+<li>启示：未来是无法完全预测的，与其焦虑不安，不如专注于当下，做好眼前的事情。</li>
+</ul>
 
+<h2 id="当时不杂">当时不杂</h2>
 
+<ul>
+<li>含义：在处理当前事务时，心无杂念，专注于当下。</li>
+<li>启示：做事时要集中精力，避免分心，这样才能高效地完成任务。</li>
+</ul>
 
-  
-  
-  
-  
-  
+<h2 id="既过不恋">既过不恋</h2>
 
-  
-  
-  
-  
-  
+<ul>
+<li>含义：过去的事情已经过去，不要过分留恋或纠结。</li>
+<li>启示：学会放下过去的得失，才能轻装前行，迎接新的机遇。</li>
+</ul>
 
+<h1 id="整体理解">整体理解</h1>
 
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>X86-64 and ARM64</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">x86_64</li>
-      
-        <li class="tab ">arm64</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-x86_64 x86_64" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-x86_64 x86_64"><code class="x86_64">curl -LO &#34;https://dl.k8s.io/release/$(curl -L -s \
-https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&#34;</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-arm64 arm64" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-arm64 arm64"><code class="arm64">curl -LO &#34;https://dl.k8s.io/release/$(curl -L -s \
-https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl&#34;</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
-
-
-<h3 id="执行命令遇到问题">执行命令遇到问题</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -LO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-<span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">138</span>  <span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">138</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">77</span>      <span style="color:#ae81ff">0</span>  0:00:01  0:00:01 --:--:--    <span style="color:#ae81ff">77</span>
-  <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> --:--:--  0:00:03 --:--:--     <span style="color:#ae81ff">0</span>
-curl: <span style="color:#f92672">(</span>60<span style="color:#f92672">)</span> Peer<span style="color:#e6db74">&#39;s Certificate issuer is not recognized.
-</span><span style="color:#e6db74">More details here: http://curl.haxx.se/docs/sslcerts.html
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">curl performs SSL certificate verification by default, using a &#34;bundle&#34;
-</span><span style="color:#e6db74"> of Certificate Authority (CA) public keys (CA certs). If the default
-</span><span style="color:#e6db74"> bundle file isn&#39;</span>t adequate, you can specify an alternate file
- using the --cacert option.
-If this HTTPS server uses a certificate signed by a CA represented in
- the bundle, the certificate verification probably failed due to a
- problem with the certificate <span style="color:#f92672">(</span>it might be expired, or the name might
- not match the domain name in the URL<span style="color:#f92672">)</span>.
-If you<span style="color:#e6db74">&#39;d like to turn off curl&#39;</span>s verification of the certificate, use
- the -k <span style="color:#f92672">(</span>or --insecure<span style="color:#f92672">)</span> option.</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">这个报错信息表明在使用 curl 命令下载文件时，SSL 证书验证失败，以下是详细解释：
-
-1.错误代码及含义
-curl: (60) Peer&#39;s Certificate issuer is not recognized.：此错误代码 60 表示 curl 在验证服务器的 SSL 证书时，无法识别证书的颁发机构（CA）。也就是说，curl 默认使用的证书颁发机构列表中，不包含为服务器证书签名的 CA。
-
-2.默认证书验证机制：curl 默认会对服务器的 SSL 证书进行验证，它使用一个包含多个证书颁发机构公钥的文件（证书包）来完成验证。如果服务器的证书是由这个证书包中的某个 CA 签名的，curl 会认为该证书是可信的。
-可能的问题
-
-3.证书过期：服务器使用的 SSL 证书可能已经超过了有效期，导致验证失败。
-
-4.域名不匹配：证书上的域名与你请求的 URL 中的域名不一致，也会使验证不通过。
-
-5.CA 证书缺失：curl 使用的默认 CA 证书包中，没有包含为服务器证书签名的 CA 的信息。</code></pre></div>
-<h3 id="解决办法">解决办法</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">需要把命令修改为：curl -kLO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl</code></pre></div>
-<div class="alert danger no-icon ">
-  <p>禁用证书验证：使用 -k 或 &ndash;insecure 选项可以关闭 curl 的证书验证功能。不过，这种方法存在安全风险，因为它会使你无法确保连接的服务器是你期望的那个，可能会遭受中间人攻击</p>
+<div class="alert info no-icon ">
+  <p>这句话强调了一种活在当下、顺其自然的生活态度：<br />
+- 不执着于过去：过去的成功或失败都已成定局，无需过度留恋或懊悔。<br />
+- 不焦虑于未来：未来的事情无法完全掌控，与其担忧，不如专注于当下。<br />
+- 专注于现在：做好眼前的事情，心无旁骛，才能从容应对生活中的变化。</p>
 </div>
 
-<h3 id="安装-kubectl">安装 kubectl</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -kLO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-<span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">138</span>  <span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">138</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">184</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:--   <span style="color:#ae81ff">185</span>
-<span style="color:#ae81ff">100</span> 44.4M  <span style="color:#ae81ff">100</span> 44.4M    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  1362k      <span style="color:#ae81ff">0</span>  0:00:33  0:00:33 --:--:--  147k
+<h1 id="现实意义">现实意义</h1>
 
-md5sum kubectl
-a60e14348d808ea0b11acdc2b1b026b5  kubectl
+<div class="alert info no-icon ">
+  <p>在现代社会，这句话对我们的生活和工作有着重要的指导意义：<br />
+- 减少焦虑：帮助我们从对未来的担忧中解脱出来，专注于当下。<br />
+- 提高效率：通过专注和简化思维，提升工作和生活的效率。<br />
+- 保持平和：在面对变化和挑战时，保持内心的平静和从容。</p>
+</div>
 
-chmod +x ./kubectl
-cp /root/kubectl /usr/bin/kubectl
-ln -s /usr/bin/kubectl /usr/local/bin/kubectl
-
-whereis kubectl
-kubectl: /usr/bin/kubectl /usr/local/bin/kubectl
-
-kubectl version
-Client Version: version.Info<span style="color:#f92672">{</span>Major:<span style="color:#e6db74">&#34;1&#34;</span>, Minor:<span style="color:#e6db74">&#34;23&#34;</span>, GitVersion:<span style="color:#e6db74">&#34;v1.23.0&#34;</span>, GitCommit:<span style="color:#e6db74">&#34;ab69524f795c42094a6630298ff53f3c3ebab7f4&#34;</span>, GitTreeState:<span style="color:#e6db74">&#34;clean&#34;</span>, BuildDate:<span style="color:#e6db74">&#34;2021-12-07T18:16:20Z&#34;</span>, GoVersion:<span style="color:#e6db74">&#34;go1.17.3&#34;</span>, Compiler:<span style="color:#e6db74">&#34;gc&#34;</span>, Platform:<span style="color:#e6db74">&#34;linux/amd64&#34;</span><span style="color:#f92672">}</span></code></pre></div>
-<h1 id="延伸阅读">延伸阅读</h1>
-
-<p>1.<a href="https://kubernetes.io/zh-cn/docs/tasks/tools/install-kubectl-linux/">原文地址</a></p>
+<p>总之，这句话提醒我们以豁达的心态面对生活，既不沉溺于过去，也不焦虑于未来，而是专注于当下，顺应自然，活出从容与智慧。</p>
               
 
 
@@ -490,7 +385,7 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" data-tooltip="Zeng Guofan&#39;s Sixteen Words of Wisdom" aria-label="NEXT: Zeng Guofan&#39;s Sixteen Words of Wisdom">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -498,7 +393,7 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2024/06/like-site/" data-tooltip="Like Site" aria-label="PREVIOUS: Like Site">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" data-tooltip="Install and Set Up kubectl on Linux" aria-label="PREVIOUS: Install and Set Up kubectl on Linux">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -516,19 +411,19 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -559,9 +454,9 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imepisode.top\/2025\/02\/install-and-set-up-kubectl-on-linux\/';
+        this.page.url = 'https:\/\/imepisode.top\/2025\/02\/zeng-guofans-sixteen-words-of-wisdom\/';
         
-          this.page.identifier = '\/2025\/02\/install-and-set-up-kubectl-on-linux\/'
+          this.page.identifier = '\/2025\/02\/zeng-guofans-sixteen-words-of-wisdom\/'
         
       };
       (function() {
@@ -597,7 +492,7 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" data-tooltip="Zeng Guofan&#39;s Sixteen Words of Wisdom" aria-label="NEXT: Zeng Guofan&#39;s Sixteen Words of Wisdom">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -605,7 +500,7 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2024/06/like-site/" data-tooltip="Like Site" aria-label="PREVIOUS: Like Site">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" data-tooltip="Install and Set Up kubectl on Linux" aria-label="PREVIOUS: Install and Set Up kubectl on Linux">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -623,19 +518,19 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2025/02/install-and-set-up-kubectl-on-linux/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2025/02/zeng-guofans-sixteen-words-of-wisdom/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -666,19 +561,19 @@ Client Version: version.Info<span style="color:#f92672">{</span>Major:<span styl
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Finstall-and-set-up-kubectl-on-linux%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Fzeng-guofans-sixteen-words-of-wisdom%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Finstall-and-set-up-kubectl-on-linux%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Fzeng-guofans-sixteen-words-of-wisdom%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Finstall-and-set-up-kubectl-on-linux%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2025%2F02%2Fzeng-guofans-sixteen-words-of-wisdom%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
