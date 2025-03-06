@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proxy on imepisode blog</title>
+    <link>https://imepisode.top/tags/proxy/</link>
+    <description>Recent content in proxy on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Mar 2025 17:44:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx proxy pass Simple usage (with / or without /)</title>
+      <link>https://imepisode.top/2025/03/nginx-proxy-pass-simple-usage-with-/-or-without-/</link>
+      <pubDate>Thu, 06 Mar 2025 17:44:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2025/03/nginx-proxy-pass-simple-usage-with-/-or-without-/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
