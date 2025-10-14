@@ -6,7 +6,25 @@
     <description>Recent content in Categories on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Mar 2025 17:44:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Oct 2025 16:00:19 +0800</lastBuildDate><atom:link href="https://imepisode.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>监控</title>
+      <link>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Tue, 14 Oct 2025 16:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>统计学</title>
+      <link>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+      <pubDate>Tue, 14 Oct 2025 16:00:19 +0800</pubDate>
+      
+      <guid>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tool</title>
       <link>https://imepisode.top/categories/tool/</link>
@@ -1039,24 +1057,6 @@
       <pubDate>Mon, 30 Mar 2020 12:14:19 +0800</pubDate>
       
       <guid>https://imepisode.top/categories/bbr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>监控</title>
-      <link>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</link>
-      <pubDate>Sat, 21 Mar 2020 23:00:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/%E7%9B%91%E6%8E%A7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>统计学</title>
-      <link>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
-      <pubDate>Sat, 21 Mar 2020 23:00:19 +0800</pubDate>
-      
-      <guid>https://imepisode.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</guid>
       <description></description>
     </item>
     
