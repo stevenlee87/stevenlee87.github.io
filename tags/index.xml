@@ -6,7 +6,34 @@
     <description>Recent content in Tags on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Oct 2025 16:00:19 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Oct 2025 18:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programmer</title>
+      <link>https://imepisode.top/tags/programmer/</link>
+      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/programmer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://imepisode.top/tags/reading/</link>
+      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>study</title>
+      <link>https://imepisode.top/tags/study/</link>
+      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/study/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>grafana</title>
       <link>https://imepisode.top/tags/grafana/</link>
@@ -62,15 +89,6 @@
     </item>
     
     <item>
-      <title>study</title>
-      <link>https://imepisode.top/tags/study/</link>
-      <pubDate>Thu, 06 Mar 2025 17:44:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/study/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>web</title>
       <link>https://imepisode.top/tags/web/</link>
       <pubDate>Thu, 06 Mar 2025 17:44:00 +0800</pubDate>
@@ -85,24 +103,6 @@
       <pubDate>Fri, 28 Feb 2025 10:29:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programmer</title>
-      <link>https://imepisode.top/tags/programmer/</link>
-      <pubDate>Fri, 28 Feb 2025 10:29:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/programmer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reading</title>
-      <link>https://imepisode.top/tags/reading/</link>
-      <pubDate>Fri, 28 Feb 2025 10:29:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/reading/</guid>
       <description></description>
     </item>
     
