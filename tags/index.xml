@@ -6,20 +6,11 @@
     <description>Recent content in Tags on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Oct 2025 18:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>programmer</title>
-      <link>https://imepisode.top/tags/programmer/</link>
-      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/programmer/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 11 Nov 2025 14:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>reading</title>
       <link>https://imepisode.top/tags/reading/</link>
-      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      <pubDate>Tue, 11 Nov 2025 14:00:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/reading/</guid>
       <description></description>
@@ -28,9 +19,18 @@
     <item>
       <title>study</title>
       <link>https://imepisode.top/tags/study/</link>
-      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      <pubDate>Tue, 11 Nov 2025 14:00:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programmer</title>
+      <link>https://imepisode.top/tags/programmer/</link>
+      <pubDate>Thu, 30 Oct 2025 18:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/programmer/</guid>
       <description></description>
     </item>
     
