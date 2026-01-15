@@ -6,11 +6,20 @@
     <description>Recent content in Tags on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Nov 2025 14:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jan 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ai</title>
+      <link>https://imepisode.top/tags/ai/</link>
+      <pubDate>Thu, 15 Jan 2026 16:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/ai/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>reading</title>
       <link>https://imepisode.top/tags/reading/</link>
-      <pubDate>Tue, 11 Nov 2025 14:00:00 +0800</pubDate>
+      <pubDate>Thu, 15 Jan 2026 16:00:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/reading/</guid>
       <description></description>
@@ -19,7 +28,7 @@
     <item>
       <title>study</title>
       <link>https://imepisode.top/tags/study/</link>
-      <pubDate>Tue, 11 Nov 2025 14:00:00 +0800</pubDate>
+      <pubDate>Thu, 15 Jan 2026 16:00:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/study/</guid>
       <description></description>
@@ -103,15 +112,6 @@
       <pubDate>Fri, 28 Feb 2025 10:29:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ai</title>
-      <link>https://imepisode.top/tags/ai/</link>
-      <pubDate>Wed, 26 Jun 2024 16:20:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/ai/</guid>
       <description></description>
     </item>
     
