@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2026\/06\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97\/",
+  "keywords":"[Ollama, Qwen3.6, MacBook M5 Pro, 本地大模型, Cherry Studio, ModelScope, GGUF, Apple Silicon]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="Ollama, Qwen3.6, MacBook M5 Pro, 本地大模型, Cherry Studio, ModelScope, GGUF, Apple Silicon">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南">
+<meta name="twitter:title" content="在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南">
+<meta property="og:url" content="https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">
+<meta property="twitter:url" content="https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2026-06-30T10:00:00">
+  
+  
+    <meta property="article:modified_time" content="2026-06-30T10:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="study">
+    
+      <meta property="article:section" content="AI">
+    
+      <meta property="article:section" content="programming">
+    
+  
+  
+    
+      <meta property="article:tag" content="Ollama">
+    
+      <meta property="article:tag" content="Qwen">
+    
+      <meta property="article:tag" content="Apple Silicon">
+    
+      <meta property="article:tag" content="本地大模型">
+    
+      <meta property="article:tag" content="Cherry Studio">
+    
+      <meta property="article:tag" content="MacBook">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png">
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro01.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro01.png">
+
+
+    <title>在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南</title>
+
+    <link rel="icon" href="https://imepisode.top/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H4BWJ91RC7');
+    </script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+          <h5 class="sidebar-profile-bio">imepisode1@gmail.com</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2026-06-30T10:00:00&#43;08:00">
+        
+  June 30, 2026
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://imepisode.top/categories/study">study</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/ai">AI</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/programming">programming</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#开篇">开篇</a></li>
+<li><a href="#一-前置准备">一、前置准备</a>
+<ul>
+<li><a href="#1-确认-python-pip-可用">1. 确认 Python / pip 可用</a></li>
+<li><a href="#2-python-3-12-安装包的注意事项">2. Python 3.12+ 安装包的注意事项</a></li>
+</ul></li>
+<li><a href="#二-下载模型-解决官方源慢的问题">二、下载模型（解决官方源慢的问题）</a>
+<ul>
+<li><a href="#问题-ollama-官方源极慢">问题：Ollama 官方源极慢</a></li>
+<li><a href="#推荐方案-从-modelscope-国内源-下载-gguf-再手动导入">推荐方案：从 ModelScope（国内源）下载 GGUF 再手动导入</a>
+<ul>
+<li><a href="#第-1-步-停掉当前下载">第 1 步：停掉当前下载</a></li>
+<li><a href="#第-2-步-关闭-vpn-代理">第 2 步：关闭 VPN / 代理</a></li>
+<li><a href="#第-3-步-安装-modelscope-cli">第 3 步：安装 ModelScope CLI</a></li>
+<li><a href="#第-4-步-下载-gguf-文件">第 4 步：下载 GGUF 文件</a></li>
+</ul></li>
+<li><a href="#备选方案-huggingface-镜像站">备选方案：HuggingFace 镜像站</a></li>
+<li><a href="#想先快速验证流程">想先快速验证流程？</a></li>
+</ul></li>
+<li><a href="#三-导入模型到-ollama">三、导入模型到 Ollama</a></li>
+<li><a href="#四-启动与对话">四、启动与对话</a></li>
+<li><a href="#五-api-调用">五、API 调用</a>
+<ul>
+<li><a href="#1-原生-api-curl">1. 原生 API（curl）</a></li>
+<li><a href="#2-openai-兼容接口-python">2. OpenAI 兼容接口（Python）</a></li>
+<li><a href="#3-各种-密钥相关-场景">3. 各种&rdquo;密钥相关&rdquo;场景</a></li>
+</ul></li>
+<li><a href="#六-在-cherry-studio-中接入">六、在 Cherry Studio 中接入</a></li>
+<li><a href="#七-这个本地模型能做什么">七、这个本地模型能做什么</a>
+<ul>
+<li><a href="#擅长的事">擅长的事</a></li>
+<li><a href="#本地跑的核心价值-相比云端">本地跑的核心价值（相比云端）</a></li>
+<li><a href="#能力边界-合理预期">能力边界（合理预期）</a></li>
+</ul></li>
+<li><a href="#八-查看-gpu-使用率-apple-silicon">八、查看 GPU 使用率（Apple Silicon）</a>
+<ul>
+<li><a href="#方法一-活动监视器-最简单">方法一：活动监视器（最简单）</a></li>
+<li><a href="#方法二-powermetrics-系统自带-最准">方法二：<code>powermetrics</code>（系统自带，最准）</a></li>
+<li><a href="#方法三-macmon-推荐-免-sudo-界面现代">方法三：<code>macmon</code>（推荐，免 sudo，界面现代）</a></li>
+<li><a href="#方法四-asitop-终端图形面板">方法四：<code>asitop</code>（终端图形面板）</a></li>
+</ul></li>
+<li><a href="#九-常见问题排查">九、常见问题排查</a></li>
+</ul>
+</nav>
+
+
+<h1 id="开篇">开篇</h1>
+
+<p>从 2019 年的 MacBook Pro (Intel 8GB) 迁移到 MacBook M5 Pro (48GB) 后，想在本地跑个大模型。这篇文章记录了从下载 Ollama、部署 Qwen3.6-27B-Q4_K_M 到接入 Cherry Studio 的完整过程，以及一路踩过的所有坑和解决方案。</p>
+
+<blockquote>
+<p>适用环境：Apple Silicon（M 系列芯片）Mac，尤其是从 Intel Mac 迁移而来的系统。</p>
+</blockquote>
+
+<h1 id="一-前置准备">一、前置准备</h1>
+
+<h2 id="1-确认-python-pip-可用">1. 确认 Python / pip 可用</h2>
+
+<p>从 Intel Mac 迁移过来后，<code>/usr/local/bin/</code> 里常残留指向 <strong>Python 2.7</strong> 的旧 <code>pip</code>，已无法使用：</p>
+<pre><code>-bash: /usr/local/bin/pip: bad interpreter: No such file or directory</code></pre>
+<p><strong>解决办法：以后一律使用 <code>pip3</code></strong>（对应 Homebrew 的 Python 3）。可清理掉残留的旧文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm /usr/local/bin/pip /usr/local/bin/pip2 /usr/local/bin/pip2.7 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   /usr/local/bin/pip3.8 /usr/local/bin/pip3.10</code></pre></div>
+<p>如习惯打 <code>pip</code>，在 <code>~/.zshrc</code> 里加一行别名：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias pip<span style="color:#f92672">=</span>pip3</code></pre></div>
+<h2 id="2-python-3-12-安装包的注意事项">2. Python 3.12+ 安装包的注意事项</h2>
+
+<p>新版 Python 默认禁止直接 <code>pip install</code> 到系统环境，会报：</p>
+<pre><code>error: externally-managed-environment</code></pre>
+<p><strong>推荐用 <code>pipx</code></strong> 来安装命令行工具（自动管理虚拟环境）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pipx
+pipx ensurepath</code></pre></div>
+<h1 id="二-下载模型-解决官方源慢的问题">二、下载模型（解决官方源慢的问题）</h1>
+
+<h2 id="问题-ollama-官方源极慢">问题：Ollama 官方源极慢</h2>
+
+<p>直接 <code>ollama run qwen3.6:27b-q4_K_M</code> 时，从海外源拉取，速度可能只有几百 KB/s，17GB 要下 8 小时。</p>
+
+<h2 id="推荐方案-从-modelscope-国内源-下载-gguf-再手动导入">推荐方案：从 ModelScope（国内源）下载 GGUF 再手动导入</h2>
+
+<h3 id="第-1-步-停掉当前下载">第 1 步：停掉当前下载</h3>
+
+<p>按 <code>Ctrl + C</code>。</p>
+
+<h3 id="第-2-步-关闭-vpn-代理">第 2 步：关闭 VPN / 代理</h3>
+
+<p>下载国内源时走直连更快（代理出口在海外反而拖慢）。</p>
+
+<h3 id="第-3-步-安装-modelscope-cli">第 3 步：安装 ModelScope CLI</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pipx install modelscope</code></pre></div>
+<h3 id="第-4-步-下载-gguf-文件">第 4 步：下载 GGUF 文件</h3>
+
+<blockquote>
+<p>注意仓库名和文件名的大小写、点号要完全对应。Qwen3.6 的 GGUF 仓库是 <code>unsloth/Qwen3.6-27B-GGUF</code>。</p>
+</blockquote>
+
+<p>ModelScope 仓库地址：<a href="https://modelscope.cn/models/unsloth/Qwen3.6-27B-GGUF">https://modelscope.cn/models/unsloth/Qwen3.6-27B-GGUF</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modelscope download unsloth/Qwen3.6-27B-GGUF Qwen3.6-27B-Q4_K_M.gguf --local_dir ./</code></pre></div>
+<ul>
+<li><code>--local_dir ./</code>：下载到<strong>当前目录</strong>，方便后续导入（不加则下到缓存目录 <code>~/.cache/modelscope/hub/</code>）。</li>
+</ul>
+
+<p><strong>Q4 量化可选项对比：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>大小</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Qwen3.6-27B-Q4_K_M.gguf</code></td>
+<td>15.66 GB</td>
+<td><strong>最常用</strong>，质量/大小平衡最好</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.6-27B-Q4_K_S.gguf</code></td>
+<td>14.77 GB</td>
+<td>略小，质量稍低</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.6-27B-UD-Q4_K_XL.gguf</code></td>
+<td>16.40 GB</td>
+<td>Unsloth dynamic 量化，质量更好</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.6-27B-IQ4_XS.gguf</code></td>
+<td>14.38 GB</td>
+<td>体积最小的 4bit</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="备选方案-huggingface-镜像站">备选方案：HuggingFace 镜像站</h2>
+
+<p>如果 ModelScope 没有需要的量化版本，用 <code>hf-mirror.com</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export HF_ENDPOINT<span style="color:#f92672">=</span>https://hf-mirror.com
+pipx install huggingface_hub
+huggingface-cli download unsloth/Qwen3.6-27B-GGUF Qwen3.6-27B-Q4_K_M.gguf --local-dir ./</code></pre></div>
+<h2 id="想先快速验证流程">想先快速验证流程？</h2>
+
+<p>先跑个小模型（约 5GB）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama run qwen3:8b</code></pre></div>
+<h1 id="三-导入模型到-ollama">三、导入模型到 Ollama</h1>
+
+<p>下载完成后，用 Modelfile 把 GGUF 导入 Ollama：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 创建 Modelfile（FROM 后面是你实际下载的 .gguf 路径）</span>
+echo <span style="color:#e6db74">&#39;FROM ./Qwen3.6-27B-Q4_K_M.gguf&#39;</span> &gt; Modelfile
+
+<span style="color:#75715e"># 创建模型</span>
+ollama create qwen3.6:27b-q4_K_M -f Modelfile
+
+<span style="color:#75715e"># 运行</span>
+ollama run qwen3.6:27b-q4_K_M</code></pre></div>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro02.png" title="图1: ollama run qwen3.6:27b-q4_K_M" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro02.png" style="width: 3698px;height: 1098px;" alt="图1: ollama run qwen3.6:27b-q4_K_M">
+  
+    </a>
+  
+   
+    <span class="caption">图1: ollama run qwen3.6:27b-q4_K_M</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<h1 id="四-启动与对话">四、启动与对话</h1>
+
+<p>启动后即可在终端直接对话。常用命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama list              <span style="color:#75715e"># 查看已安装的模型</span>
+ollama ps                <span style="color:#75715e"># 查看正在运行/已加载的模型</span>
+ollama run &lt;模型名&gt;       <span style="color:#75715e"># 启动对话</span>
+ollama rm &lt;模型名&gt;        <span style="color:#75715e"># 删除模型</span></code></pre></div>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro03.png" title="图2: ollama status" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/06/Ollama-Local-Deploy-MacBook-M5-Pro03.png" style="width: 500px;height: 700px;" alt="图2: ollama status">
+  
+    </a>
+  
+   
+    <span class="caption">图2: ollama status</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
+<h1 id="五-api-调用">五、API 调用</h1>
+
+<blockquote>
+<p><strong>Ollama 默认不需要 API 密钥。</strong> 它在本地启动 HTTP 服务，监听 <code>http://localhost:11434</code>，本机直接调用即可，无鉴权。</p>
+</blockquote>
+
+<h2 id="1-原生-api-curl">1. 原生 API（curl）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:11434/api/chat -d <span style="color:#e6db74">&#39;{
+</span><span style="color:#e6db74">  &#34;model&#34;: &#34;qwen3.6:27b-q4_K_M&#34;,
+</span><span style="color:#e6db74">  &#34;messages&#34;: [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;你好&#34;}],
+</span><span style="color:#e6db74">  &#34;stream&#34;: false
+</span><span style="color:#e6db74">}&#39;</span></code></pre></div>
+<h2 id="2-openai-兼容接口-python">2. OpenAI 兼容接口（Python）</h2>
+
+<p>Ollama 同时提供 OpenAI 兼容接口 <code>http://localhost:11434/v1</code>。此时 <code>api_key</code> 填<strong>任意非空字符串</strong>即可（库要求非空，但不校验）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+
+client <span style="color:#f92672">=</span> OpenAI(
+    base_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:11434/v1&#34;</span>,
+    api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ollama&#34;</span>,   <span style="color:#75715e"># 任意字符串，不校验</span>
+)
+
+resp <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>chat<span style="color:#f92672">.</span>completions<span style="color:#f92672">.</span>create(
+    model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qwen3.6:27b-q4_K_M&#34;</span>,
+    messages<span style="color:#f92672">=</span>[{<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;你好&#34;</span>}],
+)
+<span style="color:#66d9ef">print</span>(resp<span style="color:#f92672">.</span>choices[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>content)</code></pre></div>
+<h2 id="3-各种-密钥相关-场景">3. 各种&rdquo;密钥相关&rdquo;场景</h2>
+
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>需要做什么</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>本机自己用</td>
+<td>不需要任何密钥，直接调用</td>
+</tr>
+
+<tr>
+<td>OpenAI SDK 调用</td>
+<td><code>api_key</code> 填任意字符串（库要求非空）</td>
+</tr>
+
+<tr>
+<td>暴露到局域网/外网</td>
+<td>Ollama 无内置鉴权，需前置 Nginx/Caddy 做 API key 校验</td>
+</tr>
+
+<tr>
+<td>跨机器访问</td>
+<td>先 <code>export OLLAMA_HOST=0.0.0.0:11434</code> 再重启 <code>ollama serve</code></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>安全提示</strong>：把 <code>OLLAMA_HOST</code> 改成 <code>0.0.0.0</code> 后，任何能连到你 11434 端口的人都能用你的模型（无鉴权）。请用防火墙限制来源 IP，或前置反向代理做校验。</p>
+</blockquote>
+
+<h1 id="六-在-cherry-studio-中接入">六、在 Cherry Studio 中接入</h1>
+
+<p>在 Cherry Studio 添加一个 OpenAI 兼容的自定义服务商：</p>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>填写内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>API 密钥</strong></td>
+<td>随便填一个，如 <code>ollama</code>（留空有时会报错，填非空字符串最稳）</td>
+</tr>
+
+<tr>
+<td><strong>API 地址</strong></td>
+<td><code>http://localhost:11434/v1</code></td>
+</tr>
+
+<tr>
+<td><strong>模型</strong></td>
+<td>点「获取模型列表」自动拉取，或点「+」手动添加 <code>qwen3.6:27b-q4_K_M</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>填好后：</p>
+
+<ol>
+<li>确保 Ollama 服务在运行（<code>ollama ps</code> 能看到模型）。</li>
+<li>点「检测」测试连通性。</li>
+<li>在「模型」处点「获取模型列表」或手动「+」添加模型名（必须与 <code>ollama list</code> 里显示的完全一致）。</li>
+</ol>
+
+<h1 id="七-这个本地模型能做什么">七、这个本地模型能做什么</h1>
+
+<p><code>Qwen3.6-27B-Q4_K_M</code> 是阿里通义千问的 <strong>27B（270 亿参数）中量级模型</strong>，Q4_K_M 是 4bit 量化版（约 15.6GB），属于「<strong>通用对话 + 推理</strong>」型模型。在 M5 Pro 48GB 上能流畅本地运行，<strong>完全离线、不联网、不花钱、数据不出本机</strong>。</p>
+
+<h2 id="擅长的事">擅长的事</h2>
+
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>具体能做什么</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>日常问答 / 写作</td>
+<td>写文章、改稿、起标题、写邮件、润色、扩写缩写、风格改写</td>
+</tr>
+
+<tr>
+<td>翻译</td>
+<td>中英互译及多语种翻译，长文翻译质量不错</td>
+</tr>
+
+<tr>
+<td>代码</td>
+<td>写函数、解释代码、debug、写正则、补全、简单重构、写 SQL/shell</td>
+</tr>
+
+<tr>
+<td>总结提炼</td>
+<td>长文/会议纪要/文档总结、提取要点、做表格</td>
+</tr>
+
+<tr>
+<td>推理思考</td>
+<td>数学题、逻辑推理、分步分析（思维链能力不错）</td>
+</tr>
+
+<tr>
+<td>信息处理</td>
+<td>分类、打标签、抽取结构化信息（如从文本提取 JSON）</td>
+</tr>
+
+<tr>
+<td>角色扮演 / 头脑风暴</td>
+<td>模拟对话、创意发散、起方案</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="本地跑的核心价值-相比云端">本地跑的核心价值（相比云端）</h2>
+
+<ol>
+<li><strong>隐私</strong>：内部资料、合同、代码、个人笔记，数据完全不上传。</li>
+<li><strong>免费无限用</strong>：不计 token、不限次数。</li>
+<li><strong>离线可用</strong>：没网照样用。</li>
+<li><strong>可接入工具</strong>：配合 Cherry Studio / Open WebUI，能搭知识库（RAG）、做翻译插件、接入自动化脚本。</li>
+</ol>
+
+<h2 id="能力边界-合理预期">能力边界（合理预期）</h2>
+
+<ul>
+<li>复杂推理、长代码、精细写作上不如 GPT-5、Claude Opus 等云端旗舰。</li>
+<li>知识有截止时间，不知道最新发生的事（除非接联网/RAG）。</li>
+<li>纯文本模型，不能直接联网、看图、生成图。</li>
+<li>长上下文处理不如云端模型稳。</li>
+</ul>
+
+<blockquote>
+<p>一句话：它是一个<strong>装在你电脑里的、免费且私密的 ChatGPT 平替</strong>，日常 80% 的写作、翻译、编程、总结需求都能扛。</p>
+</blockquote>
+
+<h1 id="八-查看-gpu-使用率-apple-silicon">八、查看 GPU 使用率（Apple Silicon）</h1>
+
+<p>Apple Silicon 的 GPU 占用，活动监视器默认看不到好用的数据。从简单到专业有几种办法：</p>
+
+<h2 id="方法一-活动监视器-最简单">方法一：活动监视器（最简单）</h2>
+
+<p>打开<strong>活动监视器</strong> → 菜单栏「窗口」→「GPU 历史记录」（或按 <code>⌘ + 4</code>），弹出实时曲线。只有一条总曲线，临时看一眼够用。</p>
+
+<h2 id="方法二-powermetrics-系统自带-最准">方法二：<code>powermetrics</code>（系统自带，最准）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo powermetrics --samplers gpu_power -i <span style="color:#ae81ff">1000</span></code></pre></div>
+<ul>
+<li><code>-i 1000</code>：每 1 秒刷新一次。</li>
+<li>关注：<strong>GPU HW active residency</strong>（活跃占比 ≈ 使用率）、<strong>GPU Power</strong>（功耗）。</li>
+<li><code>Ctrl + C</code> 退出。</li>
+</ul>
+
+<h2 id="方法三-macmon-推荐-免-sudo-界面现代">方法三：<code>macmon</code>（推荐，免 sudo，界面现代）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install macmon
+macmon</code></pre></div>
+<p>实时显示 GPU 使用率、显存、功耗、温度，适合常驻观察。</p>
+
+<h2 id="方法四-asitop-终端图形面板">方法四：<code>asitop</code>（终端图形面板）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pipx install asitop
+sudo asitop</code></pre></div>
+<p>一个终端里同时看 CPU / GPU / 显存 / 功耗 / 温度（底层调 <code>powermetrics</code>，需 sudo）。</p>
+
+<blockquote>
+<p><strong>实测技巧</strong>：开一个终端跑 <code>macmon</code>，另一个终端跑 <code>ollama run qwen3.6:27b-q4_K_M</code> 问个问题，GPU 使用率会瞬间冲到 80%~100%，说明模型确实在用 GPU 推理。</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>用哪个</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>临时瞄一眼</td>
+<td>活动监视器 <code>⌘+4</code></td>
+</tr>
+
+<tr>
+<td>看 Ollama 跑模型时 GPU 吃多少（精确）</td>
+<td><code>sudo powermetrics --samplers gpu_power</code></td>
+</tr>
+
+<tr>
+<td>好看的常驻面板</td>
+<td><code>macmon</code>（免 sudo）或 <code>asitop</code></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="九-常见问题排查">九、常见问题排查</h1>
+
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>原因 / 解决</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>下载速度极慢（几百 KB/s）</td>
+<td>用 ModelScope 国内源 + 关代理；见第二节</td>
+</tr>
+
+<tr>
+<td><code>Repo ... not exists</code></td>
+<td>仓库名/文件名写错（注意 <code>Qwen3.6</code> 带点、<code>unsloth/</code> 前缀、大小写）</td>
+</tr>
+
+<tr>
+<td><code>externally-managed-environment</code></td>
+<td>用 <code>pipx</code> 安装，不要直接 <code>pip install</code> 到系统</td>
+</tr>
+
+<tr>
+<td><code>pip: bad interpreter</code></td>
+<td>旧 Python2.7 残留，改用 <code>pip3</code></td>
+</tr>
+
+<tr>
+<td>Cherry Studio 检测失败</td>
+<td>确认 Ollama 在运行、地址带 <code>/v1</code>、模型名与 <code>ollama list</code> 一致</td>
+</tr>
+
+<tr>
+<td>获取模型列表为空</td>
+<td>手动点「+」输入模型名；确认 <code>ollama list</code> 有该模型</td>
+</tr>
+</tbody>
+</table>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/ollama/">Ollama</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/qwen/">Qwen</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/apple-silicon/">Apple Silicon</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/">本地大模型</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/cherry-studio/">Cherry Studio</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/macbook/">MacBook</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2026/06/claude-code-%E4%B9%8B%E7%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84-claude.md/" data-tooltip="Claude Code 之父自己的 CLAUDE.md" aria-label="PREVIOUS: Claude Code 之父自己的 CLAUDE.md">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/imepisode.top\/2026\/06\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97\/';
+        
+          this.page.identifier = '\/2026\/06\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'stevenlee87-github-io-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2026 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2026/06/claude-code-%E4%B9%8B%E7%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84-claude.md/" data-tooltip="Claude Code 之父自己的 CLAUDE.md" aria-label="PREVIOUS: Claude Code 之父自己的 CLAUDE.md">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2026%2F06%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-ollama-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%258C%25E6%2595%25B4%25E6%258C%2587%25E5%258D%2597%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2026%2F06%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-ollama-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%258C%25E6%2595%25B4%25E6%258C%2587%25E5%258D%2597%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2026%2F06%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-ollama-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%258C%25E6%2595%25B4%25E6%258C%2587%25E5%258D%2597%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+      <div id="about-card-bio">imepisode1@gmail.com</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://imepisode.top/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://imepisode.top/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

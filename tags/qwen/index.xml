@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qwen on imepisode blog</title>
+    <link>https://imepisode.top/tags/qwen/</link>
+    <description>Recent content in Qwen on imepisode blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jun 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/qwen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南</title>
+      <link>https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 30 Jun 2026 10:00:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2026/06/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
