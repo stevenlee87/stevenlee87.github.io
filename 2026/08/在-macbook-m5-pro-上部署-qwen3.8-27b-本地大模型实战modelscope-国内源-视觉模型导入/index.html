@@ -551,7 +551,101 @@ modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --l
 <h1 id="四-启动与验证">四、启动与验证</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama list                    <span style="color:#75715e"># 应看到 qwen3.8:27b-q4_K_M，约 18GB</span>
 ollama run qwen3.8:27b-q4_K_M  <span style="color:#75715e"># 进入对话</span>
-ollama ps                      <span style="color:#75715e"># 查看已加载模型和占用内存</span></code></pre></div>
+ollama ps                      <span style="color:#75715e"># 查看已加载模型和占用内存</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">user@MacBook-Pro:~/models/qwen3.8$ ollama list
+NAME                  ID              SIZE     MODIFIED
+qwen3.8:27b-q4_K_M    e40b4c5ed128    18 GB    About a minute ago
+qwen3.6:27b-q4_K_M    7ea81a10e901    16 GB    7 weeks ago</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">user@MacBook-Pro:~/models/qwen3.8$ ollama run qwen3.8:27b-q4_K_M
+&gt;&gt;&gt; 你是什么大模型
+Thinking...
+用户问“你是什么大模型”，这是在询问我的身份/来源。根据系统提示，当用户问题涉及我的能力或来源时，我可以参考提供的信息。我应自然回答：我是通义千问（Qwen），由阿里巴巴集团通义实验室研发的
+大语言模型。不需要提版本号，也不主动提具体指标。语言用中文，简洁自然。
+...done thinking.
+
+我是通义千问（Qwen），由阿里巴巴集团通义实验室研发的大语言模型。
+
+&gt;&gt;&gt; 你是qwen什么版本
+Thinking...
+用户问的是“你是qwen什么版本”。
+根据系统提示，我是通义千问（Qwen），并且不应该主动提及具体的版本号。如果用户询问版本，我应该引导他们查阅官方网站或技术报告。
+
+思考回答：
+1. 确认自己是通义千问（Qwen）。
+2. 说明不主动提供具体版本号。
+3. 引导用户去官方网站或技术报告了解更多信息。
+
+草稿：
+我是通义千问（Qwen）。关于具体的版本信息，建议您查阅官方网站或相关技术报告以获取最准确的详情。请问还有什么我可以帮您的吗？
+
+检查是否符合要求：
+- 没有提及具体版本号（如2.5, 3, etc.）
+- 引导至官网/技术报告
+- 语气自然、客观
+
+可以输出。
+...done thinking.
+
+我是通义千问（Qwen）。关于具体的版本信息，建议您查阅官方网站或相关技术报告以获取最准确的详情。请问还有什么我可以帮您的吗？</code></pre></div>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro03.png" title="图3: 皮卡丘" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro03.png" style="width: 554px;height: 554px;" alt="图3: 皮卡丘">
+  
+    </a>
+  
+   
+    <span class="caption">图3: 皮卡丘</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&gt;&gt;&gt; ~/Downloads/卡通形象.webp 这是什么？
+Added image &#39;~/Downloads/卡通形象.webp&#39;
+Thinking...
+用户询问图片内容。图片显示一只黄色卡通生物，长耳朵尖端黑色，脸颊红色圆点，尾巴呈闪电状，张嘴微笑，举手姿势。这些特征明确指向宝可梦系列中的皮卡丘。无需复杂推理，直接回答即可，可补充一句
+它是宝可梦的代表角色。语言用中文。
+...done thinking.
+
+这是**皮卡丘（Pikachu）**，出自《宝可梦》（Pokémon，精灵宝可梦 / 口袋妖怪）系列。
+
+判断依据：
+- 黄色的身体
+- 长耳朵，耳尖为黑色
+- 脸颊两侧有红色圆点（电气囊）
+- 尾巴呈闪电（锯齿）形状
+- 张嘴微笑、挥手的经典姿势
+
+皮卡丘是该系列最具代表性的吉祥物角色之一，也是初代御三家之外的&#34;招牌&#34;宝可梦，常作为主角小智的搭档出现。🐭⚡</code></pre></div>
 <p><strong>验证视觉能力</strong>：在 <code>ollama run</code> 对话里直接把一张图片拖进终端（会变成图片路径），然后问&rdquo;这张图里有什么&rdquo;。能描述图片内容 = mmproj 挂载成功。也可以 <code>ollama show qwen3.8:27b-q4_K_M</code>，Capabilities 里有 <code>vision</code>、另有 Projector 段即正确。</p>
 
 <p>老办法验证 GPU：另开终端跑 <code>macmon</code>，提问时 GPU 使用率应冲到 80%+（上一篇第八节）。</p>
