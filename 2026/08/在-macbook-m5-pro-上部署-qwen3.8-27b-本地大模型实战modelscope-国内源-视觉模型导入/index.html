@@ -93,8 +93,8 @@
   <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
 
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.png">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.jpeg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.jpeg">
 
 
     <title>在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）</title>
@@ -303,7 +303,10 @@
 <li><a href="#第-2-步-下载主模型-17-1gb">第 2 步：下载主模型（17.1GB）</a></li>
 <li><a href="#第-3-步-下载视觉模块-实测-885mb-可选但推荐">第 3 步：下载视觉模块（实测 885MB，可选但推荐）</a></li>
 </ul></li>
-<li><a href="#三-导入-ollama">三、导入 Ollama</a></li>
+<li><a href="#三-导入-ollama">三、导入 Ollama</a>
+<ul>
+<li><a href="#第-0-步-确认-ollama-服务在跑">第 0 步：确认 Ollama 服务在跑</a></li>
+</ul></li>
 <li><a href="#四-启动与验证">四、启动与验证</a>
 <ul>
 <li><a href="#ollama-show-输出解读"><code>ollama show</code> 输出解读</a></li>
@@ -327,7 +330,7 @@
 
 <h1 id="开篇">开篇</h1>
 
-<p>上一篇《在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南》（2026-06）里部署了 Qwen3.6-27B。这次阿里新发布了 <strong>Qwen3.8-27B</strong>：新增视觉能力（能看图）、上下文窗口拉到 256K，值得升级。本文记录完整升级过程和踩过的坑。</p>
+<p>上一篇<a href="https://imepisode.top/2026/07/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">《在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南》</a>（2026-06）里部署了 Qwen3.6-27B。这次阿里新发布了 <strong>Qwen3.8-27B</strong>：新增视觉能力（能看图）、上下文窗口拉到 256K，值得升级。本文记录完整升级过程和踩过的坑。</p>
 
 <blockquote>
 <p>适用环境：MacBook Pro M5 Pro / 48GB 统一内存，Ollama v0.32.14。
@@ -361,7 +364,7 @@
 <tr>
 <td>可用磁盘空间</td>
 <td>≥ 40GB</td>
-<td>✅ 剩余 488GB</td>
+<td>✅ 剩余 XXXGB</td>
 </tr>
 
 <tr>
@@ -386,6 +389,51 @@ modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --l
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/models/qwen3.8 <span style="color:#f92672">&amp;&amp;</span> cd ~/models/qwen3.8</code></pre></div>
 <h2 id="第-2-步-下载主模型-17-1gb">第 2 步：下载主模型（17.1GB）</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --local_dir ./</code></pre></div>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro02.png" title="图2: modelscope下载过程" data-fancybox="group:none">
+  
+    <img class="fig-img" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro02.png" style="width: 750px;height: 154px;" alt="图2: modelscope下载过程">
+  
+    </a>
+  
+   
+    <span class="caption">图2: modelscope下载过程</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+
 <p>中断了直接重跑同一条命令，自动断点续传。</p>
 
 <p><strong>量化档选择（48GB 内存口径）：</strong></p>
@@ -441,6 +489,19 @@ modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --l
 </blockquote>
 
 <h1 id="三-导入-ollama">三、导入 Ollama</h1>
+
+<h2 id="第-0-步-确认-ollama-服务在跑">第 0 步：确认 Ollama 服务在跑</h2>
+
+<p><code>create</code>/<code>run</code> 都是<strong>客户端</strong>命令，真正干活的是后台的 <code>ollama serve</code>（监听 11434）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s http://localhost:11434/api/version    <span style="color:#75715e"># 返回 {&#34;version&#34;:&#34;...&#34;} = 服务在跑，直接往下</span></code></pre></div>
+<p>没返回就先起服务。注意 <code>ollama serve</code> 本身是<strong>前台阻塞</strong>命令（会占住终端），推荐用 brew 注册成系统服务：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew services start ollama      <span style="color:#75715e"># 注册为后台服务，开机自动拉起（brew 装的 CLI 版适用）</span>
+<span style="color:#75715e"># 或临时后台起（第九节用的就是这种）：</span>
+<span style="color:#75715e"># nohup ollama serve &gt; /tmp/ollama.log 2&gt;&amp;1 &amp;</span></code></pre></div>
+<blockquote>
+<p>装的是 Ollama.app（菜单栏有图标）的话服务常驻，此步可跳过。
+⚠️ <code>brew upgrade ollama</code> 后，手动起的旧 serve 进程不会自动变新版本，记得 <code>brew services restart ollama</code>（第九节的 412 报错就是它导致的）。</p>
+</blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 创建 Modelfile（在 ~/models/qwen3.8 目录下执行）</span>
 cat &gt; Modelfile <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
 </span><span style="color:#e6db74">FROM ./Qwen3.8-27B-Q4_K_M.gguf
