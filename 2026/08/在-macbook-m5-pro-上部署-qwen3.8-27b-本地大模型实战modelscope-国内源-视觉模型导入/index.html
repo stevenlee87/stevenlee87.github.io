@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/imepisode.top",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Lee",
+    
+    "image": "https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png"
+    
+  },
+  "name":"imepisode blog",
+  "description":"",
+  "url":"https:\/\/imepisode.top\/2026\/08\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5\/",
+  "keywords":"[Ollama, Qwen3.8, MacBook M5 Pro, 本地大模型, ModelScope, GGUF, mmproj, 视觉模型, Cherry Studio]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.81.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Steven Lee">
+<meta name="keywords" content="Ollama, Qwen3.8, MacBook M5 Pro, 本地大模型, ModelScope, GGUF, mmproj, 视觉模型, Cherry Studio">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）">
+<meta name="twitter:title" content="在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）">
+<meta property="og:url" content="https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/">
+<meta property="twitter:url" content="https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/">
+<meta property="og:site_name" content="imepisode blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2026-08-19T11:30:00">
+  
+  
+    <meta property="article:modified_time" content="2026-08-19T11:30:00">
+  
+  
+  
+    
+      <meta property="article:section" content="study">
+    
+      <meta property="article:section" content="AI">
+    
+      <meta property="article:section" content="programming">
+    
+  
+  
+    
+      <meta property="article:tag" content="Ollama">
+    
+      <meta property="article:tag" content="Qwen3.8">
+    
+      <meta property="article:tag" content="Apple Silicon">
+    
+      <meta property="article:tag" content="本地大模型">
+    
+      <meta property="article:tag" content="ModelScope">
+    
+      <meta property="article:tag" content="MacBook">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png">
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg">
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/2026/08/Qwen3.8-Local-Install-MacBook-M5-Pro01.png">
+
+
+    <title>在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）</title>
+
+    <link rel="icon" href="https://imepisode.top/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://imepisode.top/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4BWJ91RC7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H4BWJ91RC7');
+    </script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://imepisode.top/" aria-label="Go to homepage">imepisode blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://imepisode.top/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://imepisode.top/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Steven Lee</h4>
+        
+          <h5 class="sidebar-profile-bio">imepisode1@gmail.com</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://imepisode.top/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/Poor%20Charlie%E2%80%99s%20Almanack2.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2026-08-19T11:30:00&#43;08:00">
+        
+  August 19, 2026
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://imepisode.top/categories/study">study</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/ai">AI</a>, 
+    
+      <a class="category-link" href="https://imepisode.top/categories/programming">programming</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+<ul>
+<li><a href="#开篇">开篇</a></li>
+<li><a href="#一-前置检查-实测环境">一、前置检查（实测环境）</a></li>
+<li><a href="#二-下载模型">二、下载模型</a>
+<ul>
+<li><a href="#最重要的警告-必须指定文件名">⚠️ 最重要的警告：必须指定文件名</a></li>
+<li><a href="#第-1-步-建工作目录">第 1 步：建工作目录</a></li>
+<li><a href="#第-2-步-下载主模型-17-1gb">第 2 步：下载主模型（17.1GB）</a></li>
+<li><a href="#第-3-步-下载视觉模块-实测-885mb-可选但推荐">第 3 步：下载视觉模块（实测 885MB，可选但推荐）</a></li>
+</ul></li>
+<li><a href="#三-导入-ollama">三、导入 Ollama</a></li>
+<li><a href="#四-启动与验证">四、启动与验证</a>
+<ul>
+<li><a href="#ollama-show-输出解读"><code>ollama show</code> 输出解读</a></li>
+</ul></li>
+<li><a href="#五-接入-cherry-studio-api">五、接入 Cherry Studio / API</a></li>
+<li><a href="#六-与-qwen3-6-流程的差异清单">六、与 Qwen3.6 流程的差异清单</a></li>
+<li><a href="#七-磁盘空间管理">七、磁盘空间管理</a></li>
+<li><a href="#八-常见问题">八、常见问题</a></li>
+<li><a href="#九-补记-直接-pull-的尝试与最终本地导入">九、补记：直接 pull 的尝试与最终本地导入</a>
+<ul>
+<li><a href="#1-报错">1. 报错</a></li>
+<li><a href="#2-升级并重启-serve">2. 升级并重启 serve</a></li>
+<li><a href="#3-重新拉取">3. 重新拉取</a></li>
+<li><a href="#两条路线怎么选">两条路线怎么选</a></li>
+<li><a href="#4-同日结局-pull-放弃-本地导入成功">4. 同日结局：pull 放弃，本地导入成功</a></li>
+</ul></li>
+<li><a href="#延伸阅读">延伸阅读</a></li>
+</ul>
+</nav>
+
+
+<h1 id="开篇">开篇</h1>
+
+<p>上一篇《在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南》（2026-06）里部署了 Qwen3.6-27B。这次阿里新发布了 <strong>Qwen3.8-27B</strong>：新增视觉能力（能看图）、上下文窗口拉到 256K，值得升级。本文记录完整升级过程和踩过的坑。</p>
+
+<blockquote>
+<p>适用环境：MacBook Pro M5 Pro / 48GB 统一内存，Ollama v0.32.14。
+与上一次相比的三个新变化：模型是<strong>视觉模型</strong>（要多导入一个 mmproj 文件）、Modelfile 写法有变（<strong>没有 <code>PROJECTOR</code> 指令，要用两个 <code>FROM</code></strong>）、直接 <code>ollama pull</code> 这次没走通（412 报错 + 断流，详见第九节），最终走的是 ModelScope 国内源下载 + 本地导入。</p>
+</blockquote>
+
+<h1 id="一-前置检查-实测环境">一、前置检查（实测环境）</h1>
+
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>要求</th>
+<th>实测状态</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>modelscope CLI</td>
+<td>已安装</td>
+<td>✅ v1.37.1（<code>~/.local/bin/modelscope</code>）</td>
+</tr>
+
+<tr>
+<td>Ollama</td>
+<td>直接 pull 需 ≥ 0.32（0.30.11 会报 412）</td>
+<td>✅ v0.32.14（自 0.30.11 升级）</td>
+</tr>
+
+<tr>
+<td>可用磁盘空间</td>
+<td>≥ 40GB</td>
+<td>✅ 剩余 488GB</td>
+</tr>
+
+<tr>
+<td>VPN / 代理</td>
+<td>关闭（走国内直连更快）</td>
+<td>下载前手动确认</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="二-下载模型">二、下载模型</h1>
+
+<h2 id="最重要的警告-必须指定文件名">⚠️ 最重要的警告：必须指定文件名</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ❌ 错误：不带文件名 = 下载整个仓库全部 424GB（含 BF16 全精度、所有量化档）</span>
+modelscope download --model unsloth/Qwen3.8-27B-GGUF
+
+<span style="color:#75715e"># ✅ 正确：指定单个文件</span>
+modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --local_dir ./</code></pre></div>
+<p>误操作整仓下载时立即 <code>Ctrl + C</code>，不会产生脏数据；换成带文件名的命令重来即可。</p>
+
+<h2 id="第-1-步-建工作目录">第 1 步：建工作目录</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/models/qwen3.8 <span style="color:#f92672">&amp;&amp;</span> cd ~/models/qwen3.8</code></pre></div>
+<h2 id="第-2-步-下载主模型-17-1gb">第 2 步：下载主模型（17.1GB）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --local_dir ./</code></pre></div>
+<p>中断了直接重跑同一条命令，自动断点续传。</p>
+
+<p><strong>量化档选择（48GB 内存口径）：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>大小</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Qwen3.8-27B-Q4_K_M.gguf</code></td>
+<td>17.1 GB</td>
+<td><strong>本文选择</strong>，质量/大小平衡最好</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.8-27B-UD-Q4_K_XL.gguf</code></td>
+<td>17.9 GB</td>
+<td>Unsloth 动态量化，质量略好</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.8-27B-Q6_K.gguf</code></td>
+<td>22.9 GB</td>
+<td>更高质量，48GB 也能从容跑</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.8-27B-Q8_0.gguf</code></td>
+<td>29 GB</td>
+<td>能跑但偏紧（默认 GPU 上限约 36GB），不推荐</td>
+</tr>
+
+<tr>
+<td><code>Qwen3.8-27B-bf16</code></td>
+<td>56 GB</td>
+<td>❌ 超出 48GB 内存，跑不了</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="第-3-步-下载视觉模块-实测-885mb-可选但推荐">第 3 步：下载视觉模块（实测 885MB，可选但推荐）</h2>
+
+<p><strong>这是与 Qwen3.6 最大的不同：Qwen3.8-27B 是视觉模型，能看图。</strong> 视觉能力在一个独立的 mmproj 文件里，不下载它模型照样能用，但只能纯文本。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modelscope download --model unsloth/Qwen3.8-27B-GGUF mmproj-F16.gguf --local_dir ./</code></pre></div>
+<blockquote>
+<p>仓库里还有个 <code>mmproj-BF16.gguf</code>（931MB），二选一即可，用 F16 这个。</p>
+</blockquote>
+
+<h1 id="三-导入-ollama">三、导入 Ollama</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 创建 Modelfile（在 ~/models/qwen3.8 目录下执行）</span>
+cat &gt; Modelfile <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span><span style="color:#e6db74">FROM ./Qwen3.8-27B-Q4_K_M.gguf
+</span><span style="color:#e6db74">FROM ./mmproj-F16.gguf
+</span><span style="color:#e6db74">PARAMETER num_ctx 32768
+</span><span style="color:#e6db74">EOF</span>
+
+<span style="color:#75715e"># 2. 创建模型</span>
+ollama create qwen3.8:27b-q4_K_M -f Modelfile
+
+<span style="color:#75715e"># 3. 运行</span>
+ollama run qwen3.8:27b-q4_K_M</code></pre></div>
+<p>三行指令的作用：</p>
+
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>FROM</code>（第 1 行）</td>
+<td>主模型权重（必需）</td>
+</tr>
+
+<tr>
+<td><code>FROM</code>（第 2 行）</td>
+<td>挂载视觉模块 mmproj。<strong>⚠️ v0.32.14 没有 <code>PROJECTOR</code> 指令</strong>，写了会报 <code>command must be one of &quot;from&quot;, &quot;license&quot;, ...</code>，多模态就用第二个 <code>FROM</code> 行。不想要看图功能可整行删掉，第 2 步的 mmproj 也不用下。（<code>ADAPTER</code> 挂 mmproj 实测也能成，但语义上用 <code>FROM</code> 更正规）</td>
+</tr>
+
+<tr>
+<td><code>PARAMETER num_ctx 32768</code></td>
+<td>上下文长度设为 32K。Ollama 默认只开 4K，浪费了 Qwen3.8 的 256K 窗口</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>num_ctx 别贪大</strong>：32K 上下文大约额外占 8GB 内存（KV cache），17GB 权重 + 8GB 在 48GB 上很从容；开到 128K 以上 KV cache 就要 30GB+，会挤爆。日常 32K 够用。</p>
+</blockquote>
+
+<h1 id="四-启动与验证">四、启动与验证</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama list                    <span style="color:#75715e"># 应看到 qwen3.8:27b-q4_K_M，约 18GB</span>
+ollama run qwen3.8:27b-q4_K_M  <span style="color:#75715e"># 进入对话</span>
+ollama ps                      <span style="color:#75715e"># 查看已加载模型和占用内存</span></code></pre></div>
+<p><strong>验证视觉能力</strong>：在 <code>ollama run</code> 对话里直接把一张图片拖进终端（会变成图片路径），然后问&rdquo;这张图里有什么&rdquo;。能描述图片内容 = mmproj 挂载成功。也可以 <code>ollama show qwen3.8:27b-q4_K_M</code>，Capabilities 里有 <code>vision</code>、另有 Projector 段即正确。</p>
+
+<p>老办法验证 GPU：另开终端跑 <code>macmon</code>，提问时 GPU 使用率应冲到 80%+（上一篇第八节）。</p>
+
+<h2 id="ollama-show-输出解读"><code>ollama show</code> 输出解读</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  Model
+    architecture        qwen35      # 模型架构（qwen3.5 系列）
+    parameters          27.3B       # 参数量
+    context length      262144      # 模型支持的上下文上限（256K）
+    embedding length    5120        # 词向量维度
+    quantization        Q4_K_M      # 量化档
+
+  Capabilities
+    tools       # 工具调用（function calling）：能判断该调哪个函数、参数是什么，输出结构化 JSON。
+                # 接 Claude Code / Cherry Studio 联网搜索等都靠它（API 请求带 tools 定义）
+    thinking    # 推理模式：回答前先输出 &lt;think&gt;...&lt;/think&gt; 思考段再给正式答案，默认开启。
+                # 想关：提问末尾加 /no_think（Qwen 系软开关），或 API 传 &#34;think&#34;: false
+    completion  # 文本补全（/api/generate 单轮续写），所有模型的标配，不用管
+    vision      # 图像理解：能看图（mmproj 带来的，见下方 Projector）
+
+  Projector                  ← vision 能力的来源
+    architecture        clip        # 视觉编码器架构，把图片切块编码成向量
+    parameters          460.73M     # 视觉模块自身参数量（所以 mmproj 有 885MB）
+    embedding length    1152        # 视觉侧向量维度
+    dimensions          5120        # 输出维度，与主模型 embedding length 对齐——
+                                   # 图像向量就这样&#34;翻译&#34;进语言模型输入空间
+
+  Parameters
+    num_ctx    32768               # Modelfile 里设的实际上下文窗口 32K（KV cache 按这个算，
+                                   # 模型上限 262144，别贪大，见第三节说明）</code></pre></div>
+<p>四项能力里 completion 是标配，其余三项（tools / thinking / vision）都是这个模型的加分项。识图方法：本节上方&rdquo;验证视觉能力&rdquo;（终端拖图 / 带路径提问）、第五节（Cherry Studio 贴图、API）。</p>
+
+<h1 id="五-接入-cherry-studio-api">五、接入 Cherry Studio / API</h1>
+
+<p>和上一篇第五、六节完全一样，只改模型名：</p>
+
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>改动</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>API 地址</td>
+<td>不变：<code>http://localhost:11434/v1</code></td>
+</tr>
+
+<tr>
+<td>模型名</td>
+<td><code>qwen3.8:27b-q4_K_M</code>（必须与 <code>ollama list</code> 显示完全一致）</td>
+</tr>
+
+<tr>
+<td>Cherry Studio 发图</td>
+<td>直接在对话框贴图，模型即可识图（视觉模型新增能力）</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="六-与-qwen3-6-流程的差异清单">六、与 Qwen3.6 流程的差异清单</h1>
+
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>Qwen3.6（上一篇）</th>
+<th>Qwen3.8（本文）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>下载文件</td>
+<td>1 个 GGUF</td>
+<td><strong>2 个</strong>：GGUF + mmproj-F16.gguf</td>
+</tr>
+
+<tr>
+<td>Modelfile</td>
+<td>只有 <code>FROM</code></td>
+<td><strong>多第二个 <code>FROM</code> 行</strong>（挂 mmproj 视觉模块）+ <code>PARAMETER num_ctx</code></td>
+</tr>
+
+<tr>
+<td>模型名</td>
+<td><code>qwen3.6:27b-q4_K_M</code></td>
+<td><code>qwen3.8:27b-q4_K_M</code></td>
+</tr>
+
+<tr>
+<td>能力</td>
+<td>纯文本</td>
+<td><strong>文本 + 看图</strong>，上下文 256K</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="七-磁盘空间管理">七、磁盘空间管理</h1>
+
+<p>本次安装完成后磁盘上会多出约 <strong>35GB</strong>：</p>
+
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>大小</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>~/models/qwen3.8/</code> 原始文件</td>
+<td>~18GB</td>
+<td>GGUF 17.1G + mmproj 0.9G</td>
+</tr>
+
+<tr>
+<td><code>~/.ollama/models/blobs/</code></td>
+<td>~18GB</td>
+<td><code>ollama create</code> 生成的托管副本</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>确认模型能正常用（含看图）后，<code>~/models/qwen3.8/</code> 下的原始文件可删，省 18GB。</li>
+<li>删模型用 <code>ollama rm qwen3.8:27b-q4_K_M</code>，别手动动 blobs 目录。</li>
+<li><strong>顺手清理</strong>：<code>~/models/</code> 根目录下如果还留着旧 Qwen3.6 的原始 <code>Qwen3.6-27B-Q4_K_M.gguf</code>（16G），Ollama 里的 qwen3.6 还能正常跑且不再需要原始文件的话，这份也可以删，再省 16GB。</li>
+</ul>
+
+<h1 id="八-常见问题">八、常见问题</h1>
+
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>原因 / 解决</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>下载停不下来、磁盘暴涨</td>
+<td>忘了加文件名，正在下整仓 424GB；<code>Ctrl + C</code>，加文件名重来（见第二节警告）</td>
+</tr>
+
+<tr>
+<td><code>Repo ... not exists</code></td>
+<td>仓库名/文件名大小写、点号不符；正确写法：<code>unsloth/Qwen3.8-27B-GGUF</code> + <code>Qwen3.8-27B-Q4_K_M.gguf</code></td>
+</tr>
+
+<tr>
+<td>下载中断</td>
+<td>重跑同一条命令，自动续传</td>
+</tr>
+
+<tr>
+<td><code>ollama create</code> 报 <code>command must be one of &quot;from&quot;, &quot;license&quot;, ...</code></td>
+<td>Modelfile 用了不存在的指令（如 <code>PROJECTOR</code>，v0.32.14 实测没有这条）。视觉模块改用第二个 <code>FROM</code> 行挂 mmproj，见第三节</td>
+</tr>
+
+<tr>
+<td>模型能聊天但看不了图</td>
+<td>mmproj 没下载 / Modelfile 漏了第二个 <code>FROM</code> 行 / 改了 Modelfile 后没重新 <code>ollama create</code></td>
+</tr>
+
+<tr>
+<td>长对话后内存吃紧、变卡</td>
+<td><code>num_ctx</code> 设太大；改 Modelfile 里的值重新 <code>ollama create</code></td>
+</tr>
+
+<tr>
+<td>Cherry Studio 检测失败</td>
+<td>模型名与 <code>ollama list</code> 不一致，或 Ollama 服务没在跑</td>
+</tr>
+
+<tr>
+<td><code>pull model manifest: 412</code></td>
+<td>客户端版本过旧（直接 pull 需 ≥ 0.32）；<code>brew upgrade ollama</code> 后<strong>必须重启 serve 进程</strong>才生效，详见第九节</td>
+</tr>
+
+<tr>
+<td><code>listen tcp 127.0.0.1:11434: bind: address already in use</code></td>
+<td>已经有一个 serve 在跑；<code>pkill -f &quot;ollama serve&quot;</code> 停掉再起。注意别在 pull 进行中折腾——ollama pull 中断后实测<strong>不续传</strong>，该层从头下</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="九-补记-直接-pull-的尝试与最终本地导入">九、补记：直接 pull 的尝试与最终本地导入</h1>
+
+<p>如果没走 ModelScope，直接 <code>ollama run qwen3.8:27b-q4_K_M</code>，让 Ollama 自己从 ollama.com 拉取。先遇到版本问题，升级后开始下载，但网络不稳，最终放弃 pull 改走本地导入（见本节第 4 小节）。pull 这条路的记录如下：</p>
+
+<h2 id="1-报错">1. 报错</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Error: pull model manifest: 412:
+The model you are attempting to pull requires a newer version of Ollama.</code></pre></div>
+<p>原因：0.30.11 低于该模型 manifest 的最低客户端要求（只挡直接 pull，本地 <code>ollama create</code> 导入不受影响）。</p>
+
+<h2 id="2-升级并重启-serve">2. 升级并重启 serve</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew upgrade ollama                          <span style="color:#75715e"># 0.30.11 → 0.32.14</span>
+pkill -f <span style="color:#e6db74">&#34;ollama serve&#34;</span>                      <span style="color:#75715e"># 关键：手动起的 serve 不随升级自动重启</span>
+nohup ollama serve &gt; /tmp/ollama.log 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;  <span style="color:#75715e"># 后台重启，日志在 /tmp/ollama.log</span>
+curl -s http://localhost:11434/api/version   <span style="color:#75715e"># 验证返回 {&#34;version&#34;:&#34;0.32.14&#34;}</span></code></pre></div>
+<blockquote>
+<p>brew 只替换二进制，<strong>内存里跑着的还是旧进程</strong>——只升级不重启，pull 照样报 412。</p>
+</blockquote>
+
+<h2 id="3-重新拉取">3. 重新拉取</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama pull qwen3.8:27b-q4_K_M    <span style="color:#75715e"># 约 16GB；注意实测中断后会从头下该层（ollama pull 不续传），最好挂着别断</span></code></pre></div>
+<p>拉完用 <code>ollama show</code> 看 capabilities 里有没有 <code>vision</code> 即可。</p>
+
+<h2 id="两条路线怎么选">两条路线怎么选</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>直接 pull（本节）</th>
+<th>ModelScope + Modelfile（第二、三节）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>步骤</td>
+<td>1 条命令</td>
+<td>下 2 个文件 + 写 Modelfile + create</td>
+</tr>
+
+<tr>
+<td>速度</td>
+<td>ollama.com 海外源，实测 ~600KB/s，慢</td>
+<td>国内源，快</td>
+</tr>
+
+<tr>
+<td>量化档 / 参数</td>
+<td>用官方现成 tag</td>
+<td>完全自定义（num_ctx、mmproj 档位）</td>
+</tr>
+
+<tr>
+<td>适合</td>
+<td>省事、能挂着慢慢下</td>
+<td>要速度或要自定义</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="4-同日结局-pull-放弃-本地导入成功">4. 同日结局：pull 放弃，本地导入成功</h2>
+
+<p>pull 两次都因 <code>unexpected EOF</code> 中断（且不续传、每次从头下），放弃；改走第二、三节的本地导入，但原 Modelfile 里的 <code>PROJECTOR</code> 指令在 0.32.14 直接报错——<strong>这条指令根本不存在</strong>。实测有效的是<strong>两行 <code>FROM</code></strong>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/models/qwen3.8
+cat &gt; Modelfile <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+</span><span style="color:#e6db74">FROM ./Qwen3.8-27B-Q4_K_M.gguf
+</span><span style="color:#e6db74">FROM ./mmproj-F16.gguf
+</span><span style="color:#e6db74">PARAMETER num_ctx 32768
+</span><span style="color:#e6db74">EOF</span>
+ollama create qwen3.8:27b-q4_K_M -f Modelfile</code></pre></div>
+<p><strong>实测结论：</strong></p>
+
+<ul>
+<li><code>ollama show qwen3.8:27b-q4_K_M</code>：Capabilities 含 <code>vision</code> + Projector（clip，460M 参数）→ 视觉挂载成功</li>
+<li>红蓝双色测试图识别正确；文本对话正常（thinking 模式）</li>
+<li><code>ollama ps</code>：18GB、100% GPU、context 32768（<code>PARAMETER num_ctx</code> 生效）</li>
+<li>测过的无效写法：<code>PROJECTOR</code>（指令不存在）、<code>FROM a.gguf,b.gguf</code> 逗号/空格多文件（报 <code>invalid model name</code>）；<code>ADAPTER</code> 挂 mmproj 能成功但不推荐</li>
+</ul>
+
+<hr />
+
+<h1 id="延伸阅读">延伸阅读</h1>
+
+<ol>
+<li><a href="https://modelscope.cn/models/unsloth/Qwen3.8-27B-GGUF/summary">unsloth/Qwen3.8-27B-GGUF</a></li>
+</ol>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/ollama/">Ollama</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/qwen3.8/">Qwen3.8</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/apple-silicon/">Apple Silicon</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/">本地大模型</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/modelscope/">ModelScope</a>
+
+  <a class="tag tag--primary tag--small" href="https://imepisode.top/tags/macbook/">MacBook</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2026/07/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" data-tooltip="在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南" aria-label="PREVIOUS: 在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/imepisode.top\/2026\/08\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5\/';
+        
+          this.page.identifier = '\/2026\/08\/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'stevenlee87-github-io-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2026 Steven Lee. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imepisode.top/2026/07/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" data-tooltip="在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南" aria-label="PREVIOUS: 在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimepisode.top%2F2026%2F08%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-qwen3.8-27b-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E6%2588%2598modelscope-%25E5%259B%25BD%25E5%2586%2585%25E6%25BA%2590-%25E8%25A7%2586%25E8%25A7%2589%25E6%25A8%25A1%25E5%259E%258B%25E5%25AF%25BC%25E5%2585%25A5%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimepisode.top%2F2026%2F08%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-qwen3.8-27b-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E6%2588%2598modelscope-%25E5%259B%25BD%25E5%2586%2585%25E6%25BA%2590-%25E8%25A7%2586%25E8%25A7%2589%25E6%25A8%25A1%25E5%259E%258B%25E5%25AF%25BC%25E5%2585%25A5%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimepisode.top%2F2026%2F08%2F%25E5%259C%25A8-macbook-m5-pro-%25E4%25B8%258A%25E9%2583%25A8%25E7%25BD%25B2-qwen3.8-27b-%25E6%259C%25AC%25E5%259C%25B0%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E6%2588%2598modelscope-%25E5%259B%25BD%25E5%2586%2585%25E6%25BA%2590-%25E8%25A7%2586%25E8%25A7%2589%25E6%25A8%25A1%25E5%259E%258B%25E5%25AF%25BC%25E5%2585%25A5%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://raw.githubusercontent.com/stevenlee87/stevenlee87.github.io/master/myimage/travis-ci.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Steven Lee</h4>
+    
+      <div id="about-card-bio">imepisode1@gmail.com</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        SRE
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://imepisode.top/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://imepisode.top/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

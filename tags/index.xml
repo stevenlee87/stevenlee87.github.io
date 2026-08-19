@@ -6,13 +6,58 @@
     <description>Recent content in Tags on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 16:39:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2026 11:30:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apple Silicon</title>
       <link>https://imepisode.top/tags/apple-silicon/</link>
-      <pubDate>Tue, 14 Jul 2026 16:39:00 +0800</pubDate>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/apple-silicon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacBook</title>
+      <link>https://imepisode.top/tags/macbook/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/macbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ModelScope</title>
+      <link>https://imepisode.top/tags/modelscope/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/modelscope/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ollama</title>
+      <link>https://imepisode.top/tags/ollama/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/ollama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qwen3.8</title>
+      <link>https://imepisode.top/tags/qwen3.8/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/qwen3.8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>本地大模型</title>
+      <link>https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
       <description></description>
     </item>
     
@@ -26,38 +71,11 @@
     </item>
     
     <item>
-      <title>MacBook</title>
-      <link>https://imepisode.top/tags/macbook/</link>
-      <pubDate>Tue, 14 Jul 2026 16:39:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/macbook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ollama</title>
-      <link>https://imepisode.top/tags/ollama/</link>
-      <pubDate>Tue, 14 Jul 2026 16:39:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/ollama/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Qwen</title>
       <link>https://imepisode.top/tags/qwen/</link>
       <pubDate>Tue, 14 Jul 2026 16:39:00 +0800</pubDate>
       
       <guid>https://imepisode.top/tags/qwen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>本地大模型</title>
-      <link>https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Tue, 14 Jul 2026 16:39:00 +0800</pubDate>
-      
-      <guid>https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
       <description></description>
     </item>
     

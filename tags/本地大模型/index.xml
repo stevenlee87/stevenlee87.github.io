@@ -6,7 +6,16 @@
     <description>Recent content in 本地大模型 on imepisode blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 16:39:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2026 11:30:00 +0800</lastBuildDate><atom:link href="https://imepisode.top/tags/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 MacBook M5 Pro 上部署 Qwen3.8-27B 本地大模型实战（ModelScope 国内源 &#43; 视觉模型导入）</title>
+      <link>https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/</link>
+      <pubDate>Wed, 19 Aug 2026 11:30:00 +0800</pubDate>
+      
+      <guid>https://imepisode.top/2026/08/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-qwen3.8-27b-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98modelscope-%E5%9B%BD%E5%86%85%E6%BA%90-%E8%A7%86%E8%A7%89%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南</title>
       <link>https://imepisode.top/2026/07/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/</link>
