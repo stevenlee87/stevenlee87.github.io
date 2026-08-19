@@ -1,0 +1,7 @@
+/* 代码块自动换行：超长行在栏宽处折行，不再出横向滚动条（全站生效） */
+pre,
+pre code {
+  white-space: pre-wrap !important;   /* 保留缩进和空格，但允许自动换行 */
+  word-break: break-word !important;  /* 旧浏览器回退 */
+  overflow-wrap: anywhere !important; /* 超长英文串/URL 也能断行 */
+}
