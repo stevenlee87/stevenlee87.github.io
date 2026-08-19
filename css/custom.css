@@ -5,3 +5,12 @@ pre code {
   word-break: break-word !important;  /* 旧浏览器回退 */
   overflow-wrap: anywhere !important; /* 超长英文串/URL 也能断行 */
 }
+
+/* 可选开关：围栏语言写成 diagram（```diagram）的代码块视为 ASCII 图形，
+   不自动换行，保留原始排版 + 横向滚动 */
+pre code.language-diagram,
+pre:has(code.language-diagram) {
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
