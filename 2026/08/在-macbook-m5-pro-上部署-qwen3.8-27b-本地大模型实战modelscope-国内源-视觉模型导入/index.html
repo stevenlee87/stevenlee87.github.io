@@ -306,6 +306,9 @@
 <li><a href="#三-导入-ollama">三、导入 Ollama</a>
 <ul>
 <li><a href="#第-0-步-确认-ollama-服务在跑">第 0 步：确认 Ollama 服务在跑</a></li>
+<li><a href="#第-1-步-创建-modelfile-在-models-qwen3-8-目录下执行">第 1 步：创建 Modelfile（在 ~/models/qwen3.8 目录下执行）</a></li>
+<li><a href="#第-2-步-创建模型">第 2 步：创建模型</a></li>
+<li><a href="#第-3-步-运行">第 3 步：运行</a></li>
 </ul></li>
 <li><a href="#四-启动与验证">四、启动与验证</a>
 <ul>
@@ -502,19 +505,18 @@ modelscope download --model unsloth/Qwen3.8-27B-GGUF Qwen3.8-27B-Q4_K_M.gguf --l
 <p>装的是 Ollama.app（菜单栏有图标）的话服务常驻，此步可跳过。
 ⚠️ <code>brew upgrade ollama</code> 后，手动起的旧 serve 进程不会自动变新版本，记得 <code>brew services restart ollama</code>（第九节的 412 报错就是它导致的）。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 创建 Modelfile（在 ~/models/qwen3.8 目录下执行）</span>
-cat &gt; Modelfile <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
+
+<h2 id="第-1-步-创建-modelfile-在-models-qwen3-8-目录下执行">第 1 步：创建 Modelfile（在 ~/models/qwen3.8 目录下执行）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; Modelfile <span style="color:#e6db74">&lt;&lt;&#39;EOF&#39;
 </span><span style="color:#e6db74">FROM ./Qwen3.8-27B-Q4_K_M.gguf
 </span><span style="color:#e6db74">FROM ./mmproj-F16.gguf
 </span><span style="color:#e6db74">PARAMETER num_ctx 32768
-</span><span style="color:#e6db74">EOF</span>
-
-<span style="color:#75715e"># 2. 创建模型</span>
-ollama create qwen3.8:27b-q4_K_M -f Modelfile
-
-<span style="color:#75715e"># 3. 运行</span>
-ollama run qwen3.8:27b-q4_K_M</code></pre></div>
-<p>三行指令的作用：</p>
+</span><span style="color:#e6db74">EOF</span></code></pre></div>
+<h2 id="第-2-步-创建模型">第 2 步：创建模型</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama create qwen3.8:27b-q4_K_M -f Modelfile</code></pre></div>
+<h2 id="第-3-步-运行">第 3 步：运行</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ollama run qwen3.8:27b-q4_K_M</code></pre></div>
+<p>Modelfile 三行指令的作用：</p>
 
 <table>
 <thead>
@@ -826,6 +828,7 @@ ollama create qwen3.8:27b-q4_K_M -f Modelfile</code></pre></div>
 <h1 id="延伸阅读">延伸阅读</h1>
 
 <ol>
+<li><a href="https://imepisode.top/2026/07/%E5%9C%A8-macbook-m5-pro-%E4%B8%8A%E9%83%A8%E7%BD%B2-ollama-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">在 MacBook M5 Pro 上部署 Ollama 本地大模型完整指南 (Qwen3.6 部署文档)</a></li>
 <li><a href="https://modelscope.cn/models/unsloth/Qwen3.8-27B-GGUF/summary">unsloth/Qwen3.8-27B-GGUF（ModelScope 国内源）</a></li>
 <li><a href="https://huggingface.co/unsloth/Qwen3.8-27B-GGUF">unsloth/Qwen3.8-27B-GGUF - Hugging Face</a>：全部量化档的文件清单和大小（本文量化选择表的来源）</li>
 <li><a href="https://unsloth.ai/docs/models/qwen3.8">Qwen3.8 - How to Run Locally | Unsloth Documentation</a>：官方本地运行文档，内存需求与 NVFP4 动态量化说明</li>
